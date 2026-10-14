@@ -1,3 +1,4 @@
+using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using BitLifeClone.Models;
@@ -79,7 +80,7 @@ public sealed class SaveService
     /// <summary>(archivo, etiqueta) de cada save, del mas nuevo al mas viejo.</summary>
     public List<(string FileName, string Label)> ListSaves()
     {
-        var list = new List<(string, string)>();
+        var list = new List<(string FileName, string Label)>();
         foreach (var file in Directory.GetFiles(SavesDir, "*.json"))
         {
             try

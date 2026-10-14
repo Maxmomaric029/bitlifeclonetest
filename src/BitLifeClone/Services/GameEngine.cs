@@ -334,7 +334,7 @@ public sealed class GameEngine
             Age = p.Age,
             Text = act.SuccessText,
             Deltas = deltas,
-            MoneyDelta = -act.Cost
+            MoneyDelta = -(int)act.Cost
         };
         p.History.Add(evt);
         return evt;

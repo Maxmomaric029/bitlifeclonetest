@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Input;
 using BitLifeClone.Models;
 using BitLifeClone.Services;
@@ -41,7 +42,7 @@ public sealed class MainViewModel : ObservableObject
         _saves = new SaveService();
 
         AgeUpCommand = new RelayCommand(AgeUp, () => HasGame && !_game!.Person.IsDead);
-        OpenMenuCommand = new RelayCommand(p => OpenMenu(p as string ?? ""), () => HasGame && !_game!.Person.IsDead);
+        OpenMenuCommand = new RelayCommand(p => OpenMenu(p as string ?? ""), _ => HasGame && !_game!.Person.IsDead);
         HideMenuCommand = new RelayCommand(HideMenu);
         StartCommand = new RelayCommand(StartNewLife, () => StartName.Trim().Length > 0);
         NewLifeCommand = new RelayCommand(NewLife);
@@ -595,10 +596,10 @@ public sealed class MainViewModel : ObservableObject
     private string PickName(bool female)
     {
         var names = _engine.Data.Names;
-        var pool = female
-            ? (names.FemaleNames.Count > 0 ? names.FemaleNames : FemaleNames)
-            : (names.MaleNames.Count > 0 ? names.MaleNames : MaleNames);
-        var first = pool[_rng.Next(pool.Count)];
+        string[] pool = female
+            ? (names.FemaleNames.Count > 0 ? names.FemaleNames.ToArray() : FemaleNames)
+            : (names.MaleNames.Count > 0 ? names.MaleNames.ToArray() : MaleNames);
+        var first = pool[_rng.Next(pool.Length)];
         if (names.LastNames.Count > 0 && _rng.Next(100) < 70)
             first += " " + names.LastNames[_rng.Next(names.LastNames.Count)];
         return first;
