@@ -27,14 +27,17 @@ jobs:
       - name: Publicar exe portable (self-contained, no requiere instalar .NET)
         run: dotnet publish src/BitLifeClone/BitLifeClone.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=none -o artifacts/BitLifeClone-win64
 
-      - name: Comprimir artefacto
-        run: Compress-Archive -Path artifacts/BitLifeClone-win64/* -DestinationPath artifacts/BitLifeClone-win64.zip
+      - name: Incluir carpeta saves junto al exe
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifacts/BitLifeClone-win64/saves | Out-Null
+          'Las partidas guardadas por el juego (SaveService) se crean en esta carpeta.' | Out-File -Encoding utf8 artifacts/BitLifeClone-win64/saves/README.txt
 
-      - name: Subir exe
+      - name: Subir artefacto (un solo zip con exe + Data + saves)
         uses: actions/upload-artifact@v4
         with:
           name: BitLifeClone-win64
-          path: artifacts/BitLifeClone-win64.zip
+          path: artifacts/BitLifeClone-win64
 
       - name: Resumen del build
         if: always()
