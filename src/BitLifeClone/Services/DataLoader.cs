@@ -127,7 +127,20 @@ public sealed class DataLoader
     {
         try
         {
-            var doc = JsonSerializer.Deserialize<RelDoc>(File.ReadAllText(path), Options);
+            var raw = File.ReadAllText(path).TrimStart();
+
+            // lista suelta de subeventos con choices (ej. relationship_events.json)
+            if (raw.StartsWith("["))
+            {
+                var subs = JsonSerializer.Deserialize<List<SubEvent>>(raw, Options);
+                if (subs is null) return;
+                foreach (var sub in subs)
+                    if (!string.IsNullOrEmpty(sub.Id))
+                        SubEvents.TryAdd(sub.Id, sub); // id repetido: el validador ya lo caza
+                return;
+            }
+
+            var doc = JsonSerializer.Deserialize<RelDoc>(raw, Options);
             if (doc?.Actions is null || doc.Actions.Count == 0)
                 return;
 
@@ -439,10 +452,22 @@ public sealed class DataLoader
         public Dictionary<string, JsonElement> StatsData { get; set; } = new();
     }
 
-    /// <summary>{ subevents: [ { id, text, outcomes } ] } de Relationships/subevents.json.</summary>
+    /// <summary>{ subevents: [ { id, text, outcomes } ] } de Relationships/subevents.json.
+    /// Tambien cubre listas sueltas con choices (relationship_events.json) donde el
+    /// subevento decide primero una choice y luego un outcome ponderado.</summary>
     public sealed class SubEvent
     {
         public string Id { get; set; } = string.Empty;
+        public string Text { get; set; } = string.Empty;
+        public List<RelOutcome> Outcomes { get; set; } = new();
+
+        /// <summary>Choices del subevento (relationship_events.json...). Si hay, se usa estas.</summary>
+        public List<RelSubChoice>? Choices { get; set; }
+    }
+
+    /// <summary>Choice de un subevento de relacion: texto opcional con outcomes ponderados.</summary>
+    public sealed class RelSubChoice
+    {
         public string Text { get; set; } = string.Empty;
         public List<RelOutcome> Outcomes { get; set; } = new();
     }

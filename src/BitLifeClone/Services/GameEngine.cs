@@ -477,9 +477,19 @@ public sealed class GameEngine
     {
         if (depth > 4 || !_data.SubEvents.TryGetValue(subEventId, out var sub))
             return;
-        if (sub.Outcomes.Count == 0) return;
 
-        var outcome = PickWeighted(sub.Outcomes);
+        // subevento con choices (relationship_events.json): primero una choice al azar,
+        // luego su outcome ponderado. Sin choices: outcome ponderado directo.
+        RelOutcome? outcome;
+        if (sub.Choices is { Count: > 0 })
+        {
+            var choice = sub.Choices[_rng.Next(sub.Choices.Count)];
+            outcome = PickWeighted(choice.Outcomes);
+        }
+        else
+        {
+            outcome = PickWeighted(sub.Outcomes);
+        }
         if (outcome is null) return;
 
         var p = game.Person;
