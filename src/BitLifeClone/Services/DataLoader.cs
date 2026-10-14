@@ -385,7 +385,7 @@ public sealed class DataLoader
         public string? RemoveFlag { get; set; }
         public bool? LoseJob { get; set; }
         public string? NextEventId { get; set; }
-        public Dictionary<string, string>? TraitWeightMods { get; set; }
+        public Dictionary<string, int>? TraitWeightMods { get; set; }
 
         [JsonExtensionData]
         public Dictionary<string, JsonElement> StatsData { get; set; } = new();
@@ -497,7 +497,7 @@ public sealed class DataLoader
         public WarEnd? WarEnd { get; set; }
         public WarDraft? Draft { get; set; }
         public List<CityStatusStep>? CityStatusProgression { get; set; }
-        public Dictionary<string, string>? PoolSelection { get; set; }
+        public Dictionary<string, JsonElement>? PoolSelection { get; set; }
         public double CityStatusTransitionChance { get; set; } = 0.25;
     }
 
