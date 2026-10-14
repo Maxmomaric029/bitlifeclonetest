@@ -159,8 +159,6 @@ public sealed class MainViewModel : ObservableObject
 
     public ObservableCollection<OptionItem> Options { get; } = new();
 
-    private string _jobMenuCategoryId = "";   // submenu activo (jobs)
-
     private void ShowOptions(string title, IEnumerable<OptionItem> items)
     {
         Options.Clear();

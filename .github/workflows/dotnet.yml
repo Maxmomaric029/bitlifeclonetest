@@ -24,6 +24,18 @@ jobs:
         env:
           DOTNET_CLI_TELEMETRY_OPTOUT: "1"
 
+      - name: Publicar exe exe portable (self-contained, no requiere instalar .NET)
+        run: dotnet publish src/BitLifeClone/BitLifeClone.csproj -c Release -r win-x64 --self-contained true -o artifacts/BitLifeClone-win64
+
+      - name: Comprimir artefacto
+        run: Compress-Archive -Path artifacts/BitLifeClone-win64/* -DestinationPath artifacts/BitLifeClone-win64.zip
+
+      - name: Subir exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: BitLifeClone-win64
+          path: artifacts/BitLifeClone-win64.zip
+
       - name: Resumen del build
         if: always()
         run: echo "Build listo. Los errores de compilacion salen arriba (reactor rojo en steps o summary)."
