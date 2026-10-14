@@ -1,7 +1,7 @@
 # PENDING
 
 Lo que NO se alcanzó a hacer o queda en duda de diseño. Se actualiza al cierre.
-Actualizado: 2026-10-13.
+Actualizado: 2026-10-14.
 
 ## Resuelto en esta fase (ver PROGRESS.md)
 - `Data/Crime/`, `Data/Health/`, `Data/Fame/`, `Data/Licenses/`, `Data/Properties/`, `Data/World/` **existen y pasan el validador** (61 JSON · 1220 ids).
@@ -9,7 +9,8 @@ Actualizado: 2026-10-13.
 - Universidad y posgrados: menú de matrícula en Trabajo, avance anual, media beca.
 
 ## Bloqueo principal (fuera del repo)
-- **No se ha compilado NUNCA:** la máquina no tiene SDK de .NET (`dotnet --list-sdks` vacio) y el usuario pidió NO compilar. Al instalarlo, correr `dotnet build BitLifeClone.sln` y ajustar lo que marque el compilador. Los archivos CSS fueron verificados solo a mano (lectura completa).
+- **Compilar localmente:** la máquina NO tiene SDK de .NET (`dotnet --list-sdks` vacio). El proyecto ya SÍ compila en CI (GitHub Actions, `dotnet.yml`, verde) y publica el exe portable como artefacto `BitLifeClone-win64`. Falta instalar el SDK local para iterar sin esperar CI.
+- **Crash logs a revisar:** el crash log global (`66f6f5c`) sigue activo; a la fecha los crashes reportados (JSON de relationship_events, bindings TwoWay de las ProgressBars) ya estan corregidos. Si sale uno nuevo, pegarlo y corregirlo igual.
 
 ## Cooldowns y repostas
 - `cooldownYears`/`maxPerYear` de las acciones (bloqueo de relación y bloqueos genéricos) NO se imponen todavía: ni RunRelationAction ni RunGenericAction llevan registro de usos por año. Es la deuda de UX más visible.
