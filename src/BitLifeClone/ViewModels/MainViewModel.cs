@@ -133,7 +133,7 @@ public sealed class MainViewModel : ObservableObject
     }
     private string _selectedCountry = "República Dominicana";
 
-    private sealed record SaveEntry(string FileName, string Label)
+    public sealed record SaveEntry(string FileName, string Label)
     {
         public string FileName { get; } = FileName;
         public string Label { get; } = Label;
