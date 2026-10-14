@@ -229,6 +229,7 @@
                                                     </Style>
                                                 </TextBlock.Style>
                                             </TextBlock>
+                                            </StackPanel>
                                         </StackPanel>
                                     </Button>
                                 </DataTemplate>
