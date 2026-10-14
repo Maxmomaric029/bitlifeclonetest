@@ -480,7 +480,7 @@ public sealed class GameEngine
 
         // subevento con choices (relationship_events.json): primero una choice al azar,
         // luego su outcome ponderado. Sin choices: outcome ponderado directo.
-        DataLoader.        DataLoader.RelOutcome? outcome;
+        DataLoader.RelOutcome? outcome;
         if (sub.Choices is { Count: > 0 })
         {
             var choice = sub.Choices[_rng.Next(sub.Choices.Count)];
