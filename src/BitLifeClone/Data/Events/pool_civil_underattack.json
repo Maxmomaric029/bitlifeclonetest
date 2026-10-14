@@ -1,0 +1,178 @@
+[
+  {
+    "pool": "pool_civil_underattack",
+    "events": [
+      {
+        "id": "civil_underattack_bombing",
+        "pool": "pool_civil_underattack",
+        "highDanger": true,
+        "text": "Suenan las sirenas de nuevo y esta vez el estampido es a tres cuadras. Caen los vidrios de tu casa como lluvia. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Corro al refugio",
+            "outcomes": [
+              { "weight": 80, "resultText": "Llegas al refugio del colegio jadeando pero entero. El barrio entero cuenta los minutos.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" },
+              { "weight": 20, "resultText": "A media cuadra una onda te tira contra un muro. Te levantas con los oídos apagados.", "health": -25, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" }
+            ]
+          },
+          {
+            "text": "Me tapo bajo la mesa",
+            "outcomes": [
+              { "weight": 70, "resultText": "El techo aguanta, pero la ventana no: caes sobre mil vidrios.", "health": -15, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" },
+              { "weight": 15, "resultText": "Un proyectil entra por la ventana y no da tiempo a nada.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Sobrevives al impacto pero la casa ya no es una casa.", "health": -20, "happiness": -25, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" }
+            ]
+          },
+          {
+            "text": "Salgo a buscar a los vecinos",
+            "outcomes": [
+              { "weight": 55, "resultText": "Sacás a una familia de debajo de los escombros antes de que llegue la Cruz Roja.", "health": -10, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" },
+              { "weight": 30, "resultText": "Un segundo bombardeo te coge en la calle. Esta vez no hay mesa que valga.", "health": -50, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "civil_underattack_bombing_after" },
+              { "weight": 15, "resultText": "Te quedas bajo un muro que ya no tenía que estar en pie.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_underattack_bombing_after",
+        "pool": "pool_civil_underattack",
+        "text": "El bombardeo pasó. Entre el humo buscas tu calle y no la encuentras: es un cráter con buzones doblados. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Busco a los míos",
+            "outcomes": [
+              { "weight": 70, "resultText": "Los encuentras en el refugio, con la cara sucia pero juntos. El alivio pesa una tonelada.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Tu casa está en pie, pero falta una puerta y la familia no contesta.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me apunto a la limpieza",
+            "outcomes": [
+              { "weight": 75, "resultText": "Tres días cargando escombros con los bomberos. El barrio aprende tu cara.", "health": -10, "happiness": 10, "money": 200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Al mover una viga te cae el hombro. Te sacan de la cola de rescate en camilla.", "health": -30, "happiness": -5, "money": 200, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me marcho de la ciudad",
+            "outcomes": [
+              { "weight": 65, "resultText": "Coges el último tren con una mochila y la certeza de que no vuelves pronto.", "health": -5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 35, "resultText": "El tren se para a mitad de camino por un puente volado. Sigues a pie.", "health": -12, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_underattack_home",
+        "pool": "pool_civil_underattack",
+        "text": "Una ráfaga destrozó media casa tuya: el techo, la cocina y el cuarto de atrás. La compañía de seguros dejó de contestar el teléfono. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Reconstruyo con lo que hay",
+            "outcomes": [
+              { "weight": 65, "resultText": "Con tablones y lona levantas una casa de emergencia. Huele a cola y a resiliencia.", "health": -8, "happiness": 5, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La primera tormenta se lleva la lona y lo que había debajo.", "health": -5, "happiness": -15, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Denuncio al gobierno",
+            "outcomes": [
+              { "weight": 45, "resultText": "Un programa de emergencia te otorga una ayuda ridícula pero ayuda.", "health": 0, "happiness": -5, "money": 1200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 55, "resultText": "El expediente queda archivado entre los de mil casas iguales. No esperas respuesta.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me mudo con un familiar",
+            "outcomes": [
+              { "weight": 70, "resultText": "Tu cuñado te cede el cuarto de atrás. Convivencia de guerra: raciones y paciencia.", "health": 0, "happiness": -5, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Dos semanas después te piden el cuarto: el bombardeo también tocó su casa.", "health": 0, "happiness": -15, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_underattack_family_injured",
+        "pool": "pool_civil_underattack",
+        "text": "El hospital está a reventar: pasillos con camillas y un médico por cada veinte heridos. Tu familiar sangra en el suelo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Lo curo yo en casa",
+            "outcomes": [
+              { "weight": 55, "resultText": "Con alcohol, hilo y un tutorial viejo, cierras la herida. No es un doctor, pero funciona.", "health": -5, "happiness": 5, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La herida se te infecta y dos días después está peor que al principio.", "health": -20, "happiness": -20, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Soborno al enfermero",
+            "outcomes": [
+              { "weight": 60, "resultText": "Cien dólares en el bolsillo del delantero y pasan a la sala de curas esa misma hora.", "health": -5, "happiness": 10, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El enfermero cobra y luego te delata por 'corromper al personal'.", "health": -10, "happiness": -25, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo llevo a otro hospital",
+            "outcomes": [
+              { "weight": 45, "resultText": "Dos horas de carretera bajo sirenas, pero el hospital del interior lo estabiliza.", "health": -10, "happiness": 10, "money": -250, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 55, "resultText": "El puente está volado. Vuelven a casa con la misma sangre y dos horas menos.", "health": -25, "happiness": -25, "money": -250, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_underattack_supply",
+        "pool": "pool_civil_underattack",
+        "text": "El mercado quedó sin pan desde ayer y la gasolinera solo vende con licencia militar. Hay cara de poco humor en la fila. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Hago la fila entera",
+            "outcomes": [
+              { "weight": 75, "resultText": "Ocho horas de cola y te llevas dos panes y un bidón. Un triunfo de la logística.", "health": -5, "happiness": 5, "money": -50, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La fila se vuelve un empujón general y sales sin pan y con el pie aplastado.", "health": -15, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me busco un contacto militar",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un sargento te vende gasolina 'extraviada'. Tu nevera y tu tanque respiran.", "health": 0, "happiness": 8, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El contacto era un control encubierto. Multa, lista y nombre anotado.", "health": 0, "happiness": -20, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cultivo y cambio con vecinos",
+            "outcomes": [
+              { "weight": 80, "resultText": "Intercambios por trueque: tus plátanos por el pescado del vecino. Economía de barrio.", "health": 5, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un guardia decomisa la 'mercancía no declarada' del trueque.", "health": 0, "happiness": -12, "money": -80, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_underattack_street",
+        "pool": "pool_civil_underattack",
+        "text": "Necesitas bajar a la calle: medicinas, agua o algo peor. Las calles huelen a pólvora y nadie mira a nadie. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Salgo con una sábana blanca",
+            "outcomes": [
+              { "weight": 75, "resultText": "Cruzas los puestos de tiro enseñando la sábana. Los francotiradores dejan de mirarte.", "health": 0, "happiness": 0, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un proyectil perdido te roza el brazo a pesar de la sábana.", "health": -20, "happiness": -10, "money": -100, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me muevo de noche",
+            "outcomes": [
+              { "weight": 65, "resultText": "Tres calles en la oscuridad total y vuelves con agua potable. Silencio profesional.", "health": 0, "happiness": 8, "money": -60, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Un retén te pesca con la linterna apagada y las manos sospechosamente ocupadas.", "health": -10, "happiness": -18, "money": -60, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido ayuda a un soldado",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un soldado joven te lleva en su jeeps hasta la farmacia abierta más cercana.", "health": 0, "happiness": 10, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El soldado resulta ser del ejército de ocupación. Ahora sabes cosas que no querías saber.", "health": -5, "happiness": -20, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

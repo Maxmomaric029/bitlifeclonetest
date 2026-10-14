@@ -1,0 +1,93 @@
+{
+  "system": "world",
+  "note": "Mundo (W1). Países y ciudades de nacimiento. El campo 'cities' alimenta la pantalla de inicio y las referencias de guerra/enemigos. Los ids de país usan el nombre inglés para casar con Data/War/rivalries.json.",
+  "countries": [
+    {
+      "id": "Dominican Republic",
+      "label": "República Dominicana",
+      "cities": [
+        { "id": "city_santo_domingo", "label": "Santo Domingo", "note": "El Distrito Nacional: pura gente, pura guagua y pura esquina de colmado." },
+        { "id": "city_santiago", "label": "Santiago", "note": "La ciudad corazón del Cibao, con sus colmados y su calor de humedad fija." },
+        { "id": "city_punta_cana", "label": "Punta Cana", "note": "Turismo, resort y el asfalto nuevo que va a la playa." },
+        { "id": "city_san_cristobal", "label": "San Cristóbal", "note": "Historia, cañaveral y la fruta barata de la carretera vieja." }
+      ]
+    },
+    {
+      "id": "United States",
+      "label": "Estados Unidos",
+      "cities": [
+        { "id": "city_nyc", "label": "Nueva York", "note": "Metro, tráfico y millones de planes para este mismo fin de semana." },
+        { "id": "city_miami", "label": "Miami", "note": "Playa, calor y el español mitad de calle mitad de negocio." },
+        { "id": "city_chicago", "label": "Chicago", "note": "Viento fuerte, pizza gruesa y el invierno pide calefacción de verdad." },
+        { "id": "city_los_angeles", "label": "Los Ángeles", "note": "Sol perenne, tráfico perenne y el casting que nunca cierra." }
+      ]
+    },
+    {
+      "id": "Puerto Rico",
+      "label": "Puerto Rico",
+      "cities": [
+        { "id": "city_san_juan", "label": "San Juan", "note": "El Viejo San Juan empedrado y la costa del condado." },
+        { "id": "city_ponce", "label": "Ponce", "note": "La señorial del sur con su parque de fanoia y su masa crítica." }
+      ]
+    },
+    {
+      "id": "Mexico",
+      "label": "México",
+      "cities": [
+        { "id": "city_cdmx", "label": "Ciudad de México", "note": "La CDMX: taquería, metro lleno y el zócalo de la vida misma." },
+        { "id": "city_guadalajara", "label": "Guadalajara", "note": "Música vivo, tequila y el grito del estadio de tarde." },
+        { "id": "city_monterrey", "label": "Monterrey", "note": "Colinas, industria y un calor que arranca el aire acondicionado." }
+      ]
+    },
+    {
+      "id": "Colombia",
+      "label": "Colombia",
+      "cities": [
+        { "id": "city_bogota", "label": "Bogotá", "note": "Frío secreto, tráfico denso y la arepa del desayuno con champiñones." },
+        { "id": "city_medellin", "label": "Medellín", "note": "Eterna primavera y el cable aéreo que sube la comuna entera." },
+        { "id": "city_cali", "label": "Cali", "note": "Salsa por las cuadras y el calor que no pide perdón." }
+      ]
+    },
+    {
+      "id": "Venezuela",
+      "label": "Venezuela",
+      "cities": [
+        { "id": "city_caracas", "label": "Caracas", "note": "La montaña del Ávila y el trait de supervivencia urbana." },
+        { "id": "city_maracaibo", "label": "Maracaibo", "note": "El calor más duro del país y el agua que a veces falta." }
+      ]
+    },
+    {
+      "id": "Cuba",
+      "label": "Cuba",
+      "cities": [
+        { "id": "city_habana", "label": "La Habana", "note": "Malecón, son y la pared pintada de historia que se cae." },
+        { "id": "city_santiago_cuba", "label": "Santiago de Cuba", "note": "El carnaval del este y la brisa del sureste." }
+      ]
+    },
+    {
+      "id": "Spain",
+      "label": "España",
+      "cities": [
+        { "id": "city_madrid", "label": "Madrid", "note": "Metro, siesta posible, churros de la tarde y tapas del barrio." },
+        { "id": "city_barcelona", "label": "Barcelona", "note": "Playa pegada a la ciudad y turistas de todo el mundo el año entero." },
+        { "id": "city_valencia", "label": "Valencia", "note": "Fallas, paella y la mar que abre el invierno suave." }
+      ]
+    },
+    {
+      "id": "Argentina",
+      "label": "Argentina",
+      "cities": [
+        { "id": "city_buenos_aires", "label": "Buenos Aires", "note": "Porteño rápido, tango en el bolsillo y la milonga del viernes." },
+        { "id": "city_cordoba", "label": "Córdoba", "note": "La cordoba universitaria y las sierras a tiro de fin de semana." }
+      ]
+    },
+    {
+      "id": "Chile",
+      "label": "Chile",
+      "cities": [
+        { "id": "city_santiago_chile", "label": "Santiago de Chile", "note": "Cordillera al fondo, metro ordenado y la ventilación que respeta." },
+        { "id": "city_valparaiso", "label": "Valparaíso", "note": "Cerro con ascensor y la muralla de grafiti colorido." }
+      ]
+    }
+  ]
+}

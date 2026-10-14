@@ -1,0 +1,15 @@
+{
+  "category": "publisher",
+  "name": "Publisher",
+  "jobs": [
+    { "id": "pub_editorial_assistant", "title": "Editorial Assistant", "promotesTo": "pub_copy_editor", "tier": 1, "baseSalary": 32000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_copy_editor", "title": "Copy Editor", "promotesTo": "pub_staff_writer", "tier": 2, "baseSalary": 32000, "currency": "USD", "education": "University", "experienceYears": 2, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_staff_writer", "title": "Staff Writer", "promotesTo": "pub_editor", "tier": 3, "baseSalary": 32000, "currency": "USD", "education": "University", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_editor", "title": "Editor", "promotesTo": "pub_senior_editor", "tier": 4, "baseSalary": 32000, "currency": "USD", "education": "University", "experienceYears": 7, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_senior_editor", "title": "Senior Editor", "promotesTo": "pub_editor_in_chief", "tier": 5, "baseSalary": 32000, "currency": "USD", "education": "University", "experienceYears": 10, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_editor_in_chief", "title": "Editor-in-Chief", "promotesTo": "pub_publisher", "tier": 6, "baseSalary": 32000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 14, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_publisher", "title": "Publisher", "promotesTo": null, "tier": 7, "baseSalary": 32000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 18, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" },
+    { "id": "pub_proofreader", "title": "Proofreader", "promotesTo": null, "tier": 1, "baseSalary": 26000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "publisher", "icon": "" },
+    { "id": "pub_literary_agent", "title": "Literary Agent", "promotesTo": null, "tier": 3, "baseSalary": 45000, "currency": "USD", "education": "University", "experienceYears": 5, "canHoldWithCriminalRecord": false, "category": "publisher", "icon": "" }
+  ]
+}

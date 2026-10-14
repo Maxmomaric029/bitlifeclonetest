@@ -1,0 +1,148 @@
+[
+  {
+    "pool": "pool_civil_occupied",
+    "events": [
+      {
+        "id": "civil_occupied_curfew",
+        "pool": "pool_civil_occupied",
+        "text": "La ciudad está ocupada. Nuevas leyes cada semana: toque de queda a las 8, impuesto de guerra y control de identidades. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Juego sus reglas",
+            "outcomes": [
+              { "weight": 80, "resultText": "Cumples el toque de queda, pagas el impuesto y compras tu tranquilidad a plazos.", "health": 0, "happiness": -10, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un soldado 'olvida' sellar tu papeles y tienes que recordarle con dinero.", "health": 0, "happiness": -15, "money": -150, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Desafío las órdenes",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sales después del toque de queda y pegas carteles de la resistencia en la esquina.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_occupied_resistance" },
+              { "weight": 50, "resultText": "Un retén te pilla sin documentación. Una noche en el sótano del cuartel.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_occupied_resistance" }
+            ]
+          },
+          {
+            "text": "Busco chamba con los ocupantes",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te contratan de intérprete. Comes bien, pero el barrio te escupe por la espalda.", "health": 0, "happiness": -12, "money": 600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La resistencia anota tu nombre en una lista que prefieres no imaginarte.", "health": 0, "happiness": -20, "money": 600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_occupied_resistance",
+        "pool": "pool_civil_occupied",
+        "text": "Un tipo de la resistencia te busca por la esquina: necesita que lleves un paquete en tren, sin abrirlo, hasta la próxima ciudad. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Acepto el encargo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Llevas el paquete como un héroe civil. En la estación de llegada, el contacto te saluda con un café.", "health": 0, "happiness": 15, "money": 200, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "En el control de la estación registran tu maleta. El paquete tenía metal.", "health": -10, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El paquete explota en el control antes de que puedas decir nada.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Les doy información",
+            "outcomes": [
+              { "weight": 60, "resultText": "Les cuentas los horarios de los patrulleros que ya sabían. Te dejan en paz.", "health": 0, "happiness": 5, "money": 100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Tu información estaba desactualizada. La emboscada sale mal y te culpan a ti.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Rechazo y me callo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Dices que no y sigues tu camino. La resistencia entiende, a su manera.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "A partir de esa semana, dos bandos distintos te miran raro por la misma calle.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_occupied_son",
+        "pool": "pool_civil_occupied",
+        "text": "Los ocupantes abren listas de 'reclutamiento civil': tu hijo puede terminar sirviéndoles a ellos. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Lo escondo fuera de la ciudad",
+            "outcomes": [
+              { "weight": 65, "resultText": "Lo mandas a una granja bajo otro nombre. La lista queda con un espacio vacío.", "health": 0, "happiness": 8, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "En la granja lo registran igual con papeles falsos y lo descubren al mes.", "health": 0, "happiness": -20, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pago por eximirlo",
+            "outcomes": [
+              { "weight": 60, "resultText": "Un oficial cobra la 'exención' y firma donde hay que firmar. Tu hijo sigue en casa.", "health": 0, "happiness": 5, "money": -2000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El oficial se lleva el dinero y tu hijo sale en la lista de la semana siguiente.", "health": 0, "happiness": -25, "money": -2000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Que se presente y colabore",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sirve en un puesto logístico y le cae bien a su oficial. Lejos de las balas, por ahora.", "health": 0, "happiness": -10, "money": 300, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "Lo mandan a una columna de trabajo en la frontera. No era lo que esperabas.", "health": -15, "happiness": -25, "money": 300, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_occupied_documents",
+        "pool": "pool_civil_occupied",
+        "text": "Los ocupantes exigen 'documentos de lealtad' para circular, trabajar y hasta comprar pan. Te toca el turno en la comandancia. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Hago la cola y firmo",
+            "outcomes": [
+              { "weight": 80, "resultText": "Firmas lo que sea por un papel que te deje vivir. La cola dura seis horas.", "health": 0, "happiness": -12, "money": -50, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Tu firma entra en un archivo que la resistencia prometió 'revisar' algún día.", "health": 0, "happiness": -18, "money": -50, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Fabrico los papeles",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un impresor del barrio te arma un documento impecable. Circulas sin problemas.", "health": 0, "happiness": 10, "money": -700, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "La tinta no coincide con la de la comandancia. Un sargento con ojo fino te retiene.", "health": -10, "happiness": -25, "money": -700, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Vivo sin documentos",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te mueves por la ciudad como un fantasma. Funciona... hasta que no funciona.", "health": -5, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Sin papeles no trabajas, no compras y no sales. La ciudad se te encoge.", "health": -10, "happiness": -25, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_occupied_prices",
+        "pool": "pool_civil_occupied",
+        "text": "La ocupación arruinó los mercados: los convoyes se llevan la cosecha y el dinero de la ciudad vale menos que el papel. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Atesoro oro y dólares",
+            "outcomes": [
+              { "weight": 75, "resultText": "Cambias la moneda local por billetes verdes y unas monedas de oro. El futuro agradece.", "health": 0, "happiness": 8, "money": 200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un control registra tu dinero 'en moneda extranjera'. Se llevan la mitad.", "health": 0, "happiness": -18, "money": -500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Empiezo a comerciar",
+            "outcomes": [
+              { "weight": 60, "resultText": "Compras café en el campo y lo vendes en la ciudad al triple. El negocio despega.", "health": 0, "happiness": 10, "money": 900, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Un competidor del mercado denuncia tu puesto. Los ocupantes lo decomisan.", "health": 0, "happiness": -15, "money": 200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Ayudo al barrio con lo que tengo",
+            "outcomes": [
+              { "weight": 75, "resultText": "Repartes comida a dos familias por semana. El barrio te cuida como a uno más.", "health": 0, "happiness": 15, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Una de las familias delata tu reparto para conseguir ración extra. Barrio es barrio.", "health": 0, "happiness": -18, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

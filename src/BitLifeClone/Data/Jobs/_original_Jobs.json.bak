@@ -1,0 +1,3756 @@
+{
+  "meta": {
+    "currency": "USD",
+    "eurToUsd": 1.1,
+    "tierMultipliers": [
+      0.75,
+      1.0,
+      1.3,
+      1.7
+    ],
+    "tierGrowthAfterFour": 1.3,
+    "salaryFormula": "SalaryUSD = round(BaseSalary x CurrencyToUSD x Multiplier(Tier)); Tier ausente = x1"
+  },
+  "companies": [
+    {
+      "id": "travel_agency",
+      "name": "Travel Agency"
+    },
+    {
+      "id": "circus",
+      "name": "Circus"
+    },
+    {
+      "id": "salon",
+      "name": "Salon"
+    },
+    {
+      "id": "bank",
+      "name": "Bank"
+    },
+    {
+      "id": "trucking_company",
+      "name": "Trucking Company"
+    },
+    {
+      "id": "library",
+      "name": "Library"
+    },
+    {
+      "id": "fishery",
+      "name": "Fishery"
+    },
+    {
+      "id": "ride_sharing_app",
+      "name": "Ride Sharing App"
+    },
+    {
+      "id": "grocery_store",
+      "name": "Grocery Store"
+    },
+    {
+      "id": "fast_food",
+      "name": "Fast Food"
+    }
+  ],
+  "categories": [
+    {
+      "id": "corporate",
+      "name": "Corporate Jobs",
+      "note": "Sueldo inicial promedio; 'currency' tal cual aparecia en la wiki (mezcla USD/EUR).",
+      "jobs": [
+        {
+          "id": "jr_internal_auditor",
+          "title": "Jr. Internal Auditor",
+          "promotesTo": "internal_auditor",
+          "tier": 1,
+          "baseSalary": 90474,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "internal_auditor",
+          "title": "Internal Auditor",
+          "promotesTo": "sr_internal_auditor",
+          "tier": 2,
+          "baseSalary": 90474,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_internal_auditor",
+          "title": "Sr. Internal Auditor",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 90474,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_financial_analyst",
+          "title": "Jr. Financial Analyst",
+          "promotesTo": "financial_analyst",
+          "tier": 1,
+          "baseSalary": 49726,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "financial_analyst",
+          "title": "Financial Analyst",
+          "promotesTo": "sr_financial_analyst",
+          "tier": 2,
+          "baseSalary": 49726,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_financial_analyst",
+          "title": "Sr. Financial Analyst",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 49726,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_computer_programmer",
+          "title": "Jr. Computer Programmer",
+          "promotesTo": "computer_programmer",
+          "tier": 1,
+          "baseSalary": 57300,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "computer_programmer",
+          "title": "Computer Programmer",
+          "promotesTo": "sr_computer_programmer",
+          "tier": 2,
+          "baseSalary": 57300,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_computer_programmer",
+          "title": "Sr. Computer Programmer",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 57300,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_insurance_agent",
+          "title": "Jr. Insurance Agent",
+          "promotesTo": "insurance_agent",
+          "tier": 1,
+          "baseSalary": 78600,
+          "currency": "EUR",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "insurance_agent",
+          "title": "Insurance Agent",
+          "promotesTo": "sr_insurance_agent",
+          "tier": 2,
+          "baseSalary": 78600,
+          "currency": "EUR",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_insurance_agent",
+          "title": "Sr. Insurance Agent",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 78600,
+          "currency": "EUR",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_environmental_scientist",
+          "title": "Jr. Environmental Scientist",
+          "promotesTo": "environmental_scientist",
+          "tier": 1,
+          "baseSalary": 42983,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "environmental_scientist",
+          "title": "Environmental Scientist",
+          "promotesTo": "sr_environmental_scientist",
+          "tier": 2,
+          "baseSalary": 42983,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_environmental_scientist",
+          "title": "Sr. Environmental Scientist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 42983,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_stockbroker",
+          "title": "Jr. Stockbroker",
+          "promotesTo": "stockbroker",
+          "tier": 1,
+          "baseSalary": 64183,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "stockbroker",
+          "title": "Stockbroker",
+          "promotesTo": "sr_stockbroker",
+          "tier": 2,
+          "baseSalary": 64183,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_stockbroker",
+          "title": "Sr. Stockbroker",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 64183,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_operations_analyst",
+          "title": "Jr. Operations Analyst",
+          "promotesTo": "operations_analyst",
+          "tier": 1,
+          "baseSalary": 50714,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "operations_analyst",
+          "title": "Operations Analyst",
+          "promotesTo": "sr_operations_analyst",
+          "tier": 2,
+          "baseSalary": 50714,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_operations_analyst",
+          "title": "Sr. Operations Analyst",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 50714,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_database_administrator",
+          "title": "Jr. Database Administrator",
+          "promotesTo": "database_administrator",
+          "tier": 1,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "database_administrator",
+          "title": "Database Administrator",
+          "promotesTo": "sr_database_administrator",
+          "tier": 2,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_database_administrator",
+          "title": "Sr. Database Administrator",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_lobbyist",
+          "title": "Jr. Lobbyist",
+          "promotesTo": "lobbyist",
+          "tier": 1,
+          "baseSalary": 71283,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "lobbyist",
+          "title": "Lobbyist",
+          "promotesTo": "sr_lobbyist",
+          "tier": 2,
+          "baseSalary": 71283,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_lobbyist",
+          "title": "Sr. Lobbyist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 71283,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_biotechnologist",
+          "title": "Jr. Biotechnologist",
+          "promotesTo": "biotechnologist",
+          "tier": 1,
+          "baseSalary": 49320,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "biotechnologist",
+          "title": "Biotechnologist",
+          "promotesTo": "sr_biotechnologist",
+          "tier": 2,
+          "baseSalary": 49320,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_biotechnologist",
+          "title": "Sr. Biotechnologist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 49320,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_microbiologist",
+          "title": "Jr. Microbiologist",
+          "promotesTo": "microbiologist",
+          "tier": 1,
+          "baseSalary": 38108,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "microbiologist",
+          "title": "Microbiologist",
+          "promotesTo": "sr_microbiologist",
+          "tier": 2,
+          "baseSalary": 38108,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_microbiologist",
+          "title": "Sr. Microbiologist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 38108,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_architect",
+          "title": "Jr. Architect",
+          "promotesTo": "architect",
+          "tier": 1,
+          "baseSalary": 40000,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "architect",
+          "title": "Architect",
+          "promotesTo": "sr_architect",
+          "tier": 2,
+          "baseSalary": 40000,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_architect",
+          "title": "Sr. Architect",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 40000,
+          "currency": "EUR",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_business_analyst",
+          "title": "Jr. Business Analyst",
+          "promotesTo": "business_analyst",
+          "tier": 1,
+          "baseSalary": 64050,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "business_analyst",
+          "title": "Business Analyst",
+          "promotesTo": "sr_business_analyst",
+          "tier": 2,
+          "baseSalary": 64050,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_business_analyst",
+          "title": "Sr. Business Analyst",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 64050,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_accountant",
+          "title": "Jr. Accountant",
+          "promotesTo": "accountant",
+          "tier": 1,
+          "baseSalary": 52850,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "accountant",
+          "title": "Accountant",
+          "promotesTo": "sr_accountant",
+          "tier": 2,
+          "baseSalary": 52850,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_accountant",
+          "title": "Sr. Accountant",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 52850,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_it_support",
+          "title": "Jr. IT Support",
+          "promotesTo": "it_support",
+          "tier": 1,
+          "baseSalary": 38387,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "it_support",
+          "title": "IT Support",
+          "promotesTo": "sr_it_support",
+          "tier": 2,
+          "baseSalary": 38387,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_it_support",
+          "title": "Sr. IT Support",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 38387,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "apprentice_telemarketer",
+          "title": "Apprentice Telemarketer",
+          "promotesTo": "telemarketer",
+          "tier": 1,
+          "baseSalary": 20005,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "telemarketer",
+          "title": "Telemarketer",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 20005,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "receptionist",
+          "title": "Receptionist",
+          "promotesTo": null,
+          "baseSalary": 18260,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "factory_worker",
+          "title": "Factory Worker",
+          "promotesTo": null,
+          "baseSalary": 18330,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "janitor",
+          "title": "Janitor",
+          "promotesTo": null,
+          "baseSalary": 22100,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "jr_translator",
+          "title": "Jr. Translator",
+          "promotesTo": "translator",
+          "tier": 1,
+          "baseSalary": 41429,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "translator",
+          "title": "Translator",
+          "promotesTo": "sr_translator",
+          "tier": 2,
+          "baseSalary": 41429,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_translator",
+          "title": "Sr. Translator",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 41429,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "engineer_1",
+          "title": "Engineer I",
+          "promotesTo": "engineer_2",
+          "tier": 1,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "engineer_2",
+          "title": "Engineer II",
+          "promotesTo": "engineer_3",
+          "tier": 2,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "engineer_3",
+          "title": "Engineer III",
+          "promotesTo": "asst_engineering_manager",
+          "tier": 3,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "asst_engineering_manager",
+          "title": "Asst. Engineering Manager",
+          "promotesTo": "engineering_manager",
+          "tier": 4,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "engineering_manager",
+          "title": "Engineering Manager",
+          "promotesTo": "director_of_engineering",
+          "tier": 5,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "director_of_engineering",
+          "title": "Director of Engineering",
+          "promotesTo": "vp_of_engineering",
+          "tier": 6,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "vp_of_engineering",
+          "title": "VP of Engineering",
+          "promotesTo": null,
+          "tier": 7,
+          "baseSalary": 66447,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "assistant_vice_president",
+          "title": "Assistant Vice President",
+          "promotesTo": "vice_president",
+          "tier": 1,
+          "baseSalary": 101124,
+          "currency": "USD",
+          "education": "BusinessSchool",
+          "experienceYears": 15,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "vice_president",
+          "title": "Vice President",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 101124,
+          "currency": "USD",
+          "education": "BusinessSchool",
+          "experienceYears": 15,
+          "canHoldWithCriminalRecord": false,
+          "note": "Fila cortada en el pegado (fuente truncada): falta sueldo y a que asciende."
+        }
+      ]
+    },
+    {
+      "id": "military",
+      "name": "Military Jobs",
+      "note": "Escalas Army/Navy/Marines/Air Force (E-1..E-9), Warrant (Army), Oficiales y Piloto de jet. Sueldos de la tabla del usuario; baseSalary = rung tier-2 (E-2 = 27.000).",
+      "jobs": [
+        {
+          "id": "army_e1",
+          "title": "Private",
+          "promotesTo": "army_e2",
+          "tier": 1,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e2",
+          "title": "Private E-2",
+          "promotesTo": "army_e3",
+          "tier": 2,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e3",
+          "title": "Private First Class",
+          "promotesTo": "army_e4",
+          "tier": 3,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e4",
+          "title": "Specialist",
+          "promotesTo": "army_e5",
+          "tier": 4,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e5",
+          "title": "Sergeant",
+          "promotesTo": "army_e6",
+          "tier": 5,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e6",
+          "title": "Staff Sergeant",
+          "promotesTo": "army_e7",
+          "tier": 6,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e7",
+          "title": "Sergeant First Class",
+          "promotesTo": "army_e8",
+          "tier": 7,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e8",
+          "title": "Master Sergeant",
+          "promotesTo": "army_e9",
+          "tier": 8,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e9",
+          "title": "Sergeant Major",
+          "promotesTo": "army_e9top",
+          "tier": 9,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_e9top",
+          "title": "Command Sergeant Major",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e1",
+          "title": "Seaman Recruit",
+          "promotesTo": "navy_e2",
+          "tier": 1,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e2",
+          "title": "Seaman Apprentice",
+          "promotesTo": "navy_e3",
+          "tier": 2,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e3",
+          "title": "Seaman",
+          "promotesTo": "navy_e4",
+          "tier": 3,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e4",
+          "title": "Petty Officer 3rd",
+          "promotesTo": "navy_e5",
+          "tier": 4,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e5",
+          "title": "Petty Officer 2nd",
+          "promotesTo": "navy_e6",
+          "tier": 5,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e6",
+          "title": "Petty Officer 1st",
+          "promotesTo": "navy_e7",
+          "tier": 6,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e7",
+          "title": "Chief Petty Officer",
+          "promotesTo": "navy_e8",
+          "tier": 7,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e8",
+          "title": "Senior Chief Petty Officer",
+          "promotesTo": "navy_e9",
+          "tier": 8,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_e9",
+          "title": "Master Chief Petty Officer",
+          "promotesTo": null,
+          "tier": 9,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e1",
+          "title": "Private",
+          "promotesTo": "marines_e2",
+          "tier": 1,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e2",
+          "title": "Private First Class",
+          "promotesTo": "marines_e3",
+          "tier": 2,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e3",
+          "title": "Lance Corporal",
+          "promotesTo": "marines_e4",
+          "tier": 3,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e4",
+          "title": "Corporal",
+          "promotesTo": "marines_e5",
+          "tier": 4,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e5",
+          "title": "Sergeant",
+          "promotesTo": "marines_e6",
+          "tier": 5,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e6",
+          "title": "Staff Sergeant",
+          "promotesTo": "marines_e7",
+          "tier": 6,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e7",
+          "title": "Gunnery Sergeant",
+          "promotesTo": "marines_e8",
+          "tier": 7,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e8",
+          "title": "Master Sergeant",
+          "promotesTo": "marines_e9",
+          "tier": 8,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e9",
+          "title": "Master Gunnery Sergeant",
+          "promotesTo": "marines_e9top",
+          "tier": 9,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_e9top",
+          "title": "Sergeant Major",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e1",
+          "title": "Airman Basic",
+          "promotesTo": "air_force_e2",
+          "tier": 1,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e2",
+          "title": "Airman",
+          "promotesTo": "air_force_e3",
+          "tier": 2,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e3",
+          "title": "Airman First Class",
+          "promotesTo": "air_force_e4",
+          "tier": 3,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e4",
+          "title": "Senior Airman",
+          "promotesTo": "air_force_e5",
+          "tier": 4,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e5",
+          "title": "Staff Sergeant",
+          "promotesTo": "air_force_e6",
+          "tier": 5,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e6",
+          "title": "Technical Sergeant",
+          "promotesTo": "air_force_e7",
+          "tier": 6,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e7",
+          "title": "Master Sergeant",
+          "promotesTo": "air_force_e8",
+          "tier": 7,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e8",
+          "title": "Senior Master Sergeant",
+          "promotesTo": "air_force_e9",
+          "tier": 8,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_e9",
+          "title": "Chief Master Sergeant",
+          "promotesTo": null,
+          "tier": 9,
+          "baseSalary": 27000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_wo1",
+          "title": "Warrant Officer 1 (WO1)",
+          "promotesTo": "army_cw2",
+          "tier": 1,
+          "baseSalary": 60000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_cw2",
+          "title": "Chief Warrant Officer 2 (CW2)",
+          "promotesTo": "army_cw3",
+          "tier": 2,
+          "baseSalary": 60000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_cw3",
+          "title": "Chief Warrant Officer 3 (CW3)",
+          "promotesTo": "army_cw4",
+          "tier": 3,
+          "baseSalary": 60000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_cw4",
+          "title": "Chief Warrant Officer 4 (CW4)",
+          "promotesTo": "army_cw5",
+          "tier": 4,
+          "baseSalary": 60000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_cw5",
+          "title": "Chief Warrant Officer 5 (CW5)",
+          "promotesTo": null,
+          "tier": 5,
+          "baseSalary": 60000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_second_lieutenant",
+          "title": "Second Lieutenant",
+          "promotesTo": "army_first_lieutenant",
+          "tier": 1,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_first_lieutenant",
+          "title": "First Lieutenant",
+          "promotesTo": "army_captain",
+          "tier": 2,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_captain",
+          "title": "Captain",
+          "promotesTo": "army_major",
+          "tier": 3,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_major",
+          "title": "Major",
+          "promotesTo": "army_lieutenant_colonel",
+          "tier": 4,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_lieutenant_colonel",
+          "title": "Lieutenant Colonel",
+          "promotesTo": "army_colonel",
+          "tier": 5,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_colonel",
+          "title": "Colonel",
+          "promotesTo": "army_brigadier_general",
+          "tier": 6,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_brigadier_general",
+          "title": "Brigadier General",
+          "promotesTo": "army_major_general",
+          "tier": 7,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_major_general",
+          "title": "Major General",
+          "promotesTo": "army_lieutenant_general",
+          "tier": 8,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_lieutenant_general",
+          "title": "Lieutenant General",
+          "promotesTo": "army_general",
+          "tier": 9,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "army_general",
+          "title": "General",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_second_lieutenant",
+          "title": "Second Lieutenant",
+          "promotesTo": "marines_first_lieutenant",
+          "tier": 1,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_first_lieutenant",
+          "title": "First Lieutenant",
+          "promotesTo": "marines_captain",
+          "tier": 2,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_captain",
+          "title": "Captain",
+          "promotesTo": "marines_major",
+          "tier": 3,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_major",
+          "title": "Major",
+          "promotesTo": "marines_lieutenant_colonel",
+          "tier": 4,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_lieutenant_colonel",
+          "title": "Lieutenant Colonel",
+          "promotesTo": "marines_colonel",
+          "tier": 5,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_colonel",
+          "title": "Colonel",
+          "promotesTo": "marines_brigadier_general",
+          "tier": 6,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_brigadier_general",
+          "title": "Brigadier General",
+          "promotesTo": "marines_major_general",
+          "tier": 7,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_major_general",
+          "title": "Major General",
+          "promotesTo": "marines_lieutenant_general",
+          "tier": 8,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_lieutenant_general",
+          "title": "Lieutenant General",
+          "promotesTo": "marines_general",
+          "tier": 9,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "marines_general",
+          "title": "General",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_second_lieutenant",
+          "title": "Second Lieutenant",
+          "promotesTo": "air_force_first_lieutenant",
+          "tier": 1,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_first_lieutenant",
+          "title": "First Lieutenant",
+          "promotesTo": "air_force_captain",
+          "tier": 2,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_captain",
+          "title": "Captain",
+          "promotesTo": "air_force_major",
+          "tier": 3,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_major",
+          "title": "Major",
+          "promotesTo": "air_force_lieutenant_colonel",
+          "tier": 4,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_lieutenant_colonel",
+          "title": "Lieutenant Colonel",
+          "promotesTo": "air_force_colonel",
+          "tier": 5,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_colonel",
+          "title": "Colonel",
+          "promotesTo": "air_force_brigadier_general",
+          "tier": 6,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_brigadier_general",
+          "title": "Brigadier General",
+          "promotesTo": "air_force_major_general",
+          "tier": 7,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_major_general",
+          "title": "Major General",
+          "promotesTo": "air_force_lieutenant_general",
+          "tier": 8,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_lieutenant_general",
+          "title": "Lieutenant General",
+          "promotesTo": "air_force_general",
+          "tier": 9,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "air_force_general",
+          "title": "General",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_ensign",
+          "title": "Ensign",
+          "promotesTo": "navy_lieutenant_jg",
+          "tier": 1,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_lieutenant_jg",
+          "title": "Lieutenant JG",
+          "promotesTo": "navy_lieutenant",
+          "tier": 2,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_lieutenant",
+          "title": "Lieutenant",
+          "promotesTo": "navy_lieutenant_commander",
+          "tier": 3,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_lieutenant_commander",
+          "title": "Lieutenant Commander",
+          "promotesTo": "navy_commander",
+          "tier": 4,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_commander",
+          "title": "Commander",
+          "promotesTo": "navy_captain",
+          "tier": 5,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_captain",
+          "title": "Captain",
+          "promotesTo": "navy_rear_admiral_lower",
+          "tier": 6,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_rear_admiral_lower",
+          "title": "Rear Admiral (lower half)",
+          "promotesTo": "navy_rear_admiral_upper",
+          "tier": 7,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_rear_admiral_upper",
+          "title": "Rear Admiral (upper half)",
+          "promotesTo": "navy_vice_admiral",
+          "tier": 8,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_vice_admiral",
+          "title": "Vice Admiral",
+          "promotesTo": "navy_admiral",
+          "tier": 9,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "navy_admiral",
+          "title": "Admiral",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 54000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "student_pilot",
+          "title": "Student Pilot",
+          "promotesTo": "military_pilot",
+          "tier": 1,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "military_pilot",
+          "title": "Pilot",
+          "promotesTo": "flight_lead",
+          "tier": 2,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "flight_lead",
+          "title": "Flight Lead",
+          "promotesTo": "instructor_pilot",
+          "tier": 3,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "instructor_pilot",
+          "title": "Instructor Pilot",
+          "promotesTo": "squadron_commander",
+          "tier": 4,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "squadron_commander",
+          "title": "Squadron Commander",
+          "promotesTo": "wing_commander",
+          "tier": 5,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "wing_commander",
+          "title": "Wing Commander",
+          "promotesTo": null,
+          "tier": 6,
+          "baseSalary": 85000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "part_time",
+      "name": "Part-time Jobs",
+      "note": "Seccion 24: pendiente de pegar los trabajos.",
+      "jobs": []
+    },
+    {
+      "id": "freelance",
+      "name": "Freelance Gigs",
+      "note": "Seccion 25: pendiente de pegar los trabajos.",
+      "jobs": []
+    },
+    {
+      "id": "model_agency",
+      "name": "Model Agency Jobs",
+      "note": "Fama al ascender a Superstar Model.",
+      "jobs": [
+        {
+          "id": "foot_model",
+          "title": "Foot Model",
+          "promotesTo": "hand_model",
+          "tier": 1,
+          "baseSalary": 43970,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "hand_model",
+          "title": "Hand Model",
+          "promotesTo": "catalog_model",
+          "tier": 2,
+          "baseSalary": 43970,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "catalog_model",
+          "title": "Catalog Model",
+          "promotesTo": "lingerie_model",
+          "tier": 3,
+          "baseSalary": 43970,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "lingerie_model",
+          "title": "Lingerie Model",
+          "promotesTo": "runway_model",
+          "tier": 4,
+          "baseSalary": 43970,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "runway_model",
+          "title": "Runway Model",
+          "promotesTo": null,
+          "tier": 5,
+          "baseSalary": 43970,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "airline",
+      "name": "Airline Jobs",
+      "jobs": [
+        {
+          "id": "sr_flight_attendant",
+          "title": "Sr Flight Attendant",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 26300,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false,
+          "note": "Ascenso a Pilot Trainee eliminado: la linea de cabina de vuelo es una cadena aparte."
+        },
+        {
+          "id": "flight_attendant",
+          "title": "Flight Attendant",
+          "promotesTo": "sr_flight_attendant",
+          "tier": 2,
+          "baseSalary": 26300,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_flight_attendant",
+          "title": "Jr. Flight Attendant",
+          "promotesTo": "flight_attendant",
+          "tier": 1,
+          "baseSalary": 26300,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "baggage_handler",
+          "title": "Baggage Handler",
+          "promotesTo": null,
+          "baseSalary": 21152,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "flight_cadet",
+          "title": "Flight Cadet",
+          "promotesTo": "second_officer",
+          "tier": 1,
+          "baseSalary": 80000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "second_officer",
+          "title": "Second Officer",
+          "promotesTo": "first_officer",
+          "tier": 2,
+          "baseSalary": 80000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "first_officer",
+          "title": "First Officer",
+          "promotesTo": "airline_captain",
+          "tier": 3,
+          "baseSalary": 80000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "airline_captain",
+          "title": "Captain",
+          "promotesTo": "chief_pilot",
+          "tier": 4,
+          "baseSalary": 80000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "chief_pilot",
+          "title": "Chief Pilot",
+          "promotesTo": null,
+          "tier": 5,
+          "baseSalary": 80000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ],
+      "note": "Pilotos = cadena comercial reemplazante (sueldos realistas del usuario)."
+    },
+    {
+      "id": "veterinary_clinic",
+      "name": "Veterinary Clinic Jobs",
+      "jobs": [
+        {
+          "id": "pet_groomer",
+          "title": "Pet Groomer",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 22710,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": null,
+          "canHoldWithCriminalRecord": null,
+          "note": "Fila no incluida en la fuente (solo aparece como destino de Apprentice Pet Groomer)."
+        },
+        {
+          "id": "apprentice_pet_groomer",
+          "title": "Apprentice Pet Groomer",
+          "promotesTo": "pet_groomer",
+          "tier": 1,
+          "baseSalary": 22710,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_veterinarian",
+          "title": "Jr. Veterinarian",
+          "promotesTo": "veterinarian",
+          "tier": 1,
+          "baseSalary": 47500,
+          "currency": "USD",
+          "education": "VeterinarySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "veterinarian",
+          "title": "Veterinarian",
+          "promotesTo": "sr_veterinarian",
+          "tier": 2,
+          "baseSalary": 47500,
+          "currency": "USD",
+          "education": "VeterinarySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_veterinarian",
+          "title": "Sr. Veterinarian",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 47500,
+          "currency": "USD",
+          "education": "VeterinarySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "hospital",
+      "name": "Hospital Jobs",
+      "jobs": [
+        {
+          "id": "clinical_nurse_specialist",
+          "title": "Clinical Nurse Specialist",
+          "promotesTo": null,
+          "baseSalary": 79164,
+          "currency": "USD",
+          "education": "NursingSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "brain_surgeon",
+          "title": "Brain Surgeon",
+          "promotesTo": null,
+          "baseSalary": 175000,
+          "currency": "USD",
+          "education": "MedicalSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "family_physician",
+          "title": "Family Physician",
+          "promotesTo": null,
+          "baseSalary": 99500,
+          "currency": "USD",
+          "education": "MedicalSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "municipal",
+      "name": "Municipal Jobs",
+      "jobs": [
+        {
+          "id": "chief_justice",
+          "title": "Chief Justice",
+          "promotesTo": null,
+          "tier": 5,
+          "baseSalary": 129780,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "associate_chief_justice",
+          "title": "Associate Chief Justice",
+          "promotesTo": "chief_justice",
+          "tier": 4,
+          "baseSalary": 129780,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "district_court_judge",
+          "title": "District Court Judge",
+          "promotesTo": "associate_chief_justice",
+          "tier": 3,
+          "baseSalary": 129780,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "magistrate_court_judge",
+          "title": "Magistrate Court Judge",
+          "promotesTo": "district_court_judge",
+          "tier": 2,
+          "baseSalary": 129780,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "magistrate",
+          "title": "Magistrate",
+          "promotesTo": "magistrate_court_judge",
+          "tier": 1,
+          "baseSalary": 129780,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 30,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sculptor",
+          "title": "Sculptor",
+          "promotesTo": null,
+          "baseSalary": 24411,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_mail_carrier",
+          "title": "Jr. Mail Carrier",
+          "promotesTo": "mail_carrier",
+          "tier": 1,
+          "baseSalary": 37800,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "mail_carrier",
+          "title": "Mail Carrier",
+          "promotesTo": "sr_mail_carrier",
+          "tier": 2,
+          "baseSalary": 37800,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sr_mail_carrier",
+          "title": "Sr. Mail Carrier",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 37800,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "bus_driver",
+          "title": "Bus Driver",
+          "promotesTo": null,
+          "baseSalary": 35750,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false,
+          "note": "Requiere driving license."
+        }
+      ]
+    },
+    {
+      "id": "medical_office",
+      "name": "Medical Office Jobs",
+      "jobs": [
+        {
+          "id": "jr_psychiatrist",
+          "title": "Jr. Psychiatrist",
+          "promotesTo": "psychiatrist",
+          "tier": 1,
+          "baseSalary": 80892,
+          "currency": "USD",
+          "education": "MedicalSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "psychiatrist",
+          "title": "Psychiatrist",
+          "promotesTo": "sr_psychiatrist",
+          "tier": 2,
+          "baseSalary": 80892,
+          "currency": "USD",
+          "education": "MedicalSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_psychiatrist",
+          "title": "Sr. Psychiatrist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 80892,
+          "currency": "USD",
+          "education": "MedicalSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_pharmacist",
+          "title": "Jr. Pharmacist",
+          "promotesTo": "pharmacist",
+          "tier": 1,
+          "baseSalary": 57500,
+          "currency": "USD",
+          "education": "PharmacySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "pharmacist",
+          "title": "Pharmacist",
+          "promotesTo": "sr_pharmacist",
+          "tier": 2,
+          "baseSalary": 57500,
+          "currency": "USD",
+          "education": "PharmacySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_pharmacist",
+          "title": "Sr. Pharmacist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 57500,
+          "currency": "USD",
+          "education": "PharmacySchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        }
+      ]
+    },
+    {
+      "id": "newspaper",
+      "name": "Newspaper Jobs",
+      "jobs": [
+        {
+          "id": "sr_editor",
+          "title": "Sr. Editor",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 51717,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "editor",
+          "title": "Editor",
+          "promotesTo": "sr_editor",
+          "tier": 2,
+          "baseSalary": 51717,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "jr_editor",
+          "title": "Jr. Editor",
+          "promotesTo": "editor",
+          "tier": 1,
+          "baseSalary": 51717,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 7,
+          "canHoldWithCriminalRecord": true,
+          "note": "Requiere 7 anos de cualquier trabajo."
+        },
+        {
+          "id": "photographer",
+          "title": "Photographer",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 32163,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "apprentice_photographer",
+          "title": "Apprentice Photographer",
+          "promotesTo": "photographer",
+          "tier": 1,
+          "baseSalary": 32163,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "school_district",
+      "name": "School District Jobs",
+      "jobs": [
+        {
+          "id": "school_president",
+          "title": "School President",
+          "promotesTo": null,
+          "tier": 8,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "superintendent",
+          "title": "Superintendent",
+          "promotesTo": "school_president",
+          "tier": 7,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "asst_superintendent",
+          "title": "Asst. Superintendent",
+          "promotesTo": "superintendent",
+          "tier": 6,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "principal",
+          "title": "Principal",
+          "promotesTo": "asst_superintendent",
+          "tier": 5,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "asst_principal",
+          "title": "Asst. Principal",
+          "promotesTo": "principal",
+          "tier": 4,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "head_tech_teacher",
+          "title": "Head Tech Teacher",
+          "promotesTo": "asst_principal",
+          "tier": 3,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "tech_teacher",
+          "title": "Tech Teacher",
+          "promotesTo": "head_tech_teacher",
+          "tier": 2,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "teacher",
+          "title": "Teacher",
+          "promotesTo": "tech_teacher",
+          "tier": 1,
+          "baseSalary": 66350,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        }
+      ]
+    },
+    {
+      "id": "university_district",
+      "name": "University District Jobs",
+      "jobs": [
+        {
+          "id": "college_dean",
+          "title": "College Dean",
+          "promotesTo": null,
+          "baseSalary": 182663,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 30,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "professor",
+          "title": "Professor",
+          "promotesTo": null,
+          "baseSalary": 80408,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 10,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_archeologist",
+          "title": "Jr. Archeologist",
+          "promotesTo": "archeologist",
+          "tier": 1,
+          "baseSalary": 49437,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "archeologist",
+          "title": "Archeologist",
+          "promotesTo": "sr_archeologist",
+          "tier": 2,
+          "baseSalary": 49437,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "sr_archeologist",
+          "title": "Sr. Archeologist",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 49437,
+          "currency": "USD",
+          "education": "GraduateSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false,
+          "note": "La fuente exige 'Sr. Archeologist' (auto-referencia, errata de la wiki)."
+        }
+      ]
+    },
+    {
+      "id": "law_firm",
+      "name": "Law Firm Jobs",
+      "jobs": [
+        {
+          "id": "partner",
+          "title": "Partner",
+          "promotesTo": null,
+          "tier": 5,
+          "baseSalary": 134065,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "junior_partner",
+          "title": "Junior Partner",
+          "promotesTo": "partner",
+          "tier": 4,
+          "baseSalary": 134065,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "associate",
+          "title": "Associate",
+          "promotesTo": "junior_partner",
+          "tier": 3,
+          "baseSalary": 134065,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "junior_associate",
+          "title": "Junior Associate",
+          "promotesTo": "associate",
+          "tier": 2,
+          "baseSalary": 134065,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "law_clerk",
+          "title": "Law Clerk",
+          "promotesTo": "junior_associate",
+          "tier": 1,
+          "baseSalary": 134065,
+          "currency": "USD",
+          "education": "LawSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "paralegal",
+          "title": "Paralegal",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 31800,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "legal_records_manager",
+          "title": "Legal Records Manager",
+          "promotesTo": "paralegal",
+          "tier": 2,
+          "baseSalary": 31800,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "legal_secretary",
+          "title": "Legal Secretary",
+          "promotesTo": "legal_records_manager",
+          "tier": 1,
+          "baseSalary": 31800,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "name": "Restaurant Jobs",
+      "jobs": [
+        {
+          "id": "general_manager",
+          "title": "General Manager",
+          "promotesTo": null,
+          "tier": 6,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "assistant_manager",
+          "title": "Assistant Manager",
+          "promotesTo": "general_manager",
+          "tier": 5,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "expeditor",
+          "title": "Expeditor",
+          "promotesTo": "assistant_manager",
+          "tier": 4,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "head_waiter",
+          "title": "Head Waiter",
+          "promotesTo": "expeditor",
+          "tier": 3,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "server",
+          "title": "Server",
+          "promotesTo": "head_waiter",
+          "tier": 2,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "food_runner",
+          "title": "Food Runner",
+          "promotesTo": "server",
+          "tier": 1,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "busser",
+          "title": "Busser",
+          "promotesTo": "server",
+          "tier": 1,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "host",
+          "title": "Host",
+          "promotesTo": "server",
+          "tier": 1,
+          "baseSalary": 20700,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "sr_bartender",
+          "title": "Sr. Bartender",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 36345,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Ascenso a Server eliminado: la promocion bajaba el sueldo (errata wiki)."
+        },
+        {
+          "id": "bartender",
+          "title": "Bartender",
+          "promotesTo": "sr_bartender",
+          "tier": 2,
+          "baseSalary": 36345,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "jr_bartender",
+          "title": "Jr. Bartender",
+          "promotesTo": "bartender",
+          "tier": 1,
+          "baseSalary": 36345,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Requiere high looks."
+        },
+        {
+          "id": "master_sommelier",
+          "title": "Master Sommelier",
+          "promotesTo": null,
+          "tier": 4,
+          "baseSalary": 70000,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "advanced_sommelier",
+          "title": "Advanced Sommelier",
+          "promotesTo": "master_sommelier",
+          "tier": 3,
+          "baseSalary": 70000,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "certified_sommelier",
+          "title": "Certified Sommelier",
+          "promotesTo": "advanced_sommelier",
+          "tier": 2,
+          "baseSalary": 70000,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "introductory_sommelier",
+          "title": "Introductory Sommelier",
+          "promotesTo": "certified_sommelier",
+          "tier": 1,
+          "baseSalary": 70000,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "executive_chef",
+          "title": "Executive Chef",
+          "promotesTo": null,
+          "tier": 10,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "chef_de_cuisine",
+          "title": "Chef de Cuisine",
+          "promotesTo": "executive_chef",
+          "tier": 9,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sous_chef",
+          "title": "Sous Chef",
+          "promotesTo": "chef_de_cuisine",
+          "tier": 8,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "saucier",
+          "title": "Saucier",
+          "promotesTo": "sous_chef",
+          "tier": 7,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "junior_sous_chef",
+          "title": "Junior Sous Chef",
+          "promotesTo": "saucier",
+          "tier": 6,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "chef_garde_manager",
+          "title": "Chef Garde Manager",
+          "promotesTo": "junior_sous_chef",
+          "tier": 5,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "chef_tournant",
+          "title": "Chef Tournant",
+          "promotesTo": "chef_garde_manager",
+          "tier": 4,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "apprentice_chef",
+          "title": "Apprentice Chef",
+          "promotesTo": "chef_tournant",
+          "tier": 3,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 3,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "short_order_cook",
+          "title": "Short Order Cook",
+          "promotesTo": "apprentice_chef",
+          "tier": 2,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 3,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "line_cook",
+          "title": "Line Cook",
+          "promotesTo": "short_order_cook",
+          "tier": 1,
+          "baseSalary": 35246,
+          "currency": "USD",
+          "education": "CommunityCollege",
+          "experienceYears": 3,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "dishwasher",
+          "title": "Dishwasher",
+          "promotesTo": null,
+          "baseSalary": 11000,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        }
+      ]
+    },
+    {
+      "id": "police_department",
+      "name": "Police Department Jobs",
+      "jobs": [
+        {
+          "id": "cadet",
+          "title": "Cadet",
+          "promotesTo": "patrol_officer",
+          "tier": 1,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "patrol_officer",
+          "title": "Patrol Officer",
+          "promotesTo": "detective",
+          "tier": 2,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "detective",
+          "title": "Detective",
+          "promotesTo": "sergeant",
+          "tier": 3,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "sergeant",
+          "title": "Sergeant",
+          "promotesTo": "police_lieutenant",
+          "tier": 4,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "police_lieutenant",
+          "title": "Lieutenant",
+          "promotesTo": "police_captain",
+          "tier": 5,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "police_captain",
+          "title": "Captain",
+          "promotesTo": "deputy_chief",
+          "tier": 6,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "deputy_chief",
+          "title": "Deputy Chief",
+          "promotesTo": "chief_of_police",
+          "tier": 7,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "chief_of_police",
+          "title": "Chief of Police",
+          "promotesTo": null,
+          "tier": 8,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ],
+      "note": "Lista propia del usuario (reemplaza la de la wiki)."
+    },
+    {
+      "id": "fire_department",
+      "name": "Fire Department Jobs",
+      "jobs": [
+        {
+          "id": "fire_chief",
+          "title": "Fire Chief",
+          "promotesTo": null,
+          "tier": 8,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "assistant_chief",
+          "title": "Assistant Chief",
+          "promotesTo": "fire_chief",
+          "tier": 7,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "battalion_chief",
+          "title": "Battalion Chief",
+          "promotesTo": "assistant_chief",
+          "tier": 6,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "captain",
+          "title": "Captain",
+          "promotesTo": "battalion_chief",
+          "tier": 5,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "fire_lieutenant",
+          "title": "Lieutenant",
+          "promotesTo": "captain",
+          "tier": 4,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "fire_equipment_operator",
+          "title": "Fire Equipment Operator",
+          "promotesTo": "fire_lieutenant",
+          "tier": 3,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "firefighter",
+          "title": "Firefighter",
+          "promotesTo": "fire_equipment_operator",
+          "tier": 2,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "probationary_firefighter",
+          "title": "Probationary Firefighter",
+          "promotesTo": "firefighter",
+          "tier": 1,
+          "baseSalary": 62704,
+          "currency": "USD",
+          "education": "UpperSecondary",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "mortuary",
+      "name": "Mortuary Jobs",
+      "jobs": [
+        {
+          "id": "funeral_director",
+          "title": "Funeral Director",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 31000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "mortician",
+          "title": "Mortician",
+          "promotesTo": "funeral_director",
+          "tier": 1,
+          "baseSalary": 31000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "record_label",
+      "name": "Record Label Jobs",
+      "jobs": [
+        {
+          "id": "disk_jockey",
+          "title": "Disk Jockey",
+          "promotesTo": null,
+          "baseSalary": 23244,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "music_composer",
+          "title": "Music Composer",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 19932,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "apprentice_music_composer",
+          "title": "Apprentice Music Composer",
+          "promotesTo": "music_composer",
+          "tier": 1,
+          "baseSalary": 19932,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "lead_singer",
+          "title": "Lead Singer",
+          "promotesTo": null,
+          "tier": 4,
+          "baseSalary": 39985,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "singer",
+          "title": "Singer",
+          "promotesTo": "lead_singer",
+          "tier": 3,
+          "baseSalary": 39985,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "lounge_singer",
+          "title": "Lounge Singer",
+          "promotesTo": "singer",
+          "tier": 2,
+          "baseSalary": 39985,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "background_vocalist",
+          "title": "Background Vocalist",
+          "promotesTo": "lounge_singer",
+          "tier": 1,
+          "baseSalary": 39985,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "film_studio",
+      "name": "Film Studio Jobs",
+      "jobs": [
+        {
+          "id": "dancer",
+          "title": "Dancer",
+          "promotesTo": null,
+          "baseSalary": 15000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "makeup_artist",
+          "title": "Makeup Artist",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 18743,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "apprentice_makeup_artist",
+          "title": "Apprentice Makeup Artist",
+          "promotesTo": "makeup_artist",
+          "tier": 1,
+          "baseSalary": 18743,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "puppeteer",
+          "title": "Puppeteer",
+          "promotesTo": null,
+          "baseSalary": 21695,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "pornography_historian",
+          "title": "Pornography Historian",
+          "promotesTo": null,
+          "baseSalary": 22000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "porn_set_janitor",
+          "title": "Porn Set Janitor",
+          "promotesTo": null,
+          "baseSalary": 18202,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "stuntman",
+          "title": "Stuntman",
+          "promotesTo": null,
+          "baseSalary": 25706,
+          "currency": "USD",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        }
+      ]
+    },
+    {
+      "id": "small_business",
+      "name": "Small Business Jobs",
+      "jobs": [
+        {
+          "id": "animator",
+          "title": "Animator",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 51000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_animator",
+          "title": "Jr. Animator",
+          "promotesTo": "animator",
+          "tier": 1,
+          "baseSalary": 51000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "baker",
+          "title": "Baker",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "apprentice_baker",
+          "title": "Apprentice Baker",
+          "promotesTo": "baker",
+          "tier": 1,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "blacksmith",
+          "title": "Blacksmith",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "apprentice_blacksmith",
+          "title": "Apprentice Blacksmith",
+          "promotesTo": "blacksmith",
+          "tier": 1,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "cat_behavior_consultant",
+          "title": "Cat Behavior Consultant",
+          "promotesTo": null,
+          "baseSalary": 20000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "chimney_sweep",
+          "title": "Chimney Sweep",
+          "promotesTo": null,
+          "tier": 2,
+          "currency": null,
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "apprentice_chimney_sweep",
+          "title": "Apprentice Chimney Sweep",
+          "promotesTo": "chimney_sweep",
+          "tier": 1,
+          "currency": null,
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "construction_worker",
+          "title": "Construction Worker",
+          "promotesTo": null,
+          "currency": null,
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "electrician",
+          "title": "Electrician",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 62500,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "apprentice_electrician",
+          "title": "Apprentice Electrician",
+          "promotesTo": "electrician",
+          "tier": 1,
+          "baseSalary": 62500,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "sr_graphic_designer",
+          "title": "Sr. Graphic Designer",
+          "promotesTo": null,
+          "tier": 3,
+          "baseSalary": 39000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "graphic_designer",
+          "title": "Graphic Designer",
+          "promotesTo": "sr_graphic_designer",
+          "tier": 2,
+          "baseSalary": 39000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "jr_graphic_designer",
+          "title": "Jr. Graphic Designer",
+          "promotesTo": "graphic_designer",
+          "tier": 1,
+          "baseSalary": 39000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "housekeeper",
+          "title": "Housekeeper",
+          "promotesTo": null,
+          "baseSalary": 17076,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "landscaper",
+          "title": "Landscaper",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 20000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "apprentice_landscaper",
+          "title": "Apprentice Landscaper",
+          "promotesTo": "landscaper",
+          "tier": 1,
+          "baseSalary": 20000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "lumberjack",
+          "title": "Lumberjack",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "apprentice_lumberjack",
+          "title": "Apprentice Lumberjack",
+          "promotesTo": "lumberjack",
+          "tier": 1,
+          "baseSalary": 42000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "mall_cop",
+          "title": "Mall Cop",
+          "promotesTo": null,
+          "baseSalary": 17500,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "painter",
+          "title": "Painter",
+          "promotesTo": null,
+          "baseSalary": 26000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "personal_trainer",
+          "title": "Personal Trainer",
+          "promotesTo": null,
+          "currency": null,
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "plumber",
+          "title": "Plumber",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "apprentice_plumber",
+          "title": "Apprentice Plumber",
+          "promotesTo": "plumber",
+          "tier": 1,
+          "baseSalary": 55000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "private_investigator",
+          "title": "Private Investigator",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 34000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "jr_private_investigator",
+          "title": "Jr. Private Investigator",
+          "promotesTo": "private_investigator",
+          "tier": 1,
+          "baseSalary": 34000,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "roadkill_remover",
+          "title": "Roadkill Remover",
+          "promotesTo": null,
+          "baseSalary": 32157,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "security_guard",
+          "title": "Security Guard",
+          "promotesTo": null,
+          "baseSalary": 20000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "tailor",
+          "title": "Tailor",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 38000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "apprentice_tailor",
+          "title": "Apprentice Tailor",
+          "promotesTo": "tailor",
+          "tier": 1,
+          "baseSalary": 38000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "water_slide_tester",
+          "title": "Water Slide Tester",
+          "promotesTo": null,
+          "baseSalary": 29000,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        },
+        {
+          "id": "sr_wedding_planner",
+          "title": "Sr. Wedding Planner",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 29000,
+          "currency": "EUR",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "wedding_planner",
+          "title": "Wedding Planner",
+          "promotesTo": "sr_wedding_planner",
+          "tier": 1,
+          "baseSalary": 29000,
+          "currency": "EUR",
+          "education": "HighSchool",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "worm_picker",
+          "title": "Worm Picker",
+          "promotesTo": null,
+          "baseSalary": 17500,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": true
+        }
+      ]
+    },
+    {
+      "id": "publisher",
+      "name": "Publisher Jobs",
+      "note": "Seccion sin filas en la fuente: pendiente.",
+      "jobs": []
+    },
+    {
+      "id": "retailer",
+      "name": "Retailer Jobs",
+      "jobs": [
+        {
+          "id": "cashier",
+          "title": "Cashier",
+          "promotesTo": null,
+          "baseSalary": 15782,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": false
+        },
+        {
+          "id": "fashion_designer",
+          "title": "Fashion Designer",
+          "promotesTo": null,
+          "tier": 2,
+          "baseSalary": 49500,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "jr_fashion_designer",
+          "title": "Jr. Fashion Designer",
+          "promotesTo": "fashion_designer",
+          "tier": 1,
+          "baseSalary": 49500,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null,
+          "note": "Sueldo no disponible en la fuente."
+        },
+        {
+          "id": "retail_salesperson",
+          "title": "Retail Salesperson",
+          "promotesTo": null,
+          "baseSalary": 15915,
+          "currency": "USD",
+          "education": "None",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "orchestra",
+      "name": "Orchestra Jobs",
+      "note": "Categoria eliminada en la Pop Star Update.",
+      "jobs": [
+        {
+          "id": "violin_player",
+          "title": "Violin Player",
+          "promotesTo": null,
+          "baseSalary": 17650,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "triangle_player",
+          "title": "Triangle Player",
+          "promotesTo": null,
+          "baseSalary": 12516,
+          "currency": "USD",
+          "education": "University",
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    },
+    {
+      "id": "fbi",
+      "name": "FBI Jobs",
+      "note": "Lista del usuario.",
+      "jobs": [
+        {
+          "id": "special_agent",
+          "title": "Special Agent",
+          "promotesTo": "senior_special_agent",
+          "tier": 1,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "senior_special_agent",
+          "title": "Senior Special Agent",
+          "promotesTo": "supervisory_special_agent",
+          "tier": 2,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "supervisory_special_agent",
+          "title": "Supervisory Special Agent",
+          "promotesTo": "assistant_special_agent_in_charge",
+          "tier": 3,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "assistant_special_agent_in_charge",
+          "title": "Assistant Special Agent in Charge",
+          "promotesTo": "special_agent_in_charge",
+          "tier": 4,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "special_agent_in_charge",
+          "title": "Special Agent in Charge",
+          "promotesTo": "section_chief",
+          "tier": 5,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "section_chief",
+          "title": "Section Chief",
+          "promotesTo": "assistant_director",
+          "tier": 6,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "assistant_director",
+          "title": "Assistant Director",
+          "promotesTo": "deputy_director",
+          "tier": 7,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "deputy_director",
+          "title": "Deputy Director",
+          "promotesTo": "director",
+          "tier": 8,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        },
+        {
+          "id": "director",
+          "title": "Director",
+          "promotesTo": null,
+          "tier": 9,
+          "baseSalary": 110000,
+          "currency": "USD",
+          "education": null,
+          "experienceYears": 0,
+          "canHoldWithCriminalRecord": null
+        }
+      ]
+    }
+  ]
+}

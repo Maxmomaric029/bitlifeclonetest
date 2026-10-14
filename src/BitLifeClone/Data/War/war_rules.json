@@ -1,0 +1,63 @@
+{
+  "note": "Reglas de simulación. Los valores son los que usará el motor de guerra para decidir declaraciones, fin, reclutamiento y estados de ciudad.",
+  "declaration": {
+    "annualBaseProbability": 0.03,
+    "rivalryWeightFactor": 0.0006,
+    "maxAnnualProbability": 0.25,
+    "minRivalryToDeclare": 45,
+    "rollingWindowYears": 2,
+    "samePlayerCountryBias": 1.5
+  },
+  "timeScale": {
+    "peaceMonthsPerClick": 12,
+    "warMonthsPerClick": 1
+  },
+  "warEnd": {
+    "baseMonthlyEndChance": 0.06,
+    "growthPerMonth": 0.02,
+    "maxMonthlyEndChance": 0.60,
+    "minWarMonths": 2,
+    "stallWarAfterMonths": 24,
+    "stallWarEndChance": 0.35
+  },
+  "draft": {
+    "minAge": 18,
+    "maxAge": 45,
+    "chanceIfAtWar": 0.35,
+    "minMonthsBeforeDraft": 1,
+    "deferEducation": ["University", "GraduateSchool", "MedicalSchool", "LawSchool"],
+    "exemptFlags": ["REFUGEE", "POW", "DEAD", "DISABLED"],
+    "volunteerFlag": "DRAFTED"
+  },
+  "cityStatusProgression": [
+    { "warProgress": 0.00, "status": "safe", "note": "guerra declarada lejos; la ciudad no la siente todavía." },
+    { "warProgress": 0.15, "status": "threatened", "note": "apagones, rumores, precios subiendo." },
+    { "warProgress": 0.35, "status": "underattack", "note": "bombardeos y movilización." },
+    { "warProgress": 0.60, "status": "occupied", "note": "el enemigo controla la ciudad." },
+    { "warProgress": 0.85, "status": "destroyed", "note": "ruinas; sin casa ni servicios." }
+  ],
+  "cityStatusTransitionChance": 0.25,
+  "poolSelection": {
+    "POW": "pool_pow",
+    "REFUGEE": "pool_refugee",
+    "military_infantry": "pool_trench",
+    "military_drone": "pool_drone",
+    "military_tank": "pool_tank",
+    "military_pilot": "pool_air",
+    "military_navy": "pool_naval",
+    "military_special_forces": "pool_special_ops",
+    "medical": "pool_civil_medic",
+    "journalist": "pool_civil_journalist",
+    "default": "pool_civil_<cityStatus>"
+  },
+  "propertyOnFlee": {
+    "occupied": { "loseProperty": true, "note": "huyes y dejas casa/carro." },
+    "destroyed": { "loseProperty": true, "note": "ya no hay nada que recuperar." }
+  },
+  "warFlags": {
+    "refugeeAbroad": "REFUGEE",
+    "desertionChance": 0.08,
+    "heroChanceOnSuccess": 0.20,
+    "woundedChancePerCombatEvent": 0.30
+  }
+}

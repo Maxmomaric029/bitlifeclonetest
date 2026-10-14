@@ -1,0 +1,180 @@
+[
+  {
+    "pool": "pool_air",
+    "events": [
+      {
+        "id": "air_aa_burst",
+        "pool": "pool_air",
+        "highDanger": true,
+        "text": "Sobre el objetivo se despliega una flor de humo negro: fuego antiaéreo. El avión baila y una aguja del panel se queda dormida. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Zarpazo y rumbo a casa",
+            "outcomes": [
+              { "weight": 65, "resultText": "Evasión a pleno empuje, Machcito y horizonte. Los cañones quedan hablando solos.", "health": -5, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" },
+              { "weight": 25, "resultText": "Un shrapnel te revienta el espejo y te deja la mejilla abierta.", "health": -30, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" },
+              { "weight": 10, "resultText": "El estabilizador derecho se desintegra en el primer zarpazo. El avión entra en giro sin salida.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo recto y suelto carga",
+            "outcomes": [
+              { "weight": 55, "resultText": "Suelta todo sobre el objetivo y atraviesa la cortina de humo por el otro lado.", "health": -10, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" },
+              { "weight": 45, "resultText": "A medio paso el avión recibe una salva completa. Logras tirarte, el avión no.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" }
+            ]
+          },
+          {
+            "text": "Vuelo rasante a la ladera",
+            "outcomes": [
+              { "weight": 60, "resultText": "Te metes entre las lomas donde los cañones no bajan la vista. Salís por pura geografía.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" },
+              { "weight": 40, "resultText": "A ras de ladera un cable de alta tensión te parte la antena y medio morro.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "air_aa_burst_damage" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "air_aa_burst_damage",
+        "pool": "pool_air",
+        "text": "El avión vuela, pero pierde combustible como una herida. La base queda a 20 minutos; el mar, a 12. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Vuelo directo a la base",
+            "outcomes": [
+              { "weight": 60, "resultText": "Aterrizás con el tanque en cero y el motor parándose en la pista. Clásico de manuales.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "A tres kilómetros de pista el motor se apaga. Aterrizás de emergencia en el campo de trigo.", "health": -20, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Ejecto sobre la base",
+            "outcomes": [
+              { "weight": 75, "resultText": "Tirar de la palanca a 2.000 pies: el asiento hace el resto. Caes con paracaídas sobre el campamento.", "health": -10, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La ejection a baja altura rompe tu espalda contra el marco del asiento.", "health": -60, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Vuelo al mar y ejection",
+            "outcomes": [
+              { "weight": 60, "resultText": "Guiás el avión al mar y te tiras limpio. La flota te recoge en 40 minutos.", "health": -5, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Caes al agua con el arnés enredado. Flotas una hora hasta que el helicóptero te ve.", "health": -30, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 10, "resultText": "El mar se queda con el asiento y con vos. La armada enciende una vela en el hangar.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "air_strike_order",
+        "pool": "pool_air",
+        "text": "Misión de ataque: el objetivo marcado es un puente con un convoy encima. Inteligencia 'al 90%' de que es militar. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Ataco según misión",
+            "outcomes": [
+              { "weight": 65, "resultText": "Un solo pase, dos bombas, puente caído. El convoy deja de existir.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" },
+              { "weight": 35, "resultText": "La cámara posterior muestra autobuses entre los camiones. El 90% era mentira.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" }
+            ]
+          },
+          {
+            "text": "Pido reconfirmación",
+            "outcomes": [
+              { "weight": 60, "resultText": "La reconfirmación tarda ocho minutos. Cuando llega, el convoy ya no está en el puente.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" },
+              { "weight": 40, "resultText": "Mientras esperas, un cañón antiaéreo te descubre. La misión cambia de objetivo: tú.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" }
+            ]
+          },
+          {
+            "text": "Fallo el ataque a propósito",
+            "outcomes": [
+              { "weight": 55, "resultText": "Suelta las bombas 'accidentalmente' en el campo. El puente sigue en pie.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" },
+              { "weight": 45, "resultText": "El registrador de vuelo guarda cada grado de tus alerones. En tierra hay una sala de preguntas.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "air_strike_order_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "air_strike_order_after",
+        "pool": "pool_air",
+        "text": "Aterrizaste y el escuadrón ya habla de la misión. El oficial de seguridad pide tu informe personal antes del informe oficial. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Entrego el informe honesto",
+            "outcomes": [
+              { "weight": 55, "resultText": "Tu informe abre una revisión de procedimientos. Algún día salvará una vida.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La 'revisión' termina en un memorándum de tres páginas sobre 'disciplina de pilotos'.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Firmo el informe estándar",
+            "outcomes": [
+              { "weight": 75, "resultText": "Firmas lo que todos firman y vuelves a tu litera. Guerra en piloto automático.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un técnico del escuadrón ya contó la historia a su manera. Tu firma no calza.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido baja del escuadrón",
+            "outcomes": [
+              { "weight": 50, "resultText": "El oficial te mira largo rato y firma el pase a instructores. Te vas volando bajo.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "'Los pilotos se jubilan en el aire'. La baja se archiva con tu nombre encima.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "air_mechanical",
+        "pool": "pool_air",
+        "text": "En plena misión, la luz roja de aceite empieza a bailar y el motor empieza a sonar como una lavadora con un ladrillo adentro. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Vuelo directo a base",
+            "outcomes": [
+              { "weight": 60, "resultText": "El motor aguanta el regreso por los pelos. Aterrizás y se para en la tercera rodada.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "A doce minutos de pista el motor se apaga del todo. Vuelas planeando como un ladrillo con alas.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Intento el reinicio en vuelo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Tres intentos de arranque y el motor vuelve con un respingo. El escuadrón aplaude el regreso.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El motor prende y luego hace un ruido que los ingenieros llaman 'terminal'. Tirás de la palanca.", "health": -10, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me tiro al mar cerca de flota",
+            "outcomes": [
+              { "weight": 65, "resultText": "Ejection limpia sobre el corredor de rescate. La flota te recoge en minutos.", "health": -8, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "El viento te aleja del corredor de flota. Dos horas flotando hasta que llega el helicóptero.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "air_wingman_down",
+        "pool": "pool_air",
+        "highDanger": true,
+        "text": "Tu ala recibe un misil por la cola y se convierte en una bola de fuego. Tu compañero tira, pero cae del lado equivocado de la línea. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Mantengo el rumbo de misión",
+            "outcomes": [
+              { "weight": 65, "resultText": "Completás la misión y reportás su caída a la red de búsqueda. Protocolo impecable.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La misión se cumple, pero en el escuadrón dicen que dejaste a tu ala.", "health": 0, "happiness": -22, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo sobre la zona",
+            "outcomes": [
+              { "weight": 50, "resultText": "Circulás sobre su paracaídas dando cobertura hasta que los rescatistas lo recogen.", "health": -10, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Sobre la zona de caída recibes un misil que no viste. Tiras y caes cerca de él.", "health": -45, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El combustible no te alcanza para seguirlo. Volvés solo con el tanque vacío y la cuenta llena.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Bajo a buscarlo en helicóptero",
+            "outcomes": [
+              { "weight": 45, "resultText": "Aterrizás en tierra de nadie con el helicóptero de rescate y lo sacáis bajo fuego.", "health": -20, "happiness": 25, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 55, "resultText": "Llegáis tarde: el paracaídas está clavado en un árbol y la zona ya no es vuestra.", "health": -15, "happiness": -35, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

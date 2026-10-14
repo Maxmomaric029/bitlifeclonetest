@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compilar BitLifeClone
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar .NET SDK 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Compilar (muestra errores del compilador)
+        run: dotnet build BitLifeClone.sln --nologo
+        env:
+          DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+
+      - name: Resumen del build
+        if: always()
+        run: echo "Build listo. Los errores de compilacion salen arriba (reactor rojo en steps o summary)."
+
+  datos:
+    name: Validar datos del juego
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validador global de Data/
+        run: python tools/validate.py
+
+      - name: Test del validador (6 errores plantados)
+        run: python tools/test_validator.py

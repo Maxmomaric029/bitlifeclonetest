@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>BitLifeClone</RootNamespace>
+    <AssemblyName>BitLifeClone</AssemblyName>
+    <StartupObject>BitLifeClone.App</StartupObject>
+  </PropertyGroup>
+
+  <!-- Assets (fonts, images, sounds) que el usuario ira soltando -->
+  <ItemGroup>
+    <None Remove="Assets\**\*.*" />
+    <Resource Include="Assets\**\*.*" />
+    <None Include="..\..\saves\**\*" LinkBase="saves" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Datos JSON del juego (Update: los glob por defecto ya los incluyen como None) -->
+  <ItemGroup>
+    <None Update="Data\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

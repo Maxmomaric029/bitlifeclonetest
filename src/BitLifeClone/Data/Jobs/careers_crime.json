@@ -1,0 +1,38 @@
+{
+  "category": "crime",
+  "name": "Crime Careers",
+  "jobs": [
+    { "id": "gang_lookout", "title": "Gang Lookout", "promotesTo": "gang_member_street", "tier": 1, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "", "specialLogic": "Progreso por respeto ganado en la calle; riesgo de arresto o muerte." },
+    { "id": "gang_member_street", "title": "Gang Member", "promotesTo": "gang_lieutenant", "tier": 2, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 1, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "gang_lieutenant", "title": "Gang Lieutenant", "promotesTo": "gang_leader", "tier": 3, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "gang_leader", "title": "Gang Leader", "promotesTo": null, "tier": 4, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "mafia_associate", "title": "Mafia Associate", "promotesTo": "mafia_soldier", "tier": 1, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "", "specialLogic": "Sube por lealtad y trabajos cumplidos; una traicion se paga caro." },
+    { "id": "mafia_soldier", "title": "Mafia Soldier", "promotesTo": "mafia_capo", "tier": 2, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "mafia_capo", "title": "Mafia Capo", "promotesTo": "mafia_boss", "tier": 3, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 7, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "mafia_boss", "title": "Mafia Boss", "promotesTo": null, "tier": 4, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 12, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "street_dealer", "title": "Street Dealer", "promotesTo": "mid_dealer", "tier": 1, "baseSalary": 35000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "", "specialLogic": "Ingreso variable por ventas; la adiccion propia es un riesgo real." },
+    { "id": "mid_dealer", "title": "Mid-Level Dealer", "promotesTo": "kingpin", "tier": 2, "baseSalary": 35000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "kingpin", "title": "Drug Kingpin", "promotesTo": null, "tier": 3, "baseSalary": 35000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "script_kiddie", "title": "Script Kiddie", "promotesTo": "black_hat", "tier": 1, "baseSalary": 40000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "black_hat", "title": "Black Hat Hacker", "promotesTo": "elite_hacker", "tier": 2, "baseSalary": 40000, "currency": "USD", "education": "University", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "elite_hacker", "title": "Elite Hacker", "promotesTo": null, "tier": 3, "baseSalary": 40000, "currency": "USD", "education": "University", "experienceYears": 7, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "mule", "title": "Smuggling Mule", "promotesTo": "smuggler", "tier": 1, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "smuggler", "title": "Smuggler", "promotesTo": "smuggling_boss", "tier": 2, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "smuggling_boss", "title": "Smuggling Boss", "promotesTo": null, "tier": 3, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "thug_for_hire", "title": "Thug for Hire", "promotesTo": "hitman", "tier": 1, "baseSalary": 42000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "", "specialLogic": "Pago por contrato; cada trabajo sube el riesgo de condena." },
+    { "id": "hitman", "title": "Hitman", "promotesTo": "master_assassin", "tier": 2, "baseSalary": 42000, "currency": "USD", "education": "None", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "master_assassin", "title": "Master Assassin", "promotesTo": null, "tier": 3, "baseSalary": 42000, "currency": "USD", "education": "None", "experienceYears": 10, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "grifter", "title": "Grifter", "promotesTo": "con_artist", "tier": 1, "baseSalary": 32000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "con_artist", "title": "Con Artist", "promotesTo": "master_of_scam", "tier": 2, "baseSalary": 32000, "currency": "USD", "education": "None", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+    { "id": "master_of_scam", "title": "Master of Scams", "promotesTo": null, "tier": 3, "baseSalary": 32000, "currency": "USD", "education": "None", "experienceYears": 9, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" },
+
+    { "id": "cult_recruiter", "title": "Cult Recruiter", "promotesTo": "cult_leader", "tier": 1, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "", "specialLogic": "Gana seguidores; el lavado de cerebro y las donaciones suben el poder." },
+    { "id": "cult_leader", "title": "Cult Leader", "promotesTo": null, "tier": 2, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 5, "canHoldWithCriminalRecord": true, "category": "crime", "icon": "" }
+  ]
+}

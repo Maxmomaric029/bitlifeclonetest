@@ -1,0 +1,207 @@
+{
+  "module": "health_chains",
+  "note": "Cadenas de salud (H1). Arrancan desde outcomes de health.json y los Age Up. Profundidad maxima 4.",
+  "events": [
+    {
+      "id": "health_diag_inconclusive",
+      "pool": "health",
+      "text": "Los resultados vuelven entre dos carpetas y el médico no renta decisión: algo está hay pero todavía no sabe qué. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Hacerme los estudios completos",
+          "outcomes": [
+            { "weight": 50, "resultText": "Radiografía, ecografía y laboratorio completos: el diagnóstico salió claro y el tratamiento arranca esta semana.", "health": 6, "stress": -2, "money": -600, "nextEventId": null },
+            { "weight": 35, "resultText": "La ecografía aparece con algo que amerita biopsia: se abren dos semanas de espera pesada.", "health": -2, "stress": 12, "money": -800, "nextEventId": "health_biopsy_results" },
+            { "weight": 15, "resultText": "Los estudios se pierden en el laboratorio: toca repetirlos con prisa y con cartera.", "health": 0, "stress": 10, "money": -500, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Esperar a ver si pasa solo",
+          "outcomes": [
+            { "weight": 55, "resultText": "Los dolores se van con el calendario: era tensión acumulada y nada más.", "health": 3, "stress": -4, "nextEventId": null },
+            { "weight": 30, "resultText": "El malestar crece tres semanas seguidas: vuelves a la clínica con el caso más serio.", "health": -8, "stress": 10, "nextEventId": "health_specialist_referral" },
+            { "weight": 15, "resultText": "La infección no perdonó la espera: terminas hospitalizado en observación.", "health": -18, "stress": 14, "money": -2500, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Buscarme unas hierbas de la yerbería",
+          "outcomes": [
+            { "weight": 45, "resultText": "El té amargo y las cataplasmas de la yerberita mejoran el ánimo, aunque el cuerpo sigue igual.", "happiness": 4, "stress": -4, "health": 1, "money": -300, "nextEventId": null },
+            { "weight": 55, "resultText": "Las hierbas no tocan nada: el problema médico avanza mientras el cura del barrio insiste en el hospital.", "health": -6, "stress": 6, "money": -300, "nextEventId": "health_specialist_referral" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_specialist_referral",
+      "pool": "health",
+      "text": "Te pasan al especialista. La sala de espera es de esas que hace contar las baldosas del piso dos veces.",
+      "choices": [
+        {
+          "text": "Atenderme con el especialista",
+          "outcomes": [
+            { "weight": 45, "resultText": "El especialista encuentra la raíz: diagnóstico crónico controlable con medicina y dieta.", "health": 5, "stress": -4, "money": -900, "flag": "CHRONIC_ILL", "nextEventId": null },
+            { "weight": 35, "resultText": "El diagnóstico es duro: cáncer en etapa temprana pero operable. La palabra cirugía queda flotando en la sala.", "health": -10, "stress": 16, "money": -1200, "flag": "CANCER", "nextEventId": null },
+            { "weight": 20, "resultText": "El especialista encuentra lo inesperado: la inmunidad pide prueba de VIH esta misma tarde.", "health": -2, "stress": 16, "money": -600, "nextEventId": "health_hiv_test_results" }
+          ]
+        },
+        {
+          "text": "Buscar segunda opinión en otro centro",
+          "outcomes": [
+            { "weight": 40, "resultText": "La segunda opinión coincide con la primera: diagnosis igual y tratamiento arranca doble.", "health": 4, "stress": -2, "money": -1400, "flag": "CHRONIC_ILL", "nextEventId": null },
+            { "weight": 40, "resultText": "El segundo médico ve lo que el primero no: cambia el medicamento y la semana mejora.", "health": 6, "stress": -6, "money": -1400, "nextEventId": null },
+            { "weight": 20, "resultText": "Los dos médicos se contradicen y ninguna falta de criterio llega a decision: pasas el año a la espera.", "health": -4, "stress": 14, "money": -1600, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Ir al seguro público y hacer fila",
+          "outcomes": [
+            { "weight": 55, "resultText": "La fila da su fruto: diagnostico crónico achicado al mínimo con letra bonita y receta gratis.", "health": 3, "stress": 2, "flag": "CHRONIC_ILL", "nextEventId": null },
+            { "weight": 45, "resultText": "La atención pública te deriva de nuevo a la primera semana de mes que viene: el caso espera.", "health": -3, "stress": 10, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_biopsy_results",
+      "pool": "health",
+      "text": "La biopsia salió. La enfermera llama tu nombre con una carpetilla cerrada y el pasillo está callado.",
+      "choices": [
+        {
+          "text": "Abrir la carpetilla yo mismo",
+          "outcomes": [
+            { "weight": 55, "resultText": "La muestra es benigna: un nódulo gordito sin peligro. Respiras y lloras en el corredor de una vez.", "health": 4, "happiness": 12, "stress": -10 },
+            { "weight": 30, "resultText": "El resultado aparece maligno pero temprano: empieza el circuito de oncología esta misma semana.", "health": -8, "happiness": -14, "stress": 14, "flag": "CANCER" },
+            { "weight": 15, "resultText": "El reporte aparece maligno y avanzado: el oncólogo habla de meses y de familia.", "health": -20, "happiness": -26, "stress": 18, "flag": "TERMINAL" }
+          ]
+        },
+        {
+          "text": "Pedirle al médico que me lo diga",
+          "outcomes": [
+            { "weight": 55, "resultText": "El médico te lo dice sentado, con las palabras correctas: benigno, control anual y nada más.", "health": 4, "happiness": 10, "stress": -8 },
+            { "weight": 30, "resultText": "La mala noticia llega por la boca correcta: cáncer tratado desde el inicio con buena tasa.", "health": -6, "happiness": -10, "stress": 12, "flag": "CANCER" },
+            { "weight": 15, "resultText": "El diagnóstico terminal llega con apoyo institucional: la familia entra en la sala contigo.", "health": -18, "happiness": -22, "stress": 16, "flag": "TERMINAL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_hiv_test_results",
+      "pool": "health",
+      "text": "La prueba de VIH amaneció contratada en el laboratorio. Ahora el teléfono suena con resultado en dos líneas.",
+      "choices": [
+        {
+          "text": "Ir a recoger la prueba en persona",
+          "outcomes": [
+            { "weight": 60, "resultText": "Reactiva sale no: el colchón se abate fácil y la noche se mira más larga de lo normal.", "health": 3, "happiness": 10, "stress": -10 },
+            { "weight": 40, "resultText": "La prueba confirms positio: el consejero oficial te abraza y programa el primer control de carga viral.", "health": -4, "happiness": -18, "stress": 16, "flag": "HIV" }
+          ]
+        },
+        {
+          "text": "Pedir que me lo digan por teléfono",
+          "outcomes": [
+            { "weight": 60, "resultText": "Dos palabras claras por el móvil: no reactiva, no hay nada. Tocas la puerta del baño de alivio.", "health": 3, "happiness": 10, "stress": -8 },
+            { "weight": 40, "resultText": "La voz del teléfono confirma positivo: pasas tres horas sentado en la fila de la RAM antes de decidir algo.", "health": -4, "happiness": -18, "stress": 18, "flag": "HIV" }
+          ]
+        },
+        {
+          "text": "Decirles a mi pareja antes de mirar",
+          "outcomes": [
+            { "weight": 45, "resultText": "La pareja te acompaña a buscar la prueba: la noticia cualquiera, buena o mala, llega en dos.", "health": 2, "happiness": 4, "stress": -4 },
+            { "weight": 55, "resultText": "Contarlo antes de saber fue débil: la pareja te reclama después que salió la prueba con dos líneas rojas que no se van a ninguno.", "happiness": -8, "stress": 10, "relationDelta": -10 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_addiction_spiral",
+      "pool": "health",
+      "text": "El consumo se aceleró: la botella se acaba antes del fin de semana y el intercambio con el dealer ya tiene horario fijo. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Pedir ayuda a la familia",
+          "outcomes": [
+            { "weight": 50, "resultText": "La familia te recoge en medio del caos: la intervención es incómoda pero te mete en el programa esta misma semana.", "happiness": 5, "stress": 6, "health": 3, "flag": "IN_REHAB", "nextEventId": null },
+            { "weight": 30, "resultText": "La familia te mete a la casa y vigila: frío, duro, sin dolores pero sin ritmo.", "happiness": -2, "stress": 8, "health": 2 },
+            { "weight": 20, "resultText": "La familia ya no puede ayudarte: los mismos llantos de cada año que no cuando la promesa.", "happiness": -14, "stress": 12, "health": -5 }
+          ]
+        },
+        {
+          "text": "Aguantar solo y bajar por mi cuenta",
+          "outcomes": [
+            { "weight": 35, "resultText": "El frío de tres noches de abstinencia te remece: el cuerpo pierde la inyección y la cabeza gana la partida.", "health": -8, "happiness": 6, "stress": 14 },
+            { "weight": 45, "resultText": "La abstinencia te escupe de vuelta al consumo: la caída de la tercera noche te devuelve a la mitad de siempre.", "health": -10, "happiness": -10, "stress": 14, "flag": "ADDICT_DRUGS" },
+            { "weight": 20, "resultText": "La dosis mezclada de la noche te tumba en el baño: la ambulancia te sube con pulso bajo.", "health": -35, "happiness": -18, "stress": 18, "flag": "IN_REHAB" }
+          ]
+        },
+        {
+          "text": "Seguir consumiendo y punto",
+          "outcomes": [
+            { "weight": 45, "resultText": "El consumo se vuelve rutina del mes: el cuerpo paga la factura cuota a cuota sin queja del dueño.", "health": -10, "happiness": -4, "stress": 10, "money": -3000, "flag": "ADDICT_DRUGS", "nextEventId": null },
+            { "weight": 40, "resultText": "El paro del empleo llega por los faltazos: ahora el consumo se financia con préstamos.", "health": -12, "happiness": -12, "stress": 14, "money": -8000, "flag": "ADDICT_DRUGS", "nextEventId": "health_addiction_bottom" },
+            { "weight": 15, "resultText": "La mezcla del paquete nuevo te achica en la sala de la casa: la sirena llega tarde y suave.", "health": -100, "happiness": 0, "flag": "DEAD" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_addiction_bottom",
+      "pool": "health",
+      "text": "El fondo llegó de esa forma que no se planea: sin empleo, sin plata y con los amigos ausentes por el constante mensaje perdido.",
+      "choices": [
+        {
+          "text": "Pedir ayuda médica de emergencia",
+          "outcomes": [
+            { "weight": 55, "resultText": "El programa de emergencia te interna esa misma noche: llega el frío, el temblor y la cabeza de nuevo.", "health": 5, "happiness": 2, "stress": 8, "flag": "IN_REHAB", "nextEventId": null },
+            { "weight": 45, "resultText": "La emergencia te estabiliza y te deja con cita a un mes: el mes entero es cuesta arriba.", "health": -4, "happiness": -6, "stress": 12 }
+          ]
+        },
+        {
+          "text": "Regresar con la familia vencido",
+          "outcomes": [
+            { "weight": 50, "resultText": "La familia te abre la puerta aunque el orgullo quedó afuera: el techo y la ley seca de la casa inician el año.", "happiness": 6, "stress": -4, "health": 2 },
+            { "weight": 50, "resultText": "La puerta de la familia cerró hace tiempo: tienes casa en la marquesina y frío en la memoria.", "happiness": -14, "health": -12, "stress": 16, "flag": "HOMELESS" }
+          ]
+        },
+        {
+          "text": "Buscar plata para la próxima dosis",
+          "outcomes": [
+            { "weight": 55, "resultText": "El robo al colmado sale mal: caes con el paquete en la mano y ahora la cárcel tiene tu turno.", "happiness": -18, "stress": 16, "flag": "ARRESTED", "nextEventId": null },
+            { "weight": 35, "resultText": "La dosis nueva te tumba de nuevo: el cuerpo ya no aguanta el mismo peso de enero.", "health": -45, "happiness": -20, "stress": 18, "flag": "IN_REHAB" },
+            { "weight": 10, "resultText": "La sobredosis del viernes no encontró sirena a tiempo: lo qúe queda la recoge la familia en la morgue.", "health": -100, "happiness": 0, "flag": "DEAD" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health_depression_onset",
+      "pool": "health",
+      "text": "Hace meses que la cama te gana la batalla cada mañana: no hay labor ni sueldo, solo el teléfono a la espera.",
+      "choices": [
+        {
+          "text": "Ir al psicólogo del centro de salud",
+          "outcomes": [
+            { "weight": 55, "resultText": "El psicólogo te ubica en el mapa: seis sesiones de inicio y un plan por escrito para amanecer.", "happiness": 8, "stress": -6, "removeFlag": "DEPRESSED" },
+            { "weight": 45, "resultText": "La primera sesión solo abre el frasco: te toca disciplina porque la cabeza no quiere soltar.", "happiness": 2, "stress": 4, "flag": "DEPRESSED" }
+          ]
+        },
+        {
+          "text": "Dejarme llevar y quedarme en la cama",
+          "outcomes": [
+            { "weight": 45, "resultText": "El mes entero pasa entre cortinas: el trabajo avisa que ya no esperan más ausencias.", "happiness": -10, "health": -6, "stress": 8, "flag": "DEPRESSED", "loseJob": true },
+            { "weight": 40, "resultText": "La escuela/tatrabajo se afecta: las notas y la presencia caen sin resistencia.", "happiness": -8, "stress": 10, "grades": -8, "attendance": -10, "flag": "DEPRESSED" },
+            { "weight": 15, "resultText": "La depresión se ancla: el ánimo queda pegote al suelo y el cuerpo va perdiendo peso.", "happiness": -14, "health": -10, "stress": 12, "flag": "DEPRESSED", "removeFlag": "ANXIETY" }
+          ]
+        },
+        {
+          "text": "Buscar de donde sea un abrazo que funcione",
+          "outcomes": [
+            { "weight": 50, "resultText": "Un amigo de la vieja guardia te llama todos los días por un mes: la depresión pierde terreno a <plazo> antes del psicólogo.", "happiness": 8, "stress": -6, "removeFlag": "DEPRESSED" },
+            { "weight": 30, "resultText": "La gente responde con frases de saludo: el diálogo corto no hace el trabajo largo.", "happiness": -2, "stress": 4, "flag": "DEPRESSED" },
+            { "weight": 20, "resultText": "Sales a la calle a buscar gente y encuentras motivo: el taller del barrio te regala tres mañanas a la semana.", "happiness": 6, "stress": -4 }
+          ]
+        }
+      ]
+    }
+  ]
+}

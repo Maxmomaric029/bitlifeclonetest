@@ -1,0 +1,149 @@
+[
+  {
+    "pool": "pool_civil_destroyed",
+    "events": [
+      {
+        "id": "civil_destroyed_rubble",
+        "pool": "pool_civil_destroyed",
+        "highDanger": true,
+        "text": "Tu barrio ya no existe: es un campo de escombros con cables saliendo como hierbas. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Busco lo que puedo salvar",
+            "outcomes": [
+              { "weight": 70, "resultText": "Sacás fotos, documentos y la cuchara de tu abuela. Lo demás era casa.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Un muro se vence mientras registras la cocina. Cruzas de milagro.", "health": -20, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me sumo al rescate",
+            "outcomes": [
+              { "weight": 65, "resultText": "Cuatro días moviendo escombros con la Cruz Roja. Sacan gente viva gracias a ti.", "health": -15, "happiness": 20, "money": 300, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "En el tercer día la radio avisa: hay un segundo bombardeo en camino. Ya no estás.", "health": -10, "happiness": 10, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Saqueo lo que encuentro",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te llevas mercancía de una tienda que ya no tiene puerta. Come bien una semana.", "health": 0, "happiness": -8, "money": 500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Un vecino te reconoce saqueando. Tu nombre queda en la lista mala del refugio.", "health": 0, "happiness": -20, "money": 500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 10, "resultText": "Un techo inestable se viene abajo con tu mochila de por medio.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_destroyed_family",
+        "pool": "pool_civil_destroyed",
+        "text": "La lista de desaparecidos del refugio es un muro de papeles con fotos pegadas. Hay un nombre que te importa. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Recorro los hospitales",
+            "outcomes": [
+              { "weight": 60, "resultText": "Al tercer hospital lo encuentras: dormido, quemado, pero vivo.", "health": 0, "happiness": 30, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Recorres siete hospitales. La lista de nombres crece y el tuyo no aparece.", "health": -5, "happiness": -30, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pago por un buscador profesional",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un type con radio propia rastrea traslados y lo localiza en un campo del norte.", "health": 0, "happiness": 25, "money": -600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El buscador cobra y desaparece. Perdiste el dinero y la esperanza por partes.", "health": 0, "happiness": -25, "money": -600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pego su foto por toda la ciudad",
+            "outcomes": [
+              { "weight": 65, "resultText": "Cuarenta fotos y un número de teléfono. Una lavandera lo vio en el puente del sur.", "health": 0, "happiness": 10, "money": -80, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La lluvia borra las fotos en dos días. Sigues sin saber nada.", "health": 0, "happiness": -15, "money": -80, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_destroyed_nohome",
+        "pool": "pool_civil_destroyed",
+        "text": "Ya no tienes casa ni ciudad. En el campamento de emergencia hay lonas vacías y una lista de reubicación. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Acepto reubicación",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te mandan a una ciudad lejana con una lona, un colchón y un cupo de trabajo.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La ciudad de acogida es fría, lejana y con la lona pegada a un vertedero.", "health": -5, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo en los escombros",
+            "outcomes": [
+              { "weight": 55, "resultText": "Montas un campamento sobre los cimientos de tu casa. Cuidas lo poco que queda.", "health": -8, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Una tormenta se lleva el campamento y te deja sin nada otra vez.", "health": -18, "happiness": -22, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco a alguien que me recoja",
+            "outcomes": [
+              { "weight": 65, "resultText": "Un primo del interior te abre la puerta y hasta te consigue cama en su taller.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Los parientes 'ya tienen la casa llena'. Sigues buscando nombre y apellido.", "health": -5, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_destroyed_water",
+        "pool": "pool_civil_destroyed",
+        "text": "La planta de agua quedó fuera de servicio. El refugio reparte bidones una vez al día y la cola es de otro siglo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Hago la cola diaria",
+            "outcomes": [
+              { "weight": 80, "resultText": "Cada día tu bidón vuelve lleno. Una rutina triste que mantiene vivos a los tuyos.", "health": 5, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un empujón en la cola te tira el bidón. Vuelves a la casa con las manos vacías.", "health": -5, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco un pozo clandestino",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un viejo del barrio te enseña un manantial escondido. Agua limpia sin cola.", "health": 8, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El agua del pozo estaba contaminada. Toda la familia pasa la semana en el hospital.", "health": -25, "happiness": -15, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Compro agua cara",
+            "outcomes": [
+              { "weight": 60, "resultText": "Pagas precios de oro por garrafas que alguien cargó desde la ciudad vecina.", "health": 5, "happiness": -5, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Era agua del grifo embotellada con la etiqueta puesta al revés. Estafado.", "health": -8, "happiness": -18, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_destroyed_radio",
+        "pool": "pool_civil_destroyed",
+        "text": "En el refugio hay una radio a pilas que solo capta una emisora: la del país que bombardeó el tuyo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "La escucho por información",
+            "outcomes": [
+              { "weight": 75, "resultText": "De la propaganda de guerra sacas horarios de tren y avisos de evacuación. Útil.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un refugiado te ve escuchándola y se lo comenta a medio campamento.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "La rompo en el suelo",
+            "outcomes": [
+              { "weight": 70, "resultText": "La destrozas contra el piso y el refugio aplaude. Pierdes la única fuente de noticias.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El dueño de la radio te reclama una compensación que no tienes.", "health": 0, "happiness": -10, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "La vendo a un periodista",
+            "outcomes": [
+              { "weight": 60, "resultText": "Un corresponsal te la compra y a cambio cuenta tu historia al aire.", "health": 0, "happiness": 10, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El periodista se la lleva y ya no aparece por el campamento. Radio y todo.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "system": "world_names",
+  "note": "Nombres y apellidos (W1). El código C# los usa para generar el jugador y los NPCs. Lista pausada, con acento dominicano.",
+  "femaleNames": [
+    "Carla", "Yamilex", "Laura", "Mariana", "Sofía", "Rosanna", "Daya", "Cristina",
+    "Milagros", "Altagracia", "Yohanna", "Esther", "Pamela", "Nadia", "Isabela", "Camila",
+    "Génesis", "Johana", "Lucero", "Ramona", "Yuderka", "Anabel", "Marisol", "Yinet"
+  ],
+  "maleNames": [
+    "Carlos", "José", "Luis", "Pedro", "Manuel", "Yefri", "Ramón", "Juan",
+    "Miguel", "Anderson", "Wilkin", "Emmanuel", "Andrés", "Franklin", "Julio", "Óscar",
+    "Rafael", "Dionicio", "Yairo", "Eryck", "Robinson", "Yohan", "Alexander", "Ángel"
+  ],
+  "lastNames": [
+    "Peralta", "Santana", "Ramírez", "Fernández", "Guzmán", "Díaz", "Ureña", "Martínez",
+    "Rodríguez", "Núñez", "García", "Abreu", "Bautista", "Castillo", "Mota", "De la Rosa",
+    "Encarnación", "Ferreiras", "Concepción", "Madera", "Rosario", "Lora", "Pujols", "Mercedes"
+  ]
+}

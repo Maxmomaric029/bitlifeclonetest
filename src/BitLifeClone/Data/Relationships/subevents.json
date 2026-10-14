@@ -1,0 +1,94 @@
+{
+  "subevents": [
+    {
+      "id": "sub_breakup_partner",
+      "text": "Se acabó. Ahora toca repartir lo que era de los dos y aguantar el teléfono callado. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 45, "resultText": "Recoges tus cosas sin gritar y cierras la puerta. Duele pero sales entero.", "relationDelta": -100, "health": -5, "happiness": -20, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "La pelea se alarga tres días y te deja sin amigos en común.", "relationDelta": -100, "health": -10, "happiness": -30, "money": 0, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Termina en sexo de despedida y promesas que ninguno va a cumplir.", "relationDelta": -100, "health": 0, "happiness": -5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_divorce_partner",
+      "text": "El divorcio está firmado. Queda dividir la casa, el carro y lo que se pueda salvar. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 50, "resultText": "Partes todo por la mitad y firmas rápido. Limpio, caro y sin sangre.", "relationDelta": -100, "health": 0, "happiness": -25, "money": -8000, "karma": 10, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "easygoing": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "El abogado de ella se lleva la casa y medio sueldo. Tú te quedas con el perro.", "relationDelta": -100, "health": -5, "happiness": -35, "money": -20000, "karma": 0, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "stingy": -15 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Se pelea por cada mueble hasta que un juez corta todo a favor de ella.", "relationDelta": -100, "health": -10, "happiness": -30, "money": -15000, "karma": -5, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "resentful": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_estranged_family",
+      "text": "Le colgaste el teléfono y le dije que no lo vuelvas a llamar. Ahora la casa queda en silencio. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 55, "resultText": "Pasan los meses sin una sola llamada y aprendes a vivir con el hueco.", "relationDelta": -70, "health": -5, "happiness": -18, "money": 0, "karma": 0, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Un día la otra persona aparece en la puerta de la casa y ninguno sabe qué decir.", "relationDelta": -50, "health": 0, "happiness": -10, "money": 0, "karma": 0, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "forgiving": 25 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Enterrada en rencor, ella cuenta tu vida a todo el que pregunta.", "relationDelta": -80, "health": -5, "happiness": -25, "money": 0, "karma": -10, "fame": -5, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "resentful": 30 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_kick_out_child",
+      "text": "Le dijiste que se buscara la vida y la puerta se cerró. La calle no pregunta la edad. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 45, "resultText": "Consigue un colchón donde un pana y no vuelve a pedir un plato de comida.", "relationDelta": -60, "health": -10, "happiness": -30, "money": 0, "karma": 0, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "strict": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "A los dos días está durmiendo en la marquesina de un vecino y la gente habla.", "relationDelta": -70, "health": -15, "happiness": -35, "money": 0, "karma": -10, "fame": -10, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Vuelve a las dos semanas, más flaco y más callado, y tú no tienes fuerza pa decir no.", "relationDelta": -40, "health": 0, "happiness": -15, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 30 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_betray_friend",
+      "text": "El negocio se fue al piso y ahora ninguno de los dos tiene pruebas de nada. Solo queda la cara. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 50, "resultText": "Se acaba la amistad y el chisme corre por toda la esquina.", "relationDelta": -100, "health": 0, "happiness": -25, "money": -3000, "karma": -10, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Te devuelve lo que puso con intereses y te borra del teléfono.", "relationDelta": -100, "health": 0, "happiness": -20, "money": 5000, "karma": -15, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Aparece una demanda por tu parte y los dos pierden más de lo que ganaron.", "relationDelta": -100, "health": -5, "happiness": -25, "money": -2000, "karma": -5, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_illegal_bust",
+      "text": "El favor salió mal y hay luces azules en la esquina. Alguien va a pagar esto. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 45, "resultText": "Te llevan detenido y la familia se entera por las noticias.", "relationDelta": -20, "health": -10, "happiness": -30, "money": -5000, "karma": -10, "fame": 5, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "loyal": 15 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Cantas el nombre de quien te metió en esto y sales en libertad con una deuda pendiente.", "relationDelta": -60, "health": 0, "happiness": -15, "money": 0, "karma": -25, "fame": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Corres y te pierdes entre la gente. Nadie puede probar nada, esta vez.", "relationDelta": -10, "health": -5, "happiness": 5, "money": 0, "karma": -15, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_war_rescue",
+      "text": "Pagaste el rescate y el nombre apareció en una lista. El intercambio es de madrugada. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 55, "resultText": "El intercambio sale limpio y vuelven a casa caminando, sin correr.", "relationDelta": 25, "health": -5, "happiness": 30, "money": 0, "karma": 15, "fame": 0, "flag": null, "removeFlag": "POW", "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Alguien cambia el trato a última hora y te devuelven a una persona distinta.", "relationDelta": -15, "health": 0, "happiness": -25, "money": -10000, "karma": -5, "fame": 0, "flag": null, "removeFlag": "POW", "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 15, "resultText": "La operación se cae y esta vez la lista se lleva dos nombres.", "relationDelta": -30, "health": -10, "happiness": -35, "money": 0, "karma": 0, "fame": 0, "flag": "DEAD", "removeFlag": "POW", "traitWeightMods": { "cold": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_infidelity",
+      "text": "Te pillaron con las manos en el fuego y ahora la otra persona decide si se queda o se va. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 40, "resultText": "Te perdona con la condición de que no vuelva a pasar y no vuelve a preguntar más.", "relationDelta": -30, "health": 0, "happiness": -10, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 35 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Se va por la puerta esa misma noche y no contesta ni un mensaje.", "relationDelta": -100, "health": 0, "happiness": -30, "money": 0, "karma": -10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Deciden 'darse un tiempo' que en la práctica es que cada uno hace lo que le da la gana.", "relationDelta": -50, "health": 0, "happiness": -15, "money": 0, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_delate_sibling",
+      "text": "Tu hermana cargó con la culpa y los padres no saben que fuiste tú. Ella te mira desde la mesa. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 45, "resultText": "Cargas con la culpa tú mismo y el castigo cae parejo pa los dos.", "relationDelta": 25, "health": 0, "happiness": 10, "money": 0, "karma": 20, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 30 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Te callas y dejas que ella pague sola. Esa noche no te dirige la palabra.", "relationDelta": -40, "health": 0, "happiness": -10, "money": 0, "karma": -20, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Lo confiesas tarde y los padres castigan a los dos por mentir.", "relationDelta": 5, "health": 0, "happiness": -5, "money": 0, "karma": 10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "sub_heir_discussion",
+      "text": "Salió el tema del testamento y la familia entera se puso las orejas de punta. ¿Qué haces?",
+      "outcomes": [
+        { "weight": 40, "resultText": "Se reparte todo claro y firmado. Nadie discute nada, por ahora.", "relationDelta": 10, "health": 0, "happiness": 15, "money": 15000, "karma": 5, "fame": 0, "flag": "HEIR", "removeFlag": null, "traitWeightMods": { "generous": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Aparece un hermano que no estaba en el mapa y reclama su parte a gritos.", "relationDelta": -20, "health": 0, "happiness": -15, "money": 5000, "karma": -5, "fame": 0, "flag": "HEIR", "removeFlag": null, "traitWeightMods": { "jealous": 30 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El abogado se queda con un pellizco y las cuentas no cuadran.", "relationDelta": -10, "health": 0, "happiness": -10, "money": 3000, "karma": 0, "fame": 0, "flag": "HEIR", "removeFlag": null, "traitWeightMods": { "stingy": 25 }, "nextEventId": null }
+      ]
+    }
+  ]
+}

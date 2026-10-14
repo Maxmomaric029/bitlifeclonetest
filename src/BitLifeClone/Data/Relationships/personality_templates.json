@@ -1,0 +1,98 @@
+{
+  "system": "personality_templates",
+  "note": "Reglas de asignación de rasgos de personalidad. Los rasgos válidos están cerrados en Schema.md; si se agrega uno nuevo, se agrega primero allí.",
+  "traits": [
+    "affectionate", "cold", "stingy", "generous", "resentful", "forgiving", "jealous",
+    "loyal", "manipulative", "strict", "easygoing", "religious", "party_animal"
+  ],
+  "traitMeta": [
+    { "name": "affectionate", "family": "warmth", "opposite": "cold", "driftPerYear": 0.5 },
+    { "name": "cold", "family": "warmth", "opposite": "affectionate", "driftPerYear": 0.5 },
+    { "name": "stingy", "family": "money", "opposite": "generous", "driftPerYear": 0.3 },
+    { "name": "generous", "family": "money", "opposite": "stingy", "driftPerYear": 0.3 },
+    { "name": "resentful", "family": "grudge", "opposite": "forgiving", "driftPerYear": 0.4 },
+    { "name": "forgiving", "family": "grudge", "opposite": "resentful", "driftPerYear": 0.4 },
+    { "name": "jealous", "family": "envy", "opposite": null, "driftPerYear": 0.2 },
+    { "name": "loyal", "family": "trust", "opposite": "manipulative", "driftPerYear": 0.3 },
+    { "name": "manipulative", "family": "trust", "opposite": "loyal", "driftPerYear": 0.3 },
+    { "name": "strict", "family": "order", "opposite": "easygoing", "driftPerYear": 0.2 },
+    { "name": "easygoing", "family": "order", "opposite": "strict", "driftPerYear": 0.2 },
+    { "name": "religious", "family": "belief", "opposite": null, "driftPerYear": 0.1 },
+    { "name": "party_animal", "family": "vice", "opposite": null, "driftPerYear": 0.4 }
+  ],
+  "npcAssignment": {
+    "minTraitsPerNpc": 1,
+    "maxTraitsPerNpc": 3,
+    "maxOppositesTogether": 0,
+    "baseWeights": {
+      "affectionate": 12, "cold": 10, "stingy": 8, "generous": 10, "resentful": 9,
+      "forgiving": 9, "jealous": 7, "loyal": 12, "manipulative": 6, "strict": 10,
+      "easygoing": 11, "religious": 8, "party_animal": 9
+    },
+    "byRelation": {
+      "mother": { "affectionate": 30, "forgiving": 12, "religious": 8, "cold": 4, "resentful": 4 },
+      "father": { "strict": 20, "loyal": 10, "affectionate": 12, "cold": 8, "easygoing": -5 },
+      "sibling": { "jealous": 6, "loyal": 15, "party_animal": 8, "easygoing": 8 },
+      "spouse": { "affectionate": 20, "loyal": 18, "jealous": 6, "cold": -6 },
+      "partner": { "affectionate": 18, "party_animal": 10, "jealous": 8, "loyal": 12 },
+      "child": { "easygoing": 14, "affectionate": 12, "resentful": -5 },
+      "friend": { "loyal": 22, "generous": 12, "party_animal": 12, "easygoing": 10 },
+      "enemy": { "resentful": 25, "manipulative": 15, "jealous": 12, "forgiving": -10 },
+      "boss": { "strict": 22, "manipulative": 10, "cold": 8, "generous": -8 },
+      "coworker": { "easygoing": 12, "jealous": 8, "loyal": 8 },
+      "teacher": { "strict": 18, "forgiving": 10, "religious": 6 },
+      "classmate": { "party_animal": 12, "easygoing": 12, "jealous": 8 }
+    },
+    "byFlag": {
+      "MARRIED": { "loyal": 10, "affectionate": 8 },
+      "DIVORCED": { "resentful": 12, "forgiving": -6 },
+      "IN_PRISON": { "manipulative": 12, "resentful": 10, "forgiving": -6 },
+      "CRIMINAL_RECORD": { "manipulative": 8, "easygoing": -4 },
+      "VETERAN": { "cold": 8, "loyal": 10, "party_animal": 6 },
+      "POW": { "cold": 10, "resentful": 10, "forgiving": -8 },
+      "TERMINAL": { "forgiving": 15, "religious": 12, "cold": -8 },
+      "CELEBRITY": { "manipulative": 10, "party_animal": 10, "jealous": 6 }
+    },
+    "byEducation": {
+      "None": { "easygoing": 8, "strict": -6 },
+      "GraduateSchool": { "strict": 12, "religious": -4 },
+      "MedicalSchool": { "strict": 10, "cold": 6 },
+      "LawSchool": { "strict": 12, "manipulative": 6 }
+    }
+  },
+  "playerAssignment": {
+    "startTraits": 2,
+    "maxTraitsTotal": 5,
+    "byFamilyIncome": [
+      { "when": "low", "weights": { "generous": 14, "resentful": 10, "loyal": 12, "party_animal": 8 } },
+      { "when": "mid", "weights": { "easygoing": 14, "loyal": 10, "strict": 8 } },
+      { "when": "high", "weights": { "stingy": 10, "strict": 12, "manipulative": 8, "generous": 6 } }
+    ],
+    "driftRules": [
+      { "id": "tpl_drift_karma_low", "trigger": "karma < -50 al cerrar el ano", "adds": { "manipulative": 8, "forgiving": -6 }, "addsTo": "player" },
+      { "id": "tpl_drift_karma_high", "trigger": "karma > 50 al cerrar el ano", "adds": { "generous": 8, "resentful": -6 }, "addsTo": "player" },
+      { "id": "tpl_drift_war", "trigger": "flag POW o WOUNDED al cerrar el ano", "adds": { "cold": 10, "resentful": 8, "party_animal": -6 }, "addsTo": "player" },
+      { "id": "tpl_drift_married_5y", "trigger": "5 anos casado con relationDelta medio > 60", "adds": { "loyal": 10, "affectionate": 8 }, "addsTo": "player" },
+      { "id": "tpl_drift_divorced", "trigger": "flag DIVORCED el ano del divorcio", "adds": { "resentful": 10, "forgiving": -6 }, "addsTo": "player" },
+      { "id": "tpl_drift_rich", "trigger": "money > 1e6 al cerrar el ano", "adds": { "stingy": 8, "generous": -4 }, "addsTo": "player" },
+      { "id": "tpl_drift_prison", "trigger": "flag IN_PRISON al cerrar el ano", "adds": { "manipulative": 10, "strict": 6 }, "addsTo": "player" },
+      { "id": "tpl_drift_faith", "trigger": "3+ acciones religiosas en el ano", "adds": { "religious": 12 }, "addsTo": "player" }
+    ]
+  },
+  "interactionHooks": {
+    "note": "Como el rasgo modifica textos y outcomes. traitWeightMods de cada outcome usa estos mismos nombres.",
+    "affectionate": { "dialogue": "calido", "outcomeBias": "relaciones suben mas facil" },
+    "cold": { "dialogue": "cortante", "outcomeBias": "relaciones suben lento" },
+    "stingy": { "dialogue": "regatea", "outcomeBias": "presta menos dinero" },
+    "generous": { "dialogue": "invita", "outcomeBias": "presta mas dinero" },
+    "resentful": { "dialogue": "saca lo viejo", "outcomeBias": "peleas mas largas" },
+    "forgiving": { "dialogue": "deja pasar", "outcomeBias": "reconciliacion mas facil" },
+    "jealous": { "dialogue": "reclama", "outcomeBias": "sospecha mas" },
+    "loyal": { "dialogue": "defiende", "outcomeBias": "apoya en crisis" },
+    "manipulative": { "dialogue": "enreda", "outcomeBias": "miente con exito" },
+    "strict": { "dialogue": "exige", "outcomeBias": "dureza en disciplina" },
+    "easygoing": { "dialogue": "relajado", "outcomeBias": "menos conflicto" },
+    "religious": { "dialogue": "aconseja", "outcomeBias": "mas consuelo, menos vicio" },
+    "party_animal": { "dialogue": "invita a salir", "outcomeBias": "mas fiesta, mas riesgo" }
+  }
+}

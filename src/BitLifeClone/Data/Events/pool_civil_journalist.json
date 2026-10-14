@@ -1,0 +1,80 @@
+[
+  {
+    "pool": "pool_civil_journalist",
+    "events": [
+      {
+        "id": "journ_checkpoint",
+        "pool": "pool_civil_journalist",
+        "text": "Un retén armado detiene tu carro en la carretera. Quieren revisar tu cámara y tu libreta. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Entregar todo",
+            "outcomes": [
+              { "weight": 60, "resultText": "Revisan, borran dos videos y te dejan seguir. Escribes con la memoria.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Te retienen seis horas por 'verificación' y pierdes el reportaje.", "health": -2, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Ocultar la memoria",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sacas la tarjeta por la ventana y la escondes en el zapato. Nadie la vio.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Se dieron cuenta y ahora sí hay un problema grave.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": "ARRESTED", "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 15, "resultText": "Te dejan ir, pero te siguen el rastro todo el viaje.", "health": -3, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Grabar de escondida",
+            "outcomes": [
+              { "weight": 55, "resultText": "Grabas todo desde el asiento y el video revienta en redes.", "health": 0, "happiness": 15, "money": 500, "setCity": null, "flag": "VIRAL", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Te cachan grabando y te rompen el celular al piso.", "health": -5, "happiness": -15, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "journ_censorship",
+        "pool": "pool_civil_journalist",
+        "text": "El gobierno prohíbe publicar bajas reales y tu director quiere que suavices la nota. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Publicar lo real",
+            "outcomes": [
+              { "weight": 50, "resultText": "Publicas los números reales y media región te lee. El gobierno te cancela.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": "SCANDAL", "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 50, "resultText": "Publicas y te citan a declarar. La nota igual sale.", "health": -2, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Suavizar como piden",
+            "outcomes": [
+              { "weight": 65, "resultText": "Suavizas y conservas el trabajo. Te sienta mal, pero comes.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Algún colega filtra que te doblaste y los compañeros te dan la espalda.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "journ_embedded",
+        "pool": "pool_civil_journalist",
+        "highDanger": true,
+        "text": "Te ofrecen ir embebido con una unidad al frente. Es la historia del año y también el lugar más peligroso. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Ir con la unidad",
+            "outcomes": [
+              { "weight": 50, "resultText": "Vuelves con un reportaje que nadie más tiene. Temblabas, pero escribes.", "health": -8, "happiness": 10, "money": 1000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Caen bajo fuego y sales con esquirlas en la pierna.", "health": -30, "happiness": -10, "money": 0, "setCity": "underattack", "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "La unidad donde ibas cayó en una emboscada. No todos volvieron.", "health": -100, "happiness": 0, "money": 0, "setCity": "underattack", "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Quedarme en retaguardia",
+            "outcomes": [
+              { "weight": 70, "resultText": "Cubres desde atrás con lo que te cuentan los que vuelven.", "health": 0, "happiness": -3, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Tu director esperaba más y te relega a notas de relleno.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

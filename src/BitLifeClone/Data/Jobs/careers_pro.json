@@ -1,0 +1,44 @@
+{
+  "category": "careers_pro",
+  "name": "Health, Government, Science & Trades",
+  "jobs": [
+    { "id": "medical_intern", "title": "Medical Intern", "promotesTo": "resident_doctor", "tier": 1, "baseSalary": 62000, "currency": "USD", "education": "MedicalSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "resident_doctor", "title": "Resident Doctor", "promotesTo": "attending_physician", "tier": 2, "baseSalary": 62000, "currency": "USD", "education": "MedicalSchool", "experienceYears": 3, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "attending_physician", "title": "Attending Physician", "promotesTo": "chief_of_surgery", "tier": 3, "baseSalary": 62000, "currency": "USD", "education": "MedicalSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "chief_of_surgery", "title": "Chief of Surgery", "promotesTo": null, "tier": 4, "baseSalary": 62000, "currency": "USD", "education": "MedicalSchool", "experienceYears": 15, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "registered_nurse", "title": "Registered Nurse", "promotesTo": "nurse_practitioner", "tier": 1, "baseSalary": 55000, "currency": "USD", "education": "NursingSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "nurse_practitioner", "title": "Nurse Practitioner", "promotesTo": "nursing_director", "tier": 2, "baseSalary": 55000, "currency": "USD", "education": "NursingSchool", "experienceYears": 5, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "nursing_director", "title": "Nursing Director", "promotesTo": null, "tier": 3, "baseSalary": 55000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+
+    { "id": "city_council_member", "title": "City Council Member", "promotesTo": "mayor", "tier": 1, "baseSalary": 60000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "", "specialLogic": "Se sube por elecciones; el carisma y el dinero de campana pesan mas que el estudio." },
+    { "id": "mayor", "title": "Mayor", "promotesTo": "governor", "tier": 2, "baseSalary": 60000, "currency": "USD", "education": "University", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "governor", "title": "Governor", "promotesTo": "senator", "tier": 3, "baseSalary": 60000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "senator", "title": "Senator", "promotesTo": "president", "tier": 4, "baseSalary": 60000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "president", "title": "President", "promotesTo": null, "tier": 5, "baseSalary": 60000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 18, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+
+    { "id": "research_assistant", "title": "Research Assistant", "promotesTo": "research_scientist", "tier": 1, "baseSalary": 48000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "research_scientist", "title": "Research Scientist", "promotesTo": "lead_researcher", "tier": 2, "baseSalary": 48000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "lead_researcher", "title": "Lead Researcher", "promotesTo": "nobel_laureate", "tier": 3, "baseSalary": 48000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 10, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "nobel_laureate", "title": "Nobel Laureate", "promotesTo": null, "tier": 4, "baseSalary": 48000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 20, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+
+    { "id": "astronaut_candidate", "title": "Astronaut Candidate", "promotesTo": "astronaut", "tier": 1, "baseSalary": 90000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "astronaut", "title": "Astronaut", "promotesTo": "mission_specialist", "tier": 2, "baseSalary": 90000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "mission_specialist", "title": "Mission Specialist", "promotesTo": "mission_commander", "tier": 3, "baseSalary": 90000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+    { "id": "mission_commander", "title": "Mission Commander", "promotesTo": null, "tier": 4, "baseSalary": 90000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 14, "canHoldWithCriminalRecord": false, "category": "careers_pro", "icon": "" },
+
+    { "id": "real_estate_agent", "title": "Real Estate Agent", "promotesTo": "real_estate_broker", "tier": 1, "baseSalary": 42000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "", "specialLogic": "Comision por venta; un mal mes no paga nada." },
+    { "id": "real_estate_broker", "title": "Real Estate Broker", "promotesTo": null, "tier": 2, "baseSalary": 42000, "currency": "USD", "education": "University", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+
+    { "id": "truck_driver", "title": "Truck Driver", "promotesTo": "owner_operator", "tier": 1, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+    { "id": "owner_operator", "title": "Owner-Operator", "promotesTo": null, "tier": 2, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+
+    { "id": "farm_hand", "title": "Farm Hand", "promotesTo": "farm_owner", "tier": 1, "baseSalary": 22000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+    { "id": "farm_owner", "title": "Farm Owner", "promotesTo": null, "tier": 2, "baseSalary": 22000, "currency": "USD", "education": "None", "experienceYears": 6, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+
+    { "id": "coal_miner", "title": "Coal Miner", "promotesTo": "mine_foreman", "tier": 1, "baseSalary": 40000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "", "specialLogic": "Riesgo alto de accidente y enfermedad pulmonar con los anos." },
+    { "id": "mine_foreman", "title": "Mine Foreman", "promotesTo": null, "tier": 2, "baseSalary": 40000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" },
+
+    { "id": "oil_rig_worker", "title": "Oil Rig Worker", "promotesTo": "rig_manager", "tier": 1, "baseSalary": 52000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "", "specialLogic": "Turnos largos fuera de casa; buena paga y alto riesgo." },
+    { "id": "rig_manager", "title": "Rig Manager", "promotesTo": null, "tier": 2, "baseSalary": 52000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 7, "canHoldWithCriminalRecord": true, "category": "careers_pro", "icon": "" }
+  ]
+}

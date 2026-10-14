@@ -1,0 +1,176 @@
+[
+  {
+    "pool": "pool_civil_safe",
+    "events": [
+      {
+        "id": "civil_safe_recruit",
+        "pool": "pool_civil_safe",
+        "text": "La guerra está lejos, pero hoy llegó un sobre con el escudo del país a tu casa: tus datos salieron en la lista de reclutamiento. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me presento voluntario",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te enlistas con bandera y todo. Tu familia llora orgullosa en la estación.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": true, "nextEventId": "civil_safe_recruit_boot" },
+              { "weight": 30, "resultText": "El examen médico descubre un problema en el corazón. Te declaran inapto y vuelves a casa.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Reúno dinero pal soborno",
+            "outcomes": [
+              { "weight": 50, "resultText": "Pagas al oficial correcto y tu nombre desaparece de la lista como por arte de magia.", "health": 0, "happiness": 8, "money": -3000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El oficial te graba en el soborno. El sobre siguiente viene con handcuffs.", "health": 0, "happiness": -25, "money": -3000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Huyo con mi familia",
+            "outcomes": [
+              { "weight": 55, "resultText": "Cierras la casa de madrugada y manejan hacia el interior del país. La guerra se queda atrás.", "health": 0, "happiness": 5, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 45, "resultText": "Los detienen en la carretera principal. Ahora tienes expediente y la lista no olvida.", "health": 0, "happiness": -20, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_safe_recruit_boot",
+        "pool": "pool_civil_safe",
+        "text": "Estás en el cuartel de instrucción: camas de litera, sargentos con pocos modales y un entrenamiento que no perdona. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me saqueo la cadera",
+            "outcomes": [
+              { "weight": 70, "resultText": "El sargento nota tu garra y te señala para el pelotón de élite del curso.", "health": 5, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Te saqueas el cuerpo entero, pero sales el segundo de tu promoción.", "health": -5, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me hago el dormido",
+            "outcomes": [
+              { "weight": 60, "resultText": "Pasas el curso con lo justo y sin llamar la atención. Estrategia de supervivencia.", "health": 0, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El sargento te descubre y te convierte en el ejemplo vivo de cada formación.", "health": -8, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Deserto del cuartel",
+            "outcomes": [
+              { "weight": 45, "resultText": "Sales del cuartel por la zanja del agua. Eres desertor antes de la primera patrulla.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": "DESERTER", "removeFlag": "DRAFTED", "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Te pescan al segundo kilómetro, dormido bajo un árbol. El calabozo te espera.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Una ronda te ve salir corriendo. Una bala te alcanza en la espalda.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_safe_prices",
+        "pool": "pool_civil_safe",
+        "text": "En el mercado el aceite subió otra vez y la cola del pollo se ve desde la esquina. La guerra está lejos, pero los precios no. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Compro lo que pueda",
+            "outcomes": [
+              { "weight": 75, "resultText": "Llenas la nevera a precios de oro. Diciembre estará cubierto.", "health": 3, "happiness": -5, "money": -600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Te adelantas al mercado y hasta vendes algo guardado con ganancia.", "health": 0, "happiness": 10, "money": 400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco el mercado negro",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un primo te conecta con un depósito. Compras aceite y harina por la mitad.", "health": 0, "happiness": 5, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El depósito era una trampa de la policía económica. Perdiste la compra y la dignidad.", "health": 0, "happiness": -18, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me adapto y punto",
+            "outcomes": [
+              { "weight": 70, "resultText": "Cenas arroz y huevo otra vez, pero duermes tranquilo con la billetera intacta.", "health": -3, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Los precios siguen subiendo cada semana y tu sueldo no se entera.", "health": -5, "happiness": -15, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_safe_family_drafted",
+        "pool": "pool_civil_safe",
+        "text": "Tu hermano menor recibió su sobre de reclutamiento. Tiene 19 años y cara de no entender nada. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Le ayudo a prepararse",
+            "outcomes": [
+              { "weight": 70, "resultText": "Le enseñas lo poco que sabes y le compras unas botas buenas. Se va menos solo.", "health": 0, "happiness": 5, "money": -250, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Le consigues un puesto en cuartel administrativo, lejos de las trincheras.", "health": 0, "happiness": 10, "money": -500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo escondo en casa",
+            "outcomes": [
+              { "weight": 45, "resultText": "Duermes en el closet un mes entero y no lo descubren. Todavía.", "health": 0, "happiness": -5, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 55, "resultText": "Un vecino habla. Lo buscan en la casa con el desayuno todavía en la mesa.", "health": 0, "happiness": -20, "money": -100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo echo de la lista",
+            "outcomes": [
+              { "weight": 60, "resultText": "Le cambias la dirección del expediente a la de un pueblo inexistente. Funciona... por ahora.", "health": 0, "happiness": 5, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La maniobra sale a la luz y ahora los dos tienen el nombre marcado.", "health": 0, "happiness": -25, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_safe_move",
+        "pool": "pool_civil_safe",
+        "text": "Una empresa del interior te ofrece trabajo por casi el doble. La ciudad está tranquila, pero las radios suenan raras. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me mudo con la familia",
+            "outcomes": [
+              { "weight": 75, "resultText": "Cambia la casa, cambia el clima, cambia el sueldo. A tres meses de la frontera.", "health": 0, "happiness": 15, "money": 500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La empresa quiebra al segundo mes. Te quedaste sin casa y sin empleo.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Solo yo me voy",
+            "outcomes": [
+              { "weight": 65, "resultText": "Mandas dinero a casa cada quincena y visitas cuando puedes.", "health": 0, "happiness": 5, "money": 600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La distancia se come el dinero y a la familia por partes.", "health": 0, "happiness": -15, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo donde estoy",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te quedas con lo conocido: el mismo trabajo, la misma calle, la misma tranquilidad.", "health": 0, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Dos meses después la oficina del interior te escribe: la vacante ya no existe.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_safe_rumor",
+        "pool": "pool_civil_safe",
+        "text": "En la radio hablan de 'tropas en la frontera' y en el mercado ya nadie dice nada en voz alta. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Lleno el tanque de gas y la alacena",
+            "outcomes": [
+              { "weight": 80, "resultText": "Previsiones básicas: gas, agua, latas y dinero en efectivo. Tres meses de margen.", "health": 0, "happiness": 5, "money": -500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "El pánico general deja la ciudad sin gasolina. Tu turno en la bomba duró toda la tarde.", "health": 0, "happiness": -5, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo mi vida normal",
+            "outcomes": [
+              { "weight": 65, "resultText": "No pasó nada esa semana. Te sientes un poco tonto por haberse alarmado.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La radio deja de funcionar un martes y ya no vuelve igual.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Mando a los míos al interior",
+            "outcomes": [
+              { "weight": 60, "resultText": "Tu familia se instala con unos tíos en el campo. Tú te quedas cuidando la casa.", "health": 0, "happiness": -5, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Se van y tú te quedas solo con la radio encendida toda la noche.", "health": 0, "happiness": -12, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

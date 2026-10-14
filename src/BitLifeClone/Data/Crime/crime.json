@@ -1,0 +1,166 @@
+{
+  "module": "crime_menu",
+  "note": "Crimen callejero y organizado (C1). Las cadenas de arresto viven en crime_chains.json. Un crimen graves puede dejar CRIMINAL_RECORD aunque salga bien.",
+  "actions": [
+    {
+      "id": "crime_pickpocket", "label": "Meterle mano al bolsillo ajeno",
+      "ageMin": 12, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Sacas el billete del bolsillo trasero en la fila de la guagua y nadie ve nada. ", "happiness": 3, "stress": 2, "karma": -6, "money": 1200, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 10 }, "nextEventId": null },
+        { "weight": 30, "resultText": "La víctima se da cuenta al llegar a su parada y tu nombre quedó en su memoria, nada más.", "happiness": -2, "stress": 5, "karma": -6, "money": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 10 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Un agente de tránsito te agarra del brazo con el billete todavía en la mano.", "happiness": -10, "stress": 10, "karma": -6, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 10 }, "nextEventId": "trial_first_hearing" }
+      ]
+    },
+    {
+      "id": "crime_shoplift", "label": "Cinchar del colmado",
+      "ageMin": 10, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Metes el jamón y las pilas debajo de la franela y saldes la calle sin voltear hacia atrás.", "happiness": 4, "stress": 3, "karma": -5, "money": 800, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 10 }, "nextEventId": null },
+        { "weight": 25, "resultText": "La cámara te vio y el dueño te cobra a lo grande: te quedas sin nada y con deuda.", "happiness": -6, "stress": 6, "karma": -5, "money": -1500, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "El guardia del colmado te sigue hasta la puerta y te para con la mercancía en la mochila.", "happiness": -12, "stress": 12, "karma": -5, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 10 }, "nextEventId": "trial_first_hearing" }
+      ]
+    },
+    {
+      "id": "crime_steal_bike", "label": "Aguantar una bici o moto que no es tuya",
+      "ageMin": 12, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La cadena cede al tercer intento y vendes el rodado en la feria del barrio esa misma tarde.", "happiness": 5, "stress": 4, "karma": -12, "money": 4500, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 15 }, "nextEventId": null },
+        { "weight": 35, "resultText": "El dueño aparece con la llave y la moto llevaGPS. Susurra tu cara a la policía por teléfono.", "happiness": -8, "stress": 8, "karma": -12, "money": 0, "flag": "WANTED", "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "Te paran en un checkpoint con el rodado todavía caliente. Ahora el expediente tiene tu nombre.", "happiness": -14, "stress": 14, "karma": -12, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": "trial_first_hearing" }
+      ]
+    },
+    {
+      "id": "crime_burglari_house", "label": "Entrar a robar a una casa",
+      "ageMin": 16, "ageMax": 120, "cost": 500, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Entras por el patio trasero, vacías el cajón del noticiero y sales sin que nadie saque el perro.", "happiness": 6, "stress": 8, "karma": -20, "money": 18000, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "El vecino noctíambulo te ve pasar con el saco a medio abrir y guarda silencio, por ahora.", "happiness": 2, "stress": 12, "karma": -20, "money": 9000, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "La alarma suena al tocar la ventana y llegan los команды antes de que llegues a la esquina.", "happiness": -18, "stress": 18, "karma": -20, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_breakin" }
+      ]
+    },
+    {
+      "id": "crime_rob_person", "label": "Asaltar de frente",
+      "ageMin": 16, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "El cuchillo hace el trabajo: el ingeniero te entrega todo y caminas dos cuadras como si nada.", "happiness": 5, "stress": 12, "karma": -28, "money": 12000, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "La víctima grita y salen vecinos con machetes. Corres sin botín y sin la zapatilla.", "happiness": -10, "stress": 15, "karma": -28, "money": 0, "flag": "WANTED", "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "La víctima era un guardaespaldas de franela limpia. Terminas esposado contra el muro de la farmacia.", "happiness": -20, "stress": 20, "karma": -28, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": "trial_robbery" }
+      ]
+    },
+    {
+      "id": "crime_carjacking", "label": "Roñar un carro",
+      "ageMin": 16, "ageMax": 120, "cost": 2000, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "En un taller del ingenio un Quisqueya se converte en 350 mil pesos en efectivo esa misma noche.", "happiness": 8, "stress": 10, "karma": -25, "money": 60000, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "El seguro pagó, pero la dueña era prima del comisario y el expediente empieza a crecer.", "happiness": -5, "stress": 14, "karma": -25, "money": 0, "flag": "WANTED", "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "Un checkpoint te intercepta a la altura del elevador. El carro lleva rastreador desde fábrica.", "happiness": -22, "stress": 22, "karma": -25, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": "trial_breakin" }
+      ]
+    },
+    {
+      "id": "crime_sell_drugs", "label": "Vender drogas en la esquina",
+      "ageMin": 14, "ageMax": 120, "cost": 3000, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El paquete se mueve entero en dos días y duplicas la inversión sin gastar un billete en excusas.", "happiness": 6, "stress": 8, "karma": -22, "money": 15000, "flag": "DRUG_DEALER", "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "La media venta va bien, pero un cliente se te pasa de dosis y el barrio murmura.", "happiness": -4, "stress": 12, "karma": -22, "money": 4000, "flag": "DRUG_DEALER", "removeFlag": null, "traitWeightMods": { "jealous": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Un comprador era señalador. El operativo te frasea con el paquete en la mano.", "happiness": -18, "stress": 18, "karma": -22, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_drugs" }
+      ]
+    },
+    {
+      "id": "crime_smuggle", "label": "Pasarme mercancía de contrabando",
+      "ageMin": 18, "ageMax": 120, "cost": 5000, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El pasillo vacío del muelle y el inspector que negocia sonriendo hacen la carga un negocio limpio.", "happiness": 7, "stress": 8, "karma": -18, "money": 40000, "flag": "SMUGGLER", "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Cobras el flete, pero el cliente revende en el mismo barrio y el círculo se te cierra encima.", "happiness": 0, "stress": 12, "karma": -18, "money": 18000, "flag": "SMUGGLER", "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El escáner en el puerto marca algo más que ropa. La DNCD te recebe ahí mismo.", "happiness": -20, "stress": 20, "karma": -18, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_customs" }
+      ]
+    },
+    {
+      "id": "crime_hack_account", "label": "Meterme en cuentas ajenas",
+      "ageMin": 14, "ageMax": 120, "cost": 500, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Un broker descuidado te deja transferir 90 mil a una cuenta recién abierta en una entidad en Off-shore.", "happiness": 8, "stress": 6, "smarts": 2, "karma": -20, "money": 90000, "flag": "HACKER", "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "El empleo holds la transferencia tres días y学科的 cede, pero el cliente reporta y borras todo.", "happiness": 2, "stress": 10, "smarts": 1, "karma": -20, "money": 0, "flag": "HACKER", "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Un investigador cibernético te sigue por la misma IP tres veces. Tocan tu puerta con la orden.", "happiness": -20, "stress": 20, "karma": -20, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_hacking" }
+      ]
+    },
+    {
+      "id": "crime_launder_money", "label": "Lavarme el dinero con un negocio",
+      "ageMin": 20, "ageMax": 120, "cost": 15000, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minStat": { "smarts": 40 }, "flagsAny": ["DRUG_DEALER", "SMUGGLER", "GANG_MEMBER", "MAFIA_MADE"], "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El colmado grande de la avenida reporta ventas que nunca existieron y ahora tu dinero tiene historia.", "happiness": 8, "stress": 5, "smarts": 2, "karma": -15, "money": 0, "flag": "LAUNDERING", "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "El contador se queda con una parte y amenaza con tirar la bomba. Toca pagar su silencio.", "happiness": -6, "stress": 14, "karma": -15, "money": -25000, "flag": "LAUNDERING", "removeFlag": null, "traitWeightMods": { "jealous": 15 }, "nextEventId": null },
+        { "weight": 20, "resultText": "La fiscalía abre un expediente por las ventas del negocio. Tu dinero tiene nombre y apellido ahora.", "happiness": -18, "stress": 18, "karma": -15, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_launder" }
+      ]
+    },
+    {
+      "id": "crime_join_gang", "label": "Meterme en la pandilla del barrio",
+      "ageMin": 12, "ageMax": 60, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "flagsNone": ["GANG_MEMBER", "IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Pasas el saludo de la esquina, te dan el apodo y ahí empieza tu familia de la calle.", "happiness": 6, "stress": 6, "karma": -15, "popularity": 4, "flag": "GANG_MEMBER", "removeFlag": null, "traitWeightMods": { "loyal": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Aceptan el ingreso pero mandan a alguien a vigilar la casa de tu madre como garantía.", "health": -4, "happiness": -4, "stress": 10, "karma": -15, "money": 0, "flag": "GANG_MEMBER", "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null },
+        { "weight": 20, "resultText": "La banda de la esquina dispara destrozando tus planes: te vas a casa con una balacera en la memoria.", "health": -25, "happiness": -15, "stress": 15, "karma": -15, "money": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "crime_leave_gang", "label": "Tratar de salir de la pandilla",
+      "ageMin": 14, "ageMax": 80, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "flagsExist": ["GANG_MEMBER"], "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "UnArzo que se muda lejos y un teléfono apagado bastan: la banda pierde interés con los años.", "happiness": 12, "stress": 4, "karma": 5, "flag": null, "removeFlag": "GANG_MEMBER", "traitWeightMods": { "forgiving": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Dejas el barrio pero te marcaron a fuego en el flanco: el apodo viaja más rápido que tú.", "happiness": -2, "stress": 8, "karma": 5, "flag": "WANTED", "removeFlag": "GANG_MEMBER", "traitWeightMods": { "resentful": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Dogma de sangre: salir tiene precio y hoy te toca pagarlo con la piel.", "health": -45, "happiness": -20, "stress": 20, "karma": 5, "money": 0, "flag": null, "removeFlag": "GANG_MEMBER", "traitWeightMods": { "cold": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "crime_ask_mafia", "label": "Pedir entrar con la mafia",
+      "ageMin": 21, "ageMax": 120, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "minStat": { "smarts": 50 }, "flagsAny": ["DRUG_DEALER", "SMUGGLER", "CRIMINAL_RECORD"], "flagsNone": ["IN_PRISON", "GANG_MEMBER", "DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "El padrino te recibe en el despacho del restaurante y una vela marca tu frente. Ya eres de la familia.", "happiness": 10, "stress": 6, "karma": -20, "money": 0, "flag": "MAFIA_MADE", "removeFlag": null, "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Te dicen que vuelvas con un favor hecho: hay un almacén que necesita quedarse sin encargado.", "happiness": -2, "stress": 10, "karma": -20, "money": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "strict": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Nadie conoce a tu padrino de verdad. Te cobran por la reunión y te mandan a la calle a hacer méritos.", "happiness": -8, "stress": 12, "karma": -20, "money": -20000, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "crime_mafia_job", "label": "Hacer un trabajo para la familia",
+      "ageMin": 21, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["MAFIA_MADE"], "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El recado, la cobranza y el mensaje se entregan en orden. La familia suelta el sobre grueso.", "happiness": 5, "stress": 6, "karma": -18, "money": 35000, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "El negocio se resiste a firmar. Toca volver dos veces y la tercera deja nervios.", "happiness": 0, "stress": 10, "karma": -18, "money": 15000, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "El plan se tuerce y la policía llega al lugar. La familia manda su abogado, pero la foto salió.", "happiness": -18, "stress": 18, "karma": -18, "money": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": "trial_robbery" }
+      ]
+    },
+    {
+      "id": "crime_turn_self_in", "label": "Entregarme a la policía",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "flagsAny": ["WANTED", "CRIMINAL_RECORD"], "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te presentas voluntario, cooperas con la fiscalía y tu caso se abre en condiciones de negociación.", "happiness": -8, "stress": 8, "karma": 15, "flag": "CRIMINAL_RECORD", "removeFlag": "WANTED", "nextEventId": "trial_first_hearing" },
+        { "weight": 30, "resultText": "El expediente pesa más de lo que esperaba: el juez no da condiciones y vas por la vía larga.", "happiness": -15, "stress": 12, "karma": 10, "flag": "CRIMINAL_RECORD", "removeFlag": "WANTED", "nextEventId": "trial_verdict_guilty" },
+        { "weight": 15, "resultText": "El abogado de oficio consigue un acuerdo: pagas una multa fuerte y firmas conducta limpia.", "happiness": -5, "stress": 6, "karma": 12, "money": -8000, "flag": "CRIMINAL_RECORD", "removeFlag": "WANTED", "nextEventId": null }
+      ]
+    },
+    {
+      "id": "crime_bribe_cop", "label": "Sobornar a la policía",
+      "ageMin": 18, "ageMax": 120, "cost": 5000, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "El billete doblado desaparece en la manga del uniformado y tu nombre desaparece del reporte.", "happiness": 4, "stress": -4, "karma": -10, "flag": null, "removeFlag": "WANTED", "traitWeightMods": { "manipulative": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El oficial recibe, pero conserva ambas carpetas: ahora él te debe odio y tú le debes favores.", "happiness": -2, "stress": 8, "karma": -10, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 15 }, "nextEventId": null },
+        { "weight": 20, "resultText": "El oficial era de asuntos internos. El sobre queda de evidencia y tu caso crece una hoja.", "happiness": -16, "stress": 18, "karma": -5, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": "trial_bribe" }
+      ]
+    }
+  ]
+}

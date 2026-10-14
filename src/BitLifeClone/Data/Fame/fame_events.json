@@ -1,0 +1,151 @@
+{
+  "module": "fame_chains",
+  "note": "Cadenas de fama (F1). Los Age Up pueden tirar estas cadenas cuando fame >= 25 o ya hay flags de fama. Profundidad maxima 4.",
+  "events": [
+    {
+      "id": "fame_viral_moment",
+      "pool": "fame",
+      "text": "Un video tuyo de tres segundos amanece con dos millones de vistas: tu cara está en los memes de la mañana entera.",
+      "choices": [
+        {
+          "text": "Saltar sobre la ola быстро",
+          "outcomes": [
+            { "weight": 50, "resultText": "Grabas secuela del video esa misma tarde: la ola te sukita hasta la televisión local del mediodía.", "happiness": 10, "fame": 10, "money": 5000 },
+            { "weight": 30, "resultText": "El follow-up sale flojo y la ola pasa con tu cara en segundo plano del algoritmo.", "happiness": -2, "fame": 4 },
+            { "weight": 20, "resultText": "La segunda versión cambia el tono y el público siente que te vendió: la ola se volcó.", "happiness": -8, "fame": 5, "flag": "HATER_MAGNET", "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Contratar marca y anuncios",
+          "outcomes": [
+            { "weight": 45, "resultText": "Dos marcas locales pagan por tu gesto viral: la bolsa llena y el pitcheo de la agencia también.", "happiness": 8, "fame": 8, "money": 25000 },
+            { "weight": 35, "resultText": "Publicidad de lo que no usas: la regularidad de tu audiencia baja un grado sin que lo notes.", "happiness": -2, "fame": 5, "money": 12000 },
+            { "weight": 20, "resultText": "La marca paga cheque frío y el video del anuncio se apaga sin entrar en el ruido: aprendiste que la caja no vende.", "happiness": 0, "fame": 2, "money": 8000 }
+          ]
+        },
+        {
+          "text": "Dejar que el video se esfume solo",
+          "outcomes": [
+            { "weight": 55, "resultText": "El algoritmo se apaga solo y tu video se vuelve recuerdo de un martes nada más.", "happiness": 2, "fame": 1 },
+            { "weight": 45, "resultText": "El video vuelve a la superficie al tercer día: perdiste la ola grande y te queda una ola chica.", "happiness": -2, "fame": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fame_cancel_attempt",
+      "pool": "fame",
+      "text": "Un hilo largo con capturas y fechas salió esta mañana: dicen que estafaste a un fan con un meet & greet que nunca ocurrió.",
+      "choices": [
+        {
+          "text": "Negar con pruebas de reembolso",
+          "outcomes": [
+            { "weight": 50, "resultText": "Los comprobantes de reembolso salen a la luz: el hilo se apaga y el que te acusó borra su cuenta.", "happiness": 6, "fame": 4, "stress": -6, "flag": null, "removeFlag": "CANCELLED" },
+            { "weight": 30, "resultText": "Los reembolsos existen pero dos llegaron tarde: el hilo sigue vivo con nueva arma.", "happiness": -6, "fame": 5, "stress": 10, "flag": "SCANDAL" },
+            { "weight": 20, "resultText": "La acusación era verdadera y las capturas ya tenían el historial del banco: el silencio de tu abogado dice todo.", "happiness": -14, "fame": 8, "stress": 14, "flag": "CANCELLED", "nextEventId": "fame_public_apology_chain" }
+          ]
+        },
+        {
+          "text": "Borrar la cuenta y desaparecer",
+          "outcomes": [
+            { "weight": 45, "resultText": "El silencio digital se lee como culpa: la conversación sigue sin ti y las marcas cancelan pauta.", "happiness": -10, "fame": 4, "stress": 12, "money": -8000, "flag": "CANCELLED" },
+            { "weight": 35, "resultText": "Fuera de la red la arreglas en persona: el fan aceptó disculpa y el tema murió en el taller del barrio.", "happiness": 2, "fame": 2, "stress": -4, "flag": null, "removeFlag": "CANCELLED" },
+            { "weight": 20, "resultText": "La cuenta nueva regresa al mes y el público te perdona cuando la agenda del evento vuelve a moverse.", "happiness": 4, "fame": 3, "stress": 2, "flag": null, "removeFlag": "CANCELLED" }
+          ]
+        },
+        {
+          "text": "Irme en contra del acusador",
+          "outcomes": [
+            { "weight": 40, "resultText": "La pelea pública garnica más espectadores que el escándalo original: los dos salen manchados.", "happiness": -8, "fame": 8, "stress": 12, "flag": "HATER_MAGNET" },
+            { "weight": 30, "resultText": "El acusador tiene capturas que no pensabas: la demanda por difamación te llega a la puerta.", "happiness": -14, "fame": 6, "stress": 16, "money": -15000, "flag": "SCANDAL" },
+            { "weight": 30, "resultText": "El pleito abre tema nuevo: la fama sube aunque la conversación te marque a fuego.", "happiness": -4, "fame": 10, "stress": 10, "flag": "HATER_MAGNET", "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fame_public_apology_chain",
+      "pool": "fame",
+      "text": "El equipo de PR sugiere una conferencia formal con guion aprobado: la sala llena de cámaras y el apunte tembloroso en la mano.",
+      "choices": [
+        {
+          "text": "Leer el guion de disculpa",
+          "outcomes": [
+            { "weight": 45, "resultText": "La disculpa lee fría firma abogado: se aplaca público pero la memoria de la gente conserva el sabor del papel.", "happiness": 2, "fame": 4, "stress": -2, "flag": null, "removeFlag": "CANCELLED" },
+            { "weight": 35, "resultText": "El guion se interrumpe cuando alguien suelta el recorte del segundo caso: la sala se volvió tribunal.", "happiness": -10, "fame": 6, "stress": 12, "flag": "SCANDAL" },
+            { "weight": 20, "resultText": "La disculpa suena tan bien que los memes la rescatan: nobel de disculpas aunque el fondo quede igual.", "happiness": 6, "fame": 8, "stress": 2 }
+          ]
+        },
+        {
+          "text": "Hablar sin guion y desde el corazón",
+          "outcomes": [
+            { "weight": 40, "resultText": "Las palabras sueltas y honestas calan más que cualquier guion: el tema baja temperatura del todo.", "happiness": 8, "fame": 6, "stress": -8, "flag": null, "removeFlag": "CANCELLED", "traitWeightMods": { "forgiving": 20 } },
+            { "weight": 35, "resultText": "Sin guion, sueltas un dato que la prensa sabía guarder: el tema se vuelve el doble de grande.", "happiness": -12, "fame": 8, "stress": 14, "flag": "SCANDAL" },
+            { "weight": 25, "resultText": "Te quebras en vivo y el público llora contigo: la sociedad del meme tiene corazón después de todo.", "happiness": 5, "fame": 8, "stress": 2, "flag": null, "removeFlag": "CANCELLED" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fame_contract_dispute",
+      "pool": "fame",
+      "text": "La disquera te aprieta: quieren el 60% del próximo tour y amenazan con bloquear tu catálogo si no firmas.",
+      "choices": [
+        {
+          "text": "Firmar la cláusula nueva",
+          "outcomes": [
+            { "weight": 50, "resultText": "Firmas con cara larga: el tour se hace, el dinero viene, y la disquera te mete al bolsillo con sonrisa.", "happiness": -6, "fame": 6, "money": 90000, "flag": "UNDER_CONTRACT" },
+            { "weight": 30, "resultText": "La firma sale limpia tras renegociar: 45% es dolor pero tolerable con aval del abogado.", "happiness": 2, "fame": 6, "money": 120000, "flag": "UNDER_CONTRACT" },
+            { "weight": 20, "resultText": "Compras el silencio del fiscal con un adelanto: firma bajo presión, pero la agenda llena paga.", "happiness": -2, "fame": 4, "money": 60000, "flag": "UNDER_CONTRACT" }
+          ]
+        },
+        {
+          "text": "Pelea legal por el catálogo",
+          "outcomes": [
+            { "weight": 35, "resultText": "La corte te da la razón: quedas libre con la mitad del catálogo y la disquera respirando rabia.", "happiness": 10, "fame": 6, "money": -30000 },
+            { "weight": 45, "resultText": "La disquera gana: catálogo bloqueado, borde de la quiebra y dos años de guerra judicial.", "happiness": -14, "fame": -5, "stress": 16, "money": -60000, "flag": "SCANDAL" },
+            { "weight": 20, "resultText": "La guerra termina en acuerdo: catálogo compartido y cláusula de rescisión focalizada.", "happiness": 0, "fame": 2, "money": -15000 }
+          ]
+        },
+        {
+          "text": "Filtrar la disputa a la prensa",
+          "outcomes": [
+            { "weight": 40, "resultText": "El público te abraza como el bueno de la historia: la disquera se pinchó con la opinión pública.", "happiness": 6, "fame": 8, "stress": 4 },
+            { "weight": 35, "resultText": "La filtro duele más: la prensa saca tu parte oscura del contrato y el pleito se vuelve escándalo doble.", "happiness": -10, "fame": 8, "stress": 12, "flag": "SCANDAL" },
+            { "weight": 25, "resultText": "La disquera te mete aDecoder contractual por filtración: el break tie te cuesta el caché del año.", "happiness": -12, "fame": 2, "stress": 14, "money": -40000 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fame_decline_celebrity",
+      "pool": "fame",
+      "text": "Los números empezaron a caer: la agenda se vacía, las invitaciones llegan menos y el club del boom ya no pregunta por ti.",
+      "choices": [
+        {
+          "text": "Reinventar mi imagen",
+          "outcomes": [
+            { "weight": 50, "resultText": "El cambio de look y de repertorio prende lento pero prende: la nueva ola te agarra de lado.", "happiness": 8, "fame": 6, "stress": 4 },
+            { "weight": 30, "resultText": "La imagen nueva confunde: el público viejo no te sigue y el nuevo no llega todavía.", "happiness": -4, "fame": 2, "stress": 8 },
+            { "weight": 20, "resultText": "El makeover sale caro en la foto: modelos, diseño y sesiones recuperaron menos de la mitad del cheque.", "happiness": -6, "fame": 4, "money": -15000 }
+          ]
+        },
+        {
+          "text": "Aceptar el bajón en silencio",
+          "outcomes": [
+            { "weight": 55, "resultText": "La fama baja sin drama: la vida normal recupera peso, aunque el espejo del escenario te llame a veces.", "happiness": 2, "fame": -5, "stress": -6 },
+            { "weight": 45, "resultText": "El silencio cierra la puerta entera: de celebritaslatina recordado a número prieto en seis meses.", "happiness": -8, "fame": -10, "stress": 6 }
+          ]
+        },
+        {
+          "text": "Forzar un escándalo para volver arriba",
+          "outcomes": [
+            { "weight": 40, "resultText": "El escándalo plantado prende: la fama sube por la basura y la agenda vuelve a llenarse.", "happiness": -2, "fame": 10, "stress": 10, "flag": "SCANDAL" },
+            { "weight": 35, "resultText": "El público huele la fábrica del escándalo: el show se mente y la calle se burla.", "happiness": -12, "fame": 4, "stress": 12, "flag": "HATER_MAGNET" },
+            { "weight": 25, "resultText": "El escándalo plantado choca con el real: alguien sale con prueba verdadera de lo que no querías ver.", "happiness": -16, "fame": 8, "stress": 16, "flag": "CANCELLED" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "pool": "pool_civil_threatened",
+    "events": [
+      {
+        "id": "civil_threatened_evacuate",
+        "pool": "pool_civil_threatened",
+        "text": "Los altavoces de la calle piden evacuar la zona en las próximas 48 horas. Hay camiones y hay vecinos que no creen. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me voy con lo puesto",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te subes a un camión con una maleta y el álbum de fotos. La ciudad se queda atrás.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 25, "resultText": "El camión llega tarde al punto de reunión y se va lleno antes de que llegues.", "health": -5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo a cuidar la casa",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te quedas con otros tres vecinos tercos. La casa sigue en pie por ahora.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_threatened_stay_home" },
+              { "weight": 50, "resultText": "Los primeros bombardeos arrancan telediario y ya no hay tiempo de irse.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "civil_threatened_stay_home" }
+            ]
+          },
+          {
+            "text": "Vendo lo que no me llevo",
+            "outcomes": [
+              { "weight": 60, "resultText": "Vendes el televisor y el sofá a precio de remate. Al menos sales con algo de efectivo.", "health": 0, "happiness": -8, "money": 400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Un 'comprador' te quita los muebles y se larga sin pagar.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_threatened_stay_home",
+        "pool": "pool_civil_threatened",
+        "text": "Has decidido quedarte. Cada noche se oyen convoyes y cada mañana hay un anuncio menos en la radio. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Preparo el refugio",
+            "outcomes": [
+              { "weight": 80, "resultText": "Llenas la bañera de agua y el sótano de latas. Tienes para un mes de asedio.", "health": 0, "happiness": 5, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un oficial 'inspecciona' tu sótano y se lleva la mitad de las provisiones.", "health": 0, "happiness": -15, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Organizo a los vecinos",
+            "outcomes": [
+              { "weight": 65, "resultText": "Armas un grupo de vigía con radios de piloto. El barrio duerme más tranquilo.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Un vecino del grupo trabaja para el otro bando. La lista de nombres cae en manos equivocadas.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me acuesto y espero",
+            "outcomes": [
+              { "weight": 60, "resultText": "Te pasas los días en la cama con la radio. La guerra se siente más cerca que el pánico.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Un zarpazo de la guerra te llega sin previo aviso y no estabas preparado.", "health": -20, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_threatened_rationing",
+        "pool": "pool_civil_threatened",
+        "text": "El gobierno impone racionamiento: tarjetas de pan, tope de combustible y prohibición de horneados. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Juego con las cartas",
+            "outcomes": [
+              { "weight": 75, "resultText": "Aprendes a estirar la tarjeta como el mejor contador del barrio. La familia come.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Intercambias la tarjeta con una vecina y descubren la movida del barrio.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco mercado negro",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un contacto del mercado te consigue aceite y azúcar sin sello. Cuestan el doble.", "health": 0, "happiness": 5, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La compra negra era mercancía robada del convoy militar. Te siguen el rastro.", "health": 0, "happiness": -20, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cultivo en el patio",
+            "outcomes": [
+              { "weight": 70, "resultText": "Sembraste papas en azoteas y baldones. En tres meses el barrio te envidia.", "health": 3, "happiness": 12, "money": -150, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "La sequía y los soldados pisoteando el terreno se llevan la cosecha.", "health": 0, "happiness": -12, "money": -150, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_threatened_family_drafted",
+        "pool": "pool_civil_threatened",
+        "text": "La guerra se acerca y tu hijo acaba de cumplir 18. Ya no es voluntario: la lista ahora es obligatoria. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Lo dejo ir como héroe",
+            "outcomes": [
+              { "weight": 70, "resultText": "Lo despides en la estación con un discurso que no puedes terminar. Lo alistaste con honor.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Se fue orgulloso. Tres meses después llega un sobre con la bandera doblada.", "health": 0, "happiness": -40, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo escondo en el campo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Lo mandas con unos tíos lejos de la ciudad. El expediente queda sin firmar.", "health": 0, "happiness": 5, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Buscan al novato en la casa y terminas explicándole a tu hijo por qué se va él y no tú.", "health": 0, "happiness": -20, "money": -300, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le fabrico papeles médicos",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un doctor por contactos lo declara 'no apto por asma crónica'. Cuesta caro pero funciona.", "health": 0, "happiness": 10, "money": -2500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "La revisión médica del cuartel huele la mentira. Ahora van por los dos.", "health": 0, "happiness": -30, "money": -2500, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "civil_threatened_shelter",
+        "pool": "pool_civil_threatened",
+        "text": "El colegio del barrio se abre como refugio antiaéreo. Todavía no hay sirenas, pero ya hay colchones en el gimnasio. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me instalo allí ya",
+            "outcomes": [
+              { "weight": 75, "resultText": "Llevas los colchones y la familia al gimnasio. Cuando suenen las sirenas, ya estás dentro.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El gimnasio se llena y una noche alguien se lleva tu equipo de dormir.", "health": -5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Ayudo a preparar el refugio",
+            "outcomes": [
+              { "weight": 80, "resultText": "Pasas la semana pintando letreros y bajando colchones. El director te nombra su mano derecha.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Mientras cargas colchones te resbalas en la escalera y te rompes un brazo.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo en casa",
+            "outcomes": [
+              { "weight": 55, "resultText": "Tu casa tiene sótano y tú tienes muletas de toda la vida. Te quedas.", "health": 0, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La primera noche de sirenas la pasas bajo la mesa, con los dientes cantando.", "health": -5, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

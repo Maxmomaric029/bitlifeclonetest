@@ -1,0 +1,126 @@
+{
+  "relationType": "work",
+  "byType": ["boss", "coworker"],
+  "actions": [
+    { "id": "boss_ask_raise", "label": "Pedir un aumento", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Revisa tus números, asiente y te sube el sueldo desde la próxima quincena.", "relationDelta": 4, "money": 300, "happiness": 8, "traitWeightMods": { "generous": 25 } },
+        { "weight": 45, "resultText": "Te dice que la empresa está apretada y que vuelvas a hablar en diciembre.", "relationDelta": -2, "stress": 4, "traitWeightMods": { "stingy": 20 } },
+        { "weight": 20, "resultText": "Le cae mal la pregunta y te carga de trabajo el resto del mes.", "relationDelta": -8, "stress": 8, "traitWeightMods": { "strict": 20, "resentful": 10 } }
+      ] },
+    { "id": "boss_suck_up", "label": "Hacerle la pelota al jefe", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Le celebras cada chiste en la reunión y te invita a almorzar.", "relationDelta": 8, "popularity": -2, "traitWeightMods": { "manipulative": 15 } },
+        { "weight": 35, "resultText": "Ni se entera: está demasiado ocupado con el informe trimestral.", "relationDelta": 1, "traitWeightMods": { "cold": 20 } },
+        { "weight": 20, "resultText": "Tus compañeros te ven y empiezan a dejarte fuera del grupo de chat.", "relationDelta": 4, "popularity": -6, "happiness": -3, "traitWeightMods": { "jealous": 15 } }
+      ] },
+    { "id": "boss_overtime", "label": "Ofrecerme para horas extra", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te quedas hasta tarde tres semanas y el cheque viene gordito.", "relationDelta": 6, "money": 200, "stress": 7, "health": -2, "traitWeightMods": { "strict": 15 } },
+        { "weight": 30, "resultText": "Las horas extra salen en el cheque como si fueran normales.", "relationDelta": -3, "stress": 6, "traitWeightMods": { "stingy": 25 } },
+        { "weight": 15, "resultText": "Te agotas tanto que caes con fiebre y faltas una semana.", "relationDelta": -2, "health": -8, "stress": 10, "traitWeightMods": { "cold": 15 } }
+      ] },
+    { "id": "boss_complain", "label": "Quejarme con el jefe", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te escucha, toma nota y arregla el horario de todo el equipo.", "relationDelta": 4, "stress": -5, "popularity": 3, "traitWeightMods": { "forgiving": 20 } },
+        { "weight": 40, "resultText": "Te dice que la puerta está abierta para quien no esté conforme.", "relationDelta": -6, "stress": 6, "traitWeightMods": { "cold": 20 } },
+        { "weight": 20, "resultText": "Lo toma como insubordinación y te despide antes del viernes.", "relationDelta": -20, "happiness": -10, "stress": 10, "loseJob": true, "traitWeightMods": { "strict": 25, "resentful": 15 } }
+      ] },
+    { "id": "boss_promotion", "label": "Pedir un ascenso", "allowedTypes": ["boss"], "minAge": 18, "maxAge": 80, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 50, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Te nombra supervisor de turno y te da oficina con aire acondicionado.", "relationDelta": 6, "money": 400, "happiness": 10, "stress": 4, "traitWeightMods": { "loyal": 20 } },
+        { "weight": 45, "resultText": "Le da el puesto al sobrino recién llegado. Así es la cosa.", "relationDelta": -5, "happiness": -8, "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 20, "resultText": "Te dice que todavía te falta madurez y te pone un plan de mejora.", "relationDelta": -2, "stress": 5, "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "boss_gift", "label": "Regalarle algo al jefe", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 50, "cooldownYears": 0, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Le regalas una botella de ron añejo por Navidad y te guiña el ojo.", "relationDelta": 7, "traitWeightMods": { "party_animal": 15 } },
+        { "weight": 35, "resultText": "Lo recibe sin emoción y lo deja encima del archivo.", "relationDelta": 1, "traitWeightMods": { "cold": 20 } },
+        { "weight": 15, "resultText": "Recursos Humanos te recuerda que los regalos al jefe están prohibidos.", "relationDelta": -2, "stress": 4, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "boss_confront", "label": "Enfrentar al jefe", "allowedTypes": ["boss"], "minAge": 18, "maxAge": 80, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Le dices en la cara que su trato es abusivo y, para sorpresa de todos, se disculpa.", "relationDelta": 5, "karma": 4, "stress": -4, "traitWeightMods": { "forgiving": 20 } },
+        { "weight": 40, "resultText": "Se forma un griterío en la oficina y quedan sin hablarse.", "relationDelta": -15, "stress": 8, "traitWeightMods": { "resentful": 25 } },
+        { "weight": 30, "resultText": "Te pide que recojas tus cosas y te escolta seguridad hasta la puerta.", "relationDelta": -25, "happiness": -12, "loseJob": true, "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "boss_day_off", "label": "Pedir un día libre", "allowedTypes": ["boss"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te da el viernes libre y te dice que descanses de verdad.", "relationDelta": 3, "stress": -8, "happiness": 4, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 30, "resultText": "Te lo da, pero descontado del sueldo.", "relationDelta": 0, "stress": -4, "money": -40, "traitWeightMods": { "stingy": 20 } },
+        { "weight": 15, "resultText": "Te lo niega justo el día del bautizo de tu sobrino.", "relationDelta": -6, "happiness": -6, "traitWeightMods": { "strict": 25 } }
+      ] },
+
+    { "id": "coworker_lunch", "label": "Almorzar con un compañero de trabajo", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 10, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Comparten la bandera dominicana del comedor y se ríen de la última reunión.", "relationDelta": 8, "happiness": 4, "stress": -3, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 30, "resultText": "Se pasa el almuerzo quejándose de su suegra.", "relationDelta": 2, "stress": 2, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 15, "resultText": "Se le olvida la cartera y pagas tú, como la otra vez.", "relationDelta": -3, "money": -10, "traitWeightMods": { "stingy": 20 } }
+      ] },
+    { "id": "coworker_cover_shift", "label": "Cubrirle el turno", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Tomas el turno del sábado por él y te lo agradece trayéndote un chin de comida al día siguiente.", "relationDelta": 6, "money": 60, "stress": 4, "traitWeightMods": { "loyal": 20 } },
+        { "weight": 35, "resultText": "Cubres el turno y ni un gracias; guardas la nota para cuando te pida algo de nuevo.", "relationDelta": -4, "karma": -2, "stress": 5, "traitWeightMods": { "resentful": 20 } },
+        { "weight": 20, "resultText": "Mientras lo cubres, el supervisor nota que tú haces el trabajo mejor y te lo dice delante de todos.", "relationDelta": 2, "popularity": 4, "stress": 2, "traitWeightMods": { "generous": 20 } }
+      ] },
+    { "id": "coworker_gossip", "label": "Chismear del jefe", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te suelta que el jefe anda con secretarias de más; guardas el dato como un tesoro.", "relationDelta": 7, "happiness": 3, "traitWeightMods": { "jealous": 15 } },
+        { "weight": 30, "resultText": "Hablan dos palabradas y se cortan: nadie en esta oficina confía el tema del aire acondicionado de la sala ejecutiva.", "relationDelta": 2, "traitWeightMods": { "cold": 20 } },
+        { "weight": 20, "resultText": "El chisme llega al jefe con tu nombre detrás y quedas señalado como el chismoso del segundo piso.", "relationDelta": -10, "popularity": -5, "stress": 5, "traitWeightMods": { "resentful": 20 } }
+      ] },
+    { "id": "coworker_borrow_money", "label": "Pedirle plata prestada", "allowedTypes": ["coworker"], "minAge": 18, "maxAge": 80, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te presta el dineros sin meter pena y te dice que con que lo devuelvas cuando llegue tu quincena basta.", "relationDelta": 5, "money": 100, "traitWeightMods": { "generous": 25 } },
+        { "weight": 35, "resultText": "Te suelta que anda justo de cuenta todo el mes y cambia de tema hablando del clima.", "relationDelta": -2, "stress": 2, "traitWeightMods": { "stingy": 25 } },
+        { "weight": 25, "resultText": "Te lo presta, pero con interés semanal y recordatorio diario por WhatsApp.", "relationDelta": -3, "money": 100, "stress": 6, "traitWeightMods": { "stingy": 20 } }
+      ] },
+    { "id": "coworker_coffee", "label": "Compartir un cafecito", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 5, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Ponen cada cual su pela para el café de la máquina y comentan la mitad de la mañana que les queda.", "relationDelta": 5, "happiness": 2, "stress": -2, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 25, "resultText": "El café de la máquina sabe a agua con sombra, pero la conversación vale más que el café.", "relationDelta": 1, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 15, "resultText": "Mandaste a buscar el café tú y él se queda sentado tranquilo; traes dos vasos y ni uno le toca.", "relationDelta": -2, "money": -5, "traitWeightMods": { "stingy": 15 } }
+      ] },
+    { "id": "coworker_help_task", "label": "Echarle una mano con su pendiente", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Le terminas de armar el reporte y se lo lleva al jefe antes de que se le pase la hora.", "relationDelta": 7, "karma": 3, "stress": 3, "traitWeightMods": { "generous": 20 } },
+        { "weight": 30, "resultText": "Toda la semana te anda diciendo en donde lo ayudaste y la gente ya se le aburrió de oírlo.", "relationDelta": 4, "popularity": 2, "traitWeightMods": { "forgiving": 20 } },
+        { "weight": 20, "resultText": "Terminas haciendo lo tuyo y media parte de la suya; ni un reconocimiento te llega.", "relationDelta": -1, "stress": 6, "karma": -1, "traitWeightMods": { "cold": 15 } }
+      ] },
+    { "id": "coworker_vent", "label": "Desahogarse con un compañero", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Botan la banca por una hora larga y sales de ahí más liviano que una pluma.", "relationDelta": 6, "stress": -6, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 35, "resultText": "Le desahogas y te responde que hay que ponerle más ganas; te quedas con la espina encima.", "relationDelta": 0, "stress": 1, "traitWeightMods": { "strict": 20 } },
+        { "weight": 20, "resultText": "Tanta queja juntos les levanta la cabeza: decidieron hacer paro el lunes y tú te prestaste de plano.", "relationDelta": 5, "karma": 2, "happiness": 2, "stress": 2, "traitWeightMods": { "loyal": 20 } }
+      ] },
+    { "id": "coworker_hangout", "label": "Salir de farra después del trabajo", "allowedTypes": ["coworker"], "minAge": 18, "maxAge": 80, "cost": 40, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Salen de farra, cantan bachata con la banda en vivo hasta tarde y al día siguiente llegan arrastrando la pata los dos.", "relationDelta": 8, "happiness": 6, "health": -2, "fitness": -2, "traitWeightMods": { "party_animal": 25 } },
+        { "weight": 35, "resultText": "Resulta ser rumba disfrazada de reunión de trabajo: se van a las once hablando solo de metas y punteos.", "relationDelta": 2, "stress": 2, "traitWeightMods": { "strict": 20 } },
+        { "weight": 20, "resultText": "El grupo se parte en dos: los que bailaron toda la noche y él, pegado al celular mandando correos.", "relationDelta": -3, "happiness": -2, "traitWeightMods": { "cold": 20 } }
+      ] },
+    { "id": "coworker_take_credit", "label": "Atribuirme su mérito", "allowedTypes": ["coworker"], "minAge": 16, "maxAge": 80, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "IN_PRISON"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Le cuentas al jefe la idea suya como tuya y te aplauden en la reunión de los lunes.", "relationDelta": -12, "karma": -6, "popularity": 3, "traitWeightMods": { "manipulative": 30 } },
+        { "weight": 40, "resultText": "En la reunión nombras su nombre a tiempo y el jefe premia al equipo completo.", "relationDelta": 4, "karma": 3, "popularity": 2, "traitWeightMods": { "forgiving": 20 } },
+        { "weight": 25, "resultText": "El jefe revisa el correo del equipo y ve que la idea no salió de ti; te mira feo el resto del mes.", "relationDelta": -20, "happiness": -6, "stress": 9, "traitWeightMods": { "strict": 25 } }
+      ] }
+  ]
+}

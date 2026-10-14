@@ -1,0 +1,379 @@
+[
+  {
+    "pool": "pool_pow",
+    "events": [
+      {
+        "id": "pow_interrogation",
+        "pool": "pool_pow",
+        "highDanger": true,
+        "text": "Te arrastran al interrogatorio. Quieren que nombres a tu oficial de enlace y la posición de tu unidad. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Invento nombres falsos",
+            "outcomes": [
+              { "weight": 65, "resultText": "Te creen a medias. Te devuelven a la celta con los nervios destrozados.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Se dan cuenta de que inventas y te dan una paliza de disciplina.", "health": -12, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Colaboro con el enemigo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Tus datos ayudan a emboscar a tu antigua unidad. Lo duermes poco esa noche.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_interrogation_snitch" },
+              { "weight": 50, "resultText": "Te tratan mejor, pero los prisioneros de tu país ya sospechan de ti.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_interrogation_snitch" }
+            ]
+          },
+          {
+            "text": "Me callo y aguanto",
+            "outcomes": [
+              { "weight": 60, "resultText": "No abres la boca. Te rompen dos dedos por disciplinarte.", "health": -15, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Se cansan de golpearte y te arrastran de vuelta a la celda.", "health": -6, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Uno de los interrogadores se divierte demasiado. No sales de esa sala.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_interrogation_snitch",
+        "pool": "pool_pow",
+        "text": "Has dado información. Al día siguiente te sacan otra vez, ahora para que identifiques fotos de soldados. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Sigo cooperando",
+            "outcomes": [
+              { "weight": 70, "resultText": "Identificas a unos cuantos. Los tuyos nunca lo sabrán, supones.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Reconoces las caras, pero finges confusión con cada una. Se frustran.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Dejo de cooperar",
+            "outcomes": [
+              { "weight": 55, "resultText": "Cortas la colaboración de golpe. Te pasan a aislamiento por castigo.", "health": -5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Recuerdan lo que hiciste antes y te la hacen pagar doble.", "health": -18, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Escupo al interrogador",
+            "outcomes": [
+              { "weight": 50, "resultText": "Satisfecho contigo mismo, pero te dan la peor paliza de tu vida.", "health": -30, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Te dejan medio inconsciente en el suelo de la sala.", "health": -25, "happiness": 0, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El oficial pierde la paciencia y la calma para siempre.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_escape",
+        "pool": "pool_pow",
+        "text": "Un prisionero viejo te avisa: hay un hueco detrás de la cocina. Esta noche puede ser. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me uno a la fuga",
+            "outcomes": [
+              { "weight": 60, "resultText": "Empiezas a cavar con las manos hasta que el dedo se te va a romper.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_escape_tunnel" },
+              { "weight": 40, "resultText": "Esa noche tú y el viejo se meten por el túnel. La madrugada decide.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_escape_tunnel" }
+            ]
+          },
+          {
+            "text": "Aviso a los guardias",
+            "outcomes": [
+              { "weight": 60, "resultText": "Los guardias frustran la fuga. Los demás prisioneros saben que fuiste tú.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Te premian con comida extra, pero tu reputación vale ya menos que el hambre.", "health": 3, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo en la cama",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te quedas quieto. Al amanecer los capturan a todos y a ti te toca castigo colectivo.", "health": -8, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Los dejan salir. Tú sigues aquí, en la litera de arriba, preguntándote.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_escape_tunnel",
+        "pool": "pool_pow",
+        "text": "El túnel huele a tierra húmeda y a miedo. En un cruce, el viejo se queda atascado. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Vuelvo a por él",
+            "outcomes": [
+              { "weight": 55, "resultText": "Lo sacas arrastrando y llegan los dos al bosque. Libre otra vez.", "health": -8, "happiness": 25, "money": 0, "setCity": null, "flag": "REFUGEE", "removeFlag": "POW", "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Mientras lo sacas, suenan las alarmas. Corres solo hacia la alambrada.", "health": -10, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_escape_tunnel_caught" },
+              { "weight": 15, "resultText": "El túnel se derrumba con los dos dentro. Los rescatan medio muertos.", "health": -45, "happiness": -20, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo sin él",
+            "outcomes": [
+              { "weight": 60, "resultText": "Sales al aire libre al amanecer. Detrás escuchas gritos que prefieres no escuchar.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": "DESERTER", "removeFlag": "POW", "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un guardia te ve salir y te dispara en la pierna cruzando la valla.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "pow_escape_tunnel_caught" },
+              { "weight": 15, "resultText": "Te disparan en la espalda antes de tocar el suelo del otro lado.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo abandono en silencio",
+            "outcomes": [
+              { "weight": 70, "resultText": "Sigues el túnel sin mirar atrás. Llegas al bosque con las uñas hechas picadura.", "health": -8, "happiness": -12, "money": 0, "setCity": null, "flag": "DESERTER", "removeFlag": "POW", "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Vuelves al campamento sin él. Los demás ya saben lo que hiciste.", "health": -5, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_escape_tunnel_caught",
+        "pool": "pool_pow",
+        "text": "Te tienen en el suelo, sangrando por la pierna. Un oficial se agacha y te pregunta si valió la pena. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me río en su cara",
+            "outcomes": [
+              { "weight": 60, "resultText": "Te pegan hasta callarte. Te arrastran al calabozo para que lo pienses mejor.", "health": -20, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La risa te dura poco: la infección de la pierna empieza a subir.", "health": -30, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido un médico",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te curan la pierna a regañadientes. Perderás cojeando un buen tramo.", "health": -15, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El médico tarda demasiado y el mal llega hasta el hueso.", "health": -45, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Culpo al viejo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Le echas la culpa al viejo para salvar tu pellejo. Él ya no sale de ese calabozo.", "health": -10, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Los guardias se dan cuenta de que mientes. Tampoco te salva nadie.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_exchange",
+        "pool": "pool_pow",
+        "text": "Llega una noticia rara: tu nombre salió en una lista de canje. Podrías volver a casa en una semana. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Confío en el proceso",
+            "outcomes": [
+              { "weight": 70, "resultText": "Tu nombre sigue en la lista. Cada día de espera es una eternidad con cara de calendario.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_exchange_freedom" },
+              { "weight": 30, "resultText": "Al final tu nombre cae de la lista por un error de papeleo. Nadie corrige nada.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Intento colarme en la lista",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sobornas al escribano con tu ración de la semana. Tu nombre aparece al día siguiente.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_exchange_freedom" },
+              { "weight": 50, "resultText": "El escribano te delata. Pasas al calabozo y pierdes el cupo del canje.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cedo mi puesto a otro",
+            "outcomes": [
+              { "weight": 65, "resultText": "Cedes tu lugar a un chaval de diecinueve años. Él se va; tú te quedas esperando.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Los guardias anotan tu gesto... y también tu generosidad para el próximo canje.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_exchange_freedom",
+        "pool": "pool_pow",
+        "text": "Estás en el puente del canje, con más pies que ganas de cruzar. El otro lado ya sabe quién eres. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Cruzo caminando",
+            "outcomes": [
+              { "weight": 85, "resultText": "Cruzas el puente y no miras atrás. Vuelves a oler a libertad y a café malo del país.", "health": 0, "happiness": 30, "money": 0, "setCity": null, "flag": null, "removeFlag": "POW", "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "A mitad del puente, un tirador aburrido te apunta. Una bala perdida arruina el reencuentro.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido un acuerdo extra",
+            "outcomes": [
+              { "weight": 50, "resultText": "Intentas regatear con dos ejércitos a la vez. Te sacan del canje por meterte donde no te llaman.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "De pura suerte aceptan: te llevas una indemnización simbólica y medio documento roto.", "health": 0, "happiness": 15, "money": 1500, "setCity": null, "flag": null, "removeFlag": "POW", "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Digo que me quedo",
+            "outcomes": [
+              { "weight": 60, "resultText": "A media hora de cruzar, el miedo te gana. Vuelves con tus prisioneros como un perro mojado.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Los tuyos te curan y te esperan. La próxima lista será la buena.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_torture",
+        "pool": "pool_pow",
+        "highDanger": true,
+        "text": "Te llevan a un cuarto sin ventanas. Quieren información y esta vez no piensan preguntar dos veces. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Aguanto sin abrir la boca",
+            "outcomes": [
+              { "weight": 55, "resultText": "Aguantas lo indecible y sales con el cuerpo roto pero la boca cerrada.", "health": -35, "happiness": 5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "pow_torture_mind" },
+              { "weight": 30, "resultText": "Te despiertas en la celda sin saber cuántos días has estado fuera.", "health": -45, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "pow_torture_mind" },
+              { "weight": 15, "resultText": "Tu cuerpo aguanta menos que tu voluntad. No llegas a la noche.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Digo lo que quieren oír",
+            "outcomes": [
+              { "weight": 65, "resultText": "Mientes con detalies convincentes. Se conforman y te devuelven medio tullido.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Detectan las mentiras y deciden que la próxima sesión será peor.", "health": -35, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_torture_mind" }
+            ]
+          },
+          {
+            "text": "Grito que quiero cooperar",
+            "outcomes": [
+              { "weight": 70, "resultText": "Cantas antes de que te toquen. Te dan agua y hasta un cigarro.", "health": -5, "happiness": -22, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Cooperar con ellos te convierte en el peor enemigo de los tuyos.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_torture_mind",
+        "pool": "pool_pow",
+        "text": "Los recuerdos de ese cuarto te visitan cada noche. Un compañero te ofrece unas pastillas robadas de la enfermería. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me tomo las pastillas",
+            "outcomes": [
+              { "weight": 60, "resultText": "Duermes una semana seguida. Cuando despiertas, la guerra sigue ahí.", "health": -8, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Te enganchas rápido. La enfermería ya sabe que sobra una ración.", "health": -15, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco con quién hablar",
+            "outcomes": [
+              { "weight": 75, "resultText": "Hablas con un capellán prisionero que te escucha sin pedirte nada. No cura, pero aligera.", "health": 0, "happiness": 18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Te escucha un informador. Tu plática termina en un informe del campo.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me lo callo todo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te lo guardas hasta que la cabeza pide prestado del cuerpo.", "health": -12, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El silencio te seca por dentro, pero tú sigues firme como una piedra mojada.", "health": -5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_cellmates",
+        "pool": "pool_pow",
+        "text": "Tu compañero de celda es un tipo raro: guarda pan debajo del colchón y no duerme. Una noche te pide un favor. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Le doy mi ración",
+            "outcomes": [
+              { "weight": 70, "resultText": "El tipo se vuelve tu sombra y te avisa de todo lo que pasa en el campo.", "health": -5, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Un guardia descubre el trueque y se queda con las dos raciones.", "health": -8, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le niego la ración",
+            "outcomes": [
+              { "weight": 55, "resultText": "El tipo se lo guarda rencor. Dormir con un enemigo encima es complicado.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_cellmate_debt" },
+              { "weight": 45, "resultText": "Se controla y sigue siendo tu compañero deLitera, pero ya no se fía de ti.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pregunto qué quiere",
+            "outcomes": [
+              { "weight": 60, "resultText": "Quiere que escribas una carta por él: su familia cree que murió hace un año.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Quiere que cuides su tesoro de pan mientras él va al castigo. Tú aceptas.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_cellmate_debt",
+        "pool": "pool_pow",
+        "text": "El compañero de celda te tiene en deuda y lo hace saber cada vez que puede. Un día pide demasiado. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Cumplo una vez más",
+            "outcomes": [
+              { "weight": 65, "resultText": "Le consigues unas medicinas robadas. La deuda se cancela; las sospechas no.", "health": -3, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Te pillan con las medicinas y las dos cosas caen encima: castigo y deuda.", "health": -15, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Corto la relación",
+            "outcomes": [
+              { "weight": 60, "resultText": "Le dices que hasta aquí. Te hace la vida imposible una semana y para.", "health": -5, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El tipo pone una denuncia anónima sobre un lío de cartas falsas. Tú sales perjudicado.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo denuncio a los guardias",
+            "outcomes": [
+              { "weight": 55, "resultText": "Se lo llevan al calabozo. Tú te quedas la litera sola y el rumor corriendo.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Los guardias investigan el lío entero y te incluyen a ti en el paquete.", "health": -10, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_food",
+        "pool": "pool_pow",
+        "text": "Hoy la comida del campo huele peor que de costumbre: un guiso gris con algo flotando. Hay cola y hambre. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me la como entera",
+            "outcomes": [
+              { "weight": 60, "resultText": "Bajas el guiso sin respirar. Un rato después, el estómago manda su propia guerra.", "health": -10, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pow_food_sick" },
+              { "weight": 40, "resultText": "Pasas el día entero con aquello dentro sin que pase nada. Prisionero afortunado.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "La regalo al de al lado",
+            "outcomes": [
+              { "weight": 70, "resultText": "El tipo se la bebe alegre. Días después está en camilla y tú estás de pie.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Tu gesto se comenta por todo el campo. De vez en cuando la suerte reparte algo.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco raciones de más",
+            "outcomes": [
+              { "weight": 55, "resultText": "Le robas un pan al depósito sin que nadie te vea. Esa noche se come bien.", "health": 3, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Un guardia te pilla con la mano en el saco. La lista de castigos crece con tu nombre.", "health": -10, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pow_food_sick",
+        "pool": "pool_pow",
+        "text": "Estás tirado en la litera con una fiebre que apaga las luces. El enfermero del campo solo tiene suero robado. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me dejo curar",
+            "outcomes": [
+              { "weight": 75, "resultText": "El suero hace su trabajo en tres días. Sales adelgazado pero vivo.", "health": -12, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La infección se te va al pecho y pasas semanas dando penca en la enfermería.", "health": -30, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Aguanto sin medicinas",
+            "outcomes": [
+              { "weight": 45, "resultText": "La fiebre baja sola, como una tormenta que se va. Te quedan las manos temblando.", "health": -20, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Aguantas, pero el cuerpo cobra la cuenta: pierdes buena parte de la vista de un ojo.", "health": -40, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Sin tratamiento, la infección te gana la noche sin hacer ruido.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le robo el suero a otro",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te llevas el suero escondido. Al que se lo quitaste lo llevan a la enfermería en estado crítico.", "health": 10, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El enfermero te pilla antes del tercer paso. Castigo y fiebre en el mismo paquete.", "health": -20, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

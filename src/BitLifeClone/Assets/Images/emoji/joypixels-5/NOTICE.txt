@@ -1,0 +1,7 @@
+Emoji images: JoyPixels (R) 5.0
+Source: https://emojipedia.org/joypixels/5.0 (via Emojipedia CDN)
+
+JoyPixels is a licensed emoji set (formerly EmojiOne).
+If you distribute this app under the JoyPixels FREE license you MUST include
+an attribution such as: "Emoji provided by JoyPixels (joypixels.com)".
+See https://www.joypixels.com/license for full terms.

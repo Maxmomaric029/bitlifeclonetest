@@ -1,0 +1,37 @@
+{
+  "category": "agencies",
+  "name": "Law Enforcement & Agencies",
+  "jobs": [
+    { "id": "police_cadet_academy", "title": "Police Academy Cadet", "promotesTo": "police_patrol_new", "tier": 1, "baseSalary": 38000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "police_patrol_new", "title": "Patrol Officer", "promotesTo": "police_detective_new", "tier": 2, "baseSalary": 38000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 1, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "police_detective_new", "title": "Detective", "promotesTo": "police_sergeant_new", "tier": 3, "baseSalary": 38000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "police_sergeant_new", "title": "Sergeant", "promotesTo": "police_captain_new", "tier": 4, "baseSalary": 38000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 7, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "police_captain_new", "title": "Captain", "promotesTo": null, "tier": 5, "baseSalary": 38000, "currency": "USD", "education": "University", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "forensic_technician", "title": "Forensic Technician", "promotesTo": "csi_investigator", "tier": 1, "baseSalary": 46000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "csi_investigator", "title": "CSI Investigator", "promotesTo": "crime_lab_director", "tier": 2, "baseSalary": 46000, "currency": "USD", "education": "University", "experienceYears": 3, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "crime_lab_director", "title": "Crime Lab Director", "promotesTo": null, "tier": 3, "baseSalary": 46000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "border_patrol_agent", "title": "Border Patrol Agent", "promotesTo": "border_patrol_supervisor", "tier": 1, "baseSalary": 52000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "border_patrol_supervisor", "title": "Border Patrol Supervisor", "promotesTo": "border_patrol_chief", "tier": 2, "baseSalary": 52000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 5, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "border_patrol_chief", "title": "Border Patrol Sector Chief", "promotesTo": null, "tier": 3, "baseSalary": 52000, "currency": "USD", "education": "University", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "dea_agent", "title": "DEA Special Agent", "promotesTo": "dea_group_supervisor", "tier": 1, "baseSalary": 65000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "", "specialLogic": "Sube incautando cargamentos; puede ser infiltrado o sobornado." },
+    { "id": "dea_group_supervisor", "title": "DEA Group Supervisor", "promotesTo": "dea_special_agent_in_charge", "tier": 2, "baseSalary": 65000, "currency": "USD", "education": "University", "experienceYears": 6, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "dea_special_agent_in_charge", "title": "DEA Special Agent in Charge", "promotesTo": null, "tier": 3, "baseSalary": 65000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "secret_service_agent", "title": "Secret Service Agent", "promotesTo": "secret_service_shift_lead", "tier": 1, "baseSalary": 70000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "secret_service_shift_lead", "title": "Secret Service Shift Lead", "promotesTo": "secret_service_director", "tier": 2, "baseSalary": 70000, "currency": "USD", "education": "University", "experienceYears": 6, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "secret_service_director", "title": "Secret Service Director", "promotesTo": null, "tier": 3, "baseSalary": 70000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 15, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "cia_analyst", "title": "CIA Analyst", "promotesTo": "cia_officer", "tier": 1, "baseSalary": 74000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "", "specialLogic": "Progreso por misiones cumplidas; las misiones fallidas bajan el rango." },
+    { "id": "cia_officer", "title": "CIA Clandestine Officer", "promotesTo": "cia_station_chief", "tier": 2, "baseSalary": 74000, "currency": "USD", "education": "University", "experienceYears": 5, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "cia_station_chief", "title": "CIA Station Chief", "promotesTo": "cia_deputy_director", "tier": 3, "baseSalary": 74000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+    { "id": "cia_deputy_director", "title": "CIA Deputy Director", "promotesTo": null, "tier": 4, "baseSalary": 74000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 20, "canHoldWithCriminalRecord": false, "category": "agencies", "icon": "" },
+
+    { "id": "spy_handler", "title": "Intelligence Handler", "promotesTo": "field_spy", "tier": 1, "baseSalary": 58000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "agencies", "icon": "", "specialLogic": "Sin salario fijo real: gana por info vendida al mejor postor. Riesgo de captura." },
+    { "id": "field_spy", "title": "Field Spy", "promotesTo": "deep_cover_agent", "tier": 2, "baseSalary": 58000, "currency": "USD", "education": "University", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "agencies", "icon": "" },
+    { "id": "deep_cover_agent", "title": "Deep Cover Agent", "promotesTo": "spymaster", "tier": 3, "baseSalary": 58000, "currency": "USD", "education": "University", "experienceYears": 8, "canHoldWithCriminalRecord": true, "category": "agencies", "icon": "" },
+    { "id": "spymaster", "title": "Spymaster", "promotesTo": null, "tier": 4, "baseSalary": 58000, "currency": "USD", "education": "GraduateSchool", "experienceYears": 15, "canHoldWithCriminalRecord": true, "category": "agencies", "icon": "" }
+  ]
+}

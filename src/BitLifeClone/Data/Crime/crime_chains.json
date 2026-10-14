@@ -1,0 +1,279 @@
+{
+  "module": "crime_chains",
+  "note": "Cadenas de arresto y juicio (C1). Arrancan desde los outcomes de crime.json. Profundidad maxima 4: arresto (1) -> audiencia (2) -> veredicto/prision (3) -> prision (4).",
+  "events": [
+    {
+      "id": "trial_first_hearing",
+      "pool": "crime",
+      "text": "En la audiencia inicial el fiscal lee la acusación en voz alta y el juez te mira por encima de los lentes. Hay un abogado de oficio al lado que hoy no es tu enemigo.",
+      "choices": [
+        {
+          "text": "Declararme culpable y pedir rebaja",
+          "outcomes": [
+            { "weight": 55, "resultText": "El acuerdo sale a la tercera: condena corta y expediente oficial. La familia suspira en la silla de atrás.", "happiness": -12, "stress": 8, "karma": 5, "flag": "CRIMINAL_RECORD", "nextEventId": "trial_verdict_time" },
+            { "weight": 45, "resultText": "El fiscal no acepta rebaja y tu confesión queda en el expediente完整. Vamos a veredicto directo.", "happiness": -15, "stress": 12, "flag": "CRIMINAL_RECORD", "nextEventId": "trial_verdict_guilty" }
+          ]
+        },
+        {
+          "text": "Pleiarme inocente y aguantar el proceso",
+          "outcomes": [
+            { "weight": 40, "resultText": "Las pruebas se caen una por una y el caso muere en la sala. Sales por la puerta sin expediente.", "happiness": 8, "stress": -6, "flag": null, "removeFlag": "ARRESTED", "nextEventId": null },
+            { "weight": 40, "resultText": "Hay un testigo que no contabas y una foto tuya saliendo del lugar. El juez dicta medida de coerción.", "happiness": -10, "stress": 10, "flag": "CRIMINAL_RECORD", "nextEventId": "trial_verdict_guilty" },
+            { "weight": 20, "resultText": "El proceso se alarga meses y el abogado pide fianza: pagas y esperas en casa, con cita fija al tribunal.", "happiness": -4, "stress": 8, "money": -5000, "flag": "WANTED", "removeFlag": "ARRESTED", "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Fugarme de la sala antes de la decisión",
+          "outcomes": [
+            { "weight": 55, "resultText": "Corres dos cuadras entre motos y embracing de comida. Nadie te alcanza, pero la orden sigue viva.", "health": -5, "happiness": -2, "stress": 12, "flag": "WANTED", "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+            { "weight": 45, "resultText": "El alguacil te rodea en el pasillo del juzgado. Volver a huír te costó el doble.", "happiness": -18, "stress": 18, "flag": "IN_PRISON", "removeFlag": "ARRESTED", "traitWeightMods": { "cold": 20 }, "nextEventId": "prison_entry_generic" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_verdict_guilty",
+      "pool": "crime",
+      "text": "El veredicto llega en una sala callada: culpable. El juez empieza a leer los años y tu abogado escribe números en la libreta.",
+      "choices": [
+        {
+          "text": "Acepto la condena",
+          "outcomes": [
+            { "weight": 60, "resultText": "La condena es de años, no de meses. Te llevan por el corredor del fondo con las manos detrás de la espalda.", "happiness": -20, "stress": 15, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 40, "resultText": "El abogado consigue rebaja厚 cooperación: pena corta y camino a la libertad condicional.", "happiness": -12, "stress": 10, "flag": "IN_PRISON", "traitWeightMods": { "manipulative": 20 }, "nextEventId": "prison_entry_generic" }
+          ]
+        },
+        {
+          "text": "Apelar al tribunal superior",
+          "outcomes": [
+            { "weight": 35, "resultText": "La apelación sale bien: reducen la pena a la mitad y conservas el rostro ante la familia.", "happiness": 4, "stress": -4, "flag": "IN_PRISON", "traitWeightMods": { "loyal": 15 }, "nextEventId": "prison_entry_generic" },
+            { "weight": 45, "resultText": "El tribunal confirma todo y además te cobran las costas del juicio: la apelación fue cara.", "happiness": -18, "stress": 14, "money": -12000, "flag": "IN_PRISON", "traitWeightMods": { "stingy": 15 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 20, "resultText": "Mientras corre la apelación, sale bajo fianza: duermes en casa, pero con un anillo en el tobillo.", "happiness": -6, "stress": 10, "money": -8000, "flag": "ON_PAROLE", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_verdict_time",
+      "pool": "crime",
+      "text": "La rebaja quedó firmada: pocos meses. El autobús de traslado ya está esperando atrás del juzgado.",
+      "choices": [
+        {
+          "text": "Subir tranquilo y cumplir",
+          "outcomes": [
+            { "weight": 70, "resultText": "Meses duros pero con fecha. Lees, haces fila y aguantas el ruido sin pelear con nadie.", "happiness": -8, "stress": 6, "flag": "IN_PRISON", "nextEventId": "prison_entry_generic" },
+            { "weight": 30, "resultText": "Es corto, sí, pero en el patio ya te apuntaron: los meses se vuelven igual de pesados.", "happiness": -14, "stress": 10, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 15 }, "nextEventId": "prison_entry_generic" }
+          ]
+        },
+        {
+          "text": "Pedir trabajo en el taller del penal",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te asignan la carpintería del penal: días ocupados, horas Dogs menos en el patio y buen reporte.", "happiness": -4, "stress": 4, "smarts": 2, "discipline": 3, "flag": "IN_PRISON", "nextEventId": "prison_entry_generic" },
+            { "weight": 40, "resultText": "El taller está lleno: te toca patio y fila como a todos los demás.", "happiness": -10, "stress": 8, "flag": "IN_PRISON", "nextEventId": "prison_entry_generic" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_breakin",
+      "pool": "crime",
+      "text": "El fiscal lee el expediente del allanamiento:KeyDown puerta forzada, objetos robados, declaraciones de los vecinos. Todo está escrito.",
+      "choices": [
+        {
+          "text": "Negar todo hasta el final",
+          "outcomes": [
+            { "weight": 40, "resultText": "Sin pruebas nuevas, el caso se cae: sales libre pero con el apellido marcado en el expediente.", "happiness": 6, "stress": -6, "flag": "CRIMINAL_RECORD", "removeFlag": "ARRESTED", "nextEventId": null },
+            { "weight": 40, "resultText": "Tu huella sale en el marco de la ventana. Culpable directo, sin rebaja posible.", "happiness": -18, "stress": 14, "flag": "CRIMINAL_RECORD", "nextEventId": "trial_verdict_guilty" },
+            { "weight": 20, "resultText": "El caso sigue abierto por meses: la fianza te deja en casa con un expediente pesando.", "happiness": -8, "stress": 10, "money": -6000, "flag": "WANTED", "removeFlag": "ARRESTED", "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Cooperar y señalar a los demás",
+          "outcomes": [
+            { "weight": 50, "resultText": "La cooperación corta condena a la mitad, pero el barrio entero ya sabe quién habló.", "happiness": -10, "stress": 12, "karma": -10, "flag": "CRIMINAL_RECORD", "traitWeightMods": { "manipulative": 20 }, "nextEventId": "trial_verdict_time" },
+            { "weight": 50, "resultText": "La fiscalía te deja salir con firma de comparecencia y el expediente bajo llave por dos años.", "happiness": -4, "stress": 8, "karma": -8, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_robbery",
+      "pool": "crime",
+      "text": "Asalto con agravantes: arma blanca, testigos y la cámara de la farmacia. Acá la rebaja es más difícil.",
+      "choices": [
+        {
+          "text": "Admitir y pedir el mínimo",
+          "outcomes": [
+            { "weight": 55, "resultText": "El mínimo con agravantes sigue siendo largo. La puerta del penal suena detrás de ti con eco.", "happiness": -18, "stress": 12, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 45, "resultText": "Tu récord empieza hoy: condena media y sin derecho a benedición anticipada.", "happiness": -15, "stress": 10, "flag": "IN_PRISON", "traitWeightMods": { "cold": 20 }, "nextEventId": "prison_entry_generic" }
+          ]
+        },
+        {
+          "text": "Irme a juicio completo",
+          "outcomes": [
+            { "weight": 30, "resultText": "El juez absuelve por falta de reconocimiento en rueda. Sales enjaulado de nada y agradecido de la suerte.", "happiness": 10, "stress": -8, "flag": null, "removeFlag": "ARRESTED", "nextEventId": null },
+            { "weight": 50, "resultText": "Los testigos te señalan uno por uno y la cámara lo muestra todo. Condena completa.", "happiness": -22, "stress": 16, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 25 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 20, "resultText": "El jurado no se pone de acuerdo: nuevo juicio en meses, saliendo con juicio pendiente.", "happiness": -6, "stress": 12, "flag": "WANTED", "removeFlag": "ARRESTED", "traitWeightMods": { "easygoing": 10 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_drugs",
+      "pool": "crime",
+      "text": "La DNCD presentó el acta de hallazgo y el peso entra en evidencia. En esta mesa los años bajan si hablas de los de arriba.",
+      "choices": [
+        {
+          "text": "Cooperar con la DNCD",
+          "outcomes": [
+            { "weight": 50, "resultText": "Tu información desmantela la esquina: pena domiciliaria, pero los ojos de la calle ya te saben.", "happiness": -8, "stress": 12, "karma": -8, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+            { "weight": 50, "resultText": "Cooperas, firmas y pagas: condena corta con rehabilitación obligada al salir.", "happiness": -12, "stress": 10, "flag": "CRIMINAL_RECORD", "traitWeightMods": { "easygoing": 15 }, "nextEventId": "trial_verdict_time" }
+          ]
+        },
+        {
+          "text": "Callar y cargar la pena",
+          "outcomes": [
+            { "weight": 40, "resultText": "La lealtad cuesta años completos. Dentro, la palabra callar sigue valiendo券商.", "happiness": -20, "stress": 14, "flag": "IN_PRISON", "traitWeightMods": { "loyal": 25 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 40, "resultText": "Sin cooperación ni antecedentes, la rebaja mínima te lleva directo a la cárcel.", "happiness": -16, "stress": 12, "flag": "IN_PRISON", "traitWeightMods": { "cold": 20 }, "nextEventId": "prison_entry_generic" },
+            { "weight": 20, "resultText": "La defensa encuentra vicios en el allanamiento: el caso entero cae y sales por la puerta grande.", "happiness": 10, "stress": -8, "flag": null, "removeFlag": "ARRESTED", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_customs",
+      "pool": "crime",
+      "text": "Contrabando en el puerto: la carga, el escáner y la declaración del inspector todo concuerda. El abogado conspiró con tu familia para llegar a temps.",
+      "choices": [
+        {
+          "text": "Negociar el decomiso y el castigo",
+          "outcomes": [
+            { "weight": 55, "resultText": "Se pierde toda la mercancía y la fianza, pero la condena queda en el rango bajo del acta.", "happiness": -12, "stress": 10, "money": -15000, "flag": "CRIMINAL_RECORD", "nextEventId": "trial_verdict_time" },
+            { "weight": 45, "resultText": "El negocio era grande y la punición igual: años completos sin benedición anticipada.", "happiness": -20, "stress": 14, "money": -5000, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_hard" }
+          ]
+        },
+        {
+          "text": "Señalar al inspector corrupto",
+          "outcomes": [
+            { "weight": 45, "resultText": "Tu declaración lo tumba a él y te baja a ti: pena mínima, aunque el gremio no te perdona.", "happiness": -8, "stress": 12, "karma": -10, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+            { "weight": 55, "resultText": "El inspector niega todo y tu palabra sola pesa poco: la condena sigue completa.", "happiness": -18, "stress": 14, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_hard" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_hacking",
+      "pool": "crime",
+      "text": "Delito informático: la fiscalía muestra los logs y la IP. El expediente es largo y digital: no hay ventanas para escapar.",
+      "choices": [
+        {
+          "text": "Ofrecer mis conocimientos a la fiscalía",
+          "outcomes": [
+            { "weight": 50, "resultText": "La pericia sale a tu favor: trabajo supervisado por la Cyberpolicía y expediente suspendido.", "happiness": -4, "stress": 8, "smarts": 3, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "loyal": 20 }, "nextEventId": null },
+            { "weight": 50, "resultText": "Aceptan la oferta pero vigilan cada conexión: pasas dos años condenados a wifi controlado.", "happiness": -10, "stress": 10, "smarts": 2, "flag": "CRIMINAL_RECORD", "traitWeightMods": { "strict": 15 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Pagar multa y firmar conducta",
+          "outcomes": [
+            { "weight": 60, "resultText": "La cifra es alta, pero evitas cárcel y el expediente espera dormido por cinco años.", "happiness": -8, "stress": 6, "money": -30000, "flag": "CRIMINAL_RECORD", "removeFlag": "ARRESTED", "traitWeightMods": { "stingy": 15 }, "nextEventId": null },
+            { "weight": 40, "resultText": "No llegas ni a la multa: te entra el decomiso de equipos y la condena formal.", "happiness": -16, "stress": 12, "money": -10000, "flag": "CRIMINAL_RECORD", "traitWeightMods": { "resentful": 15 }, "nextEventId": "trial_verdict_time" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_launder",
+      "pool": "crime",
+      "text": "Lavado de activos: el contador del negocio habló. Ahora cada venta fantasmas del colmado está numerada en el expediente.",
+      "choices": [
+        {
+          "text": "Cargar con todo y proteger a la familia",
+          "outcomes": [
+            { "weight": 55, "resultText": "Tú respondes por los números y nadie más aparece en el expediente. La familia te debe la espalda entera.", "happiness": -15, "stress": 12, "karma": 10, "flag": "IN_PRISON", "traitWeightMods": { "loyal": 25 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 45, "resultText": "La pena es alta pero negociable: pagas fianza y quedas bajo firma de comparecencia.", "happiness": -10, "stress": 10, "money": -20000, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Señalar al que armó el negocio",
+          "outcomes": [
+            { "weight": 50, "resultText": "El dueño real entra por la puerta que tú abriste: tu condena se reduce a firma y multa.", "happiness": -6, "stress": 10, "karma": -15, "money": -10000, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+            { "weight": 50, "resultText": "El dueño real tiene un abogado mejor: tu declaración se voluble en contra tuya.", "happiness": -16, "stress": 14, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_generic" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_bribe",
+      "pool": "crime",
+      "text": "Soborno a un agente de asuntos internos: la cámara del sobre y la fecha exacta ya están laminadas en el expediente.",
+      "choices": [
+        {
+          "text": "Admitir el pago y pedir indulgencia",
+          "outcomes": [
+            { "weight": 55, "resultText": "El juez encoge los hombros: multa fuerte, expediente y curso de ética obligatorio. Sales sin prisión.", "happiness": -10, "stress": 8, "money": -20000, "flag": "CRIMINAL_RECORD", "removeFlag": "ARRESTED", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+            { "weight": 45, "resultText": "El oficial cae más fuerte que tú: tu testimonio colaborador baja tu caso a suspensión condicional.", "happiness": -6, "stress": 10, "flag": "ON_PAROLE", "removeFlag": "ARRESTED", "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Retroceder y decir que solo era un saludo",
+          "outcomes": [
+            { "weight": 35, "resultText": "La versión ridícula no convence a nadie: condena por soborno agravado.", "happiness": -16, "stress": 14, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": "prison_entry_hard" },
+            { "weight": 45, "resultText": "El oficial se retracta y el sobre aparece sin dueño claro: el caso queda en la nada.", "happiness": 2, "stress": -4, "flag": null, "removeFlag": "ARRESTED", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+            { "weight": 20, "resultText": "El proceso sigue abierto por meses y la fianza te deja esperando en casa.", "happiness": -8, "stress": 10, "money": -7000, "flag": "WANTED", "removeFlag": "ARRESTED", "traitWeightMods": { "stingy": 15 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prison_entry_generic",
+      "pool": "crime",
+      "text": "Puerta sanitaria, requisa estándar y celda con literas. En esta cárcel el día se mide por las filas y el campanario no existe.",
+      "choices": [
+        {
+          "text": "Buscar a los de tu corriente",
+          "outcomes": [
+            { "weight": 55, "resultText": "Tu grupo te asigna cama y turno de fila: la cárcel se vuelve llevadera con la gente correcta.", "happiness": 3, "stress": 4, "flag": "IN_PRISON", "traitWeightMods": { "loyal": 20 }, "nextEventId": null },
+            { "weight": 45, "resultText": "Molesque con el grupo equivocado el primer día y el resto del encierro se te hace cuesta arriba.", "happiness": -8, "stress": 10, "flag": "IN_PRISON", "traitWeightMods": { "cold": 15 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Mantenerce solo y en la fila",
+          "outcomes": [
+            { "weight": 60, "resultText": "Cumplr, comer, dormir. Nadie te busca y tú no buscas a nadie: los meses pasan parejos.", "happiness": -4, "stress": 6, "flag": "IN_PRISON", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+            { "weight": 40, "resultText": "Estar solo en una cárcel es estar en el menú: te cobran tributo por la cama y por el pasillo.", "happiness": -12, "stress": 12, "health": -4, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 15 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Inscribirme en el programa de estudios del penal",
+          "outcomes": [
+            { "weight": 60, "resultText": "El aula del penal te salva: clases, libros y un certificado que nadie podrá quitarte.", "happiness": 4, "stress": 2, "smarts": 4, "discipline": 2, "flag": "IN_PRISON", "traitWeightMods": { "strict": 15 }, "nextEventId": null },
+            { "weight": 40, "resultText": "El cupo está tomado: sigues en fila esperando esa lista que no se mueve.", "happiness": -6, "stress": 8, "flag": "IN_PRISON", "traitWeightMods": { "stingy": 10 }, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prison_entry_hard",
+      "pool": "crime",
+      "text": "Cadena alta, condena larga: pasillo con acero, patio con jerarquía escrita a tiza. Aquí el tiempo no se cuenta en meses.",
+      "choices": [
+        {
+          "text": "Presentar respeto y esperar mi turno",
+          "outcomes": [
+            { "weight": 55, "resultText": "La humildad del recién llegado te compra meses de calma: te asignan trabajo y nadie te aprieta.", "happiness": 0, "stress": 8, "flag": "IN_PRISON", "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+            { "weight": 45, "resultText": "En cadena alta la calma de los últimos es la de los vencidos: te toca tributo semanal igual.", "happiness": -10, "stress": 12, "health": -4, "flag": "IN_PRISON", "traitWeightMods": { "cold": 15 }, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Buscar alquiler de armas dentro",
+          "outcomes": [
+            { "weight": 40, "resultText": "Una lima entre las costuras del colchón se convierte en tu póliza de seguro nocturna.", "happiness": 4, "stress": 10, "flag": "IN_PRISON", "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+            { "weight": 35, "resultText": "El traficante interno te cobra caro: la lima cuesta medio mes de visitas y dos favores.", "happiness": -4, "stress": 12, "money": -2000, "flag": "IN_PRISON", "traitWeightMods": { "stingy": 15 }, "nextEventId": null },
+            { "weight": 25, "resultText": "La requisa del viernes encuentra la lima en tu litera: castigo y ojo del consejo de patio.", "happiness": -14, "stress": 16, "flag": "IN_PRISON", "traitWeightMods": { "resentful": 20 }, "nextEventId": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

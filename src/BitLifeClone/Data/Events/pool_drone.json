@@ -1,0 +1,147 @@
+[
+  {
+    "pool": "pool_drone",
+    "events": [
+      {
+        "id": "drone_target_doubt",
+        "pool": "pool_drone",
+        "text": "La pantalla muestra el convoy con marcaje de objetivo. Inteligencia dice 'hostil'; tu ojo dice camión de agua. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Disparo según la orden",
+            "outcomes": [
+              { "weight": 55, "resultText": "El misil acierta y el convoy deja de moverse. Cerrás el expediente y abres el otro.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" },
+              { "weight": 45, "resultText": "Después del impacto aparecen figuras pequeñas corriendo entre el humo. Eran civiles.", "health": 0, "happiness": -35, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" }
+            ]
+          },
+          {
+            "text": "Reporto objetivo dudoso",
+            "outcomes": [
+              { "weight": 60, "resultText": "Reportas y el objetivo queda en espera. Dos horas después confirman: convoy civil.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" },
+              { "weight": 40, "resultText": "Tu duda le cuesta al escuadrón el objetivo del día. El capitán no olvida.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" }
+            ]
+          },
+          {
+            "text": "Sigo el convoy más tiempo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sigues el convoy hasta ver descargas de ayuda cruzadas. Era civil y lo confirmaste.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" },
+              { "weight": 50, "resultText": "El convoy llega a una posición de morteros que no existía en el mapa. La duda tenía razón.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "drone_target_doubt_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drone_target_doubt_after",
+        "pool": "pool_drone",
+        "text": "El turno terminó y sigues mirando la pantalla en blanco. El operador de al lado pregunta si estás bien. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Le cuento lo del convoy",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te escucha sin juzgar y pide una revisión informal del caso. No es nada, pero ayuda.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Al día siguiente el rumor corre: el operador 'dudoso' del escuadrón eres tú.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me callo y sigo",
+            "outcomes": [
+              { "weight": 60, "resultText": "Guaras el asunto en el cajón de abajo. Siete misiones más esa semana.", "health": -5, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El cajón no existe. Las imágenes te persiguen al cuartel y a la cafetería.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido traslado del turno",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te pasan a misiones de vigilancia de día. Cambian las imágenes, no el trabajo.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El traslado se niega con un papel: 'personal escaso para operaciones críticas'.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drone_signal_loss",
+        "pool": "pool_drone",
+        "text": "A mitad de la misión la señal se corta: la pantalla pasa a gris y el dron vuela solo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Ejecuto el protocolo de regreso",
+            "outcomes": [
+              { "weight": 75, "resultText": "El dron vuelve a la base por su cuenta. Pierdes la misión, salvas el equipo.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El protocolo falla en el aterrizaje y el dron se estrella en la pista.", "health": 0, "happiness": -10, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Intento recuperar enlaces",
+            "outcomes": [
+              { "weight": 55, "resultText": "Cambia de antena, reinicia el enlace y recuperas la imagen a tres minutos.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Mientras peleas con el enlace, el dron se adentra en zona antiaérea sin piloto.", "health": 0, "happiness": -15, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Marco la última posición",
+            "outcomes": [
+              { "weight": 65, "resultText": "Guardas el último punto conocido y pasa la coordenada a inteligencia. Trabajo limpio.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "El equipo de búsqueda encuentra solo restos del dron y ningún enemigo. Mala información.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drone_glitch",
+        "pool": "pool_drone",
+        "text": "El dron empieza a temblar en el aire y los sensores marcan un fallo de motor. Encima, la zona tiene actividad civil confirmada. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Dirijo a zona desierta",
+            "outcomes": [
+              { "weight": 80, "resultText": "Vas al barranco y ejectas el dron. Caída limpia, cero civiles, cero bajas.", "health": 0, "happiness": 10, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "A metros del barranco el motor muere del todo. El aterrizaje es vertical y feo.", "health": 0, "happiness": 5, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Intento aterrizar en la carretera",
+            "outcomes": [
+              { "weight": 55, "resultText": "Aterrizas en la carretera vacía. Los civiles salen a mirar el 'OVNI' con sandalias.", "health": 0, "happiness": 8, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La carretera tenía un mercado improvisado. El dron se estrella en una parada de frutas.", "health": -5, "happiness": -25, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo en vuelo y rezo",
+            "outcomes": [
+              { "weight": 50, "resultText": "El motor aguanta el regreso a base por los pelos. Misiones técnicas que no se olvidan.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El motor muere sobre el valle. El reporte final culpa a un pájaro.", "health": 0, "happiness": -10, "money": -200000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drone_double_life",
+        "pool": "pool_drone",
+        "text": "Vuelas drones ocho horas diarias desde un contenedor con aire acondicionado. En casa te preguntan qué haces en el trabajo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Les cuento la verdad",
+            "outcomes": [
+              { "weight": 65, "resultText": "Tu familia se queda callada un rato largo. Después solo te piden que vuelvas entero.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Tu hijo de diez años te mira distinto el resto del verano.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Miento y digo que es logística",
+            "outcomes": [
+              { "weight": 70, "resultText": "'Logística militar' cierra cualquier conversación de comida familiar. Fácil y vacío.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Un familiar encuentra tu gafetilla con el escuadrón de drones. Las preguntas son peores.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco apoyo psicológico",
+            "outcomes": [
+              { "weight": 80, "resultText": "El psicólogo del escuadrón entiende el doble life en tres sesiones. No cura, pero ordena.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "La consulta queda registrada en tu ficha. En la próxima revisión te miran raro.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,347 @@
+[
+  {
+    "pool": "pool_refugee",
+    "events": [
+      {
+        "id": "pp_border",
+        "pool": "pool_refugee",
+        "highDanger": true,
+        "text": "Llegaste a la frontera con lo puesto. Un soldado del otro país revisa papeles y caras. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Presento mis papeles reales",
+            "outcomes": [
+              { "weight": 60, "resultText": "Tus papeles están bien, pero el oficial los mira como si le olieran mal. Te deja pasar.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_border_cross" },
+              { "weight": 40, "resultText": "El oficial rompe tu documento y te dice que ese papel no vale aquí.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_border_cross" }
+            ]
+          },
+          {
+            "text": "Trato de sobornarlo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Le tiende los billetes y él los cuenta sin prisa. Cruzas la misma tarde.", "health": 0, "happiness": 10, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_border_cross" },
+              { "weight": 50, "resultText": "Se indigna con el soborno y te devuelve al otro lado escoltado.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cruzo por el monte",
+            "outcomes": [
+              { "weight": 55, "resultText": "Tres horas de matorral y llegas al otro lado chorreado de sudor pero libre.", "health": -10, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_border_cross" },
+              { "weight": 30, "resultText": "Una patrulla te pesca a media ladera y te devuelve como un saco de papas.", "health": -8, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Resbalas en la ladera rocosa. Nadie te encuentra por tres días.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_border_cross",
+        "pool": "pool_refugee",
+        "text": "Estás del otro lado, en un puesto de la guardia fronteriza. Te faltan sellos y alguien tiene que firmar. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Espero mi turno",
+            "outcomes": [
+              { "weight": 75, "resultText": "Después de dos días de cola, sellan tu pasaporte. Eres refugiado oficial.", "health": 0, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": "REFUGEE", "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un funcionario pierde tu expediente. La cola empieza de cero.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le pago al pasamontañas",
+            "outcomes": [
+              { "weight": 60, "resultText": "El tipo cobra y te consigue el sello por la puerta de atrás. Nadie pregunta nada.", "health": 0, "happiness": 15, "money": -350, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Era un estafador. Te deja sin dinero y sin papeles en el extranjero.", "health": 0, "happiness": -30, "money": -500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Duermo en la cola",
+            "outcomes": [
+              { "weight": 70, "resultText": "Aguantas la noche en el suelo del puesto. A mediodía te toca el turno.", "health": -8, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Un enfermo de la cola te contagia algo que se te queda pegado semanas.", "health": -20, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_camp",
+        "pool": "pool_refugee",
+        "text": "El campamento de refugiados es un mar de lonas con olor a cloro y desesperación. Te asignan una lona de 2x2. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me acomodo y busco trabajo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Te inscribes en la lista del campo y en una semana ya lavando platos en la cocina.", "health": 0, "happiness": 10, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_camp_conditions" },
+              { "weight": 35, "resultText": "La lista de trabajo no se mueve. Pasas el mes mirando la lona de arriba.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_camp_conditions" }
+            ]
+          },
+          {
+            "text": "Busco cómo salir del campo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un coyote del campo te vende un asiento en un camión que sale de madrugada.", "health": -5, "happiness": 10, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Te montas en el camión, pero el destino resulta ser otro campo, más lejos.", "health": -8, "happiness": -15, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Vendo mi reloj",
+            "outcomes": [
+              { "weight": 60, "resultText": "El reloj te da para comer bien un mes entero dentro del campo.", "health": 5, "happiness": 5, "money": 150, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Un tipo del campo te lo quita por la fuerza y el resto del campo te mira sin intervenir.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_camp_conditions",
+        "pool": "pool_refugee",
+        "text": "Llueve y tu lona se está convirtiendo en un charco. La ONG reparte carpas buenas y hay menos que gente. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Hago cola ordenada",
+            "outcomes": [
+              { "weight": 60, "resultText": "Te toca una carpa decente al final de la tarde. Por fin duermes seco.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La carpa se acaba antes de que llegues. Sigues con la lona y el barro.", "health": -5, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me cuelo en la repartición",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te llevas una carpa empujando al frente. Nadie te ve, o fingen no verte.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Un guardia del campo te caza y te quita la carpa delante de todos.", "health": -5, "happiness": -22, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cedo mi lugar a una familia",
+            "outcomes": [
+              { "weight": 75, "resultText": "Una madre con dos niños duerme seca esa noche gracias a ti. El campo lo comenta.", "health": -5, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El padre de esa familia te vende tu turno de carpa a otro. No aprendiste nada nuevo.", "health": -5, "happiness": -12, "money": 100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_forge_papers",
+        "pool": "pool_refugee",
+        "text": "En el mercado del campamento un tipo ofrece pasaportes falsos que 'huelen a originales'. Cuesta lo que tienes. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Compro un pasaporte",
+            "outcomes": [
+              { "weight": 55, "resultText": "El documento parece real y te abre puertas oficiales por primera vez en meses.", "health": 0, "happiness": 15, "money": -700, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_forge_papers_bust" },
+              { "weight": 45, "resultText": "Lo usas en un control y el oficial lo huele a impostor al primer contacto.", "health": 0, "happiness": -20, "money": -700, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_forge_papers_bust" }
+            ]
+          },
+          {
+            "text": "Trabajo para pagarlo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Unas semanas cargando cajas y el tipo te entrega un pasaporte con tu cara.", "health": -8, "happiness": 10, "money": -200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_forge_papers_bust" },
+              { "weight": 35, "resultText": "Trabajas gratis y el tipo desaparece con tu dinero y tu tiempo.", "health": -10, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo denuncio al jefe del campo",
+            "outcomes": [
+              { "weight": 60, "resultText": "El jefe del campo agradece el chivatazo y hasta te consigue papeles de verdad.", "health": 0, "happiness": 12, "money": 200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El falsificador resulta tener primos en el comité. Te mudas de lona por seguridad.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_forge_papers_bust",
+        "pool": "pool_refugee",
+        "text": "Un día de control rutinario, los agentes revisan documentos con un escáner nuevo. Tu pasaporte está en tu mano. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Presento el falso",
+            "outcomes": [
+              { "weight": 40, "resultText": "El escáner pasa. El tramo sigue siendo falso, pero por ahora nadie sabe nada.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El escáner pita. Te detienen y terminas en un centro de retención.", "health": -10, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Peor aún: resulta que ese número pertenecía a alguien desaparecido. Te acusan de algo gordo.", "health": -15, "happiness": -35, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Declaro que es falso",
+            "outcomes": [
+              { "weight": 60, "resultText": "Adelantas los hechos y los agentes valoran la honestidad del refugiado. Te dejan con registro.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La confesión te salva de la celda pero no del expediente que se te queda pegado.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Huyo del control",
+            "outcomes": [
+              { "weight": 50, "resultText": "Sales corriendo y te pierdes en la ciudad. Sigues sin papeles pero en libertad.", "health": -8, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "Te alcanzan a tres calles. La fuga agrava tu caso.", "health": -15, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_illegal_work",
+        "pool": "pool_refugee",
+        "text": "Sin papeles no hay trabajo legal, pero en la bodega del puerto buscan brazos para de madrugada. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me presento al turno nocturno",
+            "outcomes": [
+              { "weight": 70, "resultText": "Cargas cajas diez horas y cobras en un sobre. El cuerpo duele pero la nevera respira.", "health": -10, "happiness": 8, "money": 600, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_illegal_work_exploit" },
+              { "weight": 30, "resultText": "El encargado te paga la mitad de lo hablado y te amenaza si reclamas.", "health": -10, "happiness": -15, "money": 300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_illegal_work_exploit" }
+            ]
+          },
+          {
+            "text": "Me busco a otro tipo de cliente",
+            "outcomes": [
+              { "weight": 50, "resultText": "Empiezas lavando carros y haciendo mandados. Un cliente te recomienda con otro.", "health": -3, "happiness": 10, "money": 350, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "Un 'cliente' resulta ser una red que te quiere cobrando deuda en vez de pagarte.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "No consigo nada",
+            "outcomes": [
+              { "weight": 65, "resultText": "Un mes sin ingresos. El campo te cubre las comidas mientras buscas algo.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Vendes tu chaqueta para comer. El invierno se está acercando.", "health": -12, "happiness": -22, "money": 80, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_illegal_work_exploit",
+        "pool": "pool_refugee",
+        "text": "El encargado del turno nocturno te tiene en deuda: 'la próxima semana te pago todo'. Ya van tres. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Exijo mi dinero",
+            "outcomes": [
+              { "weight": 55, "resultText": "Pides lo tuyo y te lo pagan de una vez, con cara de pocos amigos.", "health": 0, "happiness": 12, "money": 900, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Te echan del trabajo y te deben medio sueldo. El puerto es grande, pero no tanto.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo tragando",
+            "outcomes": [
+              { "weight": 60, "resultText": "Trabajas otro mes y un día el sobre llega completo, sin explicaciones.", "health": -8, "happiness": 5, "money": 1200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La deuda 'crece' con intereses inventados. Ya trabajas para saldarla.", "health": -12, "happiness": -20, "money": 200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le robo al depósito",
+            "outcomes": [
+              { "weight": 45, "resultText": "Te llevas mercancía en una mochila y la vendes por la mitad al día siguiente.", "health": 0, "happiness": 10, "money": 700, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Las cámaras existían. Te echan con los guardias encima y una deuda que no perdonan.", "health": -8, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El encargado no llama a la policía: te ofrece ser parte del negocio. O algo peor.", "health": 0, "happiness": -10, "money": 800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_asylum",
+        "pool": "pool_refugee",
+        "text": "Te llega una cita para la audiencia de asilo: 15 minutos para convencer a un juez de que no puedes volver. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Cuento lo que viví",
+            "outcomes": [
+              { "weight": 70, "resultText": "Hablas sin adornos de lo que huiste. El juez asiente y anota todo.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" },
+              { "weight": 30, "resultText": "Tu historia coincide poco con los papeles del expediente. El juez frunce el ceño.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" }
+            ]
+          },
+          {
+            "text": "Me invento una historia",
+            "outcomes": [
+              { "weight": 40, "resultText": "Te creen la versión exagerada y te dan asilo rápido. Nadie vendrá a verificar.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" },
+              { "weight": 60, "resultText": "El juez ha escuchado esa misma historia cinco veces hoy. Rechaza tu caso.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" }
+            ]
+          },
+          {
+            "text": "Contrato un abogado",
+            "outcomes": [
+              { "weight": 55, "resultText": "El abogado cuesta caro pero ordena tu expediente como un reloj.", "health": 0, "happiness": 10, "money": -1000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" },
+              { "weight": 45, "resultText": "El abogado se lleva tu dinero y ni siquiera aparece en la audiencia.", "health": 0, "happiness": -25, "money": -1200, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_asylum_hearing" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_asylum_hearing",
+        "pool": "pool_refugee",
+        "text": "El juez devuelve el veredicto. Puedes quedar aquí legal o volver a empezar el proceso desde cero. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Acepto las condiciones",
+            "outcomes": [
+              { "weight": 80, "resultText": "Asilo concedido. Te dan permiso de trabajo y una dirección oficial por primera vez.", "health": 0, "happiness": 30, "money": 0, "setCity": null, "flag": null, "removeFlag": "REFUGEE", "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Asilo con condiciones: te mudas a una región fría donde nadie conoce tu nombre.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": "REFUGEE", "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Apelo la decisión",
+            "outcomes": [
+              { "weight": 45, "resultText": "El apel cuela y revisan tu caso con calma. Tres meses de incertidumbre.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 55, "resultText": "El apel se rechaza y encima te mandan una orden de salida firmada.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Desaparezco del sistema",
+            "outcomes": [
+              { "weight": 60, "resultText": "No vuelves a la audiencia y te pierdes en la ciudad con millones de historias.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": "REFUGEE", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Sin papeles, cualquier control rutinario puede terminar en deportación.", "health": -5, "happiness": -15, "money": 0, "setCity": null, "flag": "REFUGEE", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_family_split",
+        "pool": "pool_refugee",
+        "text": "En el caos de la huida perdiste el rastro de tu hermana. Un primo dice que la vio hacia el sur. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Bajo a buscarla",
+            "outcomes": [
+              { "weight": 60, "resultText": "Dos días de caminos rotos y la encuentras en un albergue, viva y con fiebre.", "health": -10, "happiness": 25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_family_search" },
+              { "weight": 40, "resultText": "Recorres los albergues del sur y su rastro se enfría con cada puerta.", "health": -12, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_family_search" }
+            ]
+          },
+          {
+            "text": "Me quedo a la espera",
+            "outcomes": [
+              { "weight": 55, "resultText": "Dejas un mensaje en la radio del campo. Una semana después ella llama.", "health": 0, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "pp_family_search" },
+              { "weight": 45, "resultText": "La radio del campo se financia con papeles y tu mensaje nunca sale al aire.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo mi ruta sola",
+            "outcomes": [
+              { "weight": 65, "resultText": "Cruzas la frontera pensando que al otro lado buscarás mejor. El peso no se va.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Un mes después llega una carta: ella ya está en otro país, segura.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp_family_search",
+        "pool": "pool_refugee",
+        "text": "La encontraste, o su rastro terminó. En los dos casos hay una decisión que tomar hoy. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "La registro conmigo",
+            "outcomes": [
+              { "weight": 75, "resultText": "Consigues que la sumen a tu expediente. Los dos duermen bajo el mismo techo legal.", "health": 0, "happiness": 25, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El papeleo tarda meses y ella se queda en un albergue esperando tu número de caso.", "health": 0, "happiness": -10, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Le doy dinero y sigues",
+            "outcomes": [
+              { "weight": 70, "resultText": "Le dejas lo que puedes y sigues tu ruta. Ella se abre camino con eso.", "health": 0, "happiness": 8, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "En el camino de vuelta te enteras de que ese dinero no le llegó.", "health": 0, "happiness": -15, "money": -400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cierro el capítulo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Decides seguir adelante sin respuestas. Hay días en que eso se siente a supervivencia.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "Sigues adelante, pero cada radio encendida te devuelve a esa estación.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

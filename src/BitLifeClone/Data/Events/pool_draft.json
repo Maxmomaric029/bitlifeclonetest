@@ -1,0 +1,80 @@
+[
+  {
+    "pool": "pool_draft",
+    "events": [
+      {
+        "id": "draft_notice",
+        "pool": "pool_draft",
+        "highDanger": true,
+        "text": "Llegó tu aviso de reclutamiento: te presentas mañana al cuartel o hay órdenes de detención. En la mesa hay cuatro caminos. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me presento y acepto",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te presentas sin rechistar y te entregas al uniforme. Tu familia te despide en silencio.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": true, "nextEventId": "draft_boot_camp" },
+              { "weight": 25, "resultText": "En el control te declaran 'no apto' por una vieja lesión. Vuelves a casa con el susto.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Reúno dinero pal soborno",
+            "outcomes": [
+              { "weight": 55, "resultText": "Le pagas al sargento de la lista y tu nombre se borra con una tachadura.", "health": 0, "happiness": 5, "money": -4000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El sargento cobra y luego firma tu orden de captura para limpiarse la conciencia.", "health": 0, "happiness": -30, "money": -4000, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "draft_boot_camp" }
+            ]
+          },
+          {
+            "text": "Huyo esta misma noche",
+            "outcomes": [
+              { "weight": 55, "resultText": "Sales de madrugada con una mochila y llegas a la ciudad vecina con el amanecer.", "health": -5, "happiness": 10, "money": -500, "setCity": null, "flag": "DESERTER", "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 30, "resultText": "Un control en la carretera te pesca con el maletín en la mano.", "health": -10, "happiness": -25, "money": -500, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "draft_boot_camp" },
+              { "weight": 15, "resultText": "La huida termina en un canal al borde de la carretera. No llegas a ningún lado.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me presento y pienso desertar",
+            "outcomes": [
+              { "weight": 65, "resultText": "Te alistas para tener el uniforme, el rancho y la información. La fuga se planifica desde dentro.", "health": 0, "happiness": -3, "money": 0, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": true, "nextEventId": "draft_boot_camp" },
+              { "weight": 35, "resultText": "Un veterano adivina tu plan con solo mirarte. Te tiene encima desde el primer día.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": "DRAFTED", "removeFlag": null, "loseJob": true, "nextEventId": "draft_boot_camp" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "draft_boot_camp",
+        "pool": "pool_draft",
+        "text": "Estás dentro: cuartel, formaciones de las cinco y un sargento con cara de pocos amigos. La guerra empieza a ser real. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me saqueo la cadera",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te conviertes en el soldado que el sargento usa de ejemplo. Tus compañeros te siguen.", "health": 5, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El entrenamiento te rompe una rodilla. Te declaran no apto para el frente.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Guardo mis papeles y preparo la fuga",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un mes dentro y una noche sin luna: sales por la zanja del campo de tiro.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": "DESERTER", "removeFlag": "DRAFTED", "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El sargento registró tu litera a tiempo. Calabozo y traslado al frente.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Te descubren corriendo entre las alambradas. Las órdenes son claras.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me hago el dormido todo el curso",
+            "outcomes": [
+              { "weight": 65, "resultText": "Cumples el entrenamiento con lo mínimo y sin destacar. Nadie recuerda tu cara.", "health": 0, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "El sargento te selecciona para la unidad más certera del campamento: la de castigos.", "health": -10, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me busco un trabajo administrativo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Con tu letra y tus papeles te asignan a intendencia: lejos del barro y de las balas.", "health": 0, "happiness": 10, "money": 100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La oficina es un ladrillo del cuartel y el trabajo no para. Cansancio de otra clase.", "health": -8, "happiness": -5, "money": 100, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

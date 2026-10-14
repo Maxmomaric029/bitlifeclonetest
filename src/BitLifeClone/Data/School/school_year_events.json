@@ -1,0 +1,275 @@
+{
+  "system": "school_year_events",
+  "note": "Eventos anuales de la escuela (E5). Comparten el pool 'school'. Las cadenas llegan a 2 niveles como máximo.",
+  "events": [
+    {
+      "id": "syr_first_day",
+      "pool": "school",
+      "ageMin": 6, "ageMax": 18,
+      "text": "Primer día de clases. Uniforme planchado, mochila nueva y el patio lleno de caras que no ubicas. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Buscar a mis panas",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te ubicas rápido con tu grupo y se reparten los puestos del fondo.", "popularity": 3, "happiness": 4 },
+            { "weight": 40, "resultText": "Tu grupo quedó en otra sección y te toca sentarte entre desconocidos.", "happiness": -2, "popularity": -1, "stress": 2 }
+          ]
+        },
+        {
+          "text": "Sentarme adelante",
+          "outcomes": [
+            { "weight": 70, "resultText": "Te sientas en primera fila y el profesor te aprende el nombre el primer día.", "grades": 2, "discipline": 2, "popularity": -2 },
+            { "weight": 30, "resultText": "Adelante te toca el compañero que no para de hablar y te desconcentra.", "grades": -1, "stress": 3 }
+          ]
+        },
+        {
+          "text": "Llegar tarde a propósito",
+          "outcomes": [
+            { "weight": 50, "resultText": "Entras diez minutos tarde y el profesor lo deja pasar por ser el primer día.", "discipline": -2, "popularity": 2, "attendance": -1 },
+            { "weight": 50, "resultText": "Te toca anotarte en la lista de tardanzas desde el día uno.", "discipline": -5, "attendance": -2, "stress": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_enrollment",
+      "pool": "school",
+      "ageMin": 6, "ageMax": 18,
+      "text": "Llegó la fecha de inscripción. Hay que pagar matrícula, uniformes y útiles, y en casa el dinero está contado.",
+      "choices": [
+        {
+          "text": "Pedirle ayuda a la familia",
+          "outcomes": [
+            { "weight": 60, "resultText": "La familia junta lo que falta y te inscribes sin problemas.", "money": -300, "stress": -2, "happiness": 2, "karma": 1 },
+            { "weight": 40, "resultText": "Te dicen que este año no alcanza y te toca esperar el siguiente periodo.", "stress": 6, "happiness": -5, "attendance": -4 }
+          ]
+        },
+        {
+          "text": "Buscar un trabajito para pagarla",
+          "outcomes": [
+            { "weight": 55, "resultText": "Te pagan lo justo y completas la matrícula a último minuto.", "money": -300, "stress": 5, "discipline": 2, "flag": "WORKING_PART_TIME" },
+            { "weight": 45, "resultText": "No juntas todo y la escuela te da prórroga hasta fin de mes.", "money": -150, "stress": 6, "grades": -1 }
+          ]
+        },
+        {
+          "text": "Pedir una beca",
+          "outcomes": [
+            { "weight": 40, "resultText": "Te aprueban la media beca por tus buenas notas.", "grades": 1, "happiness": 5, "flag": "SCHOLARSHIP", "nextEventId": "chain_scholarship_offer" },
+            { "weight": 60, "resultText": "No hay cupos de beca este año y la secretaria te pide que vuelvas en enero.", "happiness": -3, "stress": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_report_card_day",
+      "pool": "school",
+      "ageMin": 6, "ageMax": 22,
+      "text": "Entrega de boletines. La profesora llama los nombres uno por uno y el salón huele a nervios.",
+      "choices": [
+        {
+          "text": "Abrir el boletín enseguida",
+          "outcomes": [
+            { "weight": 40, "resultText": "Sacas las mejores notas del trimestre y la profesora te felicita.", "grades": 4, "happiness": 7, "popularity": 2 },
+            { "weight": 40, "resultText": "Pasas todas con notas justas y respiras tranquilo.", "grades": 1, "happiness": 2 },
+            { "weight": 20, "resultText": "Ves una nota roja en matemáticas y se te baja la presión.", "grades": -4, "happiness": -6, "stress": 5 }
+          ]
+        },
+        {
+          "text": "Esconder el boletín en la mochila",
+          "outcomes": [
+            { "weight": 50, "resultText": "Lo dejas en el fondo de la mochila hasta que mamá lo encuentra.", "stress": 4, "discipline": -2, "karma": -1 },
+            { "weight": 50, "resultText": "Lo enseñas esa noche y la conversación sale mejor de lo que pensabas.", "stress": -2, "happiness": 2, "karma": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_primary_graduation",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 13,
+      "text": "Acto de graduación de primaria: toga de papel, diploma enrollado y toda la familia en las sillas del patio.",
+      "choices": [
+        {
+          "text": "Dar el discurso",
+          "outcomes": [
+            { "weight": 40, "resultText": "Lees el discurso sin trabarte y la profesora llora desde la primera fila.", "popularity": 6, "happiness": 8, "grades": 1, "flag": "GRADUATED_PRIMARY" },
+            { "weight": 40, "resultText": "Te trabas en la segunda frase pero el público te aplaude igual.", "popularity": 2, "happiness": 3, "flag": "GRADUATED_PRIMARY" },
+            { "weight": 20, "resultText": "Se te cae la hoja del discurso y terminas hablando de memoria sin sentido.", "popularity": -3, "happiness": -2, "flag": "GRADUATED_PRIMARY" }
+          ]
+        },
+        {
+          "text": "Solo recibir el diploma",
+          "outcomes": [
+            { "weight": 80, "resultText": "Subes, recibes el papel y bajas sin ruido.", "happiness": 3, "flag": "GRADUATED_PRIMARY" },
+            { "weight": 20, "resultText": "Te confunden de nombre en el micrófono y te toca corregir a la directora.", "popularity": 1, "happiness": -1, "flag": "GRADUATED_PRIMARY" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_science_fair",
+      "pool": "school",
+      "ageMin": 10, "ageMax": 18,
+      "text": "Feria científica del colegio. Hay que escoger proyecto y tienes tres semanas.",
+      "choices": [
+        {
+          "text": "Volcán con bicarbonato",
+          "outcomes": [
+            { "weight": 60, "resultText": "Tu volcán hace espuma justo cuando pasan los jueces y sacas segundo lugar.", "grades": 3, "popularity": 3, "happiness": 5 },
+            { "weight": 40, "resultText": "El volcán no hace nada y el jurado se ríe bajito.", "grades": -1, "happiness": -4, "popularity": -2 }
+          ]
+        },
+        {
+          "text": "Un circuito original con papas",
+          "outcomes": [
+            { "weight": 35, "resultText": "Tu circuito enciende un bombillo con una papa y ganas el primer lugar.", "grades": 6, "smarts": 5, "popularity": 5, "happiness": 8, "nextEventId": "syr_science_regional" },
+            { "weight": 40, "resultText": "El circuito funciona a medias y consigues una mención.", "grades": 3, "smarts": 3, "happiness": 3 },
+            { "weight": 25, "resultText": "Se te quema un cable el día de la feria y no logras mostrar nada.", "smarts": 1, "happiness": -6, "stress": 6, "grades": -2 }
+          ]
+        },
+        {
+          "text": "Copiar uno de internet",
+          "outcomes": [
+            { "weight": 50, "resultText": "Nadie sospecha nada y te llevas una buena nota.", "grades": 4, "karma": -4, "discipline": -2 },
+            { "weight": 50, "resultText": "Una profesora reconoce el mismo proyecto de otro año y te cae la reprimenda.", "grades": -5, "discipline": -10, "karma": -6, "flag": "CHEATER_CAUGHT" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_science_regional",
+      "pool": "school",
+      "ageMin": 10, "ageMax": 18,
+      "text": "Tu proyecto clasificó para la feria regional. Hay que viajar y presentar frente a gente de otros colegios.",
+      "choices": [
+        {
+          "text": "Ensayar el discurso",
+          "outcomes": [
+            { "weight": 50, "resultText": "Presentas fluido y la gente te hace preguntas serias.", "smarts": 3, "popularity": 4, "fame": 1, "happiness": 7 },
+            { "weight": 50, "resultText": "Te sobra nerviosismo y una jueza te corrige un dato delante de todos.", "smarts": 1, "stress": 5, "happiness": -2 }
+          ]
+        },
+        {
+          "text": "Improvisar",
+          "outcomes": [
+            { "weight": 40, "resultText": "Improvisas con gracia y el público ríe contigo.", "popularity": 5, "happiness": 5 },
+            { "weight": 60, "resultText": "Se te seca la boca y tu compañero termina hablando por ti.", "popularity": -3, "stress": 6, "happiness": -4 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_olympics",
+      "pool": "school",
+      "ageMin": 8, "ageMax": 18,
+      "text": "Olimpiadas escolares: hay carreras, relevos y juegos de mesa. Tu curso te anota en una prueba.",
+      "choices": [
+        {
+          "text": "Correr los 100 metros",
+          "outcomes": [
+            { "weight": 40, "resultText": "Llegas segundo y te cuelgan una medalla de plata.", "fitness": 3, "popularity": 5, "happiness": 7 },
+            { "weight": 35, "resultText": "Quedas lejos de los primeros pero terminas sin una lesión.", "fitness": 2, "happiness": 1 },
+            { "weight": 25, "resultText": "Un tirón en el último tramo te deja cojeando hasta la meta.", "fitness": -2, "health": -4, "happiness": -4, "flag": "INJURED_SPORT" }
+          ]
+        },
+        {
+          "text": "Competir en ajedrez",
+          "outcomes": [
+            { "weight": 50, "resultText": "Ganas dos partidas y empatas la tercera.", "smarts": 3, "popularity": 2, "happiness": 4 },
+            { "weight": 50, "resultText": "Pierdes en el segundo movimiento por un descuido y te quedas viendo el tablero.", "happiness": -3, "stress": 2 }
+          ]
+        },
+        {
+          "text": "Animar desde las gradas",
+          "outcomes": [
+            { "weight": 70, "resultText": "Cantas con el grupo toda la tarde y te quedas sin voz.", "happiness": 5, "popularity": 3, "health": -1 },
+            { "weight": 30, "resultText": "Te aburres a media tarde y te escapas a comprar helado.", "happiness": 2, "discipline": -2, "attendance": -1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_year_end_act",
+      "pool": "school",
+      "ageMin": 6, "ageMax": 18,
+      "text": "Acto de fin de año: cada curso presenta algo y toda la escuela está reunida en el patio.",
+      "choices": [
+        {
+          "text": "Hacer un baile",
+          "outcomes": [
+            { "weight": 45, "resultText": "Tu coreografía arranca aplausos y la directora pide que repitan el número.", "popularity": 7, "happiness": 8, "fame": 1 },
+            { "weight": 35, "resultText": "Te equivocas de paso pero tu grupo te cubre y nadie se da cuenta.", "popularity": 2, "happiness": 3 },
+            { "weight": 20, "resultText": "Se rompe el sonido a mitad del baile y bailan en silencio.", "popularity": -2, "happiness": -4, "stress": 3 }
+          ]
+        },
+        {
+          "text": "Actuar en la obra de teatro",
+          "outcomes": [
+            { "weight": 50, "resultText": "Tu papel de villano causa más risa que miedo y todos te felicitan.", "popularity": 5, "happiness": 6 },
+            { "weight": 50, "resultText": "Olvidas tu línea y el apuntador te susurra desde la cortina.", "popularity": -1, "stress": 4, "happiness": -2 }
+          ]
+        },
+        {
+          "text": "Ayudar tras bambalinas",
+          "outcomes": [
+            { "weight": 60, "resultText": "Pasas las luces y el telón sin un error y el director te lo agradece.", "discipline": 3, "happiness": 3, "karma": 1 },
+            { "weight": 40, "resultText": "Te quedas dormido en la cabina y se pierde una entrada.", "discipline": -4, "stress": 3, "happiness": -3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_secondary_graduation",
+      "pool": "school",
+      "ageMin": 17, "ageMax": 20,
+      "text": "Graduación de bachiller: toga azul, birrete y la fiesta de promoción en la noche. ¿Cómo la vives?",
+      "choices": [
+        {
+          "text": "Celebrar tranquilo con mi familia",
+          "outcomes": [
+            { "weight": 70, "resultText": "Recibes el título con tu familia aplaudiendo y cenas con todos después.", "happiness": 9, "karma": 2, "flag": "GRADUATED_SECONDARY", "nextEventId": "syr_post_grad_future" },
+            { "weight": 30, "resultText": "La ceremonia se alarga dos horas y te duermes con el título en la mano.", "happiness": 3, "stress": -2, "flag": "GRADUATED_SECONDARY", "nextEventId": "syr_post_grad_future" }
+          ]
+        },
+        {
+          "text": "Fiesta de promoción hasta la madrugada",
+          "outcomes": [
+            { "weight": 50, "resultText": "Bailas toda la noche con tu curso y amaneces con el birrete puesto.", "happiness": 10, "popularity": 4, "health": -2, "flag": "GRADUATED_SECONDARY", "nextEventId": "syr_post_grad_future" },
+            { "weight": 30, "resultText": "Alguien se pasa de tragos y la noche termina en emergencias.", "happiness": -4, "health": -6, "popularity": 1, "flag": "GRADUATED_SECONDARY", "nextEventId": "syr_post_grad_future" },
+            { "weight": 20, "resultText": "La policía corta la fiesta y te llevan a declarar con el resto.", "discipline": -6, "karma": -3, "popularity": 2, "flag": "GRADUATED_SECONDARY", "nextEventId": "syr_post_grad_future" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syr_post_grad_future",
+      "pool": "school",
+      "ageMin": 17, "ageMax": 22,
+      "text": "Con el título en la mano toca decidir qué viene después. Todo el mundo pregunta lo mismo en cada reunión familiar.",
+      "choices": [
+        {
+          "text": "Aplicar a la universidad",
+          "outcomes": [
+            { "weight": 50, "resultText": "Te aceptan en la universidad de tu ciudad y ya tienes fecha de inicio.", "happiness": 8, "stress": 3, "flag": "ACCEPTED_UNIVERSITY" },
+            { "weight": 30, "resultText": "Te ponen en lista de espera hasta el próximo semestre.", "stress": 5, "happiness": -2 },
+            { "weight": 20, "resultText": "Te rechazan por puntaje y te toca repetir la prueba.", "stress": 6, "happiness": -6 }
+          ]
+        },
+        {
+          "text": "Buscar trabajo",
+          "outcomes": [
+            { "weight": 60, "resultText": "Consigues un puesto de ayudante y empiezas la próxima semana.", "happiness": 3, "stress": 3, "flag": "EMPLOYED" },
+            { "weight": 40, "resultText": "Recorres cinco negocios y nadie te devuelve la llamada.", "stress": 5, "happiness": -3 }
+          ]
+        },
+        {
+          "text": "Tomarme un año libre",
+          "outcomes": [
+            { "weight": 70, "resultText": "Te tiras a descansar un año y tu familia pregunta cada domingo qué piensas hacer.", "happiness": 4, "stress": -3, "discipline": -2 },
+            { "weight": 30, "resultText": "Ese año libre se alarga y te pierdes entre el sofá y el teléfono.", "happiness": -2, "discipline": -5 }
+          ]
+        }
+      ]
+    }
+  ]
+}

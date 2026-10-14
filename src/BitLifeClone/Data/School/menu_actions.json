@@ -1,0 +1,421 @@
+{
+  "module": "school_menu_actions",
+  "actions": [
+    {
+      "id": "school_action_study_1h",
+      "label": "Estudiar 1 hora",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 12,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Repasas lo del día y algo se te queda. Sin drama.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Te concentras y por fin entiendes ese tema que traías atravesado.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 3, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 20, "resultText": "Abres el cuaderno, te distraes con el celular y casi no avanzas.", "happiness": -1, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_study_2h",
+      "label": "Estudiar 2 horas",
+      "ageMin": 9,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 0,
+      "maxPerYear": 8,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Dos horas bien metido y sales con la cabeza clara.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 5, "looks": 0, "fame": 0, "karma": 0, "stress": 3, "grades": 5, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 35, "resultText": "Estudias a medias porque el sueño te gana.", "happiness": -1, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 20, "resultText": "Se te va el tiempo en el celular y no retienes nada.", "happiness": -2, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_study_4h",
+      "label": "Estudiar 4 horas",
+      "ageMin": 12,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 4,
+      "cooldownYears": 0,
+      "maxPerYear": 4,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Cuatro horas seguidas y sales con la materia dominada.", "happiness": 0, "health": -2, "fitness": 0, "smarts": 9, "looks": 0, "fame": 0, "karma": 0, "stress": 8, "grades": 8, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 35, "resultText": "Aguantas, pero llegas a la cama con la cabeza hecha un nudo.", "happiness": -3, "health": -3, "fitness": 0, "smarts": 6, "looks": 0, "fame": 0, "karma": 0, "stress": 12, "grades": 5, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "A las cuatro horas revientas y no quieres ver un libro más.", "happiness": -8, "health": -3, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 0, "stress": 18, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": "BURNOUT", "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_do_homework",
+      "label": "Hacer la tarea",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 20,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Entregas la tarea a tiempo y el profe ni te mira.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 3, "attendance": 0, "discipline": 2, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "La haces rápido y con errores, pero la entregas.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 1, "attendance": 0, "discipline": 1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "Te queda mejor de lo que pensabas y el profe la lee en clase.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 4, "attendance": 0, "discipline": 2, "popularity": 2, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_skip_homework",
+      "label": "No hacer la tarea",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 10,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "No la haces y el profe no la revisa. Te salvas.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -1, "grades": -1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 35, "resultText": "No la entregas y te clavan un cero que baja el promedio.", "happiness": -2, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 3, "grades": -4, "attendance": 0, "discipline": -3, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "El profe te llama al frente y quedas mal delante de todos.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 4, "grades": -5, "attendance": 0, "discipline": -4, "popularity": -3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_study_group",
+      "label": "Estudiar en grupo",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 0,
+      "maxPerYear": 6,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Estudian juntos y entre todos se aclaran las dudas.", "happiness": 3, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 2, "stress": 1, "grades": 4, "attendance": 0, "discipline": 0, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 4, "nextEventId": null },
+        { "weight": 30, "resultText": "Terminan más hablando de series que estudiando.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 0, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 2, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 3, "nextEventId": null },
+        { "weight": 25, "resultText": "Uno del grupo te explica mejor que el profe y te cambia el tema.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 6, "looks": 0, "fame": 0, "karma": 2, "stress": 1, "grades": 5, "attendance": 0, "discipline": 0, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 4, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_ask_teacher",
+      "label": "Pedir ayuda a un profesor",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 6,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "El profe se queda contigo después de clase y te lo explica paso a paso.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 2, "stress": -3, "grades": 3, "attendance": 0, "discipline": 1, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 5, "nextEventId": null },
+        { "weight": 25, "resultText": "Te dice que pongas más atención en clase y te deja igual.", "happiness": -2, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -3, "nextEventId": null },
+        { "weight": 20, "resultText": "Te responde con mala gana porque está enojado con el grupo.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -6, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_hire_tutor",
+      "label": "Contratar un tutor",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 40,
+      "hoursCost": 2,
+      "cooldownYears": 0,
+      "maxPerYear": 4,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "El tutor te hace clic en la cabeza y por fin entiendes esa materia.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 6, "looks": 0, "fame": 0, "karma": 0, "stress": -3, "grades": 6, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "El tutor es bueno pero caro, y te deja sin chavo pa la semana.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 4, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "Pagas la hora y el tutor no da pie con bola.", "happiness": -5, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_prep_exam",
+      "label": "Prepararte pa un examen",
+      "ageMin": 12,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 4,
+      "cooldownYears": 0,
+      "maxPerYear": 4,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Repasas todo el temario y llegas al examen con seguridad.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 5, "looks": 0, "fame": 0, "karma": 0, "stress": 5, "grades": 7, "attendance": 0, "discipline": 2, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Estudias lo justo y por suerte algo te ayuda.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 3, "looks": 0, "fame": 0, "karma": 0, "stress": 4, "grades": 4, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Te agobias con tanta materia y no retienes ni la mitad.", "happiness": -4, "health": -1, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 10, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_cheat_exam",
+      "label": "Copiarte en un examen",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te pasas las respuestas sin que nadie te vea y sales con buena nota.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": -8, "stress": 4, "grades": 8, "attendance": 0, "discipline": -2, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "El profe te mira raro pero no dice nada. Sudas frío.", "happiness": -2, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -5, "stress": 8, "grades": 5, "attendance": 0, "discipline": -1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "Te pillan con la chuleta y te llevan a dirección.", "happiness": -6, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": -2, "karma": -10, "stress": 10, "grades": -10, "attendance": 0, "discipline": -12, "popularity": -2, "money": 0, "flag": "CHEATER_CAUGHT", "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_copy_homework",
+      "label": "Pedirle a alguien que te pase la tarea",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 6,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Un pana te pasa la tarea y la entregas como tuya.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -4, "stress": 2, "grades": 3, "attendance": 0, "discipline": -1, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 2, "nextEventId": null },
+        { "weight": 25, "resultText": "Te la presta, pero copias con el nombre de él y te pillan.", "happiness": -4, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": -1, "karma": -6, "stress": 4, "grades": -5, "attendance": 0, "discipline": -5, "popularity": -3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 20, "resultText": "Nadie te la quiere pasar y quedas como el vago del salón.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": -4, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -2, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_skip_class",
+      "label": "Faltar a clase",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 6,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te quedas en el baño y nadie nota tu ausencia.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -2, "stress": 1, "grades": -1, "attendance": -4, "discipline": -3, "popularity": 0, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 35, "resultText": "Te anotan la falta y la noticia llega a tu casa.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -2, "stress": 4, "grades": -2, "attendance": -6, "discipline": -5, "popularity": 0, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": -3, "nextEventId": null },
+        { "weight": 25, "resultText": "Te pillan dando vueltas por el barrio en horario de clase.", "happiness": -4, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": -1, "karma": -3, "stress": 6, "grades": -3, "attendance": -8, "discipline": -6, "popularity": -2, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": -4, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_play_hooky",
+      "label": "Hacer la cimarra con amigos",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 4,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Se van de cimarra y el día pasa volando.", "happiness": 6, "health": 0, "fitness": 1, "smarts": 0, "looks": 0, "fame": 1, "karma": -3, "stress": -2, "grades": -2, "attendance": -6, "discipline": -5, "popularity": 5, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": 5, "nextEventId": null },
+        { "weight": 35, "resultText": "La pasan bien hasta que ven al director en la esquina y corren.", "happiness": 3, "health": 0, "fitness": 1, "smarts": 0, "looks": 0, "fame": 0, "karma": -2, "stress": 4, "grades": -2, "attendance": -5, "discipline": -4, "popularity": 3, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": 3, "nextEventId": null },
+        { "weight": 25, "resultText": "Los agarran y llaman a los padres de todos.", "happiness": -6, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -3, "stress": 8, "grades": -3, "attendance": -8, "discipline": -8, "popularity": 1, "money": 0, "flag": "TRUANT", "removeFlag": null, "relationDelta": 2, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_counselor",
+      "label": "Hablar con el orientador",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El orientador te escucha de verdad y te saca un peso de encima.", "happiness": 5, "health": 1, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 3, "stress": -8, "grades": 0, "attendance": 0, "discipline": 2, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 5, "nextEventId": null },
+        { "weight": 30, "resultText": "Te da consejos de manual que no te sirven de mucho.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 20, "resultText": "Te manda a hablar con el director por algo que contaste.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 5, "grades": 0, "attendance": 0, "discipline": -2, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -4, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_request_transfer",
+      "label": "Pedir cambio de salón o escuela",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te cambian de salón y por fin respiras con otra gente.", "happiness": 5, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -5, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Te dan largas y te dejan en el mismo grupo.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -2, "nextEventId": null },
+        { "weight": 25, "resultText": "El cambio sale mal: caes con profesores peores y compañeros que no conoces.", "happiness": -5, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 5, "grades": -3, "attendance": 0, "discipline": 0, "popularity": -2, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -3, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_participate_class",
+      "label": "Participar en clase",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 12,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Levantas la mano y das la respuesta correcta. El profe te felicita.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 3, "looks": 0, "fame": 0, "karma": 1, "stress": 0, "grades": 4, "attendance": 0, "discipline": 4, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 5, "nextEventId": null },
+        { "weight": 30, "resultText": "Participas pero te equivocas y se ríen un poco.", "happiness": -1, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 1, "attendance": 0, "discipline": 1, "popularity": -1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 20, "resultText": "El profe te pone de ejemplo y los demás te miran feo.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 1, "karma": 1, "stress": 2, "grades": 3, "attendance": 0, "discipline": 3, "popularity": -2, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 4, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_stay_quiet",
+      "label": "Quedarte callado en clase",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 12,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "No participas y el día pasa sin problemas.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -1, "grades": 0, "attendance": 0, "discipline": 1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Te pierdes en tus pensamientos y se te va el tema completo.", "happiness": 1, "health": 0, "fitness": 0, "smarts": -2, "looks": 0, "fame": 0, "karma": 0, "stress": 0, "grades": -2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "El profe te interroga porque te ve distraído y sudas.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 4, "grades": -1, "attendance": 0, "discipline": -1, "popularity": -1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -2, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_apologize_teacher",
+      "label": "Pedir perdón a un profesor",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "El profe lo agradece y la relación cambia pa bien.", "happiness": 3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 2, "stress": -3, "grades": 1, "attendance": 0, "discipline": 4, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 12, "nextEventId": null },
+        { "weight": 30, "resultText": "Acepta el perdón pero no lo olvida.", "happiness": 0, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -1, "grades": 0, "attendance": 0, "discipline": 2, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 5, "nextEventId": null },
+        { "weight": 15, "resultText": "Se lo toma como burla y te ganas un enemigo.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -1, "stress": 4, "grades": 0, "attendance": 0, "discipline": -4, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -10, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_extra_course",
+      "label": "Estudiar un idioma o curso extra",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 30,
+      "hoursCost": 3,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Aprendes lo básico del curso y te gusta más de lo esperado.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 5, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": 1, "attendance": 0, "discipline": 1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "El curso es pesado pero te suma pa el futuro.", "happiness": -1, "health": 0, "fitness": 0, "smarts": 3, "looks": 0, "fame": 0, "karma": 0, "stress": 4, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "Pagas el curso, vas dos clases y lo dejas.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 0, "attendance": 0, "discipline": -1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_sleep_early",
+      "label": "Dormir temprano",
+      "ageMin": 5,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 20,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Duermes como un tronco y amaneces con todo.", "happiness": 3, "health": 3, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -4, "grades": 1, "attendance": 1, "discipline": 1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "Te acuestas temprano pero das vueltas pensando en todo.", "happiness": 0, "health": 1, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "No logras dormir igual y llegas medio zombi a clase.", "happiness": -1, "health": -1, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 2, "grades": -1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_stay_up_late",
+      "label": "Trasnochar jugando",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 0,
+      "maxPerYear": 10,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te quedas hasta las dos jugando y te diviertes como loco.", "happiness": 5, "health": -2, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": -3, "grades": -1, "attendance": 0, "discipline": -1, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Al día siguiente bostezas toda la mañana y no rindes.", "happiness": 0, "health": -3, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 3, "grades": -3, "attendance": -1, "discipline": -1, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "Te duermes en plena clase y el profe te manda a lavarte la cara.", "happiness": 2, "health": -2, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 3, "grades": -2, "attendance": 0, "discipline": -4, "popularity": -1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -2, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_recess_play",
+      "label": "Jugar en el recreo",
+      "ageMin": 5,
+      "ageMax": 11,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 20,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Corres todo el recreo y vuelves al salón con las pilas puestas.", "happiness": 4, "health": 1, "fitness": 3, "smarts": 0, "looks": 0, "fame": 0, "karma": 1, "stress": -2, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 2, "nextEventId": null },
+        { "weight": 25, "resultText": "Juegas y alguien te empuja de broma. Nada grave.", "happiness": 2, "health": 0, "fitness": 2, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 0, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 1, "nextEventId": null },
+        { "weight": 15, "resultText": "Te caes jugando y te raspas las rodillas.", "happiness": -2, "health": -3, "fitness": 1, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 1, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_read_book",
+      "label": "Leer un libro",
+      "ageMin": 6,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 0,
+      "maxPerYear": 8,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te metes en la historia y se te va el tiempo leyendo.", "happiness": 4, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 0, "stress": -3, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 30, "resultText": "Lees un rato y te engancha lo justo.", "happiness": 2, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": -1, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 15, "resultText": "El libro es un plomazo y lo dejas al tercer capítulo.", "happiness": -1, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 0, "grades": 0, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_help_classmate",
+      "label": "Ayudar a un compañero con la tarea",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 6,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le explicas y de paso refuerzas lo tuyo.", "happiness": 3, "health": 0, "fitness": 0, "smarts": 3, "looks": 0, "fame": 0, "karma": 4, "stress": 0, "grades": 2, "attendance": 0, "discipline": 1, "popularity": 4, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 6, "nextEventId": null },
+        { "weight": 30, "resultText": "Te pide ayuda y terminas haciéndole la tarea completa.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": -3, "stress": 2, "grades": 0, "attendance": 0, "discipline": -1, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 3, "nextEventId": null },
+        { "weight": 15, "resultText": "El profe cree que copiaron los dos y los separa.", "happiness": -3, "health": 0, "fitness": 0, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "stress": 3, "grades": 0, "attendance": 0, "discipline": -3, "popularity": -2, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -3, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_prepare_presentation",
+      "label": "Preparar una exposición",
+      "ageMin": 12,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 3,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Preparas la exposición y la presentas sin titubear.", "happiness": 3, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 1, "karma": 1, "stress": 3, "grades": 6, "attendance": 0, "discipline": 2, "popularity": 3, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 4, "nextEventId": null },
+        { "weight": 30, "resultText": "Te preparas a medias y te trabas al frente.", "happiness": -2, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 5, "grades": 2, "attendance": 0, "discipline": 0, "popularity": 0, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "Se te olvida parte del material y el profe te baja la nota.", "happiness": -4, "health": 0, "fitness": 0, "smarts": 1, "looks": 0, "fame": 0, "karma": 0, "stress": 5, "grades": -3, "attendance": 0, "discipline": -1, "popularity": -1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": -3, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "school_action_science_fair",
+      "label": "Apuntarte a la feria científica",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 4,
+      "cooldownYears": 0,
+      "maxPerYear": 1,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Tu proyecto despierta curiosidad y pasas a la ronda final.", "happiness": 4, "health": 0, "fitness": 0, "smarts": 6, "looks": 0, "fame": 2, "karma": 1, "stress": 4, "grades": 5, "attendance": 0, "discipline": 1, "popularity": 4, "money": 0, "flag": "GIFTED", "removeFlag": null, "relationDelta": 3, "nextEventId": null },
+        { "weight": 35, "resultText": "Trabajas duro pero no ganas nada. Aun así aprendiste bastante.", "happiness": 1, "health": 0, "fitness": 0, "smarts": 4, "looks": 0, "fame": 0, "karma": 1, "stress": 4, "grades": 3, "attendance": 0, "discipline": 0, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null },
+        { "weight": 25, "resultText": "El proyecto se te daña la noche antes y presentas lo que puedes.", "happiness": -4, "health": 0, "fitness": 0, "smarts": 2, "looks": 0, "fame": 0, "karma": 0, "stress": 6, "grades": 1, "attendance": 0, "discipline": 0, "popularity": 1, "money": 0, "flag": null, "removeFlag": null, "relationDelta": 0, "nextEventId": null }
+      ]
+    }
+  ]
+}

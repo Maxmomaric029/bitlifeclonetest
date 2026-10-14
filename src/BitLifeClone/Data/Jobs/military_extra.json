@@ -1,0 +1,39 @@
+{
+  "category": "military",
+  "name": "Military (especialidades extra)",
+  "jobs": [
+    { "id": "sf_candidate", "title": "Special Forces Candidate", "promotesTo": "green_beret", "tier": 1, "baseSalary": 30000, "currency": "USD", "education": "HighSchool", "experienceYears": 1, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "special_forces" },
+    { "id": "green_beret", "title": "Green Beret", "promotesTo": "sf_team_sergeant", "tier": 2, "baseSalary": 30000, "currency": "USD", "education": "HighSchool", "experienceYears": 2, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "special_forces" },
+    { "id": "sf_team_sergeant", "title": "SF Team Sergeant", "promotesTo": "sf_team_leader", "tier": 3, "baseSalary": 30000, "currency": "USD", "education": "HighSchool", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "special_forces" },
+    { "id": "sf_team_leader", "title": "SF Team Leader", "promotesTo": null, "tier": 4, "baseSalary": 30000, "currency": "USD", "education": "HighSchool", "experienceYears": 6, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "special_forces" },
+
+    { "id": "drone_operator_jr", "title": "Drone Operator (Jr.)", "promotesTo": "drone_operator", "tier": 1, "baseSalary": 42000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "air_force", "specialty": "drone" },
+    { "id": "drone_operator", "title": "Drone Operator", "promotesTo": "drone_commander", "tier": 2, "baseSalary": 42000, "currency": "USD", "education": "HighSchool", "experienceYears": 2, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "air_force", "specialty": "drone" },
+    { "id": "drone_commander", "title": "Drone Squadron Commander", "promotesTo": null, "tier": 3, "baseSalary": 42000, "currency": "USD", "education": "University", "experienceYears": 5, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "air_force", "specialty": "drone" },
+
+    { "id": "navy_wo1", "title": "Navy Warrant Officer 1", "promotesTo": "navy_cw2", "tier": 1, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "navy", "specialty": "navy" },
+    { "id": "navy_cw2", "title": "Navy Chief Warrant Officer 2", "promotesTo": "navy_cw3", "tier": 2, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 10, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "navy", "specialty": "navy" },
+    { "id": "navy_cw3", "title": "Navy Chief Warrant Officer 3", "promotesTo": null, "tier": 3, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "navy", "specialty": "navy" },
+
+    { "id": "marines_wo1", "title": "Marine Warrant Officer 1", "promotesTo": "marines_cw2", "tier": 1, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "marines", "specialty": "infantry" },
+    { "id": "marines_cw2", "title": "Marine Chief Warrant Officer 2", "promotesTo": "marines_cw3", "tier": 2, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 10, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "marines", "specialty": "infantry" },
+    { "id": "marines_cw3", "title": "Marine Chief Warrant Officer 3", "promotesTo": null, "tier": 3, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 12, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "marines", "specialty": "infantry" },
+
+    { "id": "air_force_wo1", "title": "Air Force Warrant Officer 1", "promotesTo": "air_force_cw2", "tier": 1, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "air_force", "specialty": "logistics" },
+    { "id": "air_force_cw2", "title": "Air Force Chief Warrant Officer 2", "promotesTo": null, "tier": 2, "baseSalary": 60000, "currency": "USD", "education": "HighSchool", "experienceYears": 10, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "air_force", "specialty": "logistics" },
+
+    { "id": "combat_medic", "title": "Combat Medic", "promotesTo": "combat_medic_sr", "tier": 1, "baseSalary": 40000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "medical" },
+    { "id": "combat_medic_sr", "title": "Senior Combat Medic", "promotesTo": "field_surgeon", "tier": 2, "baseSalary": 40000, "currency": "USD", "education": "NursingSchool", "experienceYears": 3, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "medical" },
+    { "id": "field_surgeon", "title": "Field Surgeon", "promotesTo": null, "tier": 3, "baseSalary": 40000, "currency": "USD", "education": "MedicalSchool", "experienceYears": 6, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "medical" },
+
+    { "id": "military_logistics_jr", "title": "Logistics Specialist", "promotesTo": "military_logistics_sr", "tier": 1, "baseSalary": 36000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "logistics" },
+    { "id": "military_logistics_sr", "title": "Senior Logistics NCO", "promotesTo": "logistics_chief", "tier": 2, "baseSalary": 36000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "logistics" },
+    { "id": "logistics_chief", "title": "Logistics Chief", "promotesTo": null, "tier": 3, "baseSalary": 36000, "currency": "USD", "education": "University", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "logistics" },
+
+    { "id": "military_engineer_jr", "title": "Combat Engineer", "promotesTo": "military_engineer_sr", "tier": 1, "baseSalary": 38000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "engineer" },
+    { "id": "military_engineer_sr", "title": "Senior Combat Engineer", "promotesTo": null, "tier": 2, "baseSalary": 38000, "currency": "USD", "education": "University", "experienceYears": 4, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "engineer" },
+
+    { "id": "mp_jr", "title": "Military Police", "promotesTo": "mp_sr", "tier": 1, "baseSalary": 34000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "military_police" },
+    { "id": "mp_sr", "title": "Military Police Investigator", "promotesTo": null, "tier": 2, "baseSalary": 34000, "currency": "USD", "education": "UpperSecondary", "experienceYears": 3, "canHoldWithCriminalRecord": false, "category": "military", "icon": "", "branch": "army", "specialty": "military_police" }
+  ]
+}

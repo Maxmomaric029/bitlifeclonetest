@@ -1,0 +1,146 @@
+{
+  "module": "fame_menu",
+  "note": "Sistema de fama (F1). Ganancia organica, viralidad, contratos y gestion de escandalos. Las cadenas viven en fame_events.json.",
+  "actions": [
+    {
+      "id": "fame_post_video", "label": "Subir un video a las redes",
+      "ageMin": 13, "ageMax": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "El video de la comida de la esquina prende en el barrio: mil vistas y tres comentarios de la tía Rosy.", "happiness": 4, "fame": 2, "stress": 2 },
+        { "weight": 30, "resultText": "El video pasa sin pena ni gloria: 40 vistas, 2 de ellas tuyas haciendo control de calidad.", "happiness": -2, "fame": 1 },
+        { "weight": 20, "resultText": "El algoritmo te bendice: el video de la mamá bailando llega al Millon en dia y te abre la puerta del viral.", "happiness": 10, "fame": 8, "flag": "VIRAL" },
+        { "weight": 10, "resultText": "Un error de edición deja ver la casa ajena y el propietario piensa demandarte por imagen.", "happiness": -8, "fame": 3, "stress": 8 }
+      ]
+    },
+    {
+      "id": "fame_open_account", "label": "Abrir cuenta en todas las plataformas",
+      "ageMin": 13, "ageMax": 80, "cost": 100, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "TikTok, Instagram, YouTube y X con el mismo nombre y la misma foto: la marca personal está montada.", "happiness": 3, "fame": 3, "popularity": 2 },
+        { "weight": 40, "resultText": "Las cuentas están listas, pero sin contenido el número vacío te acelera el síndrome del impostor.", "happiness": 1, "fame": 1, "stress": 3 }
+      ]
+    },
+    {
+      "id": "fame_hire_manager", "label": "Contratar un mánager de imagen",
+      "ageMin": 18, "ageMax": 120, "cost": 2500, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minStat": { "fame": 20 }, "flagsNone": ["UNDER_CONTRACT", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El mánager limpia tu perfil, agenda dos entrevista y te consigue una agencia de casting seria.", "happiness": 5, "fame": 6, "stress": -2, "money": -2000 },
+        { "weight": 30, "resultText": "El mánager cobra puntual pero la agenda que trae es de esos eventos que no pagan entrada.", "happiness": -3, "fame": 2, "stress": 4, "money": -2500 },
+        { "weight": 20, "resultText": "El mánager desaparece con el check inicial y sin firmar nada: otra lección pagada de la faraona.", "happiness": -10, "fame": 0, "money": -2500 }
+      ]
+    },
+    {
+      "id": "fame_sign_contract", "label": "Firmar contrato con disquera/agencia",
+      "ageMin": 16, "ageMax": 70, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minStat": { "fame": 55 }, "flagsAny": ["CELEBRITY", "VIRAL"], "flagsNone": ["UNDER_CONTRACT", "CANCELLED", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El contrato de tres años firma en el estudio: adelanto contante, producción y agenda llena para el año.", "happiness": 12, "fame": 8, "money": 50000, "flag": "UNDER_CONTRACT" },
+        { "weight": 30, "resultText": "El contrato se firma pero las cláusulas muerden: el adelanto viene con 30% de comisión y exclusividad total.", "happiness": 2, "fame": 6, "money": 20000, "flag": "UNDER_CONTRACT" },
+        { "weight": 20, "resultText": "La disquera entra a negociar y sale sin acuerdo: tu cara manda pocas llamadas esta semana.", "happiness": -6, "fame": 2, "stress": 8 }
+      ]
+    },
+    {
+      "id": "fame_break_contract", "label": "Romper el contrato con la disquera",
+      "ageMin": 16, "ageMax": 70, "cost": 0, "cooldownYears": 3, "maxPerYear": 1,
+      "requires": { "flagsExist": ["UNDER_CONTRACT"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Los abogados negocian la salida: pagas la cláusula y quedas libre con el cachet en mano.", "happiness": 6, "fame": -2, "money": -40000, "flag": null, "removeFlag": "UNDER_CONTRACT" },
+        { "weight": 35, "resultText": "La disquera te demanda por incumplimiento: el caso aprieta la agenda y el bolsillo por dos años.", "happiness": -12, "fame": -3, "stress": 14, "money": -25000, "flag": "SCANDAL", "removeFlag": "UNDER_CONTRACT" },
+        { "weight": 25, "resultText": "La salida era tan limpia que la disquera te deja con las multiplicaciones por la puerta del fondo.", "happiness": 2, "fame": -1, "flag": null, "removeFlag": "UNDER_CONTRACT" }
+      ]
+    },
+    {
+      "id": "fame_respond_hater", "label": "Contestar a los haters",
+      "ageMin": 13, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "minStat": { "fame": 25 }, "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Tu respuesta con humor se hace screenshot del año: gana simpatía hasta en el grupo del enemigo.", "happiness": 6, "fame": 4, "popularity": 3 },
+        { "weight": 35, "resultText": "La respuesta la usa el hater: el hilo se te devuelve con capturas viejas y sin piedad.", "happiness": -8, "fame": 3, "popularity": -2, "flag": "HATER_MAGNET" },
+        { "weight": 25, "resultText": "Contestar a todo hater es como ofrecerle el micrófono al que vino a abuchear: te consum pneumonia mental.", "happiness": -4, "fame": 1, "stress": 10, "flag": "HATER_MAGNET" }
+      ]
+    },
+    {
+      "id": "fame_ignore_hater", "label": "Ignorar los comentarios malos",
+      "ageMin": 13, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "minStat": { "fame": 20 }, "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Silencio profesional: el hilo se apaga solo y tu feed vuelve a respirar paz.", "happiness": 4, "stress": -4, "popularity": 2 },
+        { "weight": 25, "resultText": "Ignorar se lee como arrogancia: la bandeja de entraadas sigue llenándose de rabia.", "happiness": -4, "stress": 8, "flag": "HATER_MAGNET" },
+        { "weight": 20, "resultText": "La bola de comentarios se enfría tal como gurúes del internet predicen: sin drama.", "happiness": 2, "stress": -2 }
+      ]
+    },
+    {
+      "id": "fame_public_apology", "label": "Salida en vivo a pedir disculpas",
+      "ageMin": 16, "ageMax": 120, "cost": 1500, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsAny": ["SCANDAL", "CANCELLED"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Sale llorando, honesto y sin guion: la gente premia la humildad y el tema se apaga en una semana.", "happiness": 6, "fame": 5, "stress": -8, "flag": null, "removeFlag": "CANCELLED" },
+        { "weight": 35, "resultText": "Sale a pedir perdón pero el tono suena a comercial: el video se vuelve plantilla de burla.", "happiness": -8, "fame": 5, "stress": 6, "flag": "HATER_MAGNET" },
+        { "weight": 25, "resultText": "La disculpa abre nuevo escándalo: alguien sale con un recorte del pasado en el mismo directo.", "happiness": -12, "fame": 8, "stress": 12, "flag": "CANCELLED" }
+      ]
+    },
+    {
+      "id": "fame_charity_event", "label": "Organizar un evento benéfico",
+      "ageMin": 18, "ageMax": 120, "cost": 8000, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minStat": { "fame": 30 }, "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El evento llena el salón y recauda para el asilo del barrio: la prensa sale con tu nombre y el corazón suave.", "happiness": 12, "fame": 8, "karma": 10, "money": -4000 },
+        { "weight": 30, "resultText": "El evento sale a medias: recauda poco pero el gesto queda mandado para el archivo bueno.", "happiness": 5, "fame": 3, "karma": 6, "money": -8000 },
+        { "weight": 20, "resultText": "El evento se rie por el lluvia y la prensa pregunta por el dinero no gastado: el disfraz de filántropo tambalea.", "happiness": -10, "fame": 2, "stress": 12, "money": -6000, "flag": "SCANDAL" }
+      ]
+    },
+    {
+      "id": "fame_interview", "label": "Darme una entrevista con la prensa",
+      "ageMin": 18, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minStat": { "fame": 35 }, "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La entrevista sale limpia y humana: se comparte hasta el recorte de tu respuesta sobre tu barrio.", "happiness": 5, "fame": 5, "stress": 2 },
+        { "weight": 35, "resultText": "El periodista mete una pregunta fuera del guion y tu respuesta recortada se vuelve viral por aria.", "happiness": -6, "fame": 6, "stress": 8, "flag": "HATER_MAGNET" },
+        { "weight": 20, "resultText": "La entrevista saca algo privado no preguntado: la familia te reclama la mañana del domingo.", "happiness": -10, "fame": 4, "stress": 10, "relationDelta": -5 }
+      ]
+    },
+    {
+      "id": "fame_drink_and_fight", "label": "Salidas ruidosas con el grupo del boom",
+      "ageMin": 18, "ageMax": 100, "cost": 2000, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minStat": { "fame": 40 }, "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La noche sale sin pegas: fotos con gente grande y tu cara amaneciendo en las historias buenas.", "happiness": 8, "fame": 4, "money": -1500 },
+        { "weight": 35, "resultText": "El video del forcejeo en la salida del colmado nocturno circula antes del amanecer con tu nombre.", "happiness": -8, "fame": 6, "stress": 10, "money": -2000, "flag": "SCANDAL" },
+        { "weight": 20, "resultText": "La rumba termina con el camión de la policía y tu cara saliendo comiendo harina por la puerta.", "happiness": -14, "fame": 8, "stress": 14, "money": -2000, "flag": "ARRESTED", "nextEventId": "trial_first_hearing" }
+      ]
+    },
+    {
+      "id": "fame_collab", "label": "Hacer una colaboración con otra figura",
+      "ageMin": 18, "ageMax": 120, "cost": 3000, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minStat": { "fame": 45 }, "flagsAny": ["CELEBRITY", "UNDER_CONTRACT"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El junte prende: las dos audiencias se cruzan y los números de la semana no se ven en tu analytics.", "happiness": 10, "fame": 8, "money": 15000 },
+        { "weight": 30, "resultText": "La colaboración sale fría: el junte existe pero la audiencia no conecta y el caché se pierde.", "happiness": -2, "fame": 2, "money": -3000 },
+        { "weight": 20, "resultText": "El socio tira el tema antes de tiempo y tu parte queda en borrador: la alianza se amarga.", "happiness": -8, "fame": 4, "stress": 10, "money": -3000 }
+      ]
+    },
+    {
+      "id": "fame_retire", "label": "Anunciar mi retiro del show",
+      "ageMin": 25, "ageMax": 100, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "flagsAny": ["CELEBRITY", "UNDER_CONTRACT"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El retiro sale en silencio y con clase: la prensa despide con respeto y tú duermes sin campana del teléfono.", "happiness": 10, "fame": 0, "stress": -10, "flag": null, "removeFlag": "UNDER_CONTRACT" },
+        { "weight": 30, "resultText": "El retiro dura menos que el anuncio: el vacío de la cancha te devuelve al escenario en tres meses.", "happiness": -4, "fame": 4, "stress": 2, "flag": null, "removeFlag": "UNDER_CONTRACT" },
+        { "weight": 20, "resultText": "El anuncio se interpreta como reclamo por dinero: la denso memoria del público te cuesta fans.", "happiness": -8, "fame": -5, "stress": 8, "flag": null, "removeFlag": "UNDER_CONTRACT" }
+      ]
+    },
+    {
+      "id": "fame_fight_hater_public", "label": "Meterme en un pleito público",
+      "ageMin": 16, "ageMax": 100, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minStat": { "fame": 30 }, "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "El pleito con el influencer del mismo nicho garnica tendencia: los dos ganan seguidores y nadie gana paz.", "happiness": -2, "fame": 8, "stress": 8, "flag": "HATER_MAGNET" },
+        { "weight": 40, "resultText": "El pleito te deja viendo solo: la comunidad se posiciona con la otra parte y tus alias pierden colores.", "happiness": -10, "fame": 5, "stress": 10, "flag": "HATER_MAGNET", "relationDelta": -5 },
+        { "weight": 25, "resultText": "El pleito era con un abogado: la demanda por difamación llega con el burofax del viernes.", "happiness": -14, "fame": 6, "stress": 14, "money": -10000, "flag": "SCANDAL" }
+      ]
+    }
+  ]
+}

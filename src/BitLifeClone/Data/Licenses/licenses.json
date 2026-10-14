@@ -1,0 +1,94 @@
+{
+  "system": "licenses",
+  "note": "Licencias del Schema (L1). El código C# usa esta lista para el menú de licencias: coste, edad, requisitos y chance del examen. La licencia obtenida se guarda en la partida (Person.Licenses); DriverLicense y PilotLicense además ponen las flags LICENSED_DRIVER / LICENSED_PILOT que ya existen en el Schema.",
+  "exams": [
+    {
+      "id": "DriverLicense",
+      "label": "Licencia de conducir",
+      "icon": "🚗",
+      "cost": 300,
+      "ageMin": 16,
+      "ageMax": 120,
+      "passChance": 70,
+      "flag": "LICENSED_DRIVER",
+      "requires": { "minStat": { "smarts": 30 }, "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "PilotLicense",
+      "label": "Licencia de piloto",
+      "icon": "✈️",
+      "cost": 25000,
+      "ageMin": 18,
+      "ageMax": 65,
+      "passChance": 45,
+      "flag": "LICENSED_PILOT",
+      "requires": { "minStat": { "smarts": 65, "health": 60 }, "education": "HighSchool", "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "MedicalLicense",
+      "label": "Examen médico de habilitación",
+      "icon": "🩺",
+      "cost": 1500,
+      "ageMin": 18,
+      "ageMax": 120,
+      "passChance": 60,
+      "flag": null,
+      "requires": { "education": "MedicalSchool", "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "LawLicense",
+      "label": "Examen de abogacía",
+      "icon": "⚖️",
+      "cost": 1500,
+      "ageMin": 18,
+      "ageMax": 120,
+      "passChance": 60,
+      "flag": null,
+      "requires": { "education": "LawSchool", "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "FirearmLicense",
+      "label": "Licencia de portación de armas",
+      "icon": "🔫",
+      "cost": 2000,
+      "ageMin": 25,
+      "ageMax": 70,
+      "passChance": 50,
+      "flag": null,
+      "requires": { "minStat": { "smarts": 50 }, "flagsNone": ["CRIMINAL_RECORD", "IN_PRISON", "WANTED", "DEAD"] }
+    },
+    {
+      "id": "FishingLicense",
+      "label": "Licencia de pesca comercial",
+      "icon": "🎣",
+      "cost": 400,
+      "ageMin": 16,
+      "ageMax": 120,
+      "passChance": 85,
+      "flag": null,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "BusinessLicense",
+      "label": "Registro mercantil de negocio",
+      "icon": "🏪",
+      "cost": 1200,
+      "ageMin": 18,
+      "ageMax": 120,
+      "passChance": 90,
+      "flag": null,
+      "requires": { "flagsNone": ["IN_PRISON", "DEAD"] }
+    },
+    {
+      "id": "NursingLicense",
+      "label": "Examen de enfermería",
+      "icon": "💉",
+      "cost": 1200,
+      "ageMin": 18,
+      "ageMax": 120,
+      "passChance": 65,
+      "flag": null,
+      "requires": { "education": "NursingSchool", "flagsNone": ["IN_PRISON", "DEAD"] }
+    }
+  ]
+}

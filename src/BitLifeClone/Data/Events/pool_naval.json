@@ -1,0 +1,183 @@
+[
+  {
+    "pool": "pool_naval",
+    "events": [
+      {
+        "id": "naval_torpedo",
+        "pool": "pool_naval",
+        "highDanger": true,
+        "text": "Un golpe seco contra el casco y la luz se apaga: torpedo. La sirena de abordaje suena y el agua entra por las escotillas de abajo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Bajo a la sala de bombas",
+            "outcomes": [
+              { "weight": 60, "resultText": "Cierrás dos puertas estancas contra el mar. El barco escora, pero no se va al fondo.", "health": -20, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" },
+              { "weight": 25, "resultText": "La presión te arrastra por la rampa y te atrapa en la reja de la hélice.", "health": -50, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" },
+              { "weight": 15, "resultText": "Una segunda explosión parte el barco por la mitad justo donde estabas parado.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Subo a cubierta",
+            "outcomes": [
+              { "weight": 70, "resultText": "Subís al agua oscura y a los botes salvavidas. El barco se queda atrás cantando.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" },
+              { "weight": 30, "resultText": "El generador de popa revienta a tu paso. Te levantas con la ropa ardiendo.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" }
+            ]
+          },
+          {
+            "text": "Ayudo a evacuar heridos",
+            "outcomes": [
+              { "weight": 55, "resultText": "Haces tres viajes por el pasillo inundado sacando gente. El barco escora, pero la gente sale.", "health": -15, "happiness": 25, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" },
+              { "weight": 30, "resultText": "El tercer viaje lo haces con el agua al codo y los cables pelados. Vuelves medio electrocutado.", "health": -40, "happiness": 15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "naval_torpedo_pump" },
+              { "weight": 15, "resultText": "El pasillo se cierra con un barrote mientras cargabas a un compañero.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "naval_torpedo_pump",
+        "pool": "pool_naval",
+        "text": "El barco aguanta, escorado y sin luz. La bomba de achique gana terreno al mar a chorros. El capitán decide: seguir bombeando o abandonar el buque. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me quedo con la bomba",
+            "outcomes": [
+              { "weight": 70, "resultText": "Doce horas en fila pasando mangueras. El amanece con el barco a flote y la tripulación aplaudiendo.", "health": -20, "happiness": 25, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "La bomba se traga tu manga. El resto del día pasa la sábana por tu brazo.", "health": -30, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Apoyo la evacuación",
+            "outcomes": [
+              { "weight": 75, "resultText": "Organizas los botes con un orden que nadie esperaba. La tripulación cuenta todos los nombres.", "health": -5, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Un bote se larga antes de tiempo aplastando manos en la borda. No todas las que estaban ahí estaban ya fuera.", "health": -10, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Salto al agua",
+            "outcomes": [
+              { "weight": 55, "resultText": "Nadas del lado oscuro del barco, lejos de la hélice. Una boya te pesca en veinte minutos.", "health": -15, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El aceite del agua y la oscuridad te juegan una mala pasada. Un bote te rescata casi al último segundo.", "health": -35, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Nadas hacia la oscuridad. El mar del norte no da segundas oportunidades.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "naval_boarding",
+        "pool": "pool_naval",
+        "highDanger": true,
+        "text": "Lanchas rápidas enemigas se acercan por babor con escalas. En cubierta hay dos rifles, un hacha y una escoba. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Fuego de cubierta",
+            "outcomes": [
+              { "weight": 60, "resultText": "Disparás desde detrás del contenedor y repeles el primer abordaje. La lancha se da a la fuga.", "health": -10, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "naval_boarding_after" },
+              { "weight": 30, "resultText": "Una ráfaga de la lancha te barre el hombro. Sigues disparando con el brazo colgando.", "health": -40, "happiness": 5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "naval_boarding_after" },
+              { "weight": 10, "resultText": "Te asomas de más. Un francotirador de la lancha no falla esas distancias.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Corto la escalera con el hacha",
+            "outcomes": [
+              { "weight": 65, "resultText": "Un hachazo al cabo de la escalera y los cuatro primeros se van al agua con el arpón.", "health": -5, "happiness": 18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "naval_boarding_after" },
+              { "weight": 35, "resultText": "El hacha se queda en la escalera y con ella tu dedo meñique derecho.", "health": -20, "happiness": 5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "naval_boarding_after" }
+            ]
+          },
+          {
+            "text": "Dejo pasar el abordaje",
+            "outcomes": [
+              { "weight": 45, "resultText": "Te escondes en la sala de máquinas y los dejas saquear la bitácora. Vives para contarlo.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "naval_boarding_after" },
+              { "weight": 55, "resultText": "Te encuentran en la sala de máquinas con las manos llenas de grasa. Ahora sos prisionero.", "health": -20, "happiness": -25, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "naval_boarding_after",
+        "pool": "pool_naval",
+        "text": "El abordaje terminó. El barco queda con la cubierta alborotada, tripulación escasa y un rumbo que nadie ha firmado. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Asumo el mando de la guardia",
+            "outcomes": [
+              { "weight": 75, "resultText": "Repartís tareas hasta la cena como si nada. El teniente te mira raro: te vio mandando.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "Dos veteranos no aceptan órdenes de un guardia de cubierta. El motín se queda a media palabra.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cuido los heridos",
+            "outcomes": [
+              { "weight": 80, "resultText": "Haces de sanitero hasta que se acaba la gasa. Tres nombres te escriben a casa.", "health": -5, "happiness": 18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un herido empeora mientras esperabas agua. La culpa no se cura con vendas.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco lo saqueado",
+            "outcomes": [
+              { "weight": 55, "resultText": "Recuperas de la lancha enemiga un alijo de equipos que no era tuyo. El capitán cierra un ojo.", "health": 0, "happiness": 8, "money": 400, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Lo que saquearon de vos incluía tu nombre en una lista que prefieres no saber.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "naval_blockade",
+        "pool": "pool_naval",
+        "highDanger": true,
+        "text": "El puerto amaneció cerrado: la armada enemiga declara bloqueo y todo buque que entre va escoltado o hundido. Vuestro barco tiene la bodega llena y la tripulación hambrienta. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Entro con bandera blanca",
+            "outcomes": [
+              { "weight": 60, "resultText": "Entras con camisa blanca en el mástil y una carta del cónsul. El bloqueo deja pasar tu barco.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El comandante enemigo escolta tu barco... directo a su puerto. Ya no es vuestro.", "health": -10, "happiness": -25, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Espero la noche y entro rápido",
+            "outcomes": [
+              { "weight": 50, "resultText": "Motor a tope entre escollos y pescadores que hacen de centinelas. El puerto queda atrás.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Un farol encendido de más delata la maniobra. Un proyectil corta la entrada.", "health": -30, "happiness": -20, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El faro enemigo te caza a media entrada y el barco se queda en la ría.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco contrabandistas",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un lanchero te conoce el paso secreto entre las salinas. Entráis por donde nadie mira.", "health": 0, "happiness": 12, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El paso secreto era trampa: el lanchero cobró de los dos bandos.", "health": -25, "happiness": -25, "money": -300, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "naval_moral_mission",
+        "pool": "pool_naval",
+        "text": "La orden: bombardear el puerto pesquero del que salen las lanchas del bloqueo. En el radar se ven barcos pequeños y remolcadores. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Ejecuto la orden",
+            "outcomes": [
+              { "weight": 55, "resultText": "Cuatro salvos al puerto. En la sala de radio solo hay estática de aviso de pesquero.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Los pesqueros resultaron tener ametralladoras escondidas bajo las redes. La orden era buena.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Aviso antes de disparar",
+            "outcomes": [
+              { "weight": 60, "resultText": "Mandas la advertencia por altoparlante y el puerto se vacía en diez minutos. Después disparas.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Mientras esperas, la batería costera del puerto descubre tu posición.", "health": -25, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Reporto 'sin objetivos'",
+            "outcomes": [
+              { "weight": 50, "resultText": "Tu informe dice 'pesqueros sin hostiles'. El puerto queda intacto y tu firma queda registrada.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El cuartel general insiste con la orden firmada. Esta vez no podrás decir que no.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "system": "properties",
+  "note": "Propiedades (P1). El código C# usa esta lista para el menú de bienes raíces: compra, venta y mantenimiento anual. El precio es de compra en USD; maintenance se cobra cada Age Up si la propiedad está en tu poder. La lista del jugador se guarda en la partida (Person.Properties).",
+  "properties": [
+    { "id": "prop_studio_apt", "label": "Estudio en los multifamiliares", "icon": "🏢", "type": "apartment", "price": 45000, "maintenance": 600, "ageMin": 18, "ageMax": 120, "note": "Una habitación, un baño y una vista al patio del vecino." },
+    { "id": "prop_apt_mLauncher", "label": "Apartamento de 2 habitaciones", "icon": "🏢", "type": "apartment", "price": 90000, "maintenance": 1000, "ageMin": 18, "ageMax": 120, "note": "Gazebón chungo pero con buena ubicación." },
+    { "id": "prop_house_suburb", "label": "Casa de barrio residencial", "icon": "🏡", "type": "house", "price": 150000, "maintenance": 1800, "ageMin": 18, "ageMax": 120, "note": "Patio con mango, zaguan y vecinos que velan sin preguntar." },
+    { "id": "prop_house_luxury", "label": "Villa en colinas VIP", "icon": "🏰", "type": "house", "price": 650000, "maintenance": 8000, "ageMin": 18, "ageMax": 120, "note": "Piscina, caseta de seguridad y la mirada del vecino millonario." },
+    { "id": "prop_dealer_used", "label": "Carro usado", "icon": "🚗", "type": "vehicle", "price": 8000, "maintenance": 500, "ageMin": 16, "ageMax": 120, "note": "Se apaga en semáforos pero carga hasta la boya completa." },
+    { "id": "prop_car_new", "label": "Carro nuevo cero kilómetros", "icon": "🏎️", "type": "vehicle", "price": 32000, "maintenance": 1500, "ageMin": 16, "ageMax": 120, "note": "Huele a vainilla y a orgullo de cuotas pagadas." },
+    { "id": "prop_sport_car", "label": "Muscle car importado", "icon": "🚙", "type": "vehicle", "price": 88000, "maintenance": 3500, "ageMin": 18, "ageMax": 120, "note": "Arranca hasta en la casa del vecino que no pinta su fachada." },
+    { "id": "prop_boat", "label": "Yate mediano", "icon": "🛥️", "type": "boat", "price": 150000, "maintenance": 6000, "ageMin": 18, "ageMax": 120, "note": "Ruta marina conlusión del fin de semana hasta la pesca buena." },
+    { "id": "prop_retail_shop", "label": "Local comercial en avenida", "icon": "🏬", "type": "commercial", "price": 120000, "maintenance": 2000, "ageMin": 18, "ageMax": 120, "note": "Buen lugar para negocio propio o renta de mes de mes." },
+    { "id": "prop_farmland", "label": "Finca en el interior", "icon": "🌾", "type": "land", "price": 75000, "maintenance": 1200, "ageMin": 18, "ageMax": 120, "note": "Tierra fértil y militar fructífera si hay paciencia y lluvia." }
+  ]
+}

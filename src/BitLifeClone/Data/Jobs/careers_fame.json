@@ -1,0 +1,43 @@
+{
+  "category": "fame",
+  "name": "Fame Careers",
+  "jobs": [
+    { "id": "extra_actor", "title": "Movie Extra", "promotesTo": "actor", "tier": 1, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "", "specialLogic": "Progreso por audiciones exitosas; la fama y looks abren papeles grandes." },
+    { "id": "actor", "title": "Actor", "promotesTo": "lead_actor", "tier": 2, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "lead_actor", "title": "Lead Actor", "promotesTo": "a_list_actor", "tier": 3, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 6, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "a_list_actor", "title": "A-List Actor", "promotesTo": null, "tier": 4, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 12, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+
+    { "id": "underground_rapper", "title": "Underground Rapper", "promotesTo": "rapper", "tier": 1, "baseSalary": 25000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "", "specialLogic": "Sube con views y sold-out; un beef puede catapultarlo o hundirlo." },
+    { "id": "rapper", "title": "Rapper", "promotesTo": "signed_artist", "tier": 2, "baseSalary": 25000, "currency": "USD", "education": "None", "experienceYears": 2, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "signed_artist", "title": "Signed Artist", "promotesTo": "superstar_rapper", "tier": 3, "baseSalary": 25000, "currency": "USD", "education": "None", "experienceYears": 5, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "superstar_rapper", "title": "Superstar Rapper", "promotesTo": null, "tier": 4, "baseSalary": 25000, "currency": "USD", "education": "None", "experienceYears": 10, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+
+    { "id": "backup_singer", "title": "Backup Singer", "promotesTo": "fame_singer", "tier": 1, "baseSalary": 28000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "fame_singer", "title": "Singer", "promotesTo": "pop_star", "tier": 2, "baseSalary": 28000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "pop_star", "title": "Pop Star", "promotesTo": "global_superstar", "tier": 3, "baseSalary": 28000, "currency": "USD", "education": "None", "experienceYears": 6, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "global_superstar", "title": "Global Superstar", "promotesTo": null, "tier": 4, "baseSalary": 28000, "currency": "USD", "education": "None", "experienceYears": 12, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+
+    { "id": "minor_league_player", "title": "Minor League Ballplayer", "promotesTo": "pro_baseball_player", "tier": 1, "baseSalary": 60000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "", "specialLogic": "Escala por rendimiento; una lesion grave puede terminar la carrera." },
+    { "id": "pro_baseball_player", "title": "Pro Baseball Player", "promotesTo": "all_star_player", "tier": 2, "baseSalary": 60000, "currency": "USD", "education": "None", "experienceYears": 2, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+    { "id": "all_star_player", "title": "All-Star Player", "promotesTo": "hall_of_famer", "tier": 3, "baseSalary": 60000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+    { "id": "hall_of_famer", "title": "Hall of Famer", "promotesTo": null, "tier": 4, "baseSalary": 60000, "currency": "USD", "education": "None", "experienceYears": 15, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+
+    { "id": "pro_basketball_player", "title": "Pro Basketball Player", "promotesTo": "all_star_basketball", "tier": 1, "baseSalary": 70000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+    { "id": "all_star_basketball", "title": "All-Star Basketball Player", "promotesTo": null, "tier": 2, "baseSalary": 70000, "currency": "USD", "education": "None", "experienceYears": 6, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+
+    { "id": "academy_player", "title": "Soccer Academy Player", "promotesTo": "pro_soccer_player", "tier": 1, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+    { "id": "pro_soccer_player", "title": "Pro Soccer Player", "promotesTo": "star_soccer_player", "tier": 2, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+    { "id": "star_soccer_player", "title": "Star Soccer Player", "promotesTo": null, "tier": 3, "baseSalary": 45000, "currency": "USD", "education": "None", "experienceYears": 8, "canHoldWithCriminalRecord": false, "category": "fame", "icon": "" },
+
+    { "id": "amateur_boxer", "title": "Amateur Boxer", "promotesTo": "pro_boxer", "tier": 1, "baseSalary": 40000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "pro_boxer", "title": "Pro Boxer", "promotesTo": "champion_boxer", "tier": 2, "baseSalary": 40000, "currency": "USD", "education": "None", "experienceYears": 4, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "", "specialLogic": "Gana por peleas; las derrotas y el dano cerebral acumulan y bajan la salud." },
+    { "id": "champion_boxer", "title": "World Champion Boxer", "promotesTo": null, "tier": 3, "baseSalary": 40000, "currency": "USD", "education": "None", "experienceYears": 10, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+
+    { "id": "small_streamer", "title": "Small Streamer", "promotesTo": "top_streamer", "tier": 1, "baseSalary": 16000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "", "specialLogic": "Ingreso por subs/donaciones; un clip viral puede saltar de nivel." },
+    { "id": "top_streamer", "title": "Top Streamer", "promotesTo": null, "tier": 2, "baseSalary": 16000, "currency": "USD", "education": "None", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+
+    { "id": "micro_influencer", "title": "Micro Influencer", "promotesTo": "influencer", "tier": 1, "baseSalary": 22000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "", "specialLogic": "Sube por engagement; un escandalo puede cancelarte." },
+    { "id": "influencer", "title": "Influencer", "promotesTo": "mega_influencer", "tier": 2, "baseSalary": 22000, "currency": "USD", "education": "None", "experienceYears": 2, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" },
+    { "id": "mega_influencer", "title": "Mega Influencer", "promotesTo": null, "tier": 3, "baseSalary": 22000, "currency": "USD", "education": "None", "experienceYears": 5, "canHoldWithCriminalRecord": true, "category": "fame", "icon": "" }
+  ]
+}

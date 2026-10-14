@@ -1,0 +1,84 @@
+[
+  {
+    "pool": "pool_civil_medic",
+    "events": [
+      {
+        "id": "medic_triage_influx",
+        "pool": "pool_civil_medic",
+        "text": "Llegan tres ambulancias llenas de heridos y solo hay dos camillas libres. El jefe de sala te grita que decidas. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Clasificar por gravedad",
+            "outcomes": [
+              { "weight": 65, "resultText": "Clasificas rápido y salvas a los que tenían chance. Sigues de pie.", "health": -5, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Elegiste mal un caso y tuviste que dejarlo ir en la camilla.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Tomar el más grave",
+            "outcomes": [
+              { "weight": 55, "resultText": "Te lanzas con el más jodido y lo estabilizas con lo que hay.", "health": -8, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El paciente no aguanta y se te muere en la mano. Hay que seguir con el próximo.", "health": -8, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "No llega, pido apoyo",
+            "outcomes": [
+              { "weight": 60, "resultText": "Llamas a otra sala y reparten la carga. Nadie sobra y nadie se queda solo.", "health": -3, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El apoyo no llega a tiempo y pierdes a dos mientras esperas.", "health": -4, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "medic_shortage",
+        "pool": "pool_civil_medic",
+        "text": "Se acabó la morfina y el antibiótico. Afuera hay una fila de gente que no se puede ir. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Racionar lo que queda",
+            "outcomes": [
+              { "weight": 60, "resultText": "Racionas y estiras los frascos dos días más de lo creíble.", "health": -4, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "medic_shortage_after" },
+              { "weight": 40, "resultText": "El racionamiento deja a los más graves sin nada y se te vienen encima.", "health": -4, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "medic_shortage_after" }
+            ]
+          },
+          {
+            "text": "Comprar en el mercado negro",
+            "outcomes": [
+              { "weight": 50, "resultText": "Consigues medicinas por la izquierda. Caras y dudosas, pero salvan.", "health": -3, "happiness": 5, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "medic_shortage_after" },
+              { "weight": 50, "resultText": "Te estafan con frascos vencidos y encima quedas fichado por el estraperlo.", "health": -5, "happiness": -12, "money": -800, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "medic_shortage_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "medic_shortage_after",
+        "pool": "pool_civil_medic",
+        "text": "El día termina y el hospital huele a sangre y a gasoil. Tu turno dobla. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Quedarme otro turno",
+            "outcomes": [
+              { "weight": 55, "resultText": "Aguantas y cubres el hueco de los que no llegaron.", "health": -12, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "A la madrugada te desmayas encima de un paciente.", "health": -20, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Irme a dormir",
+            "outcomes": [
+              { "weight": 60, "resultText": "Duermes cuatro horas y vuelves con algo de fuerza.", "health": 8, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "En lo que dormías entró una oleada y te lo echan en cara.", "health": 5, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Ayudar a evacuar",
+            "outcomes": [
+              { "weight": 55, "resultText": "Cargas camillas hasta el sótano mientras suenan las sirenas.", "health": -10, "happiness": 5, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El bombardeo cae cerca y el hospital pierde una planta.", "health": -25, "happiness": -15, "money": 0, "setCity": "destroyed", "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

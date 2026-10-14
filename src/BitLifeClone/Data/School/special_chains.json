@@ -1,0 +1,355 @@
+{
+  "system": "school_special_chains",
+  "note": "Cadenas especiales de escuela (E6). Cuatro historias de 3 niveles: matoneo, expulsión, beca y deportista con beca universitaria. La de beca es un nivel más profunda cuando arranca desde syr_enrollment (4 niveles en total, el máximo permitido).",
+  "chains": [
+    { "id": "chain_def_bullying", "root": "chain_bully_start", "steps": ["chain_bully_start", "chain_bully_escalate", "chain_bully_aftermath"] },
+    { "id": "chain_def_expulsion", "root": "chain_expulsion", "steps": ["chain_expulsion", "chain_reinstatement", "chain_dropout"] },
+    { "id": "chain_def_scholarship", "root": "chain_scholarship_offer", "steps": ["chain_scholarship_offer", "chain_scholarship_renew", "chain_scholarship_lost"] },
+    { "id": "chain_def_athlete", "root": "chain_athlete_scout", "steps": ["chain_athlete_scout", "chain_athlete_tryout", "chain_athlete_offer"] }
+  ],
+  "events": [
+    {
+      "id": "chain_bully_start",
+      "pool": "school",
+      "ageMin": 8, "ageMax": 18,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "BULLY"] },
+      "text": "Un grupo de la sección de al lado empieza a tomarte de punto: apodos en el pasillo, empujones en la fila y burlas por todo lo que haces.",
+      "choices": [
+        {
+          "text": "Aguantar y no decir nada",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te callas, bajas la cabeza y los apodos se vuelven rutina.", "happiness": -8, "stress": 8, "popularity": -3, "flag": "BULLIED", "nextEventId": "chain_bully_escalate" },
+            { "weight": 40, "resultText": "Se aburren a las dos semanas y buscan a otro al que molestar.", "happiness": -3, "stress": 4 }
+          ]
+        },
+        {
+          "text": "Responderles de frente",
+          "outcomes": [
+            { "weight": 45, "resultText": "Les contestas con una frase que deja a todos callados un segundo.", "popularity": 4, "discipline": -2, "stress": 3 },
+            { "weight": 35, "resultText": "Te responden con empujones y todo termina en pelea en la cancha.", "health": -4, "discipline": -10, "flag": "DETENTION", "nextEventId": "chain_bully_escalate" },
+            { "weight": 20, "resultText": "La burla se multiplica y el chiste lo pagas tú todo el mes.", "popularity": -6, "happiness": -6, "flag": "BULLIED", "nextEventId": "chain_bully_escalate" }
+          ]
+        },
+        {
+          "text": "Contárselo a un profesor",
+          "outcomes": [
+            { "weight": 50, "resultText": "El profesor habla con el grupo y los molestosos bajan el tono.", "happiness": 3, "stress": -3 },
+            { "weight": 30, "resultText": "La coordinadora cita a las familias y la cosa se enfría a medias.", "stress": 2, "happiness": 1 },
+            { "weight": 20, "resultText": "Se enteran de que fuiste tú y las burlas suben de nivel.", "popularity": -5, "happiness": -6, "flag": "BULLIED", "nextEventId": "chain_bully_escalate" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_bully_escalate",
+      "pool": "school",
+      "ageMin": 8, "ageMax": 18,
+      "text": "El matoneo ya no es solo en la escuela: ahora te escriben por el grupo de WhatsApp y te siguen a la salida.",
+      "choices": [
+        {
+          "text": "Guardar capturas y mostrarlas",
+          "outcomes": [
+            { "weight": 55, "resultText": "Con las capturas en mano, la dirección abre un expediente formal.", "stress": -2, "happiness": 2, "nextEventId": "chain_bully_aftermath" },
+            { "weight": 45, "resultText": "La dirección dice que no hay pruebas suficientes y la cosa sigue.", "stress": 6, "happiness": -5, "nextEventId": "chain_bully_aftermath" }
+          ]
+        },
+        {
+          "text": "Faltar a clases unos días",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te quedas en casa tres días y la ansiedad baja un poco.", "attendance": -6, "stress": -2, "happiness": 1, "flag": "TRUANT", "nextEventId": "chain_bully_aftermath" },
+            { "weight": 40, "resultText": "Mamá se entera de las faltas y te sienta a hablar.", "attendance": -4, "stress": 3, "happiness": 2, "nextEventId": "chain_bully_aftermath" }
+          ]
+        },
+        {
+          "text": "Contraatacar con un rumor",
+          "outcomes": [
+            { "weight": 40, "resultText": "El rumor corre y los matones ahora pelean entre ellos.", "karma": -8, "popularity": 3, "discipline": -5, "flag": "BULLY", "nextEventId": "chain_bully_aftermath" },
+            { "weight": 60, "resultText": "El rumor se devuelve y terminas en dirección explicando todo.", "karma": -8, "discipline": -12, "popularity": -6, "flag": "SUSPENDED", "nextEventId": "chain_bully_aftermath" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_bully_aftermath",
+      "pool": "school",
+      "ageMin": 8, "ageMax": 18,
+      "text": "La dirección convoca a las familias. Todos los involucrados están sentados en la misma oficina y nadie quiere mirar a nadie.",
+      "choices": [
+        {
+          "text": "Contar todo con calma",
+          "outcomes": [
+            { "weight": 60, "resultText": "Hablas claro, los responsables se disculpan y quedan con sanción.", "stress": -6, "happiness": 6, "discipline": 2, "removeFlag": "BULLIED" },
+            { "weight": 40, "resultText": "Hablas claro pero los padres de los otros lo niegan todo y el caso se enfría.", "stress": 2, "happiness": -2 }
+          ]
+        },
+        {
+          "text": "Pedir cambio de sección",
+          "outcomes": [
+            { "weight": 70, "resultText": "Te mueven a otra sección con gente nueva y empiezas de cero.", "stress": -5, "happiness": 4, "popularity": -1, "removeFlag": "BULLIED" },
+            { "weight": 30, "resultText": "No hay cupo y te toca seguir en el mismo salón con una guardia más.", "stress": 1, "happiness": 1 }
+          ]
+        },
+        {
+          "text": "Mantener silencio",
+          "outcomes": [
+            { "weight": 50, "resultText": "Te quedas callado y la reunión termina en un acta que nadie cumple.", "stress": 4, "happiness": -3 },
+            { "weight": 50, "resultText": "Un compañero testifica por ti sin que se lo pidas y todo cambia.", "happiness": 5, "popularity": 3, "removeFlag": "BULLIED" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_expulsion",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 19,
+      "requires": { "flagsAll": ["SUSPENDED"], "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "text": "La dirección firmó la carta de expulsión por acumulación de faltas graves. Te quedas sin escuela de un día para otro.",
+      "choices": [
+        {
+          "text": "Aceptar la decisión",
+          "outcomes": [
+            { "weight": 60, "resultText": "Entregas el carnet, sales por la puerta de atrás y no sabes qué decirle a tu familia.", "happiness": -10, "stress": 7, "discipline": -3, "flag": "EXPELLED", "nextEventId": "chain_reinstatement" },
+            { "weight": 40, "resultText": "Llegas a casa y tu mamá ya sabía la noticia desde la mañana.", "happiness": -12, "stress": 8, "flag": "EXPELLED", "nextEventId": "chain_reinstatement" }
+          ]
+        },
+        {
+          "text": "Apelar con la familia",
+          "outcomes": [
+            { "weight": 40, "resultText": "La junta acepta revisar tu caso y te dan una cita para dentro de dos semanas.", "stress": 4, "happiness": 2, "flag": "EXPELLED", "nextEventId": "chain_reinstatement" },
+            { "weight": 60, "resultText": "La apelación se queda en una carpeta y nadie te contesta.", "stress": 6, "happiness": -5, "flag": "EXPELLED", "nextEventId": "chain_reinstatement" }
+          ]
+        },
+        {
+          "text": "Alegar que fue injusto",
+          "outcomes": [
+            { "weight": 30, "resultText": "Un profesor testifica a tu favor y la dirección baja la sanción.", "karma": 2, "stress": 2 },
+            { "weight": 70, "resultText": "Tus quejas no cambian nada y te etiquetan de rebelde.", "discipline": -4, "stress": 5, "flag": "EXPELLED", "nextEventId": "chain_reinstatement" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_reinstatement",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 19,
+      "text": "Te dan una última oportunidad de reinscripción si presentas una carta de compromiso y vuelves en el próximo periodo.",
+      "choices": [
+        {
+          "text": "Reinscribirme con compromiso",
+          "outcomes": [
+            { "weight": 55, "resultText": "Firmas el compromiso, regresas a clases y los profesores te vigilan de cerca.", "discipline": 5, "grades": 2, "stress": 3, "removeFlag": "EXPELLED" },
+            { "weight": 45, "resultText": "Te reinscribes, pero la matrícula y los uniformes se llevan los ahorros.", "money": -400, "stress": 4, "removeFlag": "EXPELLED" }
+          ]
+        },
+        {
+          "text": "Cambiarme de escuela",
+          "outcomes": [
+            { "weight": 50, "resultText": "Te aceptan en otro colegio y vuelves a empezar con papeles en regla.", "happiness": 4, "stress": 2, "popularity": -3, "removeFlag": "EXPELLED" },
+            { "weight": 50, "resultText": "Ninguna escuela cercana quiere recibir un expediente con expulsión.", "stress": 6, "happiness": -6, "nextEventId": "chain_dropout" }
+          ]
+        },
+        {
+          "text": "No volver",
+          "outcomes": [
+            { "weight": 70, "resultText": "Dejas pasar el plazo y nadie te llama de vuelta.", "happiness": -4, "stress": 3, "nextEventId": "chain_dropout" },
+            { "weight": 30, "resultText": "Te dices que lo vas a pensar y ese pensamiento dura un verano entero.", "happiness": -2, "nextEventId": "chain_dropout" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_dropout",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 22,
+      "text": "Pasó el plazo de reinscripción y tu nombre salió de la lista oficial. De pronto las mañanas son todas tuyas.",
+      "choices": [
+        {
+          "text": "Buscar trabajo",
+          "outcomes": [
+            { "weight": 60, "resultText": "Un vecino te mete de ayudante en un negocio y empiezas a ganar algo.", "money": 600, "happiness": 2, "stress": 3, "flag": "DROPPED_OUT" },
+            { "weight": 40, "resultText": "Pasas semanas buscando y solo consigues propuestas de pago mínimo.", "happiness": -4, "stress": 5, "flag": "DROPPED_OUT" }
+          ]
+        },
+        {
+          "text": "Estudiar por mi cuenta",
+          "outcomes": [
+            { "weight": 40, "resultText": "Descargas libros y videos y sigues estudiando solo por las noches.", "smarts": 3, "discipline": 3, "stress": 2, "flag": "DROPPED_OUT" },
+            { "weight": 60, "resultText": "A la tercera semana el celular le gana a la disciplina.", "smarts": 0, "discipline": -3, "happiness": -3, "flag": "DROPPED_OUT" }
+          ]
+        },
+        {
+          "text": "Quedarme en casa",
+          "outcomes": [
+            { "weight": 60, "resultText": "Pasas los días con las cortinas cerradas y el tiempo se hace espeso.", "happiness": -8, "stress": 3, "flag": "DROPPED_OUT" },
+            { "weight": 40, "resultText": "Tu familia te saca a hacer mandados y al menos sales de la casa.", "happiness": -2, "fitness": 1, "flag": "DROPPED_OUT" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_scholarship_offer",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 22,
+      "requires": { "flagsAll": ["SCHOLARSHIP"] },
+      "text": "La escuela te confirma la beca: cubre la matrícula, pero exige mantener buen promedio y asistencia todo el año.",
+      "choices": [
+        {
+          "text": "Aceptar y comprometerme",
+          "outcomes": [
+            { "weight": 70, "resultText": "Firmas el documento y la beca queda activa por el año escolar.", "grades": 2, "discipline": 2, "happiness": 6, "stress": 3, "nextEventId": "chain_scholarship_renew" },
+            { "weight": 30, "resultText": "Firmas, pero el compromiso te cae pesado en los hombros.", "stress": 6, "happiness": 2, "nextEventId": "chain_scholarship_renew" }
+          ]
+        },
+        {
+          "text": "Rechazar por orgullo",
+          "outcomes": [
+            { "weight": 60, "resultText": "Dices que prefieres pagar tú mismo y la plaza pasa a otro estudiante.", "happiness": -3, "removeFlag": "SCHOLARSHIP" },
+            { "weight": 40, "resultText": "Te arrepientes a los dos días, pero la plaza ya fue asignada.", "stress": 4, "happiness": -5, "removeFlag": "SCHOLARSHIP" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_scholarship_renew",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 22,
+      "text": "Se acerca la renovación de la beca. Revisarán tus notas, tu asistencia y tu conducta del año.",
+      "choices": [
+        {
+          "text": "Estudiar duro todo el semestre",
+          "outcomes": [
+            { "weight": 55, "resultText": "Mantienes el promedio alto y la beca se renueva sin trámite.", "grades": 4, "stress": 6, "happiness": 5 },
+            { "weight": 30, "resultText": "Cumples las notas pero te quedas sin vida social todo el semestre.", "grades": 3, "stress": 9, "happiness": -3, "popularity": -3 },
+            { "weight": 15, "resultText": "El esfuerzo te quema y una nota baja tira todo el semestre.", "grades": -2, "stress": 12, "flag": "BURNOUT", "nextEventId": "chain_scholarship_lost" }
+          ]
+        },
+        {
+          "text": "Confiar en lo ya hecho",
+          "outcomes": [
+            { "weight": 35, "resultText": "Tus notas del año pasado todavía alcanzan para la renovación.", "happiness": 2 },
+            { "weight": 65, "resultText": "Te confías, bajas dos puntos del mínimo y la comisión empieza a dudar.", "grades": -3, "stress": 6, "nextEventId": "chain_scholarship_lost" }
+          ]
+        },
+        {
+          "text": "Pedir ayuda a un profesor",
+          "outcomes": [
+            { "weight": 70, "resultText": "El profesor te arma un plan de repaso y la comisión lo ve con buenos ojos.", "grades": 3, "stress": 2, "smarts": 2 },
+            { "weight": 30, "resultText": "El profesor está saturado y no puede ayudarte este semestre.", "stress": 4, "nextEventId": "chain_scholarship_lost" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_scholarship_lost",
+      "pool": "school",
+      "ageMin": 11, "ageMax": 22,
+      "text": "La comisión revisó tu expediente y decidió retirarte la beca. Si quieres seguir, la matrícula ahora corre por tu cuenta.",
+      "choices": [
+        {
+          "text": "Apelar la decisión",
+          "outcomes": [
+            { "weight": 30, "resultText": "Te dan una prórroga de un semestre en condición de prueba.", "stress": 3, "happiness": 3 },
+            { "weight": 70, "resultText": "La respuesta llega en una semana: no hay cambios.", "stress": 6, "happiness": -6, "money": -300, "removeFlag": "SCHOLARSHIP" }
+          ]
+        },
+        {
+          "text": "Pagar la matrícula con trabajo",
+          "outcomes": [
+            { "weight": 60, "resultText": "Entre tu familia y un trabajito juntas lo necesario y sigues en clase.", "money": -400, "stress": 6, "discipline": 2, "removeFlag": "SCHOLARSHIP", "flag": "WORKING_PART_TIME" },
+            { "weight": 40, "resultText": "No alcanza el dinero y te toca cambiar de colegio.", "happiness": -6, "stress": 6, "removeFlag": "SCHOLARSHIP" }
+          ]
+        },
+        {
+          "text": "Dejarlo pasar",
+          "outcomes": [
+            { "weight": 50, "resultText": "Aceptas que no era tu año y sigues adelante sin quejas.", "happiness": -3, "removeFlag": "SCHOLARSHIP" },
+            { "weight": 50, "resultText": "Te quedas rumiando el asunto por meses y te cuesta concentrarte.", "grades": -3, "stress": 5, "happiness": -5, "removeFlag": "SCHOLARSHIP" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_athlete_scout",
+      "pool": "school",
+      "ageMin": 14, "ageMax": 19,
+      "requires": { "flagsAll": ["ON_TEAM"], "flagsNone": ["INJURED_SPORT", "EXPELLED", "DROPPED_OUT"], "minStat": { "fitness": 60 } },
+      "text": "Un ojeador de la liga regional vio tu partido del sábado y se acercó a tu entrenador con una tarjeta.",
+      "choices": [
+        {
+          "text": "Hablar con él",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te cita para una prueba formal en la academia de la ciudad.", "fitness": 2, "happiness": 6, "stress": 3, "nextEventId": "chain_athlete_tryout" },
+            { "weight": 40, "resultText": "Te dice que vuelvas el año próximo con más tiempo de juego.", "happiness": -2, "fitness": 1 }
+          ]
+        },
+        {
+          "text": "Pedirle consejo a mi entrenador primero",
+          "outcomes": [
+            { "weight": 70, "resultText": "El entrenador te prepara un plan de entrenamiento extra para la prueba.", "fitness": 4, "discipline": 3, "stress": 3, "nextEventId": "chain_athlete_tryout" },
+            { "weight": 30, "resultText": "El entrenador no quiere perderte y te frena con excusas.", "stress": 5, "happiness": -3, "discipline": -1 }
+          ]
+        },
+        {
+          "text": "Ignorarlo",
+          "outcomes": [
+            { "weight": 60, "resultText": "Te haces el desentendido y el ojeador se va a ver a otro jugador.", "happiness": -3 },
+            { "weight": 40, "resultText": "Un compañero toma tu lugar en la prueba y se lleva el crédito.", "popularity": -3, "happiness": -5 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_athlete_tryout",
+      "pool": "school",
+      "ageMin": 14, "ageMax": 19,
+      "text": "Prueba formal en la academia: cuarenta chamacos, un solo cupo de beca y los ojeadores anotando en sus libretas.",
+      "choices": [
+        {
+          "text": "Darlo todo desde el primer ejercicio",
+          "outcomes": [
+            { "weight": 40, "resultText": "Terminas entre los tres mejores de la jornada y los ojeadores anotan tu nombre dos veces.", "fitness": 4, "fame": 1, "happiness": 8, "nextEventId": "chain_athlete_offer" },
+            { "weight": 35, "resultText": "Te quedas sin aire antes de la segunda mitad pero cumples.", "fitness": 2, "stress": 6, "nextEventId": "chain_athlete_offer" },
+            { "weight": 25, "resultText": "Una mala caída en el segundo ejercicio te deja fuera de la prueba.", "health": -8, "fitness": -3, "happiness": -8, "flag": "INJURED_SPORT" }
+          ]
+        },
+        {
+          "text": "Jugar seguro y no arriesgar",
+          "outcomes": [
+            { "weight": 55, "resultText": "Cumples lo justo sin brillar y los ojeadores se quedan neutros.", "stress": 2, "nextEventId": "chain_athlete_offer" },
+            { "weight": 45, "resultText": "Tu prudencia te pasa factura y te anotan como jugador discreto.", "happiness": -4, "stress": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chain_athlete_offer",
+      "pool": "school",
+      "ageMin": 14, "ageMax": 22,
+      "text": "Llega la carta de la universidad: media beca deportiva si firmas con su equipo y mantienes las notas por encima del mínimo.",
+      "choices": [
+        {
+          "text": "Firmar con la universidad",
+          "outcomes": [
+            { "weight": 60, "resultText": "Firmas la beca deportiva y el equipo te manda el calendario de entrenamientos.", "happiness": 10, "fitness": 3, "stress": 4, "flag": "SCHOLARSHIP" },
+            { "weight": 25, "resultText": "Firmas, pero con una cláusula de rendimiento que te quita el sueño.", "happiness": 5, "stress": 8, "flag": "SCHOLARSHIP" },
+            { "weight": 15, "resultText": "La universidad se retracta a último minuto por un recorte de presupuesto.", "happiness": -8, "stress": 7 }
+          ]
+        },
+        {
+          "text": "Pedir tiempo para decidir",
+          "outcomes": [
+            { "weight": 50, "resultText": "Te dan una semana y al final aceptas con más calma.", "happiness": 6, "stress": -2, "flag": "SCHOLARSHIP" },
+            { "weight": 50, "resultText": "Tardas tanto en responder que la oferta se enfría.", "happiness": -6, "stress": 4 }
+          ]
+        },
+        {
+          "text": "Rechazarla",
+          "outcomes": [
+            { "weight": 70, "resultText": "Les dices que no, gracias, y sigues tu propio camino.", "happiness": 1, "stress": -2 },
+            { "weight": 30, "resultText": "Rechazas y a los tres meses te arrepientes mil veces.", "happiness": -7, "stress": 4 }
+          ]
+        }
+      ]
+    }
+  ]
+}

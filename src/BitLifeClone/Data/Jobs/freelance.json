@@ -1,0 +1,18 @@
+{
+  "category": "freelance",
+  "name": "Freelance Gigs",
+  "jobs": [
+    { "id": "fl_graphic_design", "title": "Freelance Graphic Design", "promotesTo": null, "tier": 1, "baseSalary": 26000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "", "specialLogic": "Pago por encargo; sin encargos no hay paga. Reputacion sube con trabajos entregados." },
+    { "id": "fl_web_developer", "title": "Freelance Web Developer", "promotesTo": null, "tier": 1, "baseSalary": 38000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "", "specialLogic": "Pago por proyecto; los clientes buenos tardan en llegar." },
+    { "id": "fl_tutor", "title": "Private Tutor", "promotesTo": null, "tier": 1, "baseSalary": 22000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "freelance", "icon": "" },
+    { "id": "fl_photographer", "title": "Freelance Photographer", "promotesTo": null, "tier": 1, "baseSalary": 21000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" },
+    { "id": "fl_video_editor", "title": "Freelance Video Editor", "promotesTo": null, "tier": 1, "baseSalary": 30000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" },
+    { "id": "fl_writer", "title": "Freelance Writer", "promotesTo": null, "tier": 1, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" },
+    { "id": "fl_music_producer", "title": "Beatmaker", "promotesTo": null, "tier": 1, "baseSalary": 20000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "", "specialLogic": "Ingreso por venta de beats; un hit multiplica el sueldo del ano." },
+    { "id": "fl_streamer", "title": "Content Streamer", "promotesTo": null, "tier": 1, "baseSalary": 18000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "", "specialLogic": "Ingreso por donaciones y subs; depende de viewers y puede viralizarse." },
+    { "id": "fl_translator", "title": "Freelance Translator", "promotesTo": null, "tier": 1, "baseSalary": 25000, "currency": "USD", "education": "University", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "freelance", "icon": "" },
+    { "id": "fl_handyman", "title": "Handyman", "promotesTo": null, "tier": 1, "baseSalary": 27000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" },
+    { "id": "fl_social_manager", "title": "Social Media Manager", "promotesTo": null, "tier": 1, "baseSalary": 28000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" },
+    { "id": "fl_voice_actor", "title": "Freelance Voice Actor", "promotesTo": null, "tier": 1, "baseSalary": 24000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "freelance", "icon": "" }
+  ]
+}

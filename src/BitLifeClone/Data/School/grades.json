@@ -1,0 +1,417 @@
+{
+  "system": "school_grade_system",
+  "note": "Sistema de notas de la escuela/colegio. Los eventos de examen viven en el mismo archivo y comparten el pool 'school'.",
+  "gradeSystem": {
+    "scale": { "min": 0, "max": 100, "passing": 65, "honorRoll": 90, "promotion": 65 },
+    "subjects": [
+      "Matemáticas",
+      "Lengua Española",
+      "Ciencias Sociales",
+      "Ciencias Naturales",
+      "Inglés",
+      "Educación Física",
+      "Artes",
+      "Informática",
+      "Formación Humana y Religiosa"
+    ],
+    "gradeBands": [
+      { "letter": "A", "min": 90, "max": 100, "label": "Sobresaliente" },
+      { "letter": "B", "min": 80, "max": 89, "label": "Muy bueno" },
+      { "letter": "C", "min": 65, "max": 79, "label": "Aprobado" },
+      { "letter": "D", "min": 55, "max": 64, "label": "En riesgo" },
+      { "letter": "F", "min": 0, "max": 54, "label": "Reprobado" }
+    ],
+    "points": { "A": 4.0, "B": 3.0, "C": 2.0, "D": 1.0, "F": 0.0 },
+    "stageWeighting": {
+      "primary": { "examen": 0.3, "tarea": 0.3, "participacion": 0.2, "asistencia": 0.2 },
+      "secondary": { "examen": 0.4, "tarea": 0.25, "participacion": 0.15, "asistencia": 0.1, "disciplina": 0.1 },
+      "university": { "examen": 0.55, "tarea": 0.25, "participacion": 0.1, "asistencia": 0.1 }
+    },
+    "examDifficultyByAge": [
+      { "ageMin": 8, "ageMax": 11, "multiplier": 0.9 },
+      { "ageMin": 12, "ageMax": 15, "multiplier": 1.0 },
+      { "ageMin": 16, "ageMax": 18, "multiplier": 1.15 },
+      { "ageMin": 19, "ageMax": 22, "multiplier": 1.25 }
+    ],
+    "gradeEffects": {
+      "gradesDeltaPerSmarts": 0.5,
+      "maxGradesDelta": 12,
+      "minGradesDelta": -12,
+      "stressPenaltyAtBurnout": 8
+    },
+    "yearEndRules": [
+      { "id": "gs_promoted", "when": "grades >= 65 y attendance >= 60", "description": "Pasa de curso sin problemas.", "flagsAdd": [], "flagsRemove": [] },
+      { "id": "gs_honor", "when": "grades >= 90 y discipline >= 70", "description": "Entra al cuadro de honor del colegio.", "flagsAdd": ["HONOR_ROLL"], "flagsRemove": [] },
+      { "id": "gs_repeat", "when": "grades < 65", "description": "Repite el año.", "flagsAdd": ["REPEATED_YEAR"], "flagsRemove": [] },
+      { "id": "gs_truancy", "when": "attendance < 60", "description": "Riesgo por ausencias; la escuela cita al tutor.", "flagsAdd": ["TRUANT"], "flagsRemove": [] },
+      { "id": "gs_suspension", "when": "discipline < 30", "description": "Suspensión de varios días.", "flagsAdd": ["SUSPENDED"], "flagsRemove": [] },
+      { "id": "gs_expulsion", "when": "discipline < 10 o 3 suspensiones en el año", "description": "Expulsión del centro.", "flagsAdd": ["EXPELLED"], "flagsRemove": [] },
+      { "id": "gs_dropout", "when": "EXPELLED y sin reinscripción en el año", "description": "Abandono definitivo de la escuela.", "flagsAdd": ["DROPPED_OUT"], "flagsRemove": [] },
+      { "id": "gs_burnout", "when": "stress >= 85 durante 3 meses seguidos en etapa escolar", "description": "Agotamiento académico.", "flagsAdd": ["BURNOUT"], "flagsRemove": [] },
+      { "id": "gs_gift", "when": "grades >= 90 tres años seguidos", "description": "La escuela te pasa al programa de talento.", "flagsAdd": ["GIFTED"], "flagsRemove": [] }
+    ]
+  },
+  "events": [
+    {
+      "id": "exam_math_partial",
+      "pool": "school",
+      "text": "Parcial de matemáticas. El profesor reparte las hojas boca abajo y da la vuelta al reloj. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Resolver todo con calma",
+          "outcomes": [
+            { "weight": 50, "resultText": "Lees con calma, resuelves y revisas. Salen 88 puntos.", "grades": 6, "smarts": 2, "stress": 3, "happiness": 3, "health": 0, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 30, "resultText": "Te trabas en el tercer ejercicio y pierdes quince minutos ahí.", "grades": 1, "smarts": 1, "stress": 5, "happiness": -2, "health": 0, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 20, "resultText": "Se te borra todo al primer renglón. Entregas casi en blanco.", "grades": -9, "smarts": 0, "stress": 8, "happiness": -8, "health": 0, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_math_retake" }
+          ]
+        },
+        {
+          "text": "Copiar del de al lado",
+          "outcomes": [
+            { "weight": 40, "resultText": "Copias las tres primeras y el profesor no nota nada.", "grades": 7, "smarts": 0, "stress": 6, "happiness": 4, "health": 0, "attendance": 0, "discipline": 0, "popularity": 1, "fitness": 0, "looks": 0, "fame": 0, "karma": -8, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 35, "resultText": "El viejito te ve de reojo y te recoge la hoja sin decir nada.", "grades": -12, "smarts": 0, "stress": 8, "happiness": -10, "health": 0, "attendance": 0, "discipline": -18, "popularity": -3, "fitness": 0, "looks": 0, "fame": 0, "karma": -10, "money": 0, "flag": "CHEATER_CAUGHT", "removeFlag": null, "nextEventId": "exam_cheat_fallout" },
+            { "weight": 25, "resultText": "El de al lado no tiene nada escrito y escribes cosas inventadas.", "grades": -6, "smarts": 0, "stress": 5, "happiness": -5, "health": 0, "attendance": 0, "discipline": -6, "popularity": -1, "fitness": 0, "looks": 0, "fame": 0, "karma": -6, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_math_retake" }
+          ]
+        },
+        {
+          "text": "Entregar en blanco y salir",
+          "outcomes": [
+            { "weight": 60, "resultText": "Entregas sin una letra y sales a sentarte en el patio hasta el timbre.", "grades": -14, "smarts": 0, "stress": -4, "happiness": -3, "health": 0, "attendance": 0, "discipline": -8, "popularity": 2, "fitness": 0, "looks": 0, "fame": 0, "karma": -2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_math_retake" },
+            { "weight": 40, "resultText": "El profesor te retiene y te manda a detención por abandono.", "grades": -8, "smarts": 0, "stress": 6, "happiness": -6, "health": 0, "attendance": -5, "discipline": -12, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -3, "money": 0, "flag": "DETENTION", "removeFlag": null, "nextEventId": "exam_math_retake" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_math_retake",
+      "pool": "school",
+      "text": "El profe te da una semana para la recuperación y te dice que es la última. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Sentarme a estudiar con alguien que sepa",
+          "outcomes": [
+            { "weight": 60, "resultText": "Un compañero te explica con paciencia y por fin entiendes el procedimiento.", "grades": 14, "smarts": 4, "stress": 4, "happiness": 6, "health": 0, "attendance": 0, "discipline": 0, "popularity": 3, "fitness": 0, "looks": 0, "fame": 0, "karma": 3, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 40, "resultText": "Estudian pero él tampoco domina el tema y quedan los dos confundidos.", "grades": 5, "smarts": 2, "stress": 5, "happiness": 0, "health": 0, "attendance": 0, "discipline": 0, "popularity": 1, "fitness": 0, "looks": 0, "fame": 0, "karma": 1, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Ir donde el profesor después de clases",
+          "outcomes": [
+            { "weight": 55, "resultText": "El profe se queda contigo en el aula vacía y te repite el tema tres veces.", "grades": 16, "smarts": 5, "stress": 3, "happiness": 5, "health": 0, "attendance": 0, "discipline": 2, "popularity": 1, "fitness": 0, "looks": 0, "fame": 0, "karma": 2, "money": 0, "flag": "TEACHERS_PET", "removeFlag": null, "nextEventId": null },
+            { "weight": 45, "resultText": "El profe te dice que eso se pregunta en clase y te deja igual.", "grades": 3, "smarts": 1, "stress": 6, "happiness": -6, "health": 0, "attendance": 0, "discipline": 0, "popularity": -1, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_spanish_oral",
+      "pool": "school",
+      "text": "Te toca la exposición oral de Lengua Española delante de todo el salón. ¿Cómo entras?",
+      "choices": [
+        {
+          "text": "Leerlo de memoria tal cual",
+          "outcomes": [
+            { "weight": 45, "resultText": "Lo dices completo, sin respirar, como una grabadora. El profe anota aprobado.", "grades": 5, "smarts": 2, "stress": 4, "happiness": 2, "attendance": 0, "discipline": 0, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Te trabas a la mitad y el silencio del salón se hace enorme.", "grades": -4, "smarts": 1, "stress": 8, "happiness": -8, "attendance": 0, "discipline": 0, "popularity": -2, "health": 0, "fitness": 0, "looks": -1, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 25, "resultText": "Alguien del fondo te sopla y logras cerrar la exposición.", "grades": 2, "smarts": 2, "stress": 5, "happiness": 3, "attendance": 0, "discipline": 0, "popularity": 3, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Improvisar y hablar con mis palabras",
+          "outcomes": [
+            { "weight": 50, "resultText": "Sueltas el tema con tus ejemplos y el salón se ríe contigo. Te dan el mejor registro.", "grades": 9, "smarts": 3, "stress": 3, "happiness": 8, "attendance": 0, "discipline": 0, "popularity": 6, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 1, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Te vas por las ramas y terminas hablando de otra cosa.", "grades": -2, "smarts": 1, "stress": 4, "happiness": 2, "attendance": 0, "discipline": 0, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "El chiste te sale muy bueno y el profe te manda a sentar por payaso.", "grades": -5, "smarts": 0, "stress": 2, "happiness": 5, "attendance": 0, "discipline": -8, "popularity": 7, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "CLASS_CLOWN", "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_science_lab",
+      "pool": "school",
+      "text": "Práctica de laboratorio de Ciencias Naturales. El profe revisa que el montaje funcione. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Seguir el protocolo paso a paso",
+          "outcomes": [
+            { "weight": 55, "resultText": "Mides, calientas y anotas. El experimento sale redondo y el profe lo pone de ejemplo.", "grades": 8, "smarts": 4, "stress": 3, "happiness": 4, "attendance": 0, "discipline": 3, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Sale a medias y el profe te hace repetir el montaje dos veces.", "grades": 2, "smarts": 2, "stress": 6, "happiness": -2, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 15, "resultText": "Se te rompe un vidrio y toda la clase gira la cabeza.", "grades": -4, "smarts": 2, "stress": 7, "happiness": -5, "attendance": 0, "discipline": -5, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Mezclar todo a ver qué pasa",
+          "outcomes": [
+            { "weight": 45, "resultText": "Por accidente sale una reacción que no estaba en el libro y el profe se queda mirando.", "grades": 3, "smarts": 6, "stress": 5, "happiness": 8, "attendance": 0, "discipline": -3, "popularity": 4, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 0, "money": 0, "flag": "GIFTED", "removeFlag": null, "nextEventId": null },
+            { "weight": 35, "resultText": "El humo sale fuera de la campana y el profe te manda a sentar.", "grades": -6, "smarts": 2, "stress": 6, "happiness": -3, "attendance": 0, "discipline": -10, "popularity": 3, "health": -3, "fitness": 0, "looks": 0, "fame": 0, "karma": -2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "Te quemas un dedo con el mechero y terminas en enfermería.", "grades": -2, "smarts": 1, "stress": 6, "happiness": -6, "attendance": 0, "discipline": -4, "popularity": 1, "health": -8, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_sociales_debate",
+      "pool": "school",
+      "text": "Debate de Ciencias Sociales. El profe divide el salón y te pone a defender una posición que no compartes. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Defenderla con datos",
+          "outcomes": [
+            { "weight": 50, "resultText": "Citas fechas y cifras y terminas convenciendo a dos del otro lado.", "grades": 9, "smarts": 4, "stress": 4, "happiness": 5, "attendance": 0, "discipline": 2, "popularity": 4, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 1, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Te quedas corto en un dato y el otro equipo te lo desmonta.", "grades": 1, "smarts": 2, "stress": 6, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "Subes la voz de más y el profe te para en seco.", "grades": -2, "smarts": 1, "stress": 5, "happiness": -2, "attendance": 0, "discipline": -6, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Cambiar de lado a mitad del debate",
+          "outcomes": [
+            { "weight": 45, "resultText": "Sueltas tu posición real a mitad y el salón aplaude. El profe te deja pero anota el cambio.", "grades": 4, "smarts": 3, "stress": 4, "happiness": 7, "attendance": 0, "discipline": -3, "popularity": 6, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 55, "resultText": "El profe te saca del debate por no respetar las reglas.", "grades": -5, "smarts": 1, "stress": 5, "happiness": -4, "attendance": 0, "discipline": -9, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_english_listening",
+      "pool": "school",
+      "text": "Listening de inglés. El audio va rápido y solo lo pasan dos veces. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Anotar palabras suelta",
+          "outcomes": [
+            { "weight": 50, "resultText": "Anotas las palabras clave y armas las respuestas. Sales bien.", "grades": 7, "smarts": 3, "stress": 4, "happiness": 3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Te pierdes en la primera parte y pierdes cuatro preguntas.", "grades": -2, "smarts": 1, "stress": 5, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "El audio y el ventilador compiten y no distingues nada.", "grades": -6, "smarts": 0, "stress": 6, "happiness": -5, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Preguntar al profe que repita otra vez",
+          "outcomes": [
+            { "weight": 45, "resultText": "El profe repite el audio una tercera vez solo para ti. Aprovechas.", "grades": 5, "smarts": 2, "stress": 3, "happiness": 4, "attendance": 0, "discipline": 2, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 55, "resultText": "Te dice delante del salón que el audio se pasa dos veces, no cinco.", "grades": -3, "smarts": 1, "stress": 5, "happiness": -5, "attendance": 0, "discipline": -3, "popularity": -3, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_pe_fitness",
+      "pool": "school",
+      "text": "Prueba física de Educación Física: correr la pista y luego flexiones. ¿Cómo la corres?",
+      "choices": [
+        {
+          "text": "Darlo todo desde el principio",
+          "outcomes": [
+            { "weight": 40, "resultText": "Sales disparado y terminas primero con el pulmón ardiendo.", "grades": 9, "fitness": 10, "health": 3, "stress": 4, "happiness": 5, "attendance": 0, "discipline": 0, "popularity": 6, "smarts": 0, "looks": 0, "fame": 1, "karma": 0, "money": 0, "flag": "ON_TEAM", "removeFlag": null, "nextEventId": null },
+            { "weight": 40, "resultText": "Aguantas tres vueltas y las dos últimas las caminas.", "grades": 3, "fitness": 5, "health": 1, "stress": 4, "happiness": 0, "attendance": 0, "discipline": 0, "popularity": 1, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "Sientes un tirón en el muslo y no terminas la prueba.", "grades": -4, "fitness": -6, "health": -9, "stress": 5, "happiness": -6, "attendance": 0, "discipline": 0, "popularity": -1, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "INJURED_SPORT", "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Ir a un ritmo que aguante",
+          "outcomes": [
+            { "weight": 60, "resultText": "Mantienes el paso todo el tiempo y llegas entero.", "grades": 6, "fitness": 7, "health": 4, "stress": 2, "happiness": 4, "attendance": 0, "discipline": 2, "popularity": 2, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 40, "resultText": "Vas bien pero el profe te corrige la técnica de las flexiones.", "grades": 3, "fitness": 4, "health": 2, "stress": 2, "happiness": 1, "attendance": 0, "discipline": 1, "popularity": 1, "smarts": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_arts_project",
+      "pool": "school",
+      "text": "Entrega del proyecto de Artes. Ayer era la fecha y hoy todavía no lo tienes listo. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Entregar lo que tengo, a medias",
+          "outcomes": [
+            { "weight": 50, "resultText": "El profe acepta el trabajo incompleto y te baja solo dos puntos.", "grades": 0, "smarts": 1, "stress": 4, "happiness": 0, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 1, "fame": 0, "karma": 2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 50, "resultText": "Te lo devuelve sin corregir por entregarlo tarde.", "grades": -7, "smarts": 0, "stress": 6, "happiness": -6, "attendance": 0, "discipline": -4, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Amanecerme haciéndolo",
+          "outcomes": [
+            { "weight": 55, "resultText": "Lo terminas a las cuatro de la mañana y queda decente. Pero llegas zombie.", "grades": 7, "smarts": 2, "stress": 9, "happiness": -4, "health": -5, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": -2, "looks": -2, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Se te pegan los ojos a las cinco, duermes dos horas y el trabajo sale feo.", "grades": -3, "smarts": 1, "stress": 10, "happiness": -6, "health": -8, "attendance": -3, "discipline": 0, "popularity": 0, "fitness": -3, "looks": -2, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 15, "resultText": "Lo dejas a la mitad y te duermes encima del cartón.", "grades": -9, "smarts": 0, "stress": 10, "happiness": -8, "health": -6, "attendance": -5, "discipline": -3, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "BURNOUT", "removeFlag": null, "nextEventId": "exam_results_day" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_tech_practical",
+      "pool": "school",
+      "text": "Práctica de Informática: armar una hoja de cálculo con fórmulas. La computadora que te toca va lenta. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Hacerlo con paciencia en esa misma PC",
+          "outcomes": [
+            { "weight": 55, "resultText": "Aguantas el lag y logras todas las fórmulas antes del timbre.", "grades": 7, "smarts": 4, "stress": 5, "happiness": 3, "attendance": 0, "discipline": 2, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Se te cuelga a mitad y pierdes veinte minutos.", "grades": 2, "smarts": 2, "stress": 7, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 15, "resultText": "Se apaga sola y pierdes todo lo que llevabas sin guardar.", "grades": -8, "smarts": 1, "stress": 9, "happiness": -8, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Pedirle la PC al que ya terminó",
+          "outcomes": [
+            { "weight": 50, "resultText": "El compañero te presta la suya y terminas con tiempo de sobra.", "grades": 8, "smarts": 3, "stress": 2, "happiness": 6, "attendance": 0, "discipline": 0, "popularity": 4, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 3, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Te dice que no y te quedas con la PC lenta igual.", "grades": 0, "smarts": 1, "stress": 5, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "El profe te ve cambiado de puesto y piensa que estás copiando.", "grades": -3, "smarts": 1, "stress": 6, "happiness": -4, "attendance": 0, "discipline": -6, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Arreglar yo mismo la PC con la mano",
+          "outcomes": [
+            { "weight": 40, "resultText": "Le metes mano al cable y por arte de magia la máquina revive.", "grades": 6, "smarts": 5, "stress": 3, "happiness": 6, "attendance": 0, "discipline": 2, "popularity": 3, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 1, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 60, "resultText": "La desarmas de más y el profe te manda a buscar al técnico.", "grades": -4, "smarts": 2, "stress": 6, "happiness": -4, "attendance": 0, "discipline": -7, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_religion_report",
+      "pool": "school",
+      "text": "Trabajo de Formación Humana: un reporte sobre un problema de tu comunidad. ¿Qué tema escoges?",
+      "choices": [
+        {
+          "text": "Un tema real de mi barrio",
+          "outcomes": [
+            { "weight": 55, "resultText": "Entrevistas a vecinos y el reporte sale con nombre y apellido. El profe lo lee en voz alta.", "grades": 9, "smarts": 3, "stress": 4, "happiness": 6, "attendance": 0, "discipline": 2, "popularity": 4, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 8, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "El tema es fuerte y en la casa te piden que no te metas en eso.", "grades": 4, "smarts": 2, "stress": 7, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 5, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 15, "resultText": "Alguien del barrio se molesta por lo que escribiste y te busca.", "grades": 2, "smarts": 2, "stress": 9, "happiness": -6, "attendance": -2, "discipline": 0, "popularity": -3, "health": -4, "fitness": 0, "looks": 0, "fame": 0, "karma": 5, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Bajarlo de internet y cambiarle el nombre",
+          "outcomes": [
+            { "weight": 45, "resultText": "Nadie se da cuenta y entregas un reporte que suena muy profesional.", "grades": 7, "smarts": 1, "stress": 4, "happiness": 3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -6, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 35, "resultText": "El profe reconoce el texto, busca la fuente y te cita con el orientador.", "grades": -10, "smarts": 0, "stress": 8, "happiness": -9, "attendance": 0, "discipline": -12, "popularity": -2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -12, "money": 0, "flag": "CHEATER_CAUGHT", "removeFlag": null, "nextEventId": "exam_cheat_fallout" },
+            { "weight": 20, "resultText": "Se te queda la carpeta de otro trabajo y entregas un anexo que no era.", "grades": -4, "smarts": 0, "stress": 6, "happiness": -4, "attendance": 0, "discipline": -4, "popularity": -1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -5, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_math_final",
+      "pool": "school",
+      "text": "Final de matemáticas. Vale el 40% de la nota y el profe avisó que este año viene con dos ejercicios de la unidad que nadie estudió. ¿Cómo vas?",
+      "choices": [
+        {
+          "text": "Repasar todo el año completo",
+          "outcomes": [
+            { "weight": 45, "resultText": "Te sabes hasta los ejercicios raros. Sales con la hoja llena y sonriendo.", "grades": 11, "smarts": 5, "stress": 5, "happiness": 8, "attendance": 0, "discipline": 2, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 35, "resultText": "Repasas hasta tarde y llegas a la prueba con la cabeza llena pero cansada.", "grades": 5, "smarts": 3, "stress": 8, "happiness": 1, "health": -3, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 20, "resultText": "Estudias tanto que te bloqueas y en el salón se te borra la mitad.", "grades": -6, "smarts": 2, "stress": 11, "happiness": -8, "health": -4, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "BURNOUT", "removeFlag": null, "nextEventId": "exam_extraordinary" }
+          ]
+        },
+        {
+          "text": "Estudiar solo lo que creo que viene",
+          "outcomes": [
+            { "weight": 35, "resultText": "Le pegas a lo que venía y te alcanza pa pasar cómodo.", "grades": 4, "smarts": 2, "stress": 4, "happiness": 4, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 45, "resultText": "Los dos ejercicios sorpresa te hunden el promedio.", "grades": -10, "smarts": 1, "stress": 8, "happiness": -7, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_extraordinary" },
+            { "weight": 20, "resultText": "Escribes lo poco que sabes y el profe te pone un 62 raspado.", "grades": -3, "smarts": 1, "stress": 7, "happiness": -3, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_extraordinary" }
+          ]
+        },
+        {
+          "text": "Dormir bien y confiar en lo que sé",
+          "outcomes": [
+            { "weight": 40, "resultText": "Duermes ocho horas y llegas fresco. La cabeza responde mejor que en el repaso.", "grades": 7, "smarts": 2, "stress": -4, "happiness": 6, "health": 3, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 1, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 35, "resultText": "Descansas pero te faltan herramientas y el examen sale parejo.", "grades": 0, "smarts": 1, "stress": 2, "happiness": 2, "health": 2, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 25, "resultText": "Te confías, no abres el libro y el resultado se ve en la nota.", "grades": -9, "smarts": 0, "stress": 4, "happiness": -7, "health": 2, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_extraordinary" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_spanish_final",
+      "pool": "school",
+      "text": "Final de Lengua Española: análisis de un texto y redacción de una carta. Dos horas y una hoja. ¿Por dónde empiezas?",
+      "choices": [
+        {
+          "text": "Primero la carta, después el análisis",
+          "outcomes": [
+            { "weight": 50, "resultText": "La carta te sale redonda y el análisis lo cierras con tiempo justo.", "grades": 9, "smarts": 4, "stress": 4, "happiness": 6, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 30, "resultText": "Te quedas fino en la carta y el análisis queda corto.", "grades": 2, "smarts": 2, "stress": 5, "happiness": 0, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "Se te va la hora escribiendo y entregas la carta sin terminar.", "grades": -7, "smarts": 1, "stress": 8, "happiness": -6, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_extraordinary" }
+          ]
+        },
+        {
+          "text": "Escribir la carta más larga de mi vida",
+          "outcomes": [
+            { "weight": 40, "resultText": "Escribes tres páginas y cada párrafo tiene su punto. El profe lo subraya.", "grades": 10, "smarts": 4, "stress": 6, "happiness": 7, "attendance": 0, "discipline": 0, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 1, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 35, "resultText": "Llenas hojas pero te sales del tema que pedía el examen.", "grades": -1, "smarts": 2, "stress": 5, "happiness": 0, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 25, "resultText": "Se te acaba el papel y tienes que pedir hoja en voz alta.", "grades": -3, "smarts": 1, "stress": 7, "happiness": -4, "attendance": 0, "discipline": -2, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_extraordinary",
+      "pool": "school",
+      "text": "Te queda la convocatoria extraordinaria: si no la pasas, repites el año. El profe te da la lista de contenidos. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Sentarme con la lista y estudiarla completa",
+          "outcomes": [
+            { "weight": 55, "resultText": "Estudias los nueve temas y en la extraordinaria te ponen cuatro de los que sí dominas.", "grades": 16, "smarts": 5, "stress": 6, "happiness": 9, "attendance": 0, "discipline": 0, "popularity": 1, "health": -3, "fitness": 0, "looks": 0, "fame": 0, "karma": 2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 30, "resultText": "Estudias pero el nervio te juega sucio y apruebas por poquito.", "grades": 6, "smarts": 3, "stress": 9, "happiness": 2, "health": -3, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 15, "resultText": "Te da gripe la semana de la prueba y llegas con fiebre.", "grades": -5, "smarts": 2, "stress": 12, "happiness": -9, "health": -10, "attendance": 0, "discipline": 0, "popularity": 0, "fitness": -4, "looks": -2, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" }
+          ]
+        },
+        {
+          "text": "Buscar el examen de años anteriores",
+          "outcomes": [
+            { "weight": 40, "resultText": "Un egresado te pasa el examen del año pasado y estudias justo eso. Repiten el formato.", "grades": 12, "smarts": 3, "stress": 4, "happiness": 8, "attendance": 0, "discipline": 0, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": -200, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 40, "resultText": "Este año cambian el formato y todo lo que estudié no sirve.", "grades": -8, "smarts": 1, "stress": 10, "happiness": -9, "attendance": 0, "discipline": 0, "popularity": 0, "health": -4, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": -200, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" },
+            { "weight": 20, "resultText": "El profe se entera de que andas pasando exámenes viejos y cambia todo a última hora.", "grades": -4, "smarts": 1, "stress": 9, "happiness": -6, "attendance": 0, "discipline": -5, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -4, "money": -200, "flag": null, "removeFlag": null, "nextEventId": "exam_results_day" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_results_day",
+      "pool": "school",
+      "text": "Día de entrega de notas. El profe va llamando uno por uno al frente y el pasillo huele a papel nuevo.",
+      "choices": [
+        {
+          "text": "Mirar la nota solo en la casa",
+          "outcomes": [
+            { "weight": 55, "resultText": "Guardas la boleta doblada y la abres en tu cuarto con la puerta cerrada.", "grades": 2, "smarts": 1, "stress": 3, "happiness": 2, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Aguantas hasta la noche y la abres con la familia mirando.", "grades": 2, "smarts": 1, "stress": 4, "happiness": 1, "attendance": 0, "discipline": 0, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 15, "resultText": "Se te cae la boleta en el pasillo y alguien lee la nota en voz alta.", "grades": 0, "smarts": 0, "stress": 6, "happiness": -5, "attendance": 0, "discipline": 0, "popularity": -2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Mostrarla en la casa apenas salga",
+          "outcomes": [
+            { "weight": 50, "resultText": "La enseñas al llegar y si está buena, te dan pa salir el sábado.", "grades": 2, "smarts": 0, "stress": -2, "happiness": 8, "attendance": 0, "discipline": 0, "popularity": 2, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "La enseñas y si está mala, la tarde se pone larga en la casa.", "grades": 0, "smarts": 0, "stress": 7, "happiness": -6, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "La enseñas y alguien en la casa decide ponerte profesor particular.", "grades": 4, "smarts": 3, "stress": 5, "happiness": -2, "attendance": 0, "discipline": 0, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 1, "money": -500, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam_cheat_fallout",
+      "pool": "school",
+      "text": "Te pillaron copiando. El profe te manda donde el orientador y hay que hablar con la dirección. ¿Qué haces?",
+      "choices": [
+        {
+          "text": "Admitirlo completo",
+          "outcomes": [
+            { "weight": 50, "resultText": "Dices la verdad, pides disculpas y te ponen trabajo comunitario en vez de suspensión.", "grades": 2, "smarts": 2, "stress": 6, "happiness": -3, "attendance": 0, "discipline": -6, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 6, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 30, "resultText": "Admites y te aplican la suspensión de tres días de todas formas.", "grades": -4, "smarts": 1, "stress": 8, "happiness": -8, "attendance": -6, "discipline": -10, "popularity": 0, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 4, "money": 0, "flag": "SUSPENDED", "removeFlag": null, "nextEventId": null },
+            { "weight": 20, "resultText": "Admites y el orientador te abre un expediente pa seguimiento todo el año.", "grades": 0, "smarts": 1, "stress": 7, "happiness": -5, "attendance": 0, "discipline": -7, "popularity": -1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": 3, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        },
+        {
+          "text": "Negarlo todo",
+          "outcomes": [
+            { "weight": 35, "resultText": "No hay prueba más que la mirada del profe y el caso se queda ahí.", "grades": -3, "smarts": 0, "stress": 9, "happiness": -4, "attendance": 0, "discipline": -6, "popularity": 1, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -8, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+            { "weight": 40, "resultText": "Otro compañero confirma que te vio y la mentira te hunde más.", "grades": -6, "smarts": 0, "stress": 10, "happiness": -9, "attendance": -4, "discipline": -12, "popularity": -4, "health": 0, "fitness": 0, "looks": 0, "fame": 0, "karma": -12, "money": 0, "flag": "SUSPENDED", "removeFlag": null, "nextEventId": null },
+            { "weight": 25, "resultText": "La dirección cita a tu familia y la cosa llega a la casa.", "grades": -4, "smarts": 0, "stress": 12, "happiness": -12, "attendance": 0, "discipline": -14, "popularity": -2, "health": -3, "fitness": 0, "looks": 0, "fame": 0, "karma": -10, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+          ]
+        }
+      ]
+    }
+  ]
+}

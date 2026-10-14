@@ -1,0 +1,193 @@
+{
+  "relationType": "spouse",
+  "actions": [
+    {
+      "id": "spouse_talk", "label": "Hablar con mi esposa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se sientan en la sala después de acostar a los niños y hablan como dos personas, no como dos turnos.", "relationDelta": 6, "health": 0, "happiness": 4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 15, "cold": -15 }, "nextEventId": null },
+        { "weight": 30, "resultText": "La conversación se queda en la lista del supermercado y el pago de la luz.", "relationDelta": 1, "health": 0, "happiness": 0, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 10 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Sacas la pelea vieja otra vez y duermen de espaldas.", "relationDelta": -7, "health": 0, "happiness": -5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_date_night", "label": "Noche de cita", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 100, "cost": 80, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Consiguen quién cuide a los muchachos y por una noche se olvidan de que son papás.", "relationDelta": 10, "health": 0, "happiness": 8, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20, "party_animal": 10 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Salen pero se pasan la noche hablando de facturas y del trabajo.", "relationDelta": 2, "health": 1, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "strict": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Alguien cancela de última hora y la cita se cae. Ella se queda con la cara larga.", "relationDelta": -6, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_anniversary", "label": "Celebrar el aniversario", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 150, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le llevas flores y una tarjeta escrita a mano. Ella la pega en la nevera.", "relationDelta": 12, "health": 0, "happiness": 8, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20, "religious": 10 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Lo celebran en casa con una botella barata y se ríen de los viejos tiempos.", "relationDelta": 6, "health": 0, "happiness": 5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Se te olvida la fecha y ella no dice nada, que es peor.", "relationDelta": -12, "health": 0, "happiness": -8, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25, "cold": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_discuss_finances", "label": "Discutir las finanzas", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Sacan las cuentas y por fin se ponen de acuerdo en cómo apretarse el cinturón.", "relationDelta": 8, "health": 0, "happiness": 3, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Cada uno defiende su gasto y la mesa se pone tensa.", "relationDelta": -5, "health": 0, "happiness": -4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Encuentras una deuda escondida y ahora el problema es la mentira.", "relationDelta": -15, "health": 0, "happiness": -10, "money": -500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_in_laws", "label": "Visitar a los suegros", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 40, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La suegra te recibe con comida y por un rato todo el mundo se lleva bien.", "relationDelta": 6, "health": 1, "happiness": 4, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 15, "religious": 10 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Te tiran pullas toda la tarde y aguantas con una sonrisa falsa.", "relationDelta": -3, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null },
+        { "weight": 20, "resultText": "El suegro mete la cuchara en tus finanzas y la discusión sigue en el carro.", "relationDelta": -8, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_plan_baby", "label": "Hablar de tener un bebé", "allowedTypes": ["spouse"], "minAge": 20, "maxAge": 50, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se miran y saben que sí. Empiezan a hablar de nombres esa misma noche.", "relationDelta": 14, "health": 0, "happiness": 12, "money": 0, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20, "religious": 10 }, "nextEventId": "sub_baby_pregnancy" },
+        { "weight": 27, "resultText": "Uno quiere ya y el otro no. Queda la conversación a medias.", "relationDelta": -5, "health": 0, "happiness": -4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": null },
+        { "weight": 18, "resultText": "La plata no alcanza y deciden esperar. Da rabia pero es de cabeza.", "relationDelta": -1, "health": 0, "happiness": -3, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_confront_cheat", "label": "Confrontar por infidelidad", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Lo niega, luego llora y jura que no vuelve a pasar.", "relationDelta": -20, "health": 0, "happiness": -15, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20 }, "nextEventId": "sub_infidelity" },
+        { "weight": 45, "resultText": "Te dice que llevas años sin mirarla y que el problema no es solo ella.", "relationDelta": -35, "health": -2, "happiness": -18, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": "sub_spouse_therapy" },
+        { "weight": 25, "resultText": "Resulta que era tu cuñado el que andaba hablando de más. Quedas de payaso.", "relationDelta": -10, "health": 0, "happiness": -8, "money": 0, "karma": -2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_cheat", "label": "Serle infiel a mi esposa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 120, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Nadie sospecha. Llegas a casa y te bañas antes de que pregunte.", "relationDelta": -3, "health": 0, "happiness": -4, "money": 0, "karma": -18, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 40, "resultText": "Te ve el celular y en cinco minutos está empacando.", "relationDelta": -55, "health": -2, "happiness": -28, "money": 0, "karma": -22, "fame": -4, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": "sub_infidelity" },
+        { "weight": 25, "resultText": "El chisme llega a la familia antes que tú y se arma el escándalo grande.", "relationDelta": -30, "health": 0, "happiness": -15, "money": 0, "karma": -20, "fame": -3, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 15 }, "nextEventId": "sub_infidelity" }
+      ]
+    },
+    {
+      "id": "spouse_divorce", "label": "Divorciarme de mi esposa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 60, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"], "flagsExist": ["MARRIED"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "El divorcio sale por lo civil, rápido y sin gritos. Reparten y firman.", "relationDelta": -100, "health": 0, "happiness": -15, "money": -5000, "karma": 5, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "easygoing": 20 }, "nextEventId": "sub_divorce_partner" },
+        { "weight": 35, "resultText": "Se lleva la casa y la mitad del sueldo. Tú te quedas con las deudas.", "relationDelta": -100, "health": -3, "happiness": -25, "money": -18000, "karma": -3, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "stingy": -15 }, "nextEventId": "sub_divorce_partner" },
+        { "weight": 25, "resultText": "La pelea se alarga años, con abogados y familia enfrentada.", "relationDelta": -100, "health": -5, "happiness": -30, "money": -12000, "karma": -8, "fame": 0, "flag": "DIVORCED", "removeFlag": "MARRIED", "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_divorce_partner" }
+      ]
+    },
+    {
+      "id": "spouse_renew_vows", "label": "Renovar los votos", "allowedTypes": ["spouse"], "minAge": 22, "maxAge": 100, "cost": 800, "cooldownYears": 3, "maxPerYear": 1,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"], "flagsExist": ["MARRIED"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Se vuelven a decir que sí delante de los hijos y los amigos. Se llora.", "relationDelta": 18, "health": 0, "happiness": 15, "money": 0, "karma": 5, "fame": 1, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 25, "religious": 10 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Alguien de la familia opina de más y la fiesta se pone incómoda.", "relationDelta": 5, "health": 0, "happiness": 3, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Sale más caro de lo que pensaban y el mes siguiente es de arroz.", "relationDelta": 8, "health": 0, "happiness": 8, "money": -500, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_ask_loan", "label": "Que mi esposa me preste plata", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Saca de su cuenta y te presta sin querer saber pa qué es.", "relationDelta": 8, "health": 0, "happiness": 8, "money": 2000, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 25 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Te da pero quiere anotarlo en un papel pa que no se te olvide.", "relationDelta": 2, "health": 0, "happiness": 2, "money": 1500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "strict": 20 }, "nextEventId": null },
+        { "weight": 15, "resultText": "No le queda y le da vergüenza decírtelo.", "relationDelta": -3, "health": 0, "happiness": -3, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_support_career", "label": "Que apoye mi carrera", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Se queda con todo lo de la casa pa que tú te enfoques en el trabajo. Eso vale.", "relationDelta": 12, "health": 1, "happiness": 8, "money": 0, "karma": 10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 25, "generous": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Dice que apoya pero suspira cada vez que llegas tarde.", "relationDelta": 2, "health": 0, "happiness": 1, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Le molesta que crezcas más que ella y lo saca en cada pelea.", "relationDelta": -8, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_ask_defend", "label": "Que mi esposa me defienda", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Delante de quien sea se te pone al lado y no le tiembla la voz.", "relationDelta": 10, "health": 0, "happiness": 8, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Te respalda delante de los vecinos, aunque sin meterse en el fondo del asunto.", "relationDelta": 3, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 10, "resultText": "Se pasa de agresiva y termina creándote otro problema.", "relationDelta": -3, "health": -2, "happiness": 0, "money": 0, "karma": -3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_cut_contact", "label": "Cortar contacto con mi esposa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 5, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "ESTRANGED", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te mudas a un cuarto alquilado y no contestas sus llamadas.", "relationDelta": -70, "health": 0, "happiness": -10, "money": -400, "karma": -5, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": "sub_estranged_family" },
+        { "weight": 45, "resultText": "Le dices en la cara que se acabó y dejas a los muchachos en medio.", "relationDelta": -65, "health": -3, "happiness": -15, "money": 0, "karma": -10, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_estranged_family" }
+      ]
+    },
+    {
+      "id": "spouse_steal", "label": "Robarle a mi esposa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le vacías la cuenta de ahorros pa los muchachos y ella no revisa hasta el mes.", "relationDelta": -45, "health": 0, "happiness": -6, "money": 1500, "karma": -25, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Lo descubre y hay una escena que los vecinos escuchan completa.", "relationDelta": -50, "health": -3, "happiness": -15, "money": 0, "karma": -20, "fame": -3, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Coge ella también lo que es 'de los dos' y queda la desconfianza.", "relationDelta": -28, "health": 0, "happiness": -6, "money": 700, "karma": -15, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_sue", "label": "Demandarla por la casa", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 4, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"], "minFame": 0 },
+      "outcomes": [
+        { "weight": 40, "resultText": "El juez pone la casa a tu nombre y ella no te lo perdona nunca.", "relationDelta": -55, "health": 0, "happiness": -10, "money": 9000, "karma": -12, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Pierdes y encima pagas los abogados de los dos.", "relationDelta": -45, "health": 0, "happiness": -15, "money": -8000, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Llegan a un acuerdo que deja a los dos medio amargados.", "relationDelta": -20, "health": 0, "happiness": -4, "money": 3500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_call_war", "label": "Llamarla donde sea", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Contesta y lo primero que hace es ponerle el teléfono al bebé.", "relationDelta": 9, "health": 0, "happiness": 8, "money": -20, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "No contesta y te come la angustia hasta el siguiente intento.", "relationDelta": -5, "health": 0, "happiness": -10, "money": -20, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "La llamada se corta justo cuando iba a contarte algo importante.", "relationDelta": 0, "health": 0, "happiness": -6, "money": -20, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_send_money_war", "label": "Enviarle dinero desde lejos", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "La remesa llega y ella la usa pa la comida de los muchachos, como siempre.", "relationDelta": 12, "health": 0, "happiness": 8, "money": -500, "karma": 15, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El dinero se pierde en el envío y la familia se queda esperando.", "relationDelta": 0, "health": 0, "happiness": -6, "money": -500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Alguien cobra una comisión en el camino y llega menos de lo enviado.", "relationDelta": -5, "health": 0, "happiness": -5, "money": -500, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_send_package", "label": "Mandar paquetes y cartas", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "El paquete llega con ropa de los muchachos y una carta que ella lee en voz alta.", "relationDelta": 10, "health": 2, "happiness": 6, "money": -200, "karma": 10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El paquete llega mojado y revuelto, pero llega.", "relationDelta": 2, "health": 0, "happiness": -3, "money": -200, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Nunca llega y ella deja de preguntarte por los envíos.", "relationDelta": -4, "health": 0, "happiness": -5, "money": -200, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_hide_draft", "label": "Esconderla de la leva", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "La escondes en casa de su hermana y los reclutadores se van con las manos vacías.", "relationDelta": 15, "health": 0, "happiness": 10, "money": -300, "karma": 10, "fame": 0, "flag": null, "removeFlag": "DRAFTED", "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Casi la encuentran pero logra escabullirse por el patio.", "relationDelta": 6, "health": -5, "happiness": 0, "money": 0, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "La descubren escondida y te llevan preso por encubrirla.", "relationDelta": -10, "health": -5, "happiness": -15, "money": 0, "karma": 5, "fame": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "strict": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "spouse_pay_rescue", "label": "Pagar un rescate por ella", "allowedTypes": ["spouse"], "minAge": 18, "maxAge": 120, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Pones la plata que piden y te la entregan viva en un retén de carretera.", "relationDelta": 20, "health": 0, "happiness": 12, "money": -9000, "karma": 15, "fame": 0, "flag": null, "removeFlag": "POW", "traitWeightMods": { "loyal": 25 }, "nextEventId": "sub_war_rescue" },
+        { "weight": 30, "resultText": "Pagas a medias y te dan largas durante semanas.", "relationDelta": -5, "health": 0, "happiness": -15, "money": -4500, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": "sub_war_rescue" },
+        { "weight": 15, "resultText": "El que servía de contacto se esfuma con el dinero y deja la deuda abierta.", "relationDelta": -20, "health": 0, "happiness": -25, "money": -9000, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 15 }, "nextEventId": null }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "companies": [
+    {
+      "id": "travel_agency",
+      "name": "Travel Agency"
+    },
+    {
+      "id": "circus",
+      "name": "Circus"
+    },
+    {
+      "id": "salon",
+      "name": "Salon"
+    },
+    {
+      "id": "bank",
+      "name": "Bank"
+    },
+    {
+      "id": "trucking_company",
+      "name": "Trucking Company"
+    },
+    {
+      "id": "library",
+      "name": "Library"
+    },
+    {
+      "id": "fishery",
+      "name": "Fishery"
+    },
+    {
+      "id": "ride_sharing_app",
+      "name": "Ride Sharing App"
+    },
+    {
+      "id": "grocery_store",
+      "name": "Grocery Store"
+    },
+    {
+      "id": "fast_food",
+      "name": "Fast Food"
+    }
+  ]
+}

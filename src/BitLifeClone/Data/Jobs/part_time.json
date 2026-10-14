@@ -1,0 +1,25 @@
+{
+  "category": "part_time",
+  "name": "Part-time Jobs",
+  "jobs": [
+    { "id": "pt_fast_food_crew", "title": "Fast Food Crew", "promotesTo": "pt_shift_leader", "tier": 1, "baseSalary": 14000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_shift_leader", "title": "Shift Leader", "promotesTo": "pt_assistant_manager", "tier": 2, "baseSalary": 14000, "currency": "USD", "education": "None", "experienceYears": 1, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_assistant_manager", "title": "Assistant Manager", "promotesTo": null, "tier": 3, "baseSalary": 14000, "currency": "USD", "education": "HighSchool", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 18 },
+
+    { "id": "pt_grocery_bagger", "title": "Grocery Bagger", "promotesTo": null, "tier": 1, "baseSalary": 12500, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_car_wash", "title": "Car Wash Attendant", "promotesTo": null, "tier": 1, "baseSalary": 13000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_newspaper_delivery", "title": "Newspaper Delivery", "promotesTo": null, "tier": 1, "baseSalary": 11000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_babysitter", "title": "Babysitter", "promotesTo": null, "tier": 1, "baseSalary": 12000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_dog_walker", "title": "Dog Walker", "promotesTo": null, "tier": 1, "baseSalary": 11500, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 14 },
+    { "id": "pt_movie_usher", "title": "Movie Theater Usher", "promotesTo": null, "tier": 1, "baseSalary": 13500, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 15 },
+    { "id": "pt_retail_associate", "title": "Retail Sales Associate", "promotesTo": "pt_retail_supervisor", "tier": 1, "baseSalary": 16000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_retail_supervisor", "title": "Retail Supervisor", "promotesTo": null, "tier": 2, "baseSalary": 16000, "currency": "USD", "education": "HighSchool", "experienceYears": 2, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 18 },
+    { "id": "pt_waiter", "title": "Waiter", "promotesTo": "pt_head_waiter", "tier": 1, "baseSalary": 17000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_head_waiter", "title": "Head Waiter", "promotesTo": null, "tier": 2, "baseSalary": 17000, "currency": "USD", "education": "HighSchool", "experienceYears": 3, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 18 },
+    { "id": "pt_barista", "title": "Barista", "promotesTo": null, "tier": 1, "baseSalary": 15500, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_dishwasher", "title": "Dishwasher", "promotesTo": null, "tier": 1, "baseSalary": 12500, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 15 },
+    { "id": "pt_stock_clerk", "title": "Stock Clerk", "promotesTo": null, "tier": 1, "baseSalary": 14000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_lifeguard", "title": "Lifeguard", "promotesTo": null, "tier": 1, "baseSalary": 15000, "currency": "USD", "education": "None", "experienceYears": 0, "canHoldWithCriminalRecord": false, "category": "part_time", "icon": "", "minAge": 16 },
+    { "id": "pt_camp_counselor", "title": "Camp Counselor", "promotesTo": null, "tier": 1, "baseSalary": 13000, "currency": "USD", "education": "HighSchool", "experienceYears": 0, "canHoldWithCriminalRecord": true, "category": "part_time", "icon": "", "minAge": 16 }
+  ]
+}

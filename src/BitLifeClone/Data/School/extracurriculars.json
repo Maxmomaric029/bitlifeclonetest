@@ -1,0 +1,182 @@
+{
+  "system": "school_extracurriculars",
+  "note": "Clubes, equipos y actividades extracurriculares. Se activan en etapa escolar y dan popularity/fitness/smarts a cambio de horas y stress.",
+  "activities": [
+    {
+      "id": "xc_basketball_team",
+      "label": "Entrar al equipo de baloncesto",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 3,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "fitness": 40 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "INJURED_SPORT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El entrenador te pone de alero y empiezas a entrenar todas las tardes.", "fitness": 9, "popularity": 8, "grades": -2, "discipline": 3, "stress": 6, "happiness": 7, "smarts": 0, "health": 1, "attendance": 0, "looks": 1, "fame": 1, "karma": 0, "money": 0, "flag": "ON_TEAM", "removeFlag": null, "nextEventId": null },
+        { "weight": 28, "resultText": "Quedas como suplente y juegas los últimos minutos de cada partido.", "fitness": 5, "popularity": 4, "grades": 0, "discipline": 2, "stress": 5, "happiness": 3, "smarts": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "ON_TEAM", "removeFlag": null, "nextEventId": null },
+        { "weight": 22, "resultText": "La prueba física te deja y el entrenador te dice que vuelvas el año que viene.", "fitness": 2, "popularity": -3, "grades": 0, "discipline": 0, "stress": 5, "happiness": -6, "smarts": 0, "health": -2, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_soccer_team",
+      "label": "Probar para el equipo de fútbol",
+      "ageMin": 9,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 3,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "fitness": 35 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "INJURED_SPORT"] },
+      "outcomes": [
+        { "weight": 48, "resultText": "Te ponen de lateral derecho y el profesor de Educación Física se vuelve tu fan.", "fitness": 10, "popularity": 7, "grades": -1, "discipline": 2, "stress": 6, "happiness": 8, "smarts": 0, "health": 1, "attendance": 0, "looks": 0, "fame": 1, "karma": 0, "money": 0, "flag": "ON_TEAM", "removeFlag": null, "nextEventId": null },
+        { "weight": 30, "resultText": "Te quedas en la banca pero viajas con el equipo a todos los partidos.", "fitness": 5, "popularity": 3, "grades": 0, "discipline": 1, "stress": 4, "happiness": 3, "smarts": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "ON_TEAM", "removeFlag": null, "nextEventId": null },
+        { "weight": 22, "resultText": "Un tirón en el entrenamiento te deja fuera tres semanas.", "fitness": -4, "popularity": 0, "grades": 0, "discipline": 0, "stress": 5, "happiness": -5, "smarts": 0, "health": -7, "attendance": -3, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "INJURED_SPORT", "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_student_council",
+      "label": "Postularme al consejo estudiantil",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "popularity": 45 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "SUSPENDED"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Ganas la votación por seis votos y te dan el pin de delegado.", "popularity": 12, "smarts": 3, "grades": 1, "discipline": 4, "stress": 5, "happiness": 10, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 2, "karma": 4, "money": 0, "flag": "STUDENT_COUNCIL", "removeFlag": null, "nextEventId": "xc_council_first_meeting" },
+        { "weight": 35, "resultText": "Pierdes la elección pero te nombran vocero de tu curso.", "popularity": 5, "smarts": 2, "grades": 0, "discipline": 2, "stress": 4, "happiness": 3, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "Haces campaña con golosinas y la dirección te anula la candidatura por irregularidades.", "popularity": -4, "smarts": 1, "grades": 0, "discipline": -6, "stress": 6, "happiness": -8, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": -5, "money": -300, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_council_first_meeting",
+      "label": "Primera reunión del consejo",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 0,
+      "maxPerYear": 1,
+      "requires": { "flagsExist": ["STUDENT_COUNCIL"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Propones arreglar los baños y la dirección te escucha por primera vez.", "popularity": 8, "smarts": 2, "grades": 0, "discipline": 3, "stress": 3, "happiness": 8, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 1, "karma": 10, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 30, "resultText": "La reunión se va entera discutiendo el color del uniforme.", "popularity": 1, "smarts": 0, "grades": 0, "discipline": 0, "stress": 4, "happiness": -2, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "Prometes cosas que no puedes cumplir y tus compañeros te lo reclaman.", "popularity": -5, "smarts": 1, "grades": 0, "discipline": -2, "stress": 5, "happiness": -5, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": -4, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_choir",
+      "label": "Meterte al coro del colegio",
+      "ageMin": 8,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El profesor de música te oye cantar solo y te da un solo en la presentación.", "popularity": 7, "smarts": 2, "looks": 2, "fame": 1, "grades": 1, "discipline": 2, "stress": 3, "happiness": 9, "fitness": 0, "health": 0, "attendance": 0, "karma": 2, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 30, "resultText": "Cantas en el coro sin brillar pero el grupo se vuelve tu gente.", "popularity": 4, "smarts": 1, "looks": 0, "fame": 0, "grades": 0, "discipline": 1, "stress": 2, "happiness": 7, "fitness": 0, "health": 0, "attendance": 0, "karma": 2, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "Te da pena cantar delante de gente y pides salir del coro a las dos semanas.", "popularity": -1, "smarts": 0, "looks": 0, "fame": 0, "grades": 0, "discipline": 0, "stress": 5, "happiness": -4, "fitness": 0, "health": 0, "attendance": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_chess_club",
+      "label": "Meterte al club de ajedrez",
+      "ageMin": 9,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "smarts": 45 }, "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Le ganas al profesor en el tercer intento y el club te pone de tablero uno.", "smarts": 8, "popularity": 4, "grades": 4, "discipline": 3, "stress": 3, "happiness": 7, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 35, "resultText": "Aprendes aperturas nuevas y el club se vuelve tu casa por las tardes.", "smarts": 5, "popularity": 3, "grades": 3, "discipline": 2, "stress": 2, "happiness": 6, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 1, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "Pierdes trece partidas seguidas y dejas de ir por vergüenza.", "smarts": 2, "popularity": -2, "grades": 1, "discipline": 0, "stress": 4, "happiness": -5, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_robotics_club",
+      "label": "Meterte al club de robótica",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 500,
+      "hoursCost": 3,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "smarts": 50 }, "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Tu equipo arma un carrito que sigue líneas y clasifica a la regional.", "smarts": 9, "popularity": 5, "grades": 4, "discipline": 3, "stress": 6, "happiness": 10, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 2, "karma": 1, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 35, "resultText": "Aprendes a soldar y a programar a la vez. Se te dan bien las dos cosas.", "smarts": 7, "popularity": 3, "grades": 3, "discipline": 2, "stress": 5, "happiness": 6, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "karma": 0, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "El kit se daña la noche antes de la competencia y no logran arreglarlo.", "smarts": 4, "popularity": -2, "grades": 1, "discipline": 0, "stress": 9, "happiness": -8, "fitness": 0, "health": -2, "attendance": -2, "looks": 0, "fame": 0, "karma": 0, "money": -500, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_band",
+      "label": "Entrar a la banda de música",
+      "ageMin": 10,
+      "ageMax": 22,
+      "cost": 300,
+      "hoursCost": 3,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "SUSPENDED"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te dan el bombardino y desfilas en el carnaval del pueblo.", "popularity": 8, "smarts": 2, "looks": 2, "fame": 2, "grades": -1, "discipline": 3, "stress": 5, "happiness": 10, "fitness": 3, "health": 0, "attendance": 0, "karma": 2, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 35, "resultText": "Aprendes a leer partituras y te vuelves de los que no faltan nunca.", "popularity": 4, "smarts": 4, "looks": 0, "fame": 0, "grades": 1, "discipline": 4, "stress": 3, "happiness": 7, "fitness": 2, "health": 0, "attendance": 0, "karma": 3, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 20, "resultText": "El instrumento cuesta más de lo que esperabas y lo devuelves al mes.", "popularity": -2, "smarts": 1, "looks": 0, "fame": 0, "grades": 0, "discipline": 0, "stress": 5, "happiness": -6, "fitness": 0, "health": 0, "attendance": 0, "karma": 0, "money": -300, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_volunteering",
+      "label": "Meterte a voluntariado escolar",
+      "ageMin": 12,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Vas a repartir comida a un barrio y vuelves con otra idea de lo que es la vida.", "karma": 14, "popularity": 5, "smarts": 3, "grades": 2, "discipline": 4, "stress": 4, "happiness": 8, "fitness": 2, "health": 1, "attendance": 0, "looks": 0, "fame": 1, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 28, "resultText": "La experiencia te pega fuerte y por unos días no quieres hablar de eso.", "karma": 10, "popularity": 2, "smarts": 3, "grades": 0, "discipline": 2, "stress": 8, "happiness": -4, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 17, "resultText": "El coordinador es un desastre y la actividad se cae a última hora.", "karma": 4, "popularity": 1, "smarts": 1, "grades": 0, "discipline": 0, "stress": 5, "happiness": -4, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_newspaper",
+      "label": "Escribir en el periódico escolar",
+      "ageMin": 11,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 2,
+      "cooldownYears": 1,
+      "maxPerYear": 2,
+      "requires": { "minStat": { "smarts": 50 }, "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Publicas un reportaje sobre el comedor escolar y la dirección cambia el menú.", "smarts": 6, "popularity": 7, "karma": 10, "grades": 3, "discipline": 2, "stress": 5, "happiness": 8, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 1, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 30, "resultText": "Escribes columnas con seudónimo y varios profes empiezan a leerlas.", "smarts": 5, "popularity": 4, "karma": 4, "grades": 2, "discipline": 1, "stress": 4, "happiness": 6, "fitness": 0, "health": 0, "attendance": 0, "looks": 0, "fame": 0, "money": 0, "flag": "IN_CLUB", "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "Escribes algo con nombre y apellido y el aludido te espera en la salida.", "smarts": 3, "popularity": -3, "karma": -3, "grades": 0, "discipline": -5, "stress": 9, "happiness": -6, "fitness": 0, "health": -4, "attendance": 0, "looks": 0, "fame": 0, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "xc_captain_election",
+      "label": "Postularme a capitán del equipo",
+      "ageMin": 13,
+      "ageMax": 22,
+      "cost": 0,
+      "hoursCost": 1,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minStat": { "popularity": 55, "fitness": 55 }, "flagsExist": ["ON_TEAM"], "flagsNone": ["EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Los muchachos votan por ti y el entrenador te da el brazalete.", "popularity": 12, "fitness": 4, "discipline": 5, "stress": 7, "happiness": 12, "fame": 2, "smarts": 1, "grades": 0, "health": 0, "attendance": 0, "looks": 0, "karma": 3, "money": 0, "flag": "TEAM_CAPTAIN", "removeFlag": null, "nextEventId": null },
+        { "weight": 30, "resultText": "El entrenador nombra capitán a otro y te pide que lo apoyes igual.", "popularity": 2, "fitness": 2, "discipline": 3, "stress": 5, "happiness": -4, "fame": 0, "smarts": 1, "grades": 0, "health": 0, "attendance": 0, "looks": 0, "karma": 2, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null },
+        { "weight": 25, "resultText": "Haces campaña hablando mal del otro candidato y el equipo se parte en dos.", "popularity": -6, "fitness": 1, "discipline": -6, "stress": 8, "happiness": -6, "fame": 0, "smarts": 0, "grades": 0, "health": 0, "attendance": 0, "looks": 0, "karma": -8, "money": 0, "flag": null, "removeFlag": null, "nextEventId": null }
+      ]
+    }
+  ]
+}

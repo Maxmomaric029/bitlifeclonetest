@@ -1,0 +1,14 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+publish/
+
+# Builds
+*.exe
+!CheatEngine77.exe
+
+# Saves locales (no versionar partidas)
+saves/*.json

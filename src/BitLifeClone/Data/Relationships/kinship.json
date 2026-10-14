@@ -1,0 +1,218 @@
+{
+  "relationType": "kinship",
+  "byType": ["grandparent", "uncle_aunt", "cousin"],
+  "actions": [
+    { "id": "kin_gp_visit", "label": "Visitar a mi abuelo", "allowedTypes": ["grandparent"], "minAge": 3, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Te recibe con café y galletas de soda y te cuenta de cuando era joven en el campo.", "relationDelta": 9, "happiness": 6, "stress": -3, "traitWeightMods": { "affectionate": 20 } },
+        { "weight": 25, "resultText": "Se pasa la visita viendo el juego de pelota y casi no habla.", "relationDelta": 2, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Te regaña por el pelo largo y por no visitarlo más seguido.", "relationDelta": -3, "happiness": -3, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "kin_gp_stories", "label": "Pedirle que cuente historias", "allowedTypes": ["grandparent"], "minAge": 4, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Te cuenta cómo enamoró a la abuela en una fiesta patronal. Te ríes hasta llorar.", "relationDelta": 10, "happiness": 6, "smarts": 1, "traitWeightMods": { "affectionate": 15 } },
+        { "weight": 25, "resultText": "Repite la misma historia de siempre, y tú haces como si fuera nueva.", "relationDelta": 4, "karma": 2, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 15, "resultText": "Se le mezclan los nombres y se pone triste al darse cuenta.", "relationDelta": 3, "happiness": -4, "traitWeightMods": { "forgiving": 10 } }
+      ] },
+    { "id": "kin_gp_ask_money", "label": "Pedirle dinero al abuelo", "allowedTypes": ["grandparent"], "minAge": 6, "maxAge": 60, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Saca un billete doblado del bolsillo de la camisa y te dice que no le digas a tu mamá.", "relationDelta": 4, "money": 50, "happiness": 4, "traitWeightMods": { "generous": 25 } },
+        { "weight": 30, "resultText": "Te da unas monedas y un sermón sobre el valor del trabajo.", "relationDelta": 1, "money": 10, "traitWeightMods": { "stingy": 20, "strict": 10 } },
+        { "weight": 20, "resultText": "Te dice que su pensión no alcanza ni para las pastillas.", "relationDelta": -4, "happiness": -3, "karma": -2, "traitWeightMods": { "stingy": 15 } }
+      ] },
+    { "id": "kin_gp_help_chores", "label": "Ayudarlo en la casa", "allowedTypes": ["grandparent"], "minAge": 8, "maxAge": 90, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Le arreglas la llave del fregadero y te bendice tres veces seguidas.", "relationDelta": 10, "karma": 6, "traitWeightMods": { "religious": 15, "affectionate": 10 } },
+        { "weight": 25, "resultText": "Te corrige cómo barrer cada dos minutos, pero queda contento.", "relationDelta": 4, "stress": 2, "traitWeightMods": { "strict": 20 } },
+        { "weight": 15, "resultText": "Te subes a la escalera, se tambalea y te raspas el brazo.", "relationDelta": 5, "health": -4, "traitWeightMods": { "easygoing": 10 } }
+      ] },
+    { "id": "kin_gp_doctor", "label": "Llevarlo al médico", "allowedTypes": ["grandparent"], "minAge": 18, "maxAge": 90, "cost": 30, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le cambian la pastilla de la presión y sale del consultorio como nuevo.", "relationDelta": 12, "karma": 8, "stress": -2, "traitWeightMods": { "loyal": 20 } },
+        { "weight": 30, "resultText": "Esperan cuatro horas en la clínica y él se queja de todo el país.", "relationDelta": 5, "stress": 6, "traitWeightMods": { "resentful": 10 } },
+        { "weight": 15, "resultText": "El médico pide más estudios y salen preocupados los dos.", "relationDelta": 6, "stress": 8, "happiness": -5, "traitWeightMods": { "religious": 15 } }
+      ] },
+    { "id": "kin_gp_gift", "label": "Regalarle algo al abuelo", "allowedTypes": ["grandparent"], "minAge": 6, "maxAge": 90, "cost": 40, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Le llevas un sombrero nuevo y se lo pone hasta para dormir.", "relationDelta": 9, "happiness": 5, "traitWeightMods": { "affectionate": 20 } },
+        { "weight": 25, "resultText": "Te dice que no gastes en él y lo guarda en el armario sin estrenar.", "relationDelta": 3, "traitWeightMods": { "stingy": 20 } },
+        { "weight": 15, "resultText": "Le compras un celular y no hay forma de que aprenda a usarlo.", "relationDelta": 1, "stress": 3, "traitWeightMods": { "strict": 10 } }
+      ] },
+    { "id": "kin_gp_inheritance", "label": "Hablar de la herencia", "allowedTypes": ["grandparent"], "minAge": 18, "maxAge": 90, "cost": 0, "cooldownYears": 3, "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te dice con calma que el conuco será tuyo y que lo cuides bien.", "relationDelta": 6, "happiness": 4, "traitWeightMods": { "loyal": 20, "generous": 10 }, "nextEventId": "sub_heir_discussion" },
+        { "weight": 35, "resultText": "Se ofende: piensa que lo das por muerto y te bota de la galería.", "relationDelta": -12, "happiness": -5, "karma": -4, "traitWeightMods": { "resentful": 25 } },
+        { "weight": 25, "resultText": "Te confiesa que ya repartió todo y que a ti no te tocó casi nada.", "relationDelta": -4, "happiness": -6, "traitWeightMods": { "cold": 15 }, "nextEventId": "sub_heir_discussion" }
+      ] },
+    { "id": "kin_gp_ignore", "label": "Dejar de visitar al abuelo", "allowedTypes": ["grandparent"], "minAge": 10, "maxAge": 90, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Pasan meses sin que vayas y él le pregunta por ti a todo el que llega.", "relationDelta": -12, "karma": -5, "traitWeightMods": { "affectionate": 15 } },
+        { "weight": 35, "resultText": "Ni se nota la ausencia: tiene la casa llena de nietos.", "relationDelta": -3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 20, "resultText": "Tu mamá te reclama que el viejo no va a durar para siempre.", "relationDelta": -6, "happiness": -5, "stress": 4, "traitWeightMods": { "resentful": 15 } }
+      ] },
+    { "id": "kin_gp_play_dominoes", "label": "Jugar dominó con el abuelo", "allowedTypes": ["grandparent"], "minAge": 8, "maxAge": 90, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te da una capotera y se ríe dando golpes en la mesa.", "relationDelta": 9, "happiness": 5, "smarts": 1, "traitWeightMods": { "party_animal": 10, "affectionate": 10 } },
+        { "weight": 30, "resultText": "Le ganas una mano y te acusa de tranquero, medio en serio.", "relationDelta": 3, "happiness": 3, "traitWeightMods": { "jealous": 15 } },
+        { "weight": 20, "resultText": "Le tranca el juego un vecino y se arma un debate de una hora.", "relationDelta": 4, "stress": 2, "traitWeightMods": { "strict": 15 } }
+      ] },
+    { "id": "kin_gp_advice", "label": "Pedirle un consejo", "allowedTypes": ["grandparent"], "minAge": 10, "maxAge": 90, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te da un consejo tan simple que te arregla medio año de dudas.", "relationDelta": 8, "stress": -6, "smarts": 1, "traitWeightMods": { "forgiving": 15 } },
+        { "weight": 30, "resultText": "Te recomienda rezar y dejarlo en manos de Dios.", "relationDelta": 4, "stress": -2, "traitWeightMods": { "religious": 25 } },
+        { "weight": 15, "resultText": "Te dice que en sus tiempos eso se arreglaba con una correa.", "relationDelta": -1, "traitWeightMods": { "strict": 25 } }
+      ] },
+
+    { "id": "kin_ua_visit", "label": "Visitar a mi tío", "allowedTypes": ["uncle_aunt"], "minAge": 4, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "La tía te sirve un plato de sancocho que te devuelve el alma.", "relationDelta": 8, "happiness": 6, "health": 1, "traitWeightMods": { "affectionate": 20 } },
+        { "weight": 30, "resultText": "Te interroga sobre novias, notas y trabajo antes de que te sientes.", "relationDelta": 1, "stress": 3, "traitWeightMods": { "strict": 15 } },
+        { "weight": 15, "resultText": "Llegas en mal momento: están peleando y te vas antes del postre.", "relationDelta": -2, "happiness": -3, "traitWeightMods": { "resentful": 15 } }
+      ] },
+    { "id": "kin_ua_ask_money", "label": "Pedirle dinero a mi tío", "allowedTypes": ["uncle_aunt"], "minAge": 8, "maxAge": 60, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El tío de Nueva York te manda una transferencia sin hacer preguntas.", "relationDelta": 3, "money": 150, "happiness": 4, "traitWeightMods": { "generous": 25 } },
+        { "weight": 35, "resultText": "Te presta, pero se lo cuenta a toda la familia en el próximo cumpleaños.", "relationDelta": -1, "money": 80, "popularity": -2, "traitWeightMods": { "manipulative": 15 } },
+        { "weight": 20, "resultText": "Te dice que él tampoco está boyante y te deja en visto.", "relationDelta": -4, "happiness": -3, "traitWeightMods": { "stingy": 20 } }
+      ] },
+    { "id": "kin_ua_advice", "label": "Pedirle consejo de vida", "allowedTypes": ["uncle_aunt"], "minAge": 12, "maxAge": 80, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te habla claro, como no se atreven tus padres, y te abre los ojos.", "relationDelta": 8, "smarts": 1, "stress": -4, "traitWeightMods": { "loyal": 15 } },
+        { "weight": 30, "resultText": "Te recomienda meterte a un negocio raro que él tiene entre manos.", "relationDelta": 1, "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 20, "resultText": "Termina dándote consejos que claramente no le funcionaron a él.", "relationDelta": 0, "happiness": -1, "traitWeightMods": { "easygoing": 15 } }
+      ] },
+    { "id": "kin_ua_party", "label": "Ir a una fiesta con mi tío", "allowedTypes": ["uncle_aunt"], "minAge": 18, "maxAge": 80, "cost": 40, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "El tío baila bachata como en sus veinte y te presenta a medio barrio.", "relationDelta": 9, "happiness": 7, "popularity": 2, "traitWeightMods": { "party_animal": 25 } },
+        { "weight": 30, "resultText": "Se pasa de tragos y te toca llevarlo a casa a las tres de la mañana.", "relationDelta": 3, "stress": 4, "health": -1, "traitWeightMods": { "party_animal": 15 } },
+        { "weight": 20, "resultText": "Se pelea con un desconocido por una silla y salen corriendo.", "relationDelta": -3, "health": -3, "stress": 6, "traitWeightMods": { "resentful": 15 } }
+      ] },
+    { "id": "kin_ua_gift", "label": "Regalarle algo a mi tía", "allowedTypes": ["uncle_aunt"], "minAge": 6, "maxAge": 100, "cost": 40, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le llevas un perfume y lo presume en el grupo de WhatsApp de la familia.", "relationDelta": 8, "happiness": 4, "traitWeightMods": { "affectionate": 15 } },
+        { "weight": 30, "resultText": "Lo recibe con una sonrisa educada y lo pone en la vitrina.", "relationDelta": 2, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Comenta que tu primo le regaló algo mejor el año pasado.", "relationDelta": -2, "happiness": -3, "traitWeightMods": { "jealous": 20 } }
+      ] },
+    { "id": "kin_ua_gossip", "label": "Chismear con mi tía", "allowedTypes": ["uncle_aunt"], "minAge": 12, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te pone al día de todos los divorcios de la familia en media hora.", "relationDelta": 7, "happiness": 4, "traitWeightMods": { "party_animal": 10, "manipulative": 10 } },
+        { "weight": 30, "resultText": "Te cuenta un secreto de tus padres que hubieras preferido no saber.", "relationDelta": 3, "stress": 4, "happiness": -2, "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 20, "resultText": "Lo que le contaste en confianza aparece al otro día en boca de todos.", "relationDelta": -8, "popularity": -3, "traitWeightMods": { "manipulative": 25 }, "nextEventId": "sub_estranged_family" }
+      ] },
+    { "id": "kin_ua_job_help", "label": "Pedirle que me consiga trabajo", "allowedTypes": ["uncle_aunt"], "minAge": 16, "maxAge": 60, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Hace dos llamadas y el lunes tienes entrevista en la empresa de un compadre suyo.", "relationDelta": 6, "happiness": 6, "stress": -3, "traitWeightMods": { "loyal": 20, "generous": 10 } },
+        { "weight": 35, "resultText": "Promete moverte el currículum y nunca más se acuerda.", "relationDelta": -2, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 20, "resultText": "Te ofrece trabajo en su colmado por la mitad del sueldo mínimo.", "relationDelta": 1, "money": 30, "stress": 4, "traitWeightMods": { "stingy": 20 } }
+      ] },
+    { "id": "kin_ua_argue_politics", "label": "Discutir de política con mi tío", "allowedTypes": ["uncle_aunt"], "minAge": 16, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Terminan de acuerdo en que todos los políticos son iguales y brindan.", "relationDelta": 5, "happiness": 3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 45, "resultText": "La discusión se calienta en la mesa de Nochebuena y nadie termina el cerdo.", "relationDelta": -8, "stress": 5, "traitWeightMods": { "resentful": 20 } },
+        { "weight": 25, "resultText": "Te bloquea en Facebook después de tu último comentario.", "relationDelta": -12, "happiness": -3, "traitWeightMods": { "strict": 15, "resentful": 15 } }
+      ] },
+    { "id": "kin_ua_babysit", "label": "Cuidarle los niños a mi tía", "allowedTypes": ["uncle_aunt"], "minAge": 13, "maxAge": 60, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Los primitos se duermen temprano y la tía te paga de más.", "relationDelta": 8, "money": 25, "karma": 3, "traitWeightMods": { "generous": 20 } },
+        { "weight": 30, "resultText": "Te pintan la pared con crayones y te pasas la noche limpiando.", "relationDelta": 2, "stress": 6, "traitWeightMods": { "easygoing": 10 } },
+        { "weight": 20, "resultText": "Uno se cae del sofá y la tía te echa la culpa delante de todos.", "relationDelta": -6, "stress": 6, "happiness": -4, "traitWeightMods": { "resentful": 15 } }
+      ] },
+    { "id": "kin_ua_borrow_car", "label": "Pedirle el carro prestado", "allowedTypes": ["uncle_aunt"], "minAge": 18, "maxAge": 60, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 40, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te da las llaves con la condición de que se lo devuelvas con gasolina.", "relationDelta": 4, "happiness": 4, "money": -15, "traitWeightMods": { "generous": 15 } },
+        { "weight": 30, "resultText": "Te lo presta pero te llama cada hora para saber dónde andas.", "relationDelta": 1, "stress": 4, "traitWeightMods": { "strict": 20 } },
+        { "weight": 20, "resultText": "Le das un toque al guardalodo y te toca pagar el desabolle.", "relationDelta": -10, "money": -120, "stress": 8, "traitWeightMods": { "resentful": 20 } }
+      ] },
+
+    { "id": "kin_cousin_hangout", "label": "Salir con mi primo", "allowedTypes": ["cousin"], "minAge": 6, "maxAge": 100, "cost": 20, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se van al malecón a comer frituras y hablan hasta que cierran los puestos.", "relationDelta": 9, "happiness": 6, "traitWeightMods": { "party_animal": 15, "loyal": 10 } },
+        { "weight": 30, "resultText": "Él se pasa la salida en el teléfono con la novia.", "relationDelta": 1, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Te deja pagando la cuenta y se desaparece al baño.", "relationDelta": -5, "money": -20, "traitWeightMods": { "manipulative": 20 } }
+      ] },
+    { "id": "kin_cousin_play", "label": "Jugar con mi primo", "allowedTypes": ["cousin"], "minAge": 3, "maxAge": 30, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Juegan vitilla en el patio hasta que la abuela los llama a comer.", "relationDelta": 9, "happiness": 7, "fitness": 2, "traitWeightMods": { "party_animal": 15 } },
+        { "weight": 25, "resultText": "Se ponen a jugar videojuegos y cada uno acusa al otro de hacer trampa.", "relationDelta": 1, "traitWeightMods": { "jealous": 15 } },
+        { "weight": 15, "resultText": "Rompen una ventana con la pelota y huyen a esconderse juntos.", "relationDelta": 4, "discipline": -3, "karma": -2, "traitWeightMods": { "loyal": 15 } }
+      ] },
+    { "id": "kin_cousin_compete", "label": "Competir con mi primo", "allowedTypes": ["cousin"], "minAge": 8, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Ganas la carrera hasta la esquina y te la cobras por el resto del verano.", "relationDelta": 2, "happiness": 4, "fitness": 2, "traitWeightMods": { "party_animal": 10 } },
+        { "weight": 40, "resultText": "La familia siempre los compara y otra vez sale ganando él.", "relationDelta": -6, "happiness": -5, "traitWeightMods": { "jealous": 25 } },
+        { "weight": 20, "resultText": "La rivalidad termina en abrazo y en apuesta para el año que viene.", "relationDelta": 6, "happiness": 3, "traitWeightMods": { "forgiving": 15 } }
+      ] },
+    { "id": "kin_cousin_secret", "label": "Contarle un secreto", "allowedTypes": ["cousin"], "minAge": 10, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te guarda el secreto como una tumba y te cuenta uno suyo de vuelta.", "relationDelta": 12, "stress": -4, "traitWeightMods": { "loyal": 25 } },
+        { "weight": 25, "resultText": "Te escucha, te da un consejo regular y cambia de tema.", "relationDelta": 3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 20, "resultText": "Tu secreto llega a oídos de toda la familia antes del domingo.", "relationDelta": -15, "stress": 8, "popularity": -3, "traitWeightMods": { "manipulative": 25 }, "nextEventId": "sub_betray_friend" }
+      ] },
+    { "id": "kin_cousin_ask_money", "label": "Pedirle dinero a mi primo", "allowedTypes": ["cousin"], "minAge": 12, "maxAge": 100, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te presta sin problema porque sabe que tú harías lo mismo.", "relationDelta": 3, "money": 70, "traitWeightMods": { "generous": 20, "loyal": 10 } },
+        { "weight": 35, "resultText": "Te presta pero con intereses de prestamista de barrio.", "relationDelta": -2, "money": 50, "traitWeightMods": { "stingy": 25 } },
+        { "weight": 20, "resultText": "Te recuerda la deuda de hace dos años que nunca le pagaste.", "relationDelta": -6, "happiness": -3, "traitWeightMods": { "resentful": 20 } }
+      ] },
+    { "id": "kin_cousin_family_party", "label": "Ir con mi primo a la fiesta familiar", "allowedTypes": ["cousin"], "minAge": 6, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se esconden en la cocina a robar dulce de leche y nadie los atrapa.", "relationDelta": 8, "happiness": 6, "traitWeightMods": { "party_animal": 15 } },
+        { "weight": 30, "resultText": "Los ponen a servir refresco toda la noche como meseros sin sueldo.", "relationDelta": 4, "stress": 3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 15, "resultText": "La tía grita delante de todos que ustedes dos nunca se casan.", "relationDelta": 3, "happiness": -3, "popularity": -1, "traitWeightMods": { "strict": 10 } }
+      ] },
+    { "id": "kin_cousin_fight", "label": "Pelear con mi primo", "allowedTypes": ["cousin"], "minAge": 6, "maxAge": 100, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Se jalan por la camisa y la abuela los separa con la chancleta.", "relationDelta": -5, "health": -2, "discipline": -2, "traitWeightMods": { "strict": 15 } },
+        { "weight": 45, "resultText": "Se dejan de hablar y las dos ramas de la familia toman bando.", "relationDelta": -15, "happiness": -6, "traitWeightMods": { "resentful": 25 } },
+        { "weight": 25, "resultText": "Se dicen todo lo que tenían guardado desde chiquitos y quedan en paz.", "relationDelta": 6, "stress": -3, "traitWeightMods": { "forgiving": 20 } }
+      ] },
+    { "id": "kin_cousin_business", "label": "Montar un negocio con mi primo", "allowedTypes": ["cousin"], "minAge": 18, "maxAge": 70, "cost": 300, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 40, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "El carrito de chimis prende en el barrio y se reparten ganancias cada viernes.", "relationDelta": 10, "money": 600, "stress": 4, "traitWeightMods": { "loyal": 20 } },
+        { "weight": 40, "resultText": "El negocio apenas cubre los gastos y lo cierran sin pelearse.", "relationDelta": 2, "money": 100, "stress": 3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 25, "resultText": "Él desaparece con la caja chica y te deja con la deuda del local.", "relationDelta": -25, "money": -300, "stress": 10, "karma": 3, "traitWeightMods": { "manipulative": 30 }, "nextEventId": "sub_betray_friend" }
+      ] },
+    { "id": "kin_cousin_cover", "label": "Que mi primo me cubra", "allowedTypes": ["cousin"], "minAge": 10, "maxAge": 40, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le dice a tu mamá que dormiste en su casa y la cuartada aguanta.", "relationDelta": 8, "happiness": 4, "traitWeightMods": { "loyal": 25 } },
+        { "weight": 25, "resultText": "Te cubre, pero te cobra con que le hagas la tarea un mes.", "relationDelta": 2, "stress": 3, "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 20, "resultText": "Se enreda con la historia y tu mamá los descubre a los dos.", "relationDelta": -3, "discipline": -3, "happiness": -4, "traitWeightMods": { "easygoing": 10 } }
+      ] },
+    { "id": "kin_cousin_visit_abroad", "label": "Visitar a mi primo en el extranjero", "allowedTypes": ["cousin"], "minAge": 18, "maxAge": 90, "cost": 700, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te pasea por todo Madrid y te presenta como si fueras su hermano.", "relationDelta": 14, "happiness": 10, "smarts": 1, "traitWeightMods": { "generous": 20, "affectionate": 10 } },
+        { "weight": 30, "resultText": "Trabaja doble turno y lo ves dos noches en toda la semana.", "relationDelta": 3, "happiness": 2, "traitWeightMods": { "strict": 10 } },
+        { "weight": 20, "resultText": "Su pareja te mira como estorbo y te mudas a un hostal al tercer día.", "relationDelta": -4, "money": -150, "happiness": -5, "traitWeightMods": { "cold": 20 } }
+      ] }
+  ]
+}

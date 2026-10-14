@@ -1,0 +1,165 @@
+{
+  "module": "health_menu",
+  "note": "Sistema de salud (H1). Acciones del menu de clinica: trata y recupera los flags de salud del Schema. Las cadenas de diagnostico viven en health_events.json. Todas cobran en USD despues de conversores; terapia psicologica exige dinero real.",
+  "actions": [
+    {
+      "id": "health_checkup", "label": "Chequeo médico de rutina",
+      "ageMin": 12, "ageMax": 120, "cost": 120, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Análisis, presión y peso: el médico firma un sello verde y te manda a seguir igual.", "health": 4, "stress": -2, "happiness": 2 },
+        { "weight": 30, "resultText": "El chequeo atrapa una anemia a tiempo: con hierro y dieta, dos meses y listo.", "health": 7, "stress": -4, "happiness": 4, "flag": "CHRONIC_ILL", "removeFlag": "CHRONIC_ILL" },
+        { "weight": 15, "resultText": "Los análisis salen raros y el médico pide más pruebas: la espera se vuelve quiziza.", "health": 0, "stress": 8, "happiness": -4, "nextEventId": "health_diag_inconclusive" }
+      ]
+    },
+    {
+      "id": "health_therapy", "label": "Sesión con el psicólogo",
+      "ageMin": 12, "ageMax": 120, "cost": 150, "cooldownYears": 0, "maxPerYear": 6,
+      "requires": { "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Hablas una hora sin frenos y sales con el pecho más liviano y una tarea para la semana.", "happiness": 8, "stress": -8, "flag": null, "removeFlag": "DEPRESSED", "traitWeightMods": { "forgiving": 15 } },
+        { "weight": 30, "resultText": "La sesión abre heridas que estaban tapadas: llegas a la casa llorando en el pasillo.", "happiness": -4, "stress": 6, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 20, "resultText": "El terapeuta te ajusta el enfoque: menos lamentos, más plan concreto para el mes.", "happiness": 5, "stress": -4, "flag": null, "removeFlag": "ANXIETY" }
+      ]
+    },
+    {
+      "id": "health_psychiatrist_meds", "label": "Consulta psiquiátrica con receta",
+      "ageMin": 14, "ageMax": 120, "cost": 220, "cooldownYears": 1, "maxPerYear": 4,
+      "requires": { "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La receta regula el ánimo: duermes ocho horas y despertar ya no pesa lo mismo.", "happiness": 9, "stress": -8, "health": 2, "removeFlag": "DEPRESSED" },
+        { "weight": 35, "resultText": "Las pastillas regulan la ansiedad, aunque el primer mes te cuesta adaptarte al cuerpo nuevo.", "happiness": 6, "stress": -6, "health": 1, "removeFlag": "ANXIETY" },
+        { "weight": 20, "resultText": "El médico te envía directo a evaluación clínica: hay algo más serio que el ánimo.", "stress": 8, "health": -2, "nextEventId": "health_diag_inconclusive" }
+      ]
+    },
+    {
+      "id": "health_enter_rehab", "label": "Internarme en rehabilitación",
+      "ageMin": 16, "ageMax": 120, "cost": 5000, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "flagsAny": ["ADDICT_ALCOHOL", "ADDICT_TOBACCO", "ADDICT_DRUGS", "ADDICT_GAMBLING"], "flagsNone": ["IN_PRISON", "DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "El programa te recoge por 90 días: grupo, terapia y horario. Empiezas de cero de verdad.", "happiness": 8, "stress": 6, "health": 6, "flag": "IN_REHAB", "traitWeightMods": { "strict": 20 } },
+        { "weight": 30, "resultText": "A la tercera semana te vas porWhere la sala: la abstinencia te gana la pelea una vez más.", "happiness": -10, "stress": 12, "health": -4 },
+        { "weight": 15, "resultText": "El programa te re Ninjazena con la cabeza: sales limpio, con padrino de recovery y plan de recaída por escrito.", "happiness": 12, "stress": 2, "health": 8, "flag": "IN_REHAB" }
+      ]
+    },
+    {
+      "id": "health_rehab_program", "label": "Seguir con sesión de rehabilitación",
+      "ageMin": 16, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["IN_REHAB"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Cumplas la sesión semanal del programa: los pasos se saben ya sin leer la tarjeta.", "happiness": 5, "stress": -4, "health": 3 },
+        { "weight": 30, "resultText": "Compartes tu caso con el grupo y alguien te abraza cuando rompes para adentro.", "happiness": 8, "stress": -6, "karma": 3 },
+        { "weight": 15, "resultText": "El grupo te expulsa por esconder tus recaídas internas: toca volver a empezar de cero.", "happiness": -8, "stress": 10, "removeFlag": "IN_REHAB" }
+      ]
+    },
+    {
+      "id": "health_sobriety_meeting", "label": "Reunión de apoyo de adicción",
+      "ageMin": 16, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 6,
+      "requires": { "flagsAny": ["ADDICT_ALCOHOL", "ADDICT_TOBACCO", "ADDICT_DRUGS", "ADDICT_GAMBLING", "IN_REHAB"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Oyes tres historias hermanas de la tuya y sales con la agenda llena de números buenos.", "happiness": 5, "stress": -5, "traitWeightMods": { "generous": 10 } },
+        { "weight": 30, "resultText": "La reunión no llena el hueco: llegas a la casa con la misma ansiedad de siempre.", "happiness": -3, "stress": 5 },
+        { "weight": 20, "resultText": "La cadencia del grupo te sostiene: una semana limpia, una más, y el calendario empieza a crecer.", "happiness": 7, "stress": -8, "removeFlag": "ADDICT_ALCOHOL" }
+      ]
+    },
+    {
+      "id": "health_quit_smoking", "label": "Tratar de dejar el cigarrillo",
+      "ageMin": 14, "ageMax": 120, "cost": 350, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsExist": ["ADDICT_TOBACCO"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Los parches y el chicle funcionan: tres meses sin encender y la tos de la mañana ya no existe.", "happiness": 5, "health": 6, "flag": null, "removeFlag": "ADDICT_TOBACCO" },
+        { "weight": 40, "resultText": "La abstinencia te gana el jueves: te limpia la garganta, pero al viernes ya estás comprando otra vez.", "happiness": -5, "stress": 8 },
+        { "weight": 20, "resultText": "Bajas de dos paquetes a uno diario: menos daño, sí, pero la jubilación del cigarro aún falta.", "happiness": 2, "health": 3 }
+      ]
+    },
+    {
+      "id": "health_quit_alcohol", "label": "Tratar de dejar el ron",
+      "ageMin": 16, "ageMax": 120, "cost": 250, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsExist": ["ADDICT_ALCOHOL"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Un mes entero haciendo tostadas con jugo de cereza: el hígado te lo agradece y el cuerpo amanece mejor.", "happiness": 6, "health": 7, "removeFlag": "ADDICT_ALCOHOL" },
+        { "weight": 40, "resultText": "La fiesta del viernes te barre: una copa, dos y el círculo empieza de nuevo al amanecer.", "happiness": -6, "health": -4, "stress": 8 },
+        { "weight": 20, "resultText": "Bajas a los fines de semana nada más: mejora real, aunque el problema todavía tiene horario.", "happiness": 2, "health": 4 }
+      ]
+    },
+    {
+      "id": "health_stop_gambling", "label": "Tratar de dejar las apuestas",
+      "ageMin": 16, "ageMax": 120, "cost": 150, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsExist": ["ADDICT_GAMBLING"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Entregas las tarjetas a tu pareja y borra el app de las jugadas: el sueldo te dura el mes completo.", "happiness": 6, "stress": -4, "removeFlag": "ADDICT_GAMBLING" },
+        { "weight": 35, "resultText": "Rompe una semana sin jugar... y luego la quiniela grande te devuelve al tablero con deudas.", "happiness": -8, "stress": 12, "money": -3000 },
+        { "weight": 25, "resultText": "Bajas el gasto a la mitad: sigue amenaza, pero los roofs del mes ya no quedan en el dancer.", "happiness": 2, "money": 2000 }
+      ]
+    },
+    {
+      "id": "health_chronic_check", "label": "Control de mi condición crónica",
+      "ageMin": 18, "ageMax": 120, "cost": 180, "cooldownYears": 1, "maxPerYear": 3,
+      "requires": { "flagsExist": ["CHRONIC_ILL"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Los controles salen estables: la dieta y la medicina van de la mano otra vez.", "health": 5, "stress": -3, "happiness": 3 },
+        { "weight": 30, "resultText": "Un número bajo obliga a cambiar la medicina: dos meses de pruebas para regular de nuevo.", "health": 2, "stress": 6, "money": -800 },
+        { "weight": 15, "resultText": "La condición avanza más rápido que el tratamiento: el especialista habla de opciones nuevas.", "health": -5, "stress": 10, "happiness": -6, "nextEventId": "health_specialist_referral" }
+      ]
+    },
+    {
+      "id": "health_cancer_treatment", "label": "Someterme al tratamiento del cáncer",
+      "ageMin": 18, "ageMax": 120, "cost": 4000, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["CANCER"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "La quimio atraviesa el cuerpo pero entra con marcha: el próximo TAC aparece limpio.", "health": 12, "happiness": 8, "stress": 8, "removeFlag": "CANCER" },
+        { "weight": 35, "resultText": "La sesión baja las plaquetas y el cuerpo queda hecho trapo: tratamiento continuado.", "health": -8, "stress": 10, "happiness": -4 },
+        { "weight": 20, "resultText": "El TAC confirma metástasis: el equipo médico cambia el plan y la casa se queda sorda.", "health": -14, "happiness": -18, "stress": 16, "flag": "TERMINAL", "nextEventId": null }
+      ]
+    },
+    {
+      "id": "health_hiv_treatment", "label": "Control del tratamiento antirretroviral",
+      "ageMin": 18, "ageMax": 120, "cost": 300, "cooldownYears": 1, "maxPerYear": 4,
+      "requires": { "flagsExist": ["HIV"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "La carga viral amanece indetectable: pastilla diaria y vida normal, sin drama extra.", "health": 6, "happiness": 4, "stress": -4 },
+        { "weight": 25, "resultText": "El precio del medicamento subió y la farmacia no tiene stock: tres días de vuelta y vuelta.", "health": -2, "stress": 8, "money": -1500 },
+        { "weight": 15, "resultText": "Un examen confirma resistencia a la terapia: el especialista cambia el esquema entero.", "health": -5, "stress": 10, "happiness": -4 }
+      ]
+    },
+    {
+      "id": "health_palliative_care", "label": "Pedir cuidados paliativos",
+      "ageMin": 18, "ageMax": 120, "cost": 800, "cooldownYears": 1, "maxPerYear": 3,
+      "requires": { "flagsExist": ["TERMINAL"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "El equipo de cuidado paliativo entra por la casa: menos dolor, más humano, mejor para todos.", "health": 4, "happiness": 6, "stress": -8, "karma": 5 },
+        { "weight": 40, "resultText": "La enfermera te explica los pasos finales con calma: la casa se vuelve un hospital silencioso y cálido.", "health": 2, "happiness": 2, "stress": -4 }
+      ]
+    },
+    {
+      "id": "health_physiotherapy", "label": "Fisioterapia por discapacidad",
+      "ageMin": 18, "ageMax": 120, "cost": 200, "cooldownYears": 1, "maxPerYear": 3,
+      "requires": { "flagsExist": ["DISABLED"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Cada sesión de fisioterapia gana grados: caminas hasta la boca del patio y regresas orgulloso.", "fitness": 5, "health": 3, "happiness": 5 },
+        { "weight": 30, "resultText": "El fisioterapeuta entrega un plan en casa: gomas, bastón y marcas en el pasillo.", "fitness": 3, "health": 2 },
+        { "weight": 20, "resultText": "El progreso se detiene y la discapacidad cierra año igual: solo mejoró el ánimo del calentamiento.", "health": 0, "happiness": -4 }
+      ]
+    },
+    {
+      "id": "health_pregnancy_care", "label": "Ir al control prenatal",
+      "ageMin": 16, "ageMax": 50, "cost": 100, "cooldownYears": 0, "maxPerYear": 6,
+      "requires": { "flagsAny": ["PREGNANT", "PREGNANT_TEEN"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Ecopraphy y vitaminas: el bebé va bien de peso y el parto está programado.", "health": 3, "happiness": 5, "stress": -4 },
+        { "weight": 25, "resultText": "El control atrapa una anemia del embarazo: hierro por tres meses y control extra cada dos semanas.", "health": 2, "stress": 6, "money": -500 },
+        { "weight": 15, "resultText": "La presión salió alta y el médico manda reposo: menos paso y menos estrés por un mes.", "health": 0, "stress": 6, "happiness": -2 }
+      ]
+    },
+    {
+      "id": "health_teengirl_pregnancy_talk", "label": "Hablar de mi embarazo a mi madre",
+      "ageMin": 13, "ageMax": 19, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "flagsExist": ["PREGNANT_TEEN"], "flagsNone": ["DEAD"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Doña blanca se sienta, respira y no grita: la familia te rodea aunque el chisme del barrio sea pesado.", "happiness": 10, "stress": -6, "karma": 3 },
+        { "weight": 35, "resultText": "El griterio dura dos días y el silencio dura un mes: la casa entera reduce el paso de la conversación.", "happiness": -10, "stress": 10 },
+        { "weight": 15, "resultText": "El papá no abre la boca: la madre se encarga sola del arreglo y la visita al ginecólogo.", "happiness": -4, "stress": 6 }
+      ]
+    }
+  ]
+}

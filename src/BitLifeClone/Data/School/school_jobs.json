@@ -1,0 +1,160 @@
+{
+  "module": "school_jobs",
+  "note": "Trabajitos de escuela (E4). Todos dan la flag WORKING_PART_TIME y solo se puede tener uno a la vez; sjob_quit_school_job la quita. baseSalary en DOP por mes de referencia; el dinero real lo mueven los outcomes.",
+  "actions": [
+    {
+      "id": "sjob_peer_tutor",
+      "label": "Dar tutorías a compañeros",
+      "ageMin": 13, "ageMax": 22, "cost": 0, "hoursCost": 3, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1200, "currency": "DOP",
+      "requires": { "minStat": { "grades": 70 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Explicas fracciones en el patio y el compañero por fin lo entiende; te paga el mes.", "money": 900, "smarts": 2, "grades": 1, "stress": 2, "popularity": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Tu alumno cancela dos veces y la tutoría se vuelve más espera que enseñanza.", "money": 300, "stress": 3, "happiness": -1 },
+        { "weight": 15, "resultText": "El papá del chamaco dice que su hijo no mejoró y no te paga.", "money": 0, "stress": 4, "happiness": -3, "popularity": -1 }
+      ]
+    },
+    {
+      "id": "sjob_hall_monitor",
+      "label": "Ser monitor de pasillo",
+      "ageMin": 12, "ageMax": 18, "cost": 0, "hoursCost": 2, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 800, "currency": "DOP",
+      "requires": { "minStat": { "discipline": 50 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "SUSPENDED", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Anotas a tres que corrían por el pasillo y la coordinadora te agradece.", "money": 500, "discipline": 3, "popularity": -2, "stress": 1, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Un grupo de cuarto te ignora y se ríe cuando les pides que bajen la voz.", "money": 500, "stress": 3, "popularity": -3 },
+        { "weight": 20, "resultText": "Delatas a un amigo por una pelea y el grupo te hace el vacío por una semana.", "money": 500, "discipline": 4, "popularity": -8, "karma": -2, "happiness": -4 }
+      ]
+    },
+    {
+      "id": "sjob_library_aide",
+      "label": "Ayudar en la biblioteca",
+      "ageMin": 12, "ageMax": 22, "cost": 0, "hoursCost": 3, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1000, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Ordenas dos carritos de libros y la bibliotecaria te deja leer en la sala de atrás.", "money": 700, "smarts": 3, "stress": -2, "happiness": 2, "grades": 1, "flag": "WORKING_PART_TIME" },
+        { "weight": 25, "resultText": "Te pasas la tarde pegando etiquetas del catálogo y se te van los ojos.", "money": 700, "stress": 2, "smarts": 1 },
+        { "weight": 15, "resultText": "Encuentras un libro perdido hace años y la escuela lo anuncia en la cartelera.", "money": 900, "popularity": 3, "happiness": 4, "smarts": 2 }
+      ]
+    },
+    {
+      "id": "sjob_cafeteria_runner",
+      "label": "Repartir en la cafetería",
+      "ageMin": 12, "ageMax": 22, "cost": 0, "hoursCost": 3, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1100, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Llevas bandejas al aula de profesores y te regalan un jugo de cortesía.", "money": 800, "fitness": 1, "popularity": 1, "stress": 1, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Se te cae una bandeja de empanadas en pleno pasillo y toda la escuela aplaude.", "money": 400, "popularity": -2, "happiness": -3, "stress": 3 },
+        { "weight": 20, "resultText": "Un profe te da propina sin que nadie lo vea.", "money": 1100, "happiness": 3, "karma": 1 }
+      ]
+    },
+    {
+      "id": "sjob_lab_assistant",
+      "label": "Ser asistente de laboratorio",
+      "ageMin": 14, "ageMax": 22, "cost": 0, "hoursCost": 3, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1500, "currency": "DOP",
+      "requires": { "minStat": { "smarts": 55 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Preparas las muestras y el profesor te deja armar el experimento de la clase.", "money": 1000, "smarts": 4, "grades": 2, "stress": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 35, "resultText": "Limpias frascos toda la tarde y huelen raro todo el fin de semana.", "money": 700, "smarts": 1, "health": -1, "happiness": -2 },
+        { "weight": 20, "resultText": "Un reactivo se derrama y te toca llenar un reporte de incidente.", "money": 400, "stress": 6, "discipline": -3, "health": -2 }
+      ]
+    },
+    {
+      "id": "sjob_office_student_worker",
+      "label": "Trabajar en la secretaría",
+      "ageMin": 16, "ageMax": 22, "cost": 0, "hoursCost": 4, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1800, "currency": "DOP",
+      "requires": { "minStat": { "discipline": 50 }, "flagsNone": ["EXPELLED", "DROPPED_OUT", "SUSPENDED", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Archivas expedientes en la secretaría y aprendes cuánta gente debe matrículas.", "money": 1200, "smarts": 2, "stress": 2, "discipline": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Te ponen a contestar el teléfono y pasas el día pidiendo que repitan el apellido.", "money": 1200, "stress": 4, "happiness": -1 },
+        { "weight": 20, "resultText": "La directora te confía el sello de la escuela y te sientes mayor.", "money": 1500, "discipline": 3, "happiness": 3, "karma": 1 }
+      ]
+    },
+    {
+      "id": "sjob_kinder_helper",
+      "label": "Ayudar a la profesora de kínder",
+      "ageMin": 15, "ageMax": 22, "cost": 0, "hoursCost": 3, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 1200, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Cuidas a diez niños de kínder y salen con pintura hasta en las orejas.", "money": 800, "happiness": 4, "stress": 4, "karma": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Uno de los chiquitos te llama papá por error y todo el salón se ríe.", "money": 800, "happiness": 2, "popularity": 1, "stress": 2 },
+        { "weight": 20, "resultText": "Se te pierde un niño por cinco minutos y casi te da un infarto.", "money": 800, "stress": 9, "happiness": -4, "health": -1 }
+      ]
+    },
+    {
+      "id": "sjob_yearbook_sales",
+      "label": "Vender anuarios",
+      "ageMin": 13, "ageMax": 20, "cost": 0, "hoursCost": 2, "cooldownYears": 1, "maxPerYear": 1,
+      "baseSalary": 900, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Vendes veinte anuarios en el recreo y te sobra para el pasaje.", "money": 900, "popularity": 3, "stress": 1, "flag": "WORKING_PART_TIME" },
+        { "weight": 35, "resultText": "Nadie quiere pagar antes del cierre y te toca perseguir a la gente por el patio.", "money": 500, "popularity": -2, "stress": 3 },
+        { "weight": 20, "resultText": "Te quedas con parte del dinero y la coordinadora hace cuentas.", "money": 700, "karma": -6, "discipline": -6, "stress": 6 }
+      ]
+    },
+    {
+      "id": "sjob_gym_equipment_aide",
+      "label": "Cuidar el equipo del gimnasio",
+      "ageMin": 12, "ageMax": 22, "cost": 0, "hoursCost": 2, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 700, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Guardas balones y conos después de cada clase y el profe de Educación Física te nota.", "money": 500, "fitness": 2, "discipline": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Cargas los colchones de gimnasia hasta el almacén y te duele la espalda.", "money": 500, "fitness": 1, "health": -2, "stress": 2 },
+        { "weight": 15, "resultText": "Te dejan abrir el gimnasio en la mañana y llegas antes que todo el mundo.", "money": 700, "fitness": 3, "discipline": 3, "happiness": 2 }
+      ]
+    },
+    {
+      "id": "sjob_print_shop_copies",
+      "label": "Sacar fotocopias en la oficina",
+      "ageMin": 14, "ageMax": 22, "cost": 0, "hoursCost": 2, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 900, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Sacas copias de los exámenes y te tientas a leerlas, pero resistes.", "money": 700, "discipline": 2, "karma": 1, "flag": "WORKING_PART_TIME" },
+        { "weight": 25, "resultText": "La fotocopiadora se traba y pasas la mañana sacando hojas con las manos negras de tinta.", "money": 600, "stress": 4, "looks": -1 },
+        { "weight": 20, "resultText": "Te llevas un juego de exámenes en la mochila y nadie se entera, por ahora.", "money": 700, "grades": 5, "karma": -8, "discipline": -5, "stress": 5 }
+      ]
+    },
+    {
+      "id": "sjob_event_setup",
+      "label": "Montar los actos de la escuela",
+      "ageMin": 13, "ageMax": 22, "cost": 0, "hoursCost": 2, "cooldownYears": 0, "maxPerYear": 3,
+      "baseSalary": 800, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Montas las sillas para el acto del viernes y sales de último con el conserje.", "money": 600, "fitness": 1, "popularity": 2, "flag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Se cae el telón en el ensayo y todos te miran como si fuera tu culpa.", "money": 400, "stress": 4, "popularity": -2, "happiness": -2 },
+        { "weight": 20, "resultText": "La directora te presenta en el micrófono por ayudar y te da un pin de colaborador.", "money": 900, "popularity": 5, "happiness": 4, "discipline": 2 }
+      ]
+    },
+    {
+      "id": "sjob_snack_reseller",
+      "label": "Revender dulces en el recreo",
+      "ageMin": 11, "ageMax": 18, "cost": 0, "hoursCost": 1, "cooldownYears": 0, "maxPerYear": 4,
+      "baseSalary": 600, "currency": "DOP",
+      "requires": { "flagsNone": ["EXPELLED", "DROPPED_OUT", "WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Revendes chocolates y chicles en el recreo y triplicas tu inversión.", "money": 700, "stress": 1, "popularity": 2, "discipline": -3, "flag": "WORKING_PART_TIME" },
+        { "weight": 35, "resultText": "Un profesor te pilla con la caja de dulces y te la quita.", "money": -200, "discipline": -8, "popularity": -2, "stress": 4, "flag": "DETENTION" },
+        { "weight": 20, "resultText": "Se te acaba el inventario antes del recreo grande y todos te piden que traigas más.", "money": 1000, "popularity": 4, "happiness": 3, "discipline": -2 }
+      ]
+    },
+    {
+      "id": "sjob_quit_school_job",
+      "label": "Dejar el trabajito de la escuela",
+      "ageMin": 11, "ageMax": 22, "cost": 0, "hoursCost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "flagsAll": ["WORKING_PART_TIME"] },
+      "outcomes": [
+        { "weight": 70, "resultText": "Le avisas a la coordinadora con una semana de antelación y te despiden con un apretón de manos.", "stress": -3, "happiness": 2, "removeFlag": "WORKING_PART_TIME" },
+        { "weight": 30, "resultText": "Dejas el puesto sin avisar y la coordinadora te cierra la puerta para futuros trabajos.", "discipline": -4, "karma": -2, "stress": 1, "removeFlag": "WORKING_PART_TIME" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "relationType": "friend",
+  "actions": [
+    {
+      "id": "friend_talk",
+      "label": "Hablar con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 6,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se cuentan la vida entera en una hora y sales con el pecho más liviano.", "relationDelta": 7, "health": 0, "happiness": 5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 15, "cold": -15 }, "nextEventId": null },
+        { "weight": 28, "resultText": "Hablan de tonterías y se despiden sin más.", "relationDelta": 1, "health": 0, "happiness": 0, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 10 }, "nextEventId": null },
+        { "weight": 17, "resultText": "Le cuentas un secreto y al día siguiente se lo sabe medio barrio.", "relationDelta": -8, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_spend_time",
+      "label": "Pasar tiempo con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 6,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Pasan la tarde vagueando sin plan y el rato se va volando.", "relationDelta": 8, "health": 0, "happiness": 6, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20, "party_animal": 10 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Se ven un rato pero él está pendiente del teléfono.", "relationDelta": 1, "health": 0, "happiness": 0, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Te deja plantado o llega dos horas tarde y se arruina la salida.", "relationDelta": -6, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_shopping",
+      "label": "Ir de compras con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 10,
+      "maxAge": 120,
+      "cost": 60,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Se aconsejan en las tiendas y sales con algo que no sabías que querías.", "relationDelta": 6, "health": 0, "happiness": 5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 15 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Solo miran y se burlan de los precios.", "relationDelta": 2, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null },
+        { "weight": 20, "resultText": "Te empuja a gastar plata que no tienes y te arrepientes después.", "relationDelta": -4, "health": 0, "happiness": -4, "money": -50, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_eat_out",
+      "label": "Salir a comer con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 8,
+      "maxAge": 120,
+      "cost": 40,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Comida, risas y la cuenta que se pelean por pagar.", "relationDelta": 7, "health": 2, "happiness": 6, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 15, "affectionate": 15 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Comida rápida y media hora de chisme.", "relationDelta": 2, "health": 1, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Se aparecen otros y al final tú pagas más de lo que pensabas.", "relationDelta": -2, "health": 2, "happiness": -3, "money": -30, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_ask_money",
+      "label": "Pedirle dinero a mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 12,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te presta sin preguntar y no te cobra interés ni culpa.", "relationDelta": 4, "health": 0, "happiness": 4, "money": 200, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 25 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Te presta pero con la promesa de que sea la última vez.", "relationDelta": 0, "health": 0, "happiness": 0, "money": 100, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Te dice que él no es banco y que está cansado de prestarte.", "relationDelta": -8, "health": 0, "happiness": -7, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_give_money",
+      "label": "Darle dinero a mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 12,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le resuelves y él jura que te lo devuelve el próximo mes. Y lo hace.", "relationDelta": 9, "health": 0, "happiness": 5, "money": -200, "karma": 10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 20, "loyal": 15 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Se lo das y al mes se olvida de que existe la deuda.", "relationDelta": 1, "health": 0, "happiness": -2, "money": -200, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Se ofende porque cree que le tienes lástima.", "relationDelta": -5, "health": 0, "happiness": -5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_gift",
+      "label": "Hacerle un regalo",
+      "allowedTypes": ["friend"],
+      "minAge": 8,
+      "maxAge": 120,
+      "cost": 80,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Le llevas algo que necesitaba y te lo agradece de verdad.", "relationDelta": 9, "health": 0, "happiness": 7, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Le gusta pero te dice que no debiste gastar en él.", "relationDelta": 3, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "No lo usa nunca y un día lo ves tirado en su casa.", "relationDelta": -4, "health": 0, "happiness": -4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_fight",
+      "label": "Pelear con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 8,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Se pelean, se dicen de todo y a la semana vuelven a salir juntos.", "relationDelta": 5, "health": -2, "happiness": -4, "money": 0, "karma": -2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20 }, "nextEventId": null },
+        { "weight": 45, "resultText": "La pelea queda y el grupo de amigos empieza a dividirse.", "relationDelta": -16, "health": -2, "happiness": -10, "money": 0, "karma": -3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Le tiras un trapo sucio delante de todos y la amistad se rompe.", "relationDelta": -30, "health": 0, "happiness": -15, "money": 0, "karma": -10, "fame": -2, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_ignore",
+      "label": "Ignorar a mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 8,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le dejas el celular en visto y él deja de buscarte.", "relationDelta": -15, "health": 0, "happiness": -5, "money": 0, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Estabas liao y él ni lo tomó a mal.", "relationDelta": -2, "health": 0, "happiness": 0, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Se lo toma como que ya no lo quieres y se aleja solo.", "relationDelta": -8, "health": 0, "happiness": -4, "money": 0, "karma": -2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_movie",
+      "label": "Ver una película con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 6,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se ríen de lo mala que es la película y se queda como chiste interno.", "relationDelta": 6, "health": 1, "happiness": 5, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 20 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Ven la película en silencio, cada uno en su celular.", "relationDelta": 1, "health": 1, "happiness": 1, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Se la pasa hablando por encima y no deja ver nada.", "relationDelta": -4, "health": 1, "happiness": -4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_party",
+      "label": "Salir de fiesta con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 16,
+      "maxAge": 120,
+      "cost": 100,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Se van de rumba y vuelven con la mejor historia del año.", "relationDelta": 9, "health": -2, "happiness": 10, "money": 0, "karma": 0, "fame": 1, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 30 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Bailan, toman y terminan discutiendo por una tontería.", "relationDelta": -4, "health": -4, "happiness": 3, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 20 }, "nextEventId": null },
+        { "weight": 20, "resultText": "La noche sale mal y a él se lo llevan detenido por pelearse.", "relationDelta": -8, "health": -5, "happiness": -8, "money": -200, "karma": -5, "fame": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_videogames",
+      "label": "Jugar videojuegos con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 6,
+      "maxAge": 60,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Se echan unas partidas hasta las tres de la mañana y se cagan de risa.", "relationDelta": 8, "health": -1, "happiness": 8, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20, "easygoing": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Juegan un rato y cada uno se va a lo suyo.", "relationDelta": 2, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Te raja el equipo delante de los demás y se arma.", "relationDelta": -6, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_gym",
+      "label": "Ir al gym con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 14,
+      "maxAge": 70,
+      "cost": 40,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Se motivan el uno al otro y por fin te vuelves constante.", "relationDelta": 7, "health": 4, "happiness": 6, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 15, "easygoing": 10 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Van tres días y dejan de aparecer, pero se divirtieron.", "relationDelta": 2, "health": 1, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Se ponen a competir con pesas y uno termina con un músculo jodido.", "relationDelta": -3, "health": -8, "happiness": 0, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_favor",
+      "label": "Pedirle un favor",
+      "allowedTypes": ["friend"],
+      "minAge": 10,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Deja lo que está haciendo pa ayudarte sin pensarlo.", "relationDelta": 8, "health": 0, "happiness": 5, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 27, "resultText": "Te ayuda pero te recuerda que él también tiene lo suyo.", "relationDelta": 2, "health": 0, "happiness": 1, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 18, "resultText": "Te dice que no puede y te deja colgado.", "relationDelta": -6, "health": 0, "happiness": -5, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_lie",
+      "label": "Mentirle a mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 10,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le sale la mentira y él te pilla rápido, pero lo deja pasar.", "relationDelta": -8, "health": 0, "happiness": -3, "money": 0, "karma": -6, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Se la traga y quedas con el secreto pudriéndote por dentro.", "relationDelta": 0, "health": 0, "happiness": -5, "money": 0, "karma": -12, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 25 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Te descubre y entiende que no puedes confiar en ti pa nada.", "relationDelta": -25, "health": 0, "happiness": -12, "money": 0, "karma": -18, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_betray",
+      "label": "Traicionar a mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 12,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 2,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Le pasas por encima pa quedarte con la novia o el trabajo y él se entera.", "relationDelta": -50, "health": -2, "happiness": -8, "money": 0, "karma": -25, "fame": -2, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 30 }, "nextEventId": "sub_betray_friend" },
+        { "weight": 40, "resultText": "Te sale de chiripa y nunca sabe que fuiste tú. Pero tú sí.", "relationDelta": -5, "health": 0, "happiness": -4, "money": 500, "karma": -20, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Te arrepientes a última hora y le suplicas que no se entere de nada.", "relationDelta": -8, "health": 0, "happiness": -2, "money": 0, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_business",
+      "label": "Meter un negocio juntos",
+      "allowedTypes": ["friend"],
+      "minAge": 18,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 3,
+      "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El negocio arranca bien y los dos se reparten igual sin discutir.", "relationDelta": 15, "health": 0, "happiness": 10, "money": 3000, "karma": 5, "fame": 1, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 20, "generous": 15 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Se pelean por las cuentas y el negocio se va al piso.", "relationDelta": -25, "health": 0, "happiness": -15, "money": -2000, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 25 }, "nextEventId": "sub_betray_friend" },
+        { "weight": 20, "resultText": "Él se queda con la parte buena y tú con las deudas.", "relationDelta": -35, "health": 0, "happiness": -18, "money": -3000, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 30 }, "nextEventId": "sub_betray_friend" }
+      ]
+    },
+    {
+      "id": "friend_concert",
+      "label": "Ir a un concierto o partido",
+      "allowedTypes": ["friend"],
+      "minAge": 14,
+      "maxAge": 120,
+      "cost": 200,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Gritan, cantan y vuelven con la voz ronca y una amistad más fuerte.", "relationDelta": 10, "health": 0, "happiness": 10, "money": 0, "karma": 2, "fame": 1, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 25, "loyal": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El evento es bueno pero las entradas te costaron un ojo.", "relationDelta": 3, "health": 0, "happiness": 5, "money": -100, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Se pelean con unos desconocidos y los sacan del lugar.", "relationDelta": -6, "health": -5, "happiness": -6, "money": 0, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_ask_loan",
+      "label": "Que mi amigo me preste plata",
+      "allowedTypes": ["friend"],
+      "minAge": 16,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 2,
+      "maxPerYear": 1,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Te presta lo que tiene y hasta te ofrece más si lo necesitas.", "relationDelta": 9, "health": 0, "happiness": 8, "money": 2000, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 25, "loyal": 15 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Te presta con la condición de que le pagues cuando puedas.", "relationDelta": 2, "health": 0, "happiness": 2, "money": 1500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Tu amigo no tiene pa prestarte y se siente mal.", "relationDelta": -3, "health": 0, "happiness": -3, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_ask_backup",
+      "label": "Que mi amigo me respalde",
+      "allowedTypes": ["friend"],
+      "minAge": 12,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 2,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Aparece sin que se lo pidas y se pone a tu lado pase lo que pase.", "relationDelta": 10, "health": 0, "happiness": 8, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 30, "resultText": "Te respalda pero sin meterse en problemas.", "relationDelta": 3, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 10, "resultText": "Llega tarde y con ganas de pelea, y la cosa empeora.", "relationDelta": -3, "health": -4, "happiness": 0, "money": 0, "karma": -3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "party_animal": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_ask_network",
+      "label": "Que me consiga un contacto",
+      "allowedTypes": ["friend"],
+      "minAge": 16,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 2,
+      "requires": { "minBar": 80, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Te abre la puerta con alguien que te cambia el rumbo y no te cobra el favor.", "relationDelta": 10, "health": 0, "happiness": 8, "money": 1000, "karma": 8, "fame": 1, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 20, "loyal": 20 }, "nextEventId": null },
+        { "weight": 28, "resultText": "Te pasa el contacto pero el tipo no contesta nunca.", "relationDelta": 2, "health": 0, "happiness": 1, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 12, "resultText": "En realidad te metió en un negocio turbio sin avisarte.", "relationDelta": -10, "health": -3, "happiness": -8, "money": -500, "karma": -10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 30 }, "nextEventId": "sub_illegal_bust" }
+      ]
+    },
+    {
+      "id": "friend_cut_contact",
+      "label": "Cortar contacto con mi amigo",
+      "allowedTypes": ["friend"],
+      "minAge": 14,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 5,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "ESTRANGED", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Lo bloqueas y dejas de aparecer por donde él anda.", "relationDelta": -70, "health": 0, "happiness": -8, "money": 0, "karma": -5, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "cold": 25 }, "nextEventId": "sub_estranged_family" },
+        { "weight": 45, "resultText": "Le dices en la cara que no quieres saber más de él y el grupo se parte.", "relationDelta": -60, "health": -3, "happiness": -12, "money": 0, "karma": -10, "fame": 0, "flag": "ESTRANGED", "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_estranged_family" }
+      ]
+    },
+    {
+      "id": "friend_spread_rumor",
+      "label": "Esparcir un chisme",
+      "allowedTypes": ["friend"],
+      "minAge": 12,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Sueltas el chisme y todo el barrio se entera menos él.", "relationDelta": -20, "health": 0, "happiness": -3, "money": 0, "karma": -18, "fame": -2, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 30 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Le llega el cuento y sabe que fuiste tú. Se acabó la amistad.", "relationDelta": -45, "health": -2, "happiness": -12, "money": 0, "karma": -22, "fame": -3, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_betray_friend" },
+        { "weight": 25, "resultText": "El chisme se da la vuelta y termina dañando tu reputación a ti.", "relationDelta": -12, "health": 0, "happiness": -8, "money": 0, "karma": -15, "fame": -5, "flag": null, "removeFlag": null, "traitWeightMods": { "jealous": 20 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_call_war",
+      "label": "Llamarlo donde sea",
+      "allowedTypes": ["friend"],
+      "minAge": 0,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Contesta con la misma broma de siempre y por un minuto todo parece normal.", "relationDelta": 8, "health": 0, "happiness": 6, "money": -20, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20 }, "nextEventId": null },
+        { "weight": 30, "resultText": "No contesta nunca y no sabes si sigue vivo.", "relationDelta": -4, "health": 0, "happiness": -8, "money": -20, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Te contesta un compañero suyo y te da largas.", "relationDelta": 0, "health": 0, "happiness": -4, "money": -20, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_send_money_war",
+      "label": "Enviarle dinero desde lejos",
+      "allowedTypes": ["friend"],
+      "minAge": 16,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Le mandas la remesa y él te jura que se la va a beber toda. Tú sabes que no.", "relationDelta": 11, "health": 0, "happiness": 8, "money": -500, "karma": 15, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "generous": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "El dinero se pierde en el envío y él no se queja.", "relationDelta": 0, "health": 0, "happiness": -6, "money": -500, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Alguien cobra una comisión y llega menos de lo enviado.", "relationDelta": -5, "health": 0, "happiness": -5, "money": -500, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_send_package",
+      "label": "Mandar paquetes y cartas",
+      "allowedTypes": ["friend"],
+      "minAge": 10,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 0,
+      "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "El paquete llega con tabaco, comida y una carta de coña. Se ríe solo en la carpa.", "relationDelta": 10, "health": 2, "happiness": 6, "money": -200, "karma": 10, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20 }, "nextEventId": null },
+        { "weight": 25, "resultText": "Llega abierto pero llega. Con eso basta.", "relationDelta": 2, "health": 0, "happiness": -3, "money": -200, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Nunca llega y él se queda sin saber que se lo mandaste.", "relationDelta": -4, "health": 0, "happiness": -5, "money": -200, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_hide_draft",
+      "label": "Esconderlo de la leva",
+      "allowedTypes": ["friend"],
+      "minAge": 16,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 1,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Lo escondes en el sótano de tu casa y los reclutadores se van con las manos vacías.", "relationDelta": 15, "health": 0, "happiness": 10, "money": -300, "karma": 10, "fame": 0, "flag": null, "removeFlag": "DRAFTED", "traitWeightMods": { "loyal": 25 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Casi lo encuentran pero logra escabullirse.", "relationDelta": 6, "health": -5, "happiness": 0, "money": 0, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+        { "weight": 15, "resultText": "Descubren a tu amigo escondido y te llevan preso por encubrirlo.", "relationDelta": -10, "health": -5, "happiness": -15, "money": 0, "karma": 5, "fame": 0, "flag": "ARRESTED", "removeFlag": null, "traitWeightMods": { "strict": 10 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_pay_rescue",
+      "label": "Pagar un rescate por él",
+      "allowedTypes": ["friend"],
+      "minAge": 18,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 2,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD"], "flagsAny": ["DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Pagas la suma completa y te lo devuelven vivo en un puesto de control.", "relationDelta": 20, "health": 0, "happiness": 12, "money": -9000, "karma": 15, "fame": 0, "flag": null, "removeFlag": "POW", "traitWeightMods": { "loyal": 25 }, "nextEventId": "sub_war_rescue" },
+        { "weight": 30, "resultText": "Pagas a medias por tu amigo y te dan largas semanas.", "relationDelta": -5, "health": 0, "happiness": -15, "money": -4500, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 20 }, "nextEventId": "sub_war_rescue" },
+        { "weight": 15, "resultText": "El intermediario desaparece con la plata y sin tu amigo.", "relationDelta": -20, "health": 0, "happiness": -25, "money": -9000, "karma": -5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 15 }, "nextEventId": null }
+      ]
+    },
+    {
+      "id": "friend_squeeze",
+      "label": "Sacarle plata con una mentira",
+      "allowedTypes": ["friend"],
+      "minAge": 14,
+      "maxAge": 120,
+      "cost": 0,
+      "cooldownYears": 2,
+      "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 20, "traitsAny": [], "flagsNone": ["DEAD", "DRAFTED", "POW", "REFUGEE"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le cuentas una emergencia inventada y te presta sin dudar. Te quedas con la plata.", "relationDelta": -20, "health": 0, "happiness": 4, "money": 600, "karma": -22, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "manipulative": 30 }, "nextEventId": null },
+        { "weight": 35, "resultText": "Se entera de que todo era mentira y te borra de su vida.", "relationDelta": -45, "health": 0, "happiness": -12, "money": 0, "karma": -22, "fame": -2, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_betray_friend" },
+        { "weight": 25, "resultText": "Te da la plata pero te pide firmar un papel y el cuento se te cae solo.", "relationDelta": -10, "health": 0, "happiness": -5, "money": 0, "karma": -12, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "sub_baby_pregnancy",
+    "pool": "relationship",
+    "text": "Después de hablarlo, la prueba sale positiva. Los próximos nueve meses van a cambiar todo en la casa.",
+    "choices": [
+      {
+        "text": "Nos preparamos en serio",
+        "outcomes": [
+          { "weight": 60, "resultText": "Empiezan las citas, las vitaminas y las clases de parto. Los dos remando pa el mismo lado.", "relationDelta": 14, "health": 1, "happiness": 12, "money": -1200, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 20, "loyal": 15 }, "nextEventId": "sub_baby_birth" },
+          { "weight": 25, "resultText": "Se preparan a medias porque el trabajo no da tregua y llegan agotados a la recta final.", "relationDelta": 4, "health": -2, "happiness": 4, "money": -1200, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "strict": 15 }, "nextEventId": "sub_baby_birth" },
+          { "weight": 15, "resultText": "Una complicación obliga a reposo y a dejar cosas de lado antes de tiempo.", "relationDelta": 6, "health": -8, "happiness": -6, "money": -2500, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": -10 }, "nextEventId": "sub_baby_birth" }
+        ]
+      },
+      {
+        "text": "Que todo siga como está hasta que pase",
+        "outcomes": [
+          { "weight": 45, "resultText": "Sigue la vida normal y el cuerpo aguanta. Nada que reportar.", "relationDelta": 4, "health": 0, "happiness": 6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 20 }, "nextEventId": "sub_baby_birth" },
+          { "weight": 55, "resultText": "A mitad de camino aparecen los malestares y el cansancio se acumula en los dos.", "relationDelta": -6, "health": -6, "happiness": -8, "money": -600, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 15 }, "nextEventId": "sub_baby_birth" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sub_baby_birth",
+    "pool": "relationship",
+    "text": "Nace el bebé. La sala del hospital huele a desinfectante y a algo nuevo que no saben nombrar.",
+    "choices": [
+      {
+        "text": "Cargarlo yo primero",
+        "outcomes": [
+          { "weight": 65, "resultText": "Lo cargas en brazos y por un momento se te olvida todo lo demás.", "relationDelta": 16, "health": 0, "happiness": 18, "money": 0, "karma": 8, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 25 }, "nextEventId": null },
+          { "weight": 35, "resultText": "Te pones nervioso y casi se te resbala. La enfermera te mira mal.", "relationDelta": 6, "health": 0, "happiness": 10, "money": 0, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null }
+        ]
+      },
+      {
+        "text": "Grabar todo desde la puerta",
+        "outcomes": [
+          { "weight": 55, "resultText": "Grabas el primer llanto y ese video se va a repetir mil veces en la casa.", "relationDelta": 10, "health": 0, "happiness": 12, "money": 0, "karma": 5, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "affectionate": 15 }, "nextEventId": null },
+          { "weight": 45, "resultText": "Se te va la batería en el momento exacto y te quedas sin el video.", "relationDelta": 2, "health": 0, "happiness": 4, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 10 }, "nextEventId": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sub_spouse_therapy",
+    "pool": "relationship",
+    "text": "La idea de ir a terapia de pareja queda sobre la mesa. Ninguno de los dos quiere ser el primero en decir que sí.",
+    "choices": [
+      {
+        "text": "Vamos los dos",
+        "outcomes": [
+          { "weight": 55, "resultText": "En la tercera sesión sueltan lo que llevaban años guardando. Sale a la luz, duele y alivia.", "relationDelta": 18, "health": 0, "happiness": 10, "money": -800, "karma": 8, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 20, "loyal": 15 }, "nextEventId": "sub_spouse_therapy_talk" },
+          { "weight": 30, "resultText": "El terapeuta les da tarea semanal y por un mes cumplen. Después se les olvida.", "relationDelta": 6, "health": 0, "happiness": 4, "money": -800, "karma": 3, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 15 }, "nextEventId": null },
+          { "weight": 15, "resultText": "Uno de los dos se cierra en la silla y las sesiones se vuelven un trámite.", "relationDelta": -6, "health": 0, "happiness": -4, "money": -800, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": null }
+        ]
+      },
+      {
+        "text": "Eso es cosa de gente rica",
+        "outcomes": [
+          { "weight": 50, "resultText": "Deciden arreglarlo solos y por unas semanas se esfuerzan de verdad.", "relationDelta": 5, "health": 0, "happiness": 2, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "stingy": 20 }, "nextEventId": null },
+          { "weight": 50, "resultText": "Sigue el hielo en la casa y cada uno se acostumbra a hablar poco.", "relationDelta": -10, "health": -2, "happiness": -8, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 20 }, "nextEventId": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sub_spouse_therapy_talk",
+    "pool": "relationship",
+    "text": "Salen de la consulta en silencio. Faltan diez cuadras hasta el carro y ninguno habla primero.",
+    "choices": [
+      {
+        "text": "Perdón por lo mío",
+        "outcomes": [
+          { "weight": 60, "resultText": "Dices las dos palabras primero y ella te agarra la mano en medio de la acera.", "relationDelta": 15, "health": 0, "happiness": 12, "money": 0, "karma": 6, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "forgiving": 25 }, "nextEventId": null },
+          { "weight": 40, "resultText": "Lo dices y ella responde con una lista de agravios. Pero al menos hablan.", "relationDelta": 4, "health": 0, "happiness": 2, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "resentful": 15 }, "nextEventId": null }
+        ]
+      },
+      {
+        "text": "Dejar que el tiempo hable",
+        "outcomes": [
+          { "weight": 40, "resultText": "Llegan a la casa y ella pone café. Con eso basta por hoy.", "relationDelta": 6, "health": 0, "happiness": 4, "money": 0, "karma": 2, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "easygoing": 20 }, "nextEventId": null },
+          { "weight": 60, "resultText": "El silencio del carro se les queda pegado toda la semana.", "relationDelta": -8, "health": 0, "happiness": -6, "money": 0, "karma": 0, "fame": 0, "flag": null, "removeFlag": null, "traitWeightMods": { "cold": 20 }, "nextEventId": null }
+        ]
+      }
+    ]
+  }
+]

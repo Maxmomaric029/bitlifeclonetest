@@ -1,0 +1,181 @@
+[
+  {
+    "pool": "pool_tank",
+    "events": [
+      {
+        "id": "tank_mine",
+        "pool": "pool_tank",
+        "highDanger": true,
+        "text": "Un crujido horrible bajo las orugas: mina. El casco se dobla, el humo entra por las rejillas y el comandante grita '¡fuera!'. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Salto por la escotilla",
+            "outcomes": [
+              { "weight": 65, "resultText": "Sales rodando y te alejas a gatas. Detrás el tanque se convierte en una fogata.", "health": -15, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" },
+              { "weight": 20, "resultText": "Te pisa la escotilla de salida el vehículo en marcha. La pierna no salió entera.", "health": -45, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" },
+              { "weight": 15, "resultText": "La oruga que saltó te alcanza en el aire. El tanque muere contigo dentro.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Apago fuego y sigo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Apagas el motor a tiempo y el humo se estanca. El tanque muere, la tripulación vive.", "health": -10, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" },
+              { "weight": 45, "resultText": "La munición del interior no piensa igual: el compartimento se enciende con todos dentro.", "health": -50, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" }
+            ]
+          },
+          {
+            "text": "Cubro a la tripulación",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te quedas en la puerta empujando a los otros fuera. Sales el último, calcinado.", "health": -40, "happiness": 15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" },
+              { "weight": 50, "resultText": "La tripulación sale entera gracias a ti. Tu uniforme ya no es un uniforme.", "health": -25, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_mine_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tank_mine_after",
+        "pool": "pool_tank",
+        "text": "El tanque arde a 50 metros y el humo se ve desde la siguiente loma. Estás a pie con tres hombres, sin vehículo y con la misión a medias. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Retiro a la tripulación",
+            "outcomes": [
+              { "weight": 80, "resultText": "Llevas a los tres a las líneas propias. El comandante te escribe el nombre en su informe.", "health": -5, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "A mitad de camino os pilla una patrulla enemiga. La rendición es rápida.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Sigo a pie hasta el objetivo",
+            "outcomes": [
+              { "weight": 50, "resultText": "Llegáis al objetivo a pie y lo tomáis por sorpresa. Nadie espera infantería con cara de tanquistas.", "health": -15, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "A pie contra una posición preparada es aritmética de guerra. Volvéis menos de los que salieron.", "health": -40, "happiness": -25, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Busco un tanque enemigo",
+            "outcomes": [
+              { "weight": 40, "resultText": "Encontráis un blindaje enemigo abandonado y en marcha. Lo reclutáis para vosotros.", "health": 0, "happiness": 25, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El tanque estaba 'abandonado' porque su tripulación estaba esperando exactamente eso.", "health": -35, "happiness": -20, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Os acercáis con las manos arriba a pedir las llaves. Os las dan con plomo.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tank_ambush",
+        "pool": "pool_tank",
+        "highDanger": true,
+        "text": "Emboscada antitanque en el desfiladero: el vehículo de cabeza arde y el tuyo queda a la vista de un cañón escondido. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Retroceso a la inversa",
+            "outcomes": [
+              { "weight": 65, "resultText": "Maniobrás marcha atrás a toda pastilla como te entrenaron. El cañón falla dos veces.", "health": -5, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Una esquirla te atraviesa el visor y te deja la cara como un mapa.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Cortina de humo y giro",
+            "outcomes": [
+              { "weight": 60, "resultText": "Lanzás el humo, girás y salís del desfiladero por el camino de cabras.", "health": -5, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El humo tapa la vista pero no el pozo. Caéis de lado en un barranco.", "health": -30, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Respondo fuego a ciegas",
+            "outcomes": [
+              { "weight": 45, "resultText": "Tu tiro ciego revienta el arbusto donde estaba el cañón enemigo. Suerte del diablo.", "health": 0, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Disparás a donde suena el cañón y aciertas... a un camión lleno de munición. Peor quedó.", "health": -15, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El fogonazo de tu torreta delata el tanque entero. El segundo impacto no falla.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tank_low_ammo",
+        "pool": "pool_tank",
+        "text": "La guerra pasó a llevar la cuenta de proyectiles: quedan tres de perforación y la columna enemiga sigue subiendo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Escojo los objetivos uno a uno",
+            "outcomes": [
+              { "weight": 75, "resultText": "Tres proyectiles, tres vehículos de mando fuera de combate. El mayor te invita a cenar.", "health": 0, "happiness": 18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El segundo proyectil falla por un sensor sucio. El tercero llega tarde a la fiesta.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Mezclo munición vieja",
+            "outcomes": [
+              { "weight": 55, "resultText": "La munición de 1978 todavía perfora. La columna se detiene en la curva.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Un proyectile viejo se traba en el cañón. El tanque se queda mudo con la columna acercándose.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido apoyo aéreo por radio",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un cazabombardero escucha tu pánico y responde en cuatro minutos. La columna deja de existir.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Apoyo aéreo en cuatro minutos: promesa de radio. La columna llega en dos.", "health": -20, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tank_moral_order",
+        "pool": "pool_tank",
+        "text": "La orden: abrir fuego sobre una aldea que 'apoya insurgentes'. En el visor se ven techos, gallinas y una plaza con niños. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Confirmo objetivo con dudas",
+            "outcomes": [
+              { "weight": 45, "resultText": "Reportas 'objetivos no confirmados' en voz alta en la red. El fuego se pospone.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" },
+              { "weight": 55, "resultText": "Tu voz dudosa en la red graba la duda. El capitán repite la orden, más fuerte.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" }
+            ]
+          },
+          {
+            "text": "Abro fuego a la plaza",
+            "outcomes": [
+              { "weight": 50, "resultText": "Cumplís. El informe habla de 'neutralización de posición insurgente'. Vos leés otra cosa.", "health": 0, "happiness": -35, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" },
+              { "weight": 50, "resultText": "El comandante de pelotón te mira por el periscopio sin decir nada. Esa mirada dura años.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" }
+            ]
+          },
+          {
+            "text": "Apunto alto y fallo",
+            "outcomes": [
+              { "weight": 55, "resultText": "Tres proyectiles 'fallan' a metros de los techos. La aldea huye despavorida, viva.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" },
+              { "weight": 30, "resultText": "El registrador de disparos del tanque guarda cada coordenada. Alguien audita eso.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" },
+              { "weight": 15, "resultText": "Tu 'fallo' hiere a un compañero de otra escuadra que avanzaba por el flanco.", "health": -30, "happiness": -40, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "tank_moral_order_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tank_moral_order_after",
+        "pool": "pool_tank",
+        "text": "En el mantenimiento de la noche, el mecánico te pregunta cómo fue el día. En la radio ya preparan la misión de mañana. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Le digo la verdad al mecánico",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te escucha con la llave en la mano y dice 'yo tú no vuelvo ahí'. No es mala idea.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "La confesión al mecánico termina en el informe del capellán. Tu nombre circula.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Digo que todo bien",
+            "outcomes": [
+              { "weight": 75, "resultText": "'Todo bien' son dos palabras que caben en cualquier guerra. El mecánico asiente.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El mecánico ya sabe leer caras de tanquista. Te mira y no repite la pregunta.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido cambio de tripulación",
+            "outcomes": [
+              { "weight": 50, "resultText": "La solicitud avanza: te mandan a la sección de instrucción, lejos del frente.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El cambio se niega: 'tripulaciones estables hasta el final de la campaña'.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

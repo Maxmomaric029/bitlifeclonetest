@@ -1,0 +1,117 @@
+{
+  "module": "prison_menu",
+  "note": "Vida dentro de la prision (C1). Todas las acciones exigen IN_PRISON. La salida normal la da la accion pris_parole_hearing; la fuga puede terminar mal muy rapido.",
+  "actions": [
+    {
+      "id": "prison_daily_routine", "label": "Cumplir la rutina sin problemas",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 6,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Fila, comida, ducha, conteo. Nadie te busca y el mes pasa sin una pinta en el expediente.", "happiness": -2, "stress": 4, "health": 1, "discipline": 2 }, 
+        { "weight": 25, "resultText": "La rutina te come la cabeza: el reloj de la pared se vuelve tu enemigo mas lento.", "happiness": -8, "stress": 10 },
+        { "weight": 15, "resultText": "Un recluso nuevo te obliga a ceder tu turno de ducha y hoy el dia termina amargo.", "happiness": -6, "stress": 8, "karma": -2 }
+      ]
+    },
+    {
+      "id": "prison_gym", "label": "Entrenar en el patio",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Fondas, barras y dominadas al amanecer: el cuerpo aguanta mejor lo que viene.", "fitness": 6, "health": 2, "stress": -4, "happiness": 2 },
+        { "weight": 30, "resultText": "Entrenas en el rincón de los veteranos y alguien te corrige la técnica sin cobrarte nada.", "fitness": 8, "stress": -2, "popularity": 2 },
+        { "weight": 15, "resultText": "Te estiraste el hombro en la barra y la enfermería no tiene hielo para nadie.", "fitness": -3, "health": -6, "stress": 8, "happiness": -6 }
+      ]
+    },
+    {
+      "id": "prison_study", "label": "Estudiar en la aula del penal",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Dos horas de clases con el maestro voluntario: sales con la libreta llena y la cabeza despejada.", "smarts": 4, "happiness": 3, "stress": -2, "discipline": 2 },
+        { "weight": 30, "resultText": "Terminas ayudando a un recluso que no sabe leer y el maestro te nombra su auxiliar.", "smarts": 3, "karma": 6, "happiness": 5, "popularity": 2 },
+        { "weight": 15, "resultText": "El aula amanece cerrada por falta de docente: pierdes el turno y la mañana entera.", "happiness": -4, "stress": 6 }
+      ]
+    },
+    {
+      "id": "prison_job_workshop", "label": "Trabajar en el taller del penal",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Sillas, uniformes y sellos del penal: el taller paga un dinerito y limpia tu récord interno.", "money": 1500, "discipline": 3, "stress": 4, "happiness": 1 },
+        { "weight": 30, "resultText": "El capataz te guarda las horas: te anotan puntual y eso pesa cuando sube el informe.", "money": 2200, "discipline": 5, "stress": 6, "happiness": 2 },
+        { "weight": 20, "resultText": "La sierra se atasca y casi pierdes un dedo: el taller te baja de la lista por un mes.", "health": -8, "stress": 10, "happiness": -8 }
+      ]
+    },
+    {
+      "id": "prison_make_allies", "label": "Buscar aliados dentro",
+      "ageMin": 14, "ageMax": 120, "cost": 2000, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Cigarrillos y favores te compran dos amigos de celda: ahora hay que cuidar tu trasero juntos.", "happiness": 5, "stress": -6, "popularity": 3, "money": -1400, "traitWeightMods": { "loyal": 15 } },
+        { "weight": 30, "resultText": "Compras la amistad de un veterano: él paga y tú aprendes las reglas que no vienen escritas.", "happiness": 3, "stress": -4, "popularity": 2, "smarts": 2, "money": -2000 },
+        { "weight": 20, "resultText": "El que aceptó tu dinero estaba grabando: tu nombre va a la lista del consejo del patio.", "happiness": -12, "stress": 14, "popularity": -6, "money": -2000 }
+      ]
+    },
+    {
+      "id": "prison_fight", "label": "Pelear con el que te molesta",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Ganas la pelea en tres golpes y el patio entero te respeta desde el lunes.", "fitness": 2, "happiness": 5, "popularity": 5, "karma": -6, "stress": -2, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 35, "resultText": "Empate sangriento: los dos al calabozo y el expediente interno más grueso.", "health": -12, "happiness": -8, "popularity": 2, "stress": 10, "traitWeightMods": { "cold": 15 } },
+        { "weight": 25, "resultText": "Te vidrieron en la espalda por la noche: la enfermería apunta puñalada y el ambiente se pone tenso.", "health": -30, "happiness": -15, "stress": 16, "traitWeightMods": { "resentful": 20 } }
+      ]
+    },
+    {
+      "id": "prison_contraband", "label": "Comprar contrabando de vispera",
+      "ageMin": 14, "ageMax": 120, "cost": 3000, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "El celular llega dentro de un pan de sobras y ya estás llamando a tu familia desde el baño.", "happiness": 8, "stress": 2, "money": -2400, "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 30, "resultText": "El paquete llega incompleto: mitad de lo pagado y la mitad de la esperanza también.", "happiness": -4, "stress": 6, "money": -3000 },
+        { "weight": 25, "resultText": "El perro del registro amanece listo: te confiscan todo y te reportan al consejo.", "happiness": -12, "stress": 12, "money": -3000 }
+      ]
+    },
+    {
+      "id": "prison_parole_hearing", "label": "Audiencia de libertad condicional",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 2, "maxPerYear": 1,
+      "requires": { "flagsExist": ["IN_PRISON"], "flagsNone": [] },
+      "outcomes": [
+        { "weight": 40, "resultText": "El informe sale limpio y la junta abraza tu solicitud: sales con anillo electrónico y cita mensual.", "happiness": 15, "stress": -8, "flag": "ON_PAROLE", "removeFlag": "IN_PRISON", "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 30, "resultText": "Te postergan seis meses por conducta regular: vuelta a fila, a cama y a conteo.", "happiness": -10, "stress": 8 },
+        { "weight": 20, "resultText": "Un recluso habló contra ti en la audiencia: la junta niega todo por conducta en mención.", "happiness": -14, "stress": 12, "popularity": -3 },
+        { "weight": 10, "resultText": "Pagar el abogado externo era la jugada correcta: la junta aprueba la salida condicionada a trabajo y firma.", "money": -150000, "happiness": 12, "flag": "ON_PAROLE", "removeFlag": "IN_PRISON" }
+      ]
+    },
+    {
+      "id": "prison_parole_check", "label": "Cumplir con el oficial de libertad condicional",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 0, "maxPerYear": 4,
+      "requires": { "flagsExist": ["ON_PAROLE"], "flagsNone": [] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Firma, saludo y un reporte limpio: el oficial te anota como caso que no da problemas.", "happiness": 2, "stress": -2, "karma": 3 },
+        { "weight": 25, "resultText": "Llegaste tarde y te lo apuntan: el expediente condicional gana una pagina más.", "happiness": -4, "stress": 8 },
+        { "weight": 15, "resultText": "El oficial te encuentra sin trabajo ni teléfono: te sube el nivel de supervisión semanal.", "happiness": -8, "stress": 12 }
+      ]
+    },
+    {
+      "id": "prison_finish_sentence", "label": "Terminar de cumplir la condena",
+      "ageMin": 14, "ageMax": 120, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 70, "resultText": "La puerta se abre de verdad ahora: saliste libre por haber cumplido todo el plazo.", "happiness": 18, "stress": -10, "flag": "EX_CONVICT", "removeFlag": "IN_PRISON" },
+        { "weight": 30, "resultText": "Sales libre pero con el sello pegado: los contratos de trabajo cierran cuando leen tu expediente.", "happiness": 8, "stress": 4, "flag": "EX_CONVICT", "removeFlag": "IN_PRISON" }
+      ]
+    },
+    {
+      "id": "prison_escape", "label": "Someterme al plan de fuga del bloque",
+      "ageMin": 14, "ageMax": 120, "cost": 10000, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "flagsExist": ["IN_PRISON"] },
+      "outcomes": [
+        { "weight": 15, "resultText": "El túnel del taller parece mágico: sales por una alcantarilla y caminas libre otra vez... por ahora.", "happiness": 20, "stress": -6, "flag": "WANTED", "removeFlag": "IN_PRISON", "traitWeightMods": { "manipulative": 25 } },
+        { "weight": 35, "resultText": "El plan se cae a mitad de camino: te descubren en el techo y el encierro se pone brutal.", "health": -15, "happiness": -20, "stress": 18 }, 
+        { "weight": 35, "resultText": "El compañero se acobara y delata todo: punición máxima y años nuevos sumados a la condena.", "happiness": -25, "stress": 20, "karma": -5, "traitWeightMods": { "resentful": 20 } },
+        { "weight": 15, "resultText": "Los centinelas disparan al aire y el balazo de rebote te encuentra en la cerca eléctrica.", "health": -100, "happiness": 0, "flag": "DEAD" }
+      ]
+    }
+  ]
+}

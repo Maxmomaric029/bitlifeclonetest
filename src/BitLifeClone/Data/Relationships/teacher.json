@@ -1,0 +1,103 @@
+{
+  "relationType": "teacher",
+  "actions": [
+    { "id": "teacher_participate", "label": "Participar en clase", "allowedTypes": ["teacher"], "minAge": 5, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Levantas la mano, das la respuesta correcta y la profe te señala como ejemplo.", "relationDelta": 7, "grades": 3, "smarts": 1, "popularity": -1, "traitWeightMods": { "strict": -10, "forgiving": 10 } },
+        { "weight": 30, "resultText": "Respondes a medias y la profe te completa la idea sin regañarte.", "relationDelta": 2, "grades": 1, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 15, "resultText": "Dices un disparate y el aula entera se ríe de ti.", "relationDelta": -2, "happiness": -4, "popularity": -3, "stress": 3, "traitWeightMods": { "cold": 15 } }
+      ] },
+    { "id": "teacher_ask_doubt", "label": "Preguntar una duda después de clase", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 60, "resultText": "Se queda diez minutos explicándote con paciencia y por fin entiendes el tema.", "relationDelta": 8, "grades": 4, "smarts": 2, "stress": -3, "traitWeightMods": { "affectionate": 15 } },
+        { "weight": 25, "resultText": "Te contesta rápido, mirando el reloj, porque tiene otra sección.", "relationDelta": 1, "grades": 1, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Te dice que eso lo explicó ayer y que pongas atención la próxima vez.", "relationDelta": -3, "happiness": -3, "stress": 2, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "teacher_ask_extension", "label": "Pedir prórroga para una tarea", "allowedTypes": ["teacher"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te da hasta el lunes, pero con la condición de que venga bien hecha.", "relationDelta": 2, "stress": -5, "grades": 1, "traitWeightMods": { "forgiving": 20, "easygoing": 10 } },
+        { "weight": 35, "resultText": "Te la acepta, pero con dos puntos menos por entregarla tarde.", "relationDelta": -1, "stress": -2, "grades": -1, "traitWeightMods": { "strict": 15 } },
+        { "weight": 20, "resultText": "Te dice que no, que la fecha era la fecha, y te toca amanecerte.", "relationDelta": -4, "stress": 8, "health": -2, "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "teacher_clean_classroom", "label": "Ayudar a limpiar el aula", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 18, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Barres, borras la pizarra y la profe te regala un dulce de su gaveta.", "relationDelta": 8, "discipline": 3, "karma": 3, "traitWeightMods": { "affectionate": 15 } },
+        { "weight": 30, "resultText": "Limpias callado mientras ella corrige exámenes. Ni gracias, pero tampoco mal.", "relationDelta": 3, "discipline": 2, "traitWeightMods": { "cold": 10 } },
+        { "weight": 15, "resultText": "Tus compañeros te ven con la escoba y te bautizan como el conserje.", "relationDelta": 4, "popularity": -5, "happiness": -3, "flag": "TEACHERS_PET", "traitWeightMods": { "strict": 10 } }
+      ] },
+    { "id": "teacher_suck_up", "label": "Caerle bien a la profe", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Le celebras el peinado y le llevas un café. Ya eres su favorito oficial.", "relationDelta": 10, "grades": 2, "popularity": -3, "flag": "TEACHERS_PET", "traitWeightMods": { "affectionate": 20 } },
+        { "weight": 35, "resultText": "Se da cuenta de la jugada, se ríe y te sigue tratando igual que a todos.", "relationDelta": 2, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 20, "resultText": "Te dice delante de todos que con lambonería no se sube la nota.", "relationDelta": -4, "popularity": -4, "happiness": -4, "traitWeightMods": { "strict": 20, "manipulative": -10 } }
+      ] },
+    { "id": "teacher_complain_grade", "label": "Quejarse por una nota", "allowedTypes": ["teacher"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Revisa el examen, encuentra un error suyo y te sube tres puntos.", "relationDelta": 1, "grades": 3, "happiness": 4, "traitWeightMods": { "forgiving": 20 } },
+        { "weight": 45, "resultText": "Te explica punto por punto por qué está bien corregido. La nota se queda.", "relationDelta": -2, "stress": 3, "traitWeightMods": { "strict": 15 } },
+        { "weight": 20, "resultText": "Lo toma personal y desde ese día te corrige con lupa.", "relationDelta": -8, "grades": -2, "stress": 5, "traitWeightMods": { "resentful": 25 } }
+      ] },
+    { "id": "teacher_confront_unfair", "label": "Confrontar una nota injusta", "allowedTypes": ["teacher"], "minAge": 12, "maxAge": 22, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 30, "resultText": "Llevas pruebas a la dirección y te dan la razón. La profe te saluda seca desde entonces.", "relationDelta": -6, "grades": 5, "karma": 3, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 50, "resultText": "Le alzas la voz en el pasillo y terminas castigado una semana.", "relationDelta": -10, "discipline": -4, "stress": 6, "flag": "DETENTION", "traitWeightMods": { "strict": 25 } },
+        { "weight": 20, "resultText": "La cosa escala, llaman a tus padres y en la casa se forma el lío.", "relationDelta": -14, "discipline": -6, "happiness": -8, "flag": "SUSPENDED", "traitWeightMods": { "cold": 20 }, "nextEventId": "sub_estranged_family" }
+      ] },
+    { "id": "teacher_recommendation", "label": "Pedir carta de recomendación", "allowedTypes": ["teacher"], "minAge": 16, "maxAge": 22, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 40, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te escribe una carta tan buena que casi no te reconoces en ella.", "relationDelta": 6, "happiness": 6, "smarts": 1, "traitWeightMods": { "affectionate": 20, "loyal": 10 } },
+        { "weight": 30, "resultText": "Te da una carta correcta, de plantilla, con tu nombre mal escrito una vez.", "relationDelta": 1, "happiness": 1, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Te dice que no te conoce lo suficiente para firmar eso.", "relationDelta": -3, "happiness": -5, "stress": 4, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "teacher_extra_credit", "label": "Pedir crédito extra", "allowedTypes": ["teacher"], "minAge": 10, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te pone un proyecto extra. Lo haces de madrugada y salvas el período.", "relationDelta": 4, "grades": 5, "stress": 5, "traitWeightMods": { "forgiving": 15 } },
+        { "weight": 30, "resultText": "Te da un trabajito cortico que apenas mueve el promedio.", "relationDelta": 2, "grades": 1, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 20, "resultText": "Te responde que el crédito extra se gana poniendo atención en clase.", "relationDelta": -2, "stress": 3, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "teacher_prank", "label": "Hacerle una broma a la profe", "allowedTypes": ["teacher"], "minAge": 8, "maxAge": 18, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Le escondes la tiza y hasta ella se ríe. El aula te aplaude.", "relationDelta": 0, "popularity": 6, "happiness": 5, "flag": "CLASS_CLOWN", "traitWeightMods": { "easygoing": 20, "party_animal": 10 } },
+        { "weight": 45, "resultText": "La broma con la silla sale mal y te mandan a detención toda la semana.", "relationDelta": -12, "discipline": -6, "popularity": 2, "flag": "DETENTION", "traitWeightMods": { "strict": 25 } },
+        { "weight": 20, "resultText": "Se cae de verdad, se lastima la muñeca y el director te suspende.", "relationDelta": -25, "discipline": -10, "karma": -12, "stress": 10, "flag": "SUSPENDED", "traitWeightMods": { "resentful": 25 } }
+      ] },
+    { "id": "teacher_report_bullying", "label": "Reportar matoneo", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 18, "cost": 0, "cooldownYears": 1, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "La profe actúa rápido, cita a los padres del abusador y el recreo vuelve a ser tranquilo.", "relationDelta": 8, "stress": -8, "happiness": 6, "karma": 5, "removeFlag": "BULLIED", "traitWeightMods": { "loyal": 20, "strict": 10 } },
+        { "weight": 30, "resultText": "Toma nota y dice que va a vigilar. No cambia mucho, pero algo es algo.", "relationDelta": 2, "stress": -2, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 20, "resultText": "Se riega que fuiste tú quien habló y ahora te llaman chivato.", "relationDelta": 3, "popularity": -6, "stress": 8, "flag": "BULLIED", "traitWeightMods": { "cold": 15 } }
+      ] },
+    { "id": "teacher_apologize", "label": "Disculparse con la profe", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Aceptas tu error mirándola a los ojos y te levanta el castigo.", "relationDelta": 10, "discipline": 4, "karma": 3, "removeFlag": "DETENTION", "traitWeightMods": { "forgiving": 25 } },
+        { "weight": 30, "resultText": "Acepta la disculpa pero el castigo sigue en pie, por principio.", "relationDelta": 4, "discipline": 2, "traitWeightMods": { "strict": 20 } },
+        { "weight": 15, "resultText": "Te dice que las disculpas sin cambio no valen nada y se va.", "relationDelta": -2, "happiness": -3, "traitWeightMods": { "resentful": 20 } }
+      ] },
+    { "id": "teacher_skip_class", "label": "Faltar a su clase", "allowedTypes": ["teacher"], "minAge": 10, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te vas al colmado con los panas y nadie pasa lista ese día.", "relationDelta": -1, "happiness": 5, "attendance": -4, "traitWeightMods": { "easygoing": 20, "party_animal": 15 } },
+        { "weight": 45, "resultText": "Pasan lista justo hoy y te ganas una falta y una mirada fea el lunes.", "relationDelta": -6, "attendance": -6, "grades": -2, "flag": "TRUANT", "traitWeightMods": { "strict": 20 } },
+        { "weight": 15, "resultText": "La profe llama a tu casa y tu mamá se entera de todas las faltas juntas.", "relationDelta": -8, "attendance": -6, "happiness": -8, "discipline": -5, "flag": "TRUANT", "traitWeightMods": { "cold": 15 }, "nextEventId": "sub_estranged_family" }
+      ] },
+    { "id": "teacher_change_seat", "label": "Pedir que me cambie de asiento", "allowedTypes": ["teacher"], "minAge": 6, "maxAge": 18, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Te pasa a la primera fila, lejos del relajo, y te concentras mejor.", "relationDelta": 4, "grades": 2, "stress": -3, "traitWeightMods": { "forgiving": 15 } },
+        { "weight": 30, "resultText": "Te sienta al lado del más tremendo del curso. Peor el remedio.", "relationDelta": -1, "stress": 4, "grades": -1, "traitWeightMods": { "manipulative": 15 } },
+        { "weight": 20, "resultText": "Te dice que la lista de asientos no se toca en todo el año.", "relationDelta": -2, "happiness": -2, "traitWeightMods": { "strict": 25 } }
+      ] }
+  ]
+}

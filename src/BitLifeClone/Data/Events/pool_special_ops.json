@@ -1,0 +1,240 @@
+[
+  {
+    "pool": "pool_special_ops",
+    "events": [
+      {
+        "id": "op_compromised",
+        "pool": "pool_special_ops",
+        "highDanger": true,
+        "text": "El punto de encuentro estaba frío antes de llegaros: la luz de la azotea parpadea dos veces, el código de la puerta no responde. Algo salió mal. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Aborto y salgo limpio",
+            "outcomes": [
+              { "weight": 70, "resultText": "Cortáis la misión y os mezcláis con la gente del mercado. El equipo vuelve entero.", "health": 0, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" },
+              { "weight": 30, "resultText": "Al dar la vuelta os pilla un retén que no estaba en el mapa de la misión.", "health": -25, "happiness": -20, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" }
+            ]
+          },
+          {
+            "text": "Sigo con la misión",
+            "outcomes": [
+              { "weight": 50, "resultText": "Entráis por la azotea igual. El objetivo estaba en pijama, solo y sin escolta. Demasiado fácil.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" },
+              { "weight": 35, "resultText": "La casa estaba esperándoos: bengalas y un foco en la cara. La salida se pone fea.", "health": -45, "happiness": -25, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" },
+              { "weight": 15, "resultText": "Embestís una puerta con una emboscada detrás. Los cuatro primeros no salen.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Mando al equipo por la trasera",
+            "outcomes": [
+              { "weight": 55, "resultText": "Dividís el equipo y la trasera resultó ser la entrada bueno. Movimiento de manual.", "health": -5, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" },
+              { "weight": 45, "resultText": "En la trasera os esperaba la segunda patrulla. El silencio de la noche se rompe de todo.", "health": -35, "happiness": -18, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_compromised_debrief" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_compromised_debrief",
+        "pool": "pool_special_ops",
+        "text": "De vuelta en base, el oficial de inteligencia quiere saber cómo sabían dónde estaríais. Sospecha de una filtración en el equipo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Señalo al enlace local",
+            "outcomes": [
+              { "weight": 55, "resultText": "Tu informe señala al enlace que os dio el punto frío. Lo detienen esa misma tarde.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El enlace resultó ser un civil que tenía la familia rehén. Tu informe cierra un expediente y abre una tumba.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Defiendo a mi equipo",
+            "outcomes": [
+              { "weight": 70, "resultText": "Sacas pecho por tus cuatro compañeros. El oficial anota 'sin responsables' y pasa a lo siguiente.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Tu defensa suena a encubrimiento y el capitán te quita del equipo activo.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Acuso al mando",
+            "outcomes": [
+              { "weight": 40, "resultText": "Dices que la orden vino filtrada desde arriba. El cuartel general se enciende.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 60, "resultText": "Acusar al mando sin pruebas es el fin del uniforme. Te mandan a instructores lejos.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_hvt_capture",
+        "pool": "pool_special_ops",
+        "highDanger": true,
+        "text": "Objetivo de alto valor en la casa de la segunda fila. En el plano hay familiares y en la cocina hay luz encendida. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Entrada rápida con balas",
+            "outcomes": [
+              { "weight": 55, "resultText": "La puerta vuela y las tres habitaciones se controlan en ocho segundos. El objetivo queda vivo.", "health": -10, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" },
+              { "weight": 30, "resultText": "Un familiar sale corriendo con un celular y recibe la ráfaga equivocada.", "health": 0, "happiness": -35, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" },
+              { "weight": 15, "resultText": "El 'celular' era una radio de mano y la reacción del dormitorio fue más rápida.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Captura silenciosa",
+            "outcomes": [
+              { "weight": 60, "resultText": "Dos horas esperando la ventana del baño. El objetivo sale en pijama y sin disparar un tiro.", "health": 0, "happiness": 18, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" },
+              { "weight": 40, "resultText": "Un perro rompe el silencio con un ladrido. La casa entera despierta a la vez.", "health": -30, "happiness": -12, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" }
+            ]
+          },
+          {
+            "text": "Espero a que salga solo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Lo esperáis en la parada del autobús con gafas de sol. Cae sin que nadie en el barrio se entere.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" },
+              { "weight": 35, "resultText": "El objetivo no sale. Sale su hermano con su ropa y su coche. Ahora el expediente tiene un nombre malo.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_hvt_capture_done" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_hvt_capture_done",
+        "pool": "pool_special_ops",
+        "text": "El objetivo va en el maletero rumbo al helipuerto y la radio del pueblo empieza a moverse. El convoy tiene que cruzar tres controles. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Cruzo rápido disfrazado",
+            "outcomes": [
+              { "weight": 60, "resultText": "Uniformes prestados y lenguaje aprendido: los tres controles os dejan pasar.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "En el segundo control un sargento jovencito reconoce la letra del convoy. Pide respaldo.", "health": -20, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Camino por la sierra",
+            "outcomes": [
+              { "weight": 55, "resultText": "Ocho horas de sierra con un prisionero caprichoso. El helicóptero os recoge en la cima.", "health": -15, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El prisionero se resbala en la ladera y se rompe la cadera. Ahora lo cargáis.", "health": -20, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "Un dron de vigilancia os parpadea encima y el helipuerto de la sierra deja de ser secreto.", "health": -30, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido apoyo de fuego",
+            "outcomes": [
+              { "weight": 50, "resultText": "Un acarreo de artillería abre un corredor por la carretera. El convoy sale entero.", "health": 0, "happiness": 12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El apoyo de fuego 'cubrió' también media aldea. El expediente del objetivo crece y el tuyo también.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_rescue_pow",
+        "pool": "pool_special_ops",
+        "highDanger": true,
+        "text": "Misión de rescate: dos pilotos prisioneros en un complejo agrícola. La inteligencia dice 'guardia laxa'; vuestro instinto dice otra cosa. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Entrada por el silo",
+            "outcomes": [
+              { "weight": 60, "resultText": "El silo daba a la bodega y la bodega al calabozo. Salís con dos pilotos y sin un tiro.", "health": 0, "happiness": 25, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" },
+              { "weight": 40, "resultText": "La 'guardia laxa' era un pelotón completo esperando en la bodega. La salida se hace disparando.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" }
+            ]
+          },
+          {
+            "text": "Rescate en pleno día",
+            "outcomes": [
+              { "weight": 50, "resultText": "Camioneta de la ONG, chalecos amarillos y caras de susto auténtico. Entráis de día por la puerta.", "health": 0, "happiness": 18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" },
+              { "weight": 35, "resultText": "El portero revisa papeles que no existen. El plan se rompe en la puerta delantera.", "health": -20, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" },
+              { "weight": 15, "resultText": "Os pescan en la revisión de papeles. El rescate se convierte en dos prisioneros más.", "health": -20, "happiness": -30, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Espero la luna nueva",
+            "outcomes": [
+              { "weight": 65, "resultText": "Dos noches de espera y la oscuridad perfecta. El complejo duerme y vosotros no.", "health": -10, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" },
+              { "weight": 35, "resultText": "Mientras esperabas, los prisioneros los trasladaron. El complejo está vacío y frío.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_rescue_pow_after" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_rescue_pow_after",
+        "pool": "pool_special_ops",
+        "text": "Los pilotos rescatados no hablan: el de la derecha tiembla y el de la izquierda no parpadea. En el helicóptero no se dice nada. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Les cedo mi cantimplora",
+            "outcomes": [
+              { "weight": 80, "resultText": "Agua, una manta y silencio. A veces eso es todo lo que un soldado sabe dar.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Uno de los pilotos la tira contra la pared del helicóptero. Entendés igual.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pregunto qué pasó allá dentro",
+            "outcomes": [
+              { "weight": 55, "resultText": "El de la derende habla dos horas seguidas. Lo que cuenta explica el temblor.", "health": 0, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "El oficial de contrainteligencia te corta la charla: 'todo lo que oiga queda en el expediente'.", "health": 0, "happiness": -8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo callado",
+            "outcomes": [
+              { "weight": 75, "resultText": "Miráis el mapa durante veinte minutos sin decir nada. El silencio de los dos lados funciona.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "El de la izquierda te mira fijo y dice: 'Gracias por no preguntar'.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_dubious_order",
+        "pool": "pool_special_ops",
+        "highDanger": true,
+        "text": "Orden del alto mando: eliminar a un oficial enemigo en una casa de campo... con su fiesta familiar dentro. Vuestro escuadrón es el martillo. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Cumplo con precisión",
+            "outcomes": [
+              { "weight": 50, "resultText": "Objetivo neutralizado en el invernadero, sin daños colaterales. Misión perfecta de manual.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" },
+              { "weight": 50, "resultText": "La fiesta se acercó al invernadero por un cumpleaños. El informe habla de 'daños inevitables'.", "health": 0, "happiness": -40, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" }
+            ]
+          },
+          {
+            "text": "Aplazo hasta que se vaya la familia",
+            "outcomes": [
+              { "weight": 55, "resultText": "Quedáis ocho horas en el seto esperando a que se lleven los coches de niños. La orden se cumple.", "health": -5, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" },
+              { "weight": 45, "resultText": "En la espera, el objetivo recibe una llamada de alerta. El seto se queda vacío.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" }
+            ]
+          },
+          {
+            "text": "Rechazo la misión",
+            "outcomes": [
+              { "weight": 40, "resultText": "Ponéis las gafetillas sobre la mesa del capitán. Él las mira... y pide un cambio de plan.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" },
+              { "weight": 45, "resultText": "La reacción del cuartel general es rápida: destitución y expediente abierto por 'indisciplina'.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "op_dubious_order_after" },
+              { "weight": 15, "resultText": "En operaciones especiales, un rechazo en el momento exacto puede confundirse con sabotaje.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "op_dubious_order_after",
+        "pool": "pool_special_ops",
+        "text": "La misión terminó. En el campamento nadie mira la tele del común y el capitán organiza la ronda de la noche de otra manera. Vuestro nombre ya está en un papel. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Sigo como si nada",
+            "outcomes": [
+              { "weight": 70, "resultText": "Vuelves a la litera y al rifle. Los escuadrones de operaciones tienen memoria corta y fría.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Te cambian de escuadrón al de 'apoyo logístico'. Tu carrera especial cambió de orilla.", "health": 0, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Escribo mi renuncia",
+            "outcomes": [
+              { "weight": 60, "resultText": "La renuncia se procesa en silencio: ni desfile, ni banda, ni discurso. Un taxi al aeropuerto.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": true, "nextEventId": null },
+              { "weight": 40, "resultText": "La renuncia se 'pierde' en el papeleo y tu unidad sigue apareciendo en la planificación semanal.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Guardo pruebas por si acaso",
+            "outcomes": [
+              { "weight": 55, "resultText": "Guardas el chat de la orden y las notas del capitán. Seguro extra, no lo uses nunca.", "health": 0, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La 'revisión de seguridad' de la semana encuentra tus notas guardadas. Ahora sos vos el problema.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

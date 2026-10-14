@@ -1,0 +1,271 @@
+[
+  {
+    "pool": "pool_trench",
+    "events": [
+      {
+        "id": "trench_no_ammo",
+        "pool": "pool_trench",
+        "highDanger": true,
+        "text": "El sargento grita que la munición se acabó a media ráfaga. El otro lado sigue viniendo por la zanja. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Bajo a buscar cajas de balas",
+            "outcomes": [
+              { "weight": 65, "resultText": "Te lanzas al pozo de munición bajo fuego. Vuelves con dos cajas y el corazón en la boca.", "health": -10, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing" },
+              { "weight": 35, "resultText": "A mitad de camino una metralla te parte el muslo. Arrastras las cajas y las piernas.", "health": -35, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing" }
+            ]
+          },
+          {
+            "text": "Espero la bayoneta",
+            "outcomes": [
+              { "weight": 60, "resultText": "Colocas la bayoneta con manos que no tiemblan. La emboscada se estrella contra la zanja.", "health": -15, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing" },
+              { "weight": 25, "resultText": "La pelea cuerpo a cuerpo te cuesta tres costillas y un amigo.", "health": -40, "happiness": -20, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing" },
+              { "weight": 15, "resultText": "La zanja se llena de enemigos antes de que actives el seguro de la granada.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me rindo sin balas",
+            "outcomes": [
+              { "weight": 55, "resultText": "Sales con las manos arriba. Te quitan las botas y te llevan al otro lado.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "Un compañero te arrastra de vuelta antes de que hagas el saludo. 'Aquí no nos rendimos'.", "health": -8, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_no_ammo_bombing",
+        "pool": "pool_trench",
+        "text": "Mientras repartes las cajas, el cielo se llena de silbidos: bombardeo de mortero sobre la zanja. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Corro al búnker",
+            "outcomes": [
+              { "weight": 75, "resultText": "Llegas al búnker en cuatro saltos. Detrás, la zanja que dejaste se convierte en cráteres.", "health": -5, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" },
+              { "weight": 25, "resultText": "Un metro antes de la entrada una onda te planta contra el parapeto.", "health": -30, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" }
+            ]
+          },
+          {
+            "text": "Cubro a los demás",
+            "outcomes": [
+              { "weight": 60, "resultText": "Tú quedas expuesto pero guías a dos soldados al búnker. Los dos llegan.", "health": -20, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" },
+              { "weight": 25, "resultText": "Un fragmento te encuentra a media orden. Te sacan medio enterrado.", "health": -45, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" },
+              { "weight": 15, "resultText": "La última ráfaga del bombardeo se lleva tu puesto y tu nombre de la lista.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo quieto y rezar",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te apelas al fondo de la zanja y recitas lo que te acuerdas. El bombardeo pasa.", "health": -10, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" },
+              { "weight": 50, "resultText": "Un mortero cae a dos metros. El silencio que sigue es peor que el ruido.", "health": -35, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_no_ammo_bombing_collapse" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_no_ammo_bombing_collapse",
+        "pool": "pool_trench",
+        "text": "La zanja se derrumba con vos dentro: tierra en los ojos, la boca llena de barro y un compañero medio enterrado a un lado. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Excavo al compañero",
+            "outcomes": [
+              { "weight": 60, "resultText": "Salís a la superficie arrastrándolo. Respira. Los dos respiran.", "health": -20, "happiness": 20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Lo excavan con las manos pero el derrumbe le costó una pierna.", "health": -25, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Excavo para salir solo",
+            "outcomes": [
+              { "weight": 65, "resultText": "Salís solo con las uñas rotas. Detrás la zanja queda en silencio.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "Cuando llegas arriba, tu sección ya se retiró. Estás solo en tierra de nadie.", "health": -20, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Espero rescate enterrado",
+            "outcomes": [
+              { "weight": 50, "resultText": "Ocho horas bajo la tierra hasta que una pala amiga te encuentra. Te salvas.", "health": -30, "happiness": 10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "El aire se acaba más rápido de lo que la pala avanza. Te despiertas en una camilla.", "health": -40, "happiness": 0, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 10, "resultText": "La tierra no cede y el aire tampoco. La zanja se queda con vos.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_ambush",
+        "pool": "pool_trench",
+        "highDanger": true,
+        "text": "La patrulla de noche se rompe con tres ráfagas desde el matorral: emboscada. El teniente grita órdenes que no se oyen. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Respondo fuego a ciegas",
+            "outcomes": [
+              { "weight": 55, "resultText": "Vacías el cargador hacia el matorral. La emboscada se rompe o se esconde.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" },
+              { "weight": 30, "resultText": "Tu posición revela tu posición. Dos ráfagas después estás sangrando en el camino.", "health": -35, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" },
+              { "weight": 15, "resultText": "El fogonazo de tu arma les dice exactamente dónde estabas.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me lanzo al suelo",
+            "outcomes": [
+              { "weight": 70, "resultText": "Te plantas en el barro y esperas. Los fogonazos pasan por encima.", "health": -5, "happiness": 0, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" },
+              { "weight": 30, "resultText": "Un proyectil te roza la cabeza al caer. Ves doble hasta el amanecer.", "health": -20, "happiness": -8, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" }
+            ]
+          },
+          {
+            "text": "Retrocedo a la zanja",
+            "outcomes": [
+              { "weight": 60, "resultText": "Corres de espaldas disparando y llegas a la zanja con la ropa hecha trizas.", "health": -8, "happiness": -5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" },
+              { "weight": 40, "resultText": "A media retirada una bala te da en el pie. Cuentas los metros a saltos.", "health": -30, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": "trench_ambush_hold" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_ambush_hold",
+        "pool": "pool_trench",
+        "text": "La emboscada se convierte en un tiroteo de veinte minutos. El teniente yace en el camino y el mando del pelotón es tuyo por herencia. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Mando la retirada",
+            "outcomes": [
+              { "weight": 70, "resultText": "Sacás al pelotón vivo a la zanja. Nadie te lo agradece, pero nadie muere.", "health": -5, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "El oficial superior anota tu retirada como 'abandono de posición'.", "health": 0, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Reorganizo y contraataco",
+            "outcomes": [
+              { "weight": 50, "resultText": "Divides al pelotón en dos flancos y los sorprendes a ellos por primera vez.", "health": -10, "happiness": 20, "money": 0, "setCity": null, "flag": "HERO", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "El contraataque funciona hasta que el mortero de ellos contesta. Media sección no vuelve.", "health": -25, "happiness": -15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Me quedo a cubrir",
+            "outcomes": [
+              { "weight": 65, "resultText": "Tú haces de señuelo disparando desde la misma esquina. El resto se reagrupa.", "health": -10, "happiness": 8, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "El señuelo funciona demasiado bien: recibes el peso completo del fuego enemigo.", "health": -40, "happiness": -5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_questionable_order",
+        "pool": "pool_trench",
+        "highDanger": true,
+        "text": "La orden del mando: bombardear un pueblo que dicen lleno de insurgentes, pero sabes que también hay civiles. Tú eres el artillero. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Ejecuto la orden",
+            "outcomes": [
+              { "weight": 60, "resultText": "Cumplís. El informe habla de 'objetivos neutralizados'. Vos contás otra cosa.", "health": 0, "happiness": -30, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" },
+              { "weight": 40, "resultText": "Los cañones responden y el pueblo deja de contestar las transmisiones.", "health": 0, "happiness": -25, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" }
+            ]
+          },
+          {
+            "text": "Fingo un fallo técnico",
+            "outcomes": [
+              { "weight": 55, "resultText": "Reportas 'cañón atascado'. El bombardeo se cancela por ese sector. El pueblo respira.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" },
+              { "weight": 45, "resultText": "El técnico revisa tu cañón 'averiado' y encuentra el sabotaje a simple vista.", "health": -10, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" }
+            ]
+          },
+          {
+            "text": "Me niego en voz alta",
+            "outcomes": [
+              { "weight": 40, "resultText": "Dices 'no' frente a la compañía. El teniente te mira, piensa, y anula la orden.", "health": 0, "happiness": 15, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" },
+              { "weight": 45, "resultText": "El coronel te desarma y te manda arrestado. El bombardeo lo hará otro.", "health": -10, "happiness": -10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": "trench_questionable_order_after" },
+              { "weight": 15, "resultText": "La 'negativa' se interpreta como insubordinación en tiempo de guerra. Te fusilan ejemplarmente.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_questionable_order_after",
+        "pool": "pool_trench",
+        "text": "Pasó lo que pasó. En la cena nadie habla y el capellán reparte café como si fuera absolución. Tu nombre ya circula. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Sigo cumpliendo órdenes",
+            "outcomes": [
+              { "weight": 70, "resultText": "Vuelves a tu puesto y aprietas los dientes. La guerra sigue sin pedirte permiso.", "health": 0, "happiness": -12, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 30, "resultText": "Esa noche el sueño te devuelve el pueblo con nombre propio.", "health": -5, "happiness": -18, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Lo denuncio al cuartel general",
+            "outcomes": [
+              { "weight": 40, "resultText": "Tu informe llega a un auditor con cara de pocos amigos. Abren una investigación.", "health": 0, "happiness": 10, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 60, "resultText": "El informe vuelve a tu unidad firmado por tu propio coronel. 'Discreción, soldado'.", "health": 0, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido baja por inaptitud",
+            "outcomes": [
+              { "weight": 55, "resultText": "Un psiquiatra militar te escucha 40 minutos y firma tu pase a retaguardia.", "health": 0, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 45, "resultText": "La baja se niega: 'la guerra termina cuando termina'. Sigues en la trinchera.", "health": -5, "happiness": -20, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_wounded",
+        "pool": "pool_trench",
+        "highDanger": true,
+        "text": "Una metralla te barrió la pierna en el parapeto. El sanitarista dice 'aguanta' con cara que no aguanta nada. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Aguanto la cura",
+            "outcomes": [
+              { "weight": 75, "resultText": "Te cosen sin anestesia mientras cuentas las nubes. Piernas hay una, pero funciona.", "health": -25, "happiness": 5, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 25, "resultText": "La herida se infecta al tercer día y te evacuan en camilla por el lodo.", "health": -45, "happiness": -10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Pido morfina",
+            "outcomes": [
+              { "weight": 60, "resultText": "El morfinomano del batallón te cede su dosis personal. Duelen menos las horas.", "health": -20, "happiness": 10, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "La morfina te hace dormir la guardia. Un superior te descubre y quita el suministro.", "health": -25, "happiness": -12, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Vuelvo a la línea",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te atascas la pierna con una venda y vuelves al parapeto cojeando. El pelotón respira.", "health": -35, "happiness": 12, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 35, "resultText": "La herida se abre con el primer salto. Te sacan de la línea de la peor manera.", "health": -55, "happiness": -15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "La pérdida de sangre te alcanza en el segundo parapeto. No hay camilla que valga.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trench_capture",
+        "pool": "pool_trench",
+        "highDanger": true,
+        "text": "La posición cayó mientras dormías. Despiertas con un fusil en la cara y dos soldados enemigos revisando tus bolsillos. ¿Qué haces?",
+        "choices": [
+          {
+            "text": "Me rindo formalmente",
+            "outcomes": [
+              { "weight": 80, "resultText": "Dices las palabras correctas con las manos correctas. Te tratan como prisionero, no como cadáver.", "health": -10, "happiness": -15, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 20, "resultText": "Un soldado jovencito no recibió el memo sobre rendiciones. Te quitan todo y a veces más.", "health": -35, "happiness": -25, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Tiro la granada",
+            "outcomes": [
+              { "weight": 45, "resultText": "El caos de la granada te da cuatro segundos para correr. Llegas a las líneas tuyas.", "health": -30, "happiness": 15, "money": 0, "setCity": null, "flag": "WOUNDED", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 40, "resultText": "Te bajan antes de que actives el seguro. El castigo por intento es fuerte.", "health": -45, "happiness": -25, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 15, "resultText": "El seguro no salió de tu mano. Salieron de la tuya todos juntos.", "health": -100, "happiness": 0, "money": 0, "setCity": null, "flag": "DEAD", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          },
+          {
+            "text": "Fingo estar muerto",
+            "outcomes": [
+              { "weight": 50, "resultText": "Te quedas inmóvil entre los cuerpos hasta que se van. Después, tres días solo en tierra de nadie.", "health": -25, "happiness": 5, "money": 0, "setCity": null, "flag": null, "removeFlag": null, "loseJob": false, "nextEventId": null },
+              { "weight": 50, "resultText": "Uno de ellos vuelve para 'revisar'. Tu actuación termina con las manos arriba.", "health": -15, "happiness": -20, "money": 0, "setCity": null, "flag": "POW", "removeFlag": null, "loseJob": false, "nextEventId": null }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

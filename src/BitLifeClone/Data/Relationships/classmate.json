@@ -1,0 +1,103 @@
+{
+  "relationType": "classmate",
+  "actions": [
+    { "id": "classmate_group_work", "label": "Hacer grupo con él", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Se reparten el trabajo parejo y sacan la mejor nota del curso.", "relationDelta": 8, "grades": 3, "popularity": 2, "traitWeightMods": { "loyal": 20 } },
+        { "weight": 30, "resultText": "Él pone el nombre y tú pones todo lo demás. Pasa, pero raspando.", "relationDelta": -2, "grades": 1, "stress": 4, "traitWeightMods": { "easygoing": 20 } },
+        { "weight": 15, "resultText": "Pelean por el diseño de la cartulina y entregan cada uno su versión.", "relationDelta": -6, "grades": -1, "stress": 3, "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "classmate_lend_notes", "label": "Prestarle mis apuntes", "allowedTypes": ["classmate"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Te devuelve la libreta con un chocolate dentro como pago.", "relationDelta": 7, "karma": 3, "traitWeightMods": { "generous": 20 } },
+        { "weight": 30, "resultText": "Te la devuelve toda arrugada y con una mancha de refresco.", "relationDelta": 0, "happiness": -2, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 15, "resultText": "La libreta se le pierde la semana del examen y estudias por el libro.", "relationDelta": -6, "grades": -2, "stress": 6, "traitWeightMods": { "manipulative": 15 } }
+      ] },
+    { "id": "classmate_copy_exam", "label": "Copiarle en un examen", "allowedTypes": ["classmate"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Te inclina la hoja sin que nadie lo note y pasas el examen.", "relationDelta": 4, "grades": 4, "karma": -4, "traitWeightMods": { "loyal": 20, "manipulative": 10 } },
+        { "weight": 35, "resultText": "Él también estaba perdido y copian juntos las mismas respuestas malas.", "relationDelta": 2, "grades": -2, "karma": -3, "traitWeightMods": { "easygoing": 15 } },
+        { "weight": 25, "resultText": "El profe los agarra con las dos hojas iguales y les ponen cero a ambos.", "relationDelta": -8, "grades": -6, "discipline": -5, "stress": 7, "flag": "CHEATER_CAUGHT", "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "classmate_defend", "label": "Defenderlo de un bully", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 18, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te paras al frente del abusador y este recula. Tu compañero no lo olvida.", "relationDelta": 14, "karma": 8, "popularity": 4, "traitWeightMods": { "loyal": 25 } },
+        { "weight": 35, "resultText": "Te llevas un empujón y un ojo morado, pero él ya no anda solo.", "relationDelta": 10, "health": -5, "karma": 6, "traitWeightMods": { "loyal": 15, "affectionate": 10 } },
+        { "weight": 20, "resultText": "El abusador cambia de blanco y ahora la coge contigo en el recreo.", "relationDelta": 8, "stress": 8, "happiness": -6, "flag": "BULLIED", "traitWeightMods": { "cold": 10 } }
+      ] },
+    { "id": "classmate_mock", "label": "Burlarme de él", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le sacas un apodo que se pega en todo el curso. Ríen todos menos él.", "relationDelta": -15, "popularity": 4, "karma": -8, "flag": "BULLY", "traitWeightMods": { "manipulative": 20 } },
+        { "weight": 35, "resultText": "Te devuelve la burla mejor que tú y quedas como el payaso.", "relationDelta": -5, "popularity": -4, "happiness": -3, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 25, "resultText": "La orientadora te escucha desde el pasillo y te manda a detención.", "relationDelta": -10, "discipline": -5, "karma": -5, "flag": "DETENTION", "traitWeightMods": { "strict": 20 } }
+      ] },
+    { "id": "classmate_ask_money", "label": "Pedirle plata para la merienda", "allowedTypes": ["classmate"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Te pasa cincuenta pesos y te dice que se lo pagues con un pica pollo.", "relationDelta": 2, "money": 3, "traitWeightMods": { "generous": 20 } },
+        { "weight": 35, "resultText": "Te jura que anda sin un chele, aunque lo viste comprando jugo.", "relationDelta": -2, "traitWeightMods": { "stingy": 20 } },
+        { "weight": 20, "resultText": "Le cuenta a medio salón que andas pidiendo y te da vergüenza.", "relationDelta": -5, "popularity": -4, "happiness": -3, "traitWeightMods": { "manipulative": 15 } }
+      ] },
+    { "id": "classmate_invite_home", "label": "Invitarlo a mi casa", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 10, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Juegan videojuegos toda la tarde y tu mamá le sirve hasta segunda vuelta.", "relationDelta": 10, "happiness": 6, "traitWeightMods": { "affectionate": 15, "party_animal": 10 } },
+        { "weight": 30, "resultText": "Se aburre rápido y pide que lo vengan a buscar antes de la cena.", "relationDelta": 0, "happiness": -1, "traitWeightMods": { "cold": 15 } },
+        { "weight": 15, "resultText": "Rompe un adorno de la sala y tu papá te regaña a ti.", "relationDelta": -3, "happiness": -5, "money": -10, "traitWeightMods": { "easygoing": 10 } }
+      ] },
+    { "id": "classmate_do_homework", "label": "Hacerle el trabajo", "allowedTypes": ["classmate"], "minAge": 10, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Le haces el ensayo por quinientos pesos y nadie sospecha.", "relationDelta": 4, "money": 10, "stress": 4, "karma": -3, "traitWeightMods": { "manipulative": 15 } },
+        { "weight": 35, "resultText": "Él saca mejor nota con tu trabajo que tú con el tuyo. Duele.", "relationDelta": 3, "happiness": -4, "stress": 3, "traitWeightMods": { "jealous": 20 } },
+        { "weight": 20, "resultText": "La profe reconoce tu letra en el trabajo ajeno y los castiga a los dos.", "relationDelta": -6, "grades": -4, "discipline": -4, "flag": "CHEATER_CAUGHT", "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "classmate_snitch", "label": "Delatarlo", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Lo delatas por fumar en el baño y te ganas puntos con la dirección.", "relationDelta": -20, "discipline": 3, "popularity": -5, "karma": -4, "traitWeightMods": { "manipulative": 25 } },
+        { "weight": 35, "resultText": "Se entera de que fuiste tú y lo riega por todo el liceo.", "relationDelta": -25, "popularity": -8, "stress": 6, "traitWeightMods": { "resentful": 25 }, "nextEventId": "sub_betray_friend" },
+        { "weight": 25, "resultText": "Nadie te cree y el castigado terminas siendo tú por chismoso.", "relationDelta": -10, "discipline": -3, "happiness": -5, "flag": "DETENTION", "traitWeightMods": { "strict": 15 } }
+      ] },
+    { "id": "classmate_fight", "label": "Pelear con él", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 35, "resultText": "Se agarran detrás de la cancha, ganas tú y el curso entero lo comenta.", "relationDelta": -18, "health": -4, "popularity": 5, "flag": "BULLY", "traitWeightMods": { "resentful": 20 } },
+        { "weight": 40, "resultText": "Te dan una pela delante de todos y llegas a casa con el uniforme roto.", "relationDelta": -12, "health": -8, "popularity": -5, "happiness": -6, "traitWeightMods": { "cold": 15 } },
+        { "weight": 25, "resultText": "El coordinador los separa y los suspende a los dos tres días.", "relationDelta": -10, "health": -3, "discipline": -8, "attendance": -3, "flag": "SUSPENDED", "traitWeightMods": { "strict": 25 } }
+      ] },
+    { "id": "classmate_reconcile", "label": "Reconciliarme con él", "allowedTypes": ["classmate"], "minAge": 6, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 60, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 50, "resultText": "Le brindas un jugo en el recreo y la pelea queda en el pasado.", "relationDelta": 14, "happiness": 4, "karma": 4, "removeFlag": "BULLY", "traitWeightMods": { "forgiving": 25 } },
+        { "weight": 30, "resultText": "Te da la mano pero se nota que todavía no confía en ti.", "relationDelta": 5, "traitWeightMods": { "resentful": 15 } },
+        { "weight": 20, "resultText": "Te deja hablando solo y se va con su grupo.", "relationDelta": -3, "happiness": -4, "traitWeightMods": { "cold": 20 } }
+      ] },
+    { "id": "classmate_tutor", "label": "Ayudarlo a estudiar", "allowedTypes": ["classmate"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 3,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 55, "resultText": "Le explicas álgebra con ejemplos de pelota y por fin le entra.", "relationDelta": 10, "smarts": 2, "grades": 2, "karma": 4, "traitWeightMods": { "loyal": 15, "affectionate": 10 } },
+        { "weight": 30, "resultText": "Estudian dos horas y la mitad se va hablando de la novela.", "relationDelta": 5, "happiness": 3, "traitWeightMods": { "party_animal": 15 } },
+        { "weight": 15, "resultText": "Se desespera, cierra el cuaderno y te dice que tú explicas feo.", "relationDelta": -4, "stress": 3, "traitWeightMods": { "resentful": 15 } }
+      ] },
+    { "id": "classmate_tease_clothes", "label": "Tomarle el pelo por su ropa", "allowedTypes": ["classmate"], "minAge": 8, "maxAge": 22, "cost": 0, "cooldownYears": 0, "maxPerYear": 2,
+      "requires": { "minBar": 0, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 40, "resultText": "Le dices que sus tenis parecen de pulga y él se ríe contigo.", "relationDelta": 2, "popularity": 3, "flag": "CLASS_CLOWN", "traitWeightMods": { "easygoing": 25 } },
+        { "weight": 40, "resultText": "Se le aguan los ojos y deja de usar esa camisa para siempre.", "relationDelta": -12, "karma": -6, "traitWeightMods": { "resentful": 20 } },
+        { "weight": 20, "resultText": "Te señala la mancha de tu propio uniforme y el chiste te rebota.", "relationDelta": -3, "popularity": -3, "looks": -1, "traitWeightMods": { "jealous": 15 } }
+      ] },
+    { "id": "classmate_pact", "label": "Hacer un pacto con él", "allowedTypes": ["classmate"], "minAge": 10, "maxAge": 22, "cost": 0, "cooldownYears": 1, "maxPerYear": 1,
+      "requires": { "minBar": 30, "maxBar": 100, "traitsAny": [], "flagsNone": ["DEAD", "EXPELLED", "DROPPED_OUT"] },
+      "outcomes": [
+        { "weight": 45, "resultText": "Juran entrar juntos al equipo de voleibol y los dos quedan seleccionados.", "relationDelta": 12, "fitness": 3, "popularity": 4, "flag": "ON_TEAM", "traitWeightMods": { "loyal": 25 } },
+        { "weight": 35, "resultText": "Fundan el club de ajedrez del liceo con tres miembros y mucha ilusión.", "relationDelta": 10, "smarts": 2, "flag": "IN_CLUB", "traitWeightMods": { "strict": 10, "loyal": 15 } },
+        { "weight": 20, "resultText": "Él rompe el pacto a la semana y se va con otro grupo.", "relationDelta": -10, "happiness": -6, "traitWeightMods": { "manipulative": 20 } }
+      ] }
+  ]
+}
