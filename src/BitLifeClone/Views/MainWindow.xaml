@@ -126,22 +126,22 @@
                 <UniformGrid Columns="2">
                     <StackPanel Margin="0,2,10,2">
                         <TextBlock Text="😊 Felicidad" Style="{StaticResource SecondaryLabel}" />
-                        <ProgressBar Value="{Binding Happiness}" Maximum="100" Height="9"
+                        <ProgressBar Value="{Binding Happiness, Mode=OneWay}" Maximum="100" Height="9"
                                      Foreground="#FF4DD0E1" Background="#FF333333" />
                     </StackPanel>
                     <StackPanel Margin="10,2,0,2">
                         <TextBlock Text="❤️ Salud" Style="{StaticResource SecondaryLabel}" />
-                        <ProgressBar Value="{Binding Health}" Maximum="100" Height="9"
+                        <ProgressBar Value="{Binding Health, Mode=OneWay}" Maximum="100" Height="9"
                                      Foreground="#FFE57373" Background="#FF333333" />
                     </StackPanel>
                     <StackPanel Margin="0,2,10,2">
                         <TextBlock Text="🧠 Inteligencia" Style="{StaticResource SecondaryLabel}" />
-                        <ProgressBar Value="{Binding Smarts}" Maximum="100" Height="9"
+                        <ProgressBar Value="{Binding Smarts, Mode=OneWay}" Maximum="100" Height="9"
                                      Foreground="#FFBA68C8" Background="#FF333333" />
                     </StackPanel>
                     <StackPanel Margin="10,2,0,2">
                         <TextBlock Text="✨ Apariencia" Style="{StaticResource SecondaryLabel}" />
-                        <ProgressBar Value="{Binding Looks}" Maximum="100" Height="9"
+                        <ProgressBar Value="{Binding Looks, Mode=OneWay}" Maximum="100" Height="9"
                                      Foreground="#FFFFB74D" Background="#FF333333" />
                     </StackPanel>
                 </UniformGrid>
