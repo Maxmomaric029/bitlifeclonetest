@@ -1,3 +1,6 @@
+using System.Windows.Media;
+using BitLifeClone.Services;
+
 namespace BitLifeClone.Models;
 
 /// <summary>
@@ -55,4 +58,35 @@ public sealed class LifeEvent
     }
 
     public string AgeLabel => $"{Age} años";
+
+    // ---------------------------------------------------------------- JoyPixels
+    private ImageSource? _emojiImage;
+    private string? _feedText;
+
+    /// <summary>El emoji inicial de Text como PNG de JoyPixels (o null si no hay asset).</summary>
+    public ImageSource? EmojiImage
+    {
+        get
+        {
+            if (_feedText is null) ResolveEmoji();
+            return _emojiImage;
+        }
+    }
+
+    /// <summary>Text sin el emoji inicial (solo si EmojiImage tiene asset; si no, Text).</summary>
+    public string FeedText
+    {
+        get
+        {
+            if (_feedText is null) ResolveEmoji();
+            return _feedText ?? Text;
+        }
+    }
+
+    private void ResolveEmoji()
+    {
+        var (image, cleaned) = EmojiService.FirstEmoji(Text);
+        _emojiImage = image;
+        _feedText = cleaned;
+    }
 }

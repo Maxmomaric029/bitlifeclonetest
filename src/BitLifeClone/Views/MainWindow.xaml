@@ -67,9 +67,22 @@
                                     <TextBlock Text="{Binding AgeLabel}"
                                                FontSize="11"
                                                Foreground="{StaticResource SecondaryTextBrush}"
-                                               Margin="0,0,8,0"
+                                               Margin="0,1,8,0"
                                                VerticalAlignment="Top" />
-                                    <TextBlock Text="{Binding Text}"
+                                    <Image Source="{Binding EmojiImage}"
+                                           Width="18" Height="18"
+                                           VerticalAlignment="Top" Margin="0,1,6,0">
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding EmojiImage}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <TextBlock Text="{Binding FeedText}"
                                                TextWrapping="Wrap"
                                                FontSize="14"
                                                Foreground="{StaticResource PrimaryTextBrush}" />
@@ -187,9 +200,23 @@
                                             Command="{Binding Command}"
                                             Style="{StaticResource SurfaceButton}"
                                             Margin="0,3">
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding Text}" TextAlignment="Left" />
-                                            <TextBlock Text="{Binding Sub}"
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding EmojiImage}"
+                                                   Width="20" Height="20"
+                                                   VerticalAlignment="Center" Margin="0,0,8,0">
+                                                <Image.Style>
+                                                    <Style TargetType="Image">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding EmojiImage}" Value="{x:Null}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Image.Style>
+                                            </Image>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding TextClean}" TextAlignment="Left" />
+                                                <TextBlock Text="{Binding Sub}"
                                                        TextAlignment="Left" FontSize="11"
                                                        Foreground="{StaticResource SecondaryTextBrush}">
                                                 <TextBlock.Style>
@@ -323,6 +350,11 @@
                     <Button Content="🔄 Refrescar lista" Style="{StaticResource SurfaceButton}"
                             Command="{Binding RefreshSavesCommand}" FontSize="12"
                             Margin="0,8,0,20" HorizontalAlignment="Left" />
+
+                    <TextBlock Text="Emoji provided by JoyPixels (joypixels.com)"
+                               FontSize="10"
+                               Foreground="{StaticResource SecondaryTextBrush}"
+                               HorizontalAlignment="Center" Margin="0,0,0,12" />
                 </StackPanel>
             </ScrollViewer>
         </Border>

@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows.Input;
+using System.Windows.Media;
 using BitLifeClone.Models;
 using BitLifeClone.Services;
 
@@ -14,11 +15,16 @@ public sealed class OptionItem
         Text = text;
         Sub = sub;
         Command = command;
+        (EmojiImage, TextClean) = EmojiService.FirstEmoji(text);
     }
 
     public string Text { get; }
     public string? Sub { get; }
     public ICommand Command { get; }
+
+    // ---------------------------------------------------------------- JoyPixels
+    public ImageSource? EmojiImage { get; }
+    public string TextClean { get; }
 }
 
 /// <summary>
